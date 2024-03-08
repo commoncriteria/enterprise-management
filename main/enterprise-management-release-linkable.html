@@ -1,0 +1,1101 @@
+<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><meta content="utf-8" http-equiv="encoding"><title>Protection Profile for QQQQ</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            showMathMenu: false,
+            tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+              displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+              processEscapes: true
+            },
+            styles: {
+
+                ".MathJax_Display": {
+                "text-align": "left !important",
+                margin:       "0em 0em !important"
+            }}
+            });
+        </script><script type="text/javascript">// 
+
+// Called on page load to parse URL parameters and perform actions on them.
+function init(){
+    if(getQueryVariable("expand") == "on"){
+      expand();
+    }
+    fixAbbrs();
+}
+
+
+function fixAbbrs(){
+    var aa;
+    var brk_els = document.getElementsByClassName("dyn-abbr");
+    //
+    for(aa=0; aa!=brk_els.length; aa++){
+        var abbr = brk_els[aa].firstElementChild.getAttribute("href").substring(1);
+        var el = document.getElementById("long_"+abbr)
+        if (el==null) {
+             console.log("Could not find 'long_abbr_'"+abbr);
+             continue;
+        }
+        var abbr_def = el.textContent;
+        brk_els[aa].setAttribute("title", abbr_def);
+    }
+}
+// // 
+const AMPERSAND=String.fromCharCode(38);
+
+// Pass a URL variable to this function and it will return its value
+function getQueryVariable(variable)
+{
+    var query = window.location.search.substring(1);
+    var vars = query.split(AMPERSAND);
+    for (var i=0;i!=vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+}
+
+
+//    Expands all evaluation activities
+function expand(){
+    var ap = document.getElementsByClassName('activity_pane');
+    for (var ii = 0; ii!=ap.length; ii++) {
+        ap[ii].classList.remove('hide');
+    }
+}
+
+// Function to expand and contract a given div
+function toggle(descendent) {
+    var cl = descendent.parentNode.parentNode.classList;
+    if (cl.contains('hide')){
+      cl.remove('hide');
+    }
+    else{
+      cl.add('hide');
+    }
+}
+
+// Expands targets if they are hidden
+function showTarget(id){
+    var element = document.getElementById(id);
+    while (element != document.body.rootNode ){
+	element.classList.remove("hide");
+	element = element.parentElement;
+    }
+}
+
+
+// </script><style type="text/css">
+    #toc a{
+        display: block;
+    }
+
+    svg{
+      width: 100%;
+    }
+
+    a[id^="ajq_"]{
+        color:black;
+    }
+
+    
+    body{
+       max-width: 900px;
+       margin: auto;
+    }
+    #toc span{
+       margin-left: 20px;
+    }
+    .assignable-content{
+      font-style: italic;
+    }
+    .selectable-content{
+      font-style: italic;
+    }
+    .not-selectable-content{
+      font-style: italic;
+      text-decoration: line-through;
+    }
+    .refinement{
+      font-weight: bold;
+    }
+    div.eacategory{
+      font-style: italic;
+      font-weight: bold;
+    }
+    .activity_pane .toggler::after, .activity_pane .toggler{
+       display: inline-block;
+       height: auto;
+       content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8A\
+       AAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAQOFAAEDhQGl\
+       VDz+AAAAB3RJTUUH4gIXFDM7fhmr1wAAAfRJREFUKM+dkk9I02EYxz/P+25uurWR\
+       tTkzI4NGl4jQgkq71K1DhnTQIDolRAQFQYSHTtGhU4e6eujQofBSFLOg0C4RUSjh\
+       FnmqTTdKpj/mfv/eX4cUpmRYn9vz8v3w8D7PA/AWGADCbI4QcAb4AnAF8IBJEdX+\
+       N0tEda40C4AHADviW1LFvpOX6+FwtAacVzqkGiWtwxo4F21OuPu7+yvxRNoDEhpY\
+       cpzavkQyc7D76FCk+vN7j7VU6RdR4xAsikjGGP9FKrN3sPfEpajv2i2zhckR4JUG\
+       UCr0erFavLkn2ytd2WPxcFOsZb74+SIQA0YPHBqIdB8Z6tChJv1m/N4P33OGAUsD\
+       BIFxPNcOkq07jyeSbbo1tTu2q6vHEqU7D/ddSKcz2ZQJjBSmx925b9NjwEMAafha\
+       eyQa/3Dq7O0243sCIEoRGAOA59nm5dM7OHVruzH+AkDjYEp23RrLT+U8Ub+fV0UR\
+       oVyaMfVa9fqquF5GKX3ja2FCuc6yWbMipYNP755UgEdr8o2FMf5ivVYdKRfzRkRW\
+       RfJTOc+2rWdAcUN5hdGP7x8viGgAXLvGbGFCKxW6tj74J3nOqVvP89M5V6kQ86UZ\
+       f7lWvWWMt7Sp41VKb21uSfqnB++6kWi8BLTzL4ioq7H4tgC4z3/QAZSBxEaBXygN\
+       v+jeFnAPAAAAAElFTkSuQmCC');
+       max-width: 15px;
+    }
+
+    a.definition{
+      color: inherit;
+      text-decoration: inherit;
+    }
+      
+    a {
+      text-decoration: none;
+      word-wrap: break-word;
+    }
+    a.abbr:link{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:visited{
+      color:black;
+      text-decoration:none;
+    }
+    a.abbr:hover{
+      color:blue;
+      text-decoration:none;
+    }
+    a.abbr:hover:visited{
+      color:purple;
+      text-decoration:none;
+    }
+    a.abbr:active{
+      color:red;
+      text-decoration:none;
+    }
+    .note-header{
+      font-weight: bold;
+    }
+    .note p:first-child{
+      display: inline;
+    }
+
+    .indent{ margin-left:2em; }
+
+    /* Tooltip container */
+    .tooltipped {
+       position: relative;
+       display: inline-block;
+       border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltiptext {
+       visibility: hidden;
+       width: 120px;
+       background-color: black;
+       color: #fff;
+       text-align: center;
+       padding: 5px 0;
+       border-radius: 6px;
+
+       /* Position the tooltip text - see examples below! */
+       position: absolute;
+       z-index: 1;
+   }
+
+   /* Show the tooltip text when you mouse over the tooltip container */
+   .tooltipped:hover .tooltiptext {
+       visibility: visible;
+   }
+   tr.major-row{
+       border-top-style: double;
+   }
+   tr.major-row td:first-child{
+       border-right-style: ridge;
+       background-color: white;
+   } 
+   table.mfs td{
+       text-align: center;
+   }
+   table.mfs td:first-child{
+       text-align: left;
+       white-space: nowrap;
+   }
+  .table-caption, caption{
+       text-align: center;
+       font-weight: bold;
+   }
+   table{
+       margin:auto;
+       margin-top:1em;
+       border-collapse:collapse; /*border: 1px solid black;*/
+   }
+   td{
+       text-align:left;
+       padding:8px 8px;
+   }
+   th{
+       padding:8px 8px;
+   }
+   thead tr td{
+       text-align: center;
+       font-style: oblique;
+       font-weight: bold;
+   }
+   tr.header{
+       border-bottom:3px solid gray;
+       padding:8px 8px;
+       text-align:left;
+       font-weight:bold; /*font-size: 90%; font-family: verdana, arial, helvetica, sans-serif; */
+   }
+   table tr:nth-child(2n+2){
+       background-color:#F4F4F4;
+   }
+
+   .dependent{
+       border: 1px solid gray;
+       border-radius: 1px
+   }
+   .dependent-content{
+       margin-left: 25px;
+       font-style: italic;
+   }
+
+   .uc_table_or td, .uc_table_or tr {
+       vertical-align: middle;
+       border: 1px solid black;
+       background-color: white;
+   }
+
+   .uc_not, .uc_mf, .uc_sel, .uc_guide{
+       text-indent: 10px;
+   }
+   .uc_sel > a{ 
+       font-style: italic;
+   }
+
+   .uc_not_sel, .uc_sel.uc_mf, uc_assign.uc_mf{
+       text-indent: 20px;
+   }
+
+
+   .uc_table_or tr td.or_cell{
+      white-space: nowrap;
+      border-radius: 0.6em 0 0 0.6em;
+      background-color: black;
+      color: white;
+   }
+
+   .uc_table_and, .uc_table_or {
+       width: 100%;
+       background-color: white;
+   }
+   .uc_guidance{
+       display: table;
+       background-color: gray;
+   }  
+   div.uc_inc_fcomp{
+       display: list-item;
+       list-style-type: disc;
+       list-style-position: inside;
+       }
+
+   div.validationguidelines_label{
+        padding-top: 10px;
+   }
+	
+   .evidence, .test-obj { font-style: normal; font-size: 90%;}
+   
+   
+	table.classic {
+    	width: 100%;
+    	background-color: white;
+    	border-collapse: collapse;
+    	border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		color: black;
+		font-size: small;
+	}
+    table.classic th {
+  		background-color: lightgray;   
+	}
+    table.classic th:empty{
+	    background-color: white;
+		border-top: none;
+		border-left: none;
+	}
+	table.classic td, table.classic th {
+  		border-width: 2px;
+  		border-color: gray;
+  		border-style: solid;
+  		padding: 5px;
+	}
+
+   
+    .comp .description{
+        padding-bottom: 20px;
+        display: block;
+    }    
+   
+   
+          .figure{
+              font-weight:bold;
+          }
+          h1{
+              page-break-before:always;
+              text-align:left;
+              font-size:200%;
+              margin-top:2em;
+              margin-bottom:2em;
+              font-family:verdana, arial, helvetica, sans-serif;
+              margin-bottom:1.0em;
+          }
+          h1.title{
+              text-align:center;
+          }
+          h2{
+              font-size:125%;
+              border-bottom:solid 1px gray;
+              margin-bottom:1.0em;
+              margin-top:2em;
+              margin-bottom:0.75em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h3{
+              font-size:110%;
+              margin-bottom:0.25em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h4{
+              margin-left:0%;
+              font-size:100%;
+              margin-bottom:0.75em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h5,
+          h6{
+              margin-left:6%;
+              font-size:90%;
+              margin-bottom:0.5em;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          p{
+              margin-bottom:0.6em;
+              margin-top:0.2em;
+          }
+          pre{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+              margin-left:3%;
+              font-family:monospace;
+              font-size:90%;
+          }
+          ul{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+          }
+          td{
+              vertical-align:top;
+          }
+          dl{
+              margin-bottom:0.5em;
+              margin-top:0.25em;
+          }
+          dt{
+              margin-top:0.7em;
+              font-weight:bold;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+
+          a.linkref{
+              font-family:verdana, arial, helvetica, sans-serif;
+              font-size:90%;
+          }
+
+          *.simpleText{
+              margin-left:10%;
+          }
+          *.propertyText{
+              margin-left:10%;
+              margin-top:0.2em;
+              margin-bottom:0.2em
+          }
+          *.toc{
+              background:#FFFFFF;
+          }
+          *.toc2{
+              background:#FFFFFF;
+          }
+	  .choicelabel{
+	    font-weight: bold;
+	  }
+          div.comp{
+              margin-left:8%;
+              margin-top:1em;
+              margin-bottom:1em;
+          }
+          div.element{
+              margin-bottom:1em;
+          }
+          div.appnote{
+              margin-left:0%;
+              margin-top:1em;
+          }
+          .comment{
+              background-color:beige;
+              color:green;
+          }
+
+          div.subaact{
+              margin-left:0%;
+              margin-top:1em;
+          }
+          .subaact-header{
+              font-weight: bold;
+          }
+
+          div.activity_pane_body{
+              font-style:italic;
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              padding:1em;
+              border:2px solid #888888;
+              border-radius:3px;
+              display:block;
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+          }
+          div.optional-appendicies{
+              display:none;
+          }
+
+          div.statustag{
+              margin-left:0%;
+              margin-top:1em;
+              margin-bottom:1em;
+              padding: 0.6em;
+              border:2px solid #888888;
+              border-radius:3px;
+          }
+
+          div.toc{
+              margin-left:8%;
+              margin-bottom:4em;
+              padding-bottom:0.75em;
+              padding-top:1em;
+              padding-left:2em;
+              padding-right:2em;
+          }
+          span.SOlist{
+              font-size:90%;
+              font-family:verdana, arial, helvetica, sans-serif;
+          }
+          h2.toc{
+              border-bottom:none;
+              margin-left:0%;
+              margin-top:0em;
+          }
+          p.toc{
+              margin-left:2em;
+              margin-bottom:0.2em;
+              margin-top:0.5em;
+          }
+          p.toc2{
+              margin-left:5em;
+              margin-bottom:0.1em;
+              margin-top:0.1em;
+          }
+          div.center{
+              display:block;
+              margin-left:auto;
+              margin-right:auto;
+              text-align:center;
+              }
+          div.ea{
+	      padding-bottom:10px;
+          }
+	      
+          div.figure{
+              display:block;
+              margin-left:auto;
+              margin-right:auto;
+              text-align:center;
+              margin-top:1em;
+          }
+          div.activity_pane_header{
+              display:table-cell;
+              vertical-align:middle;
+              padding-top:10px;
+          }
+          span.activity_pane_label{
+              vertical-align:middle;
+              color:black;
+              text-decoration:none;
+              font-size:100%;
+              font-weight:bold; /*font-family: verdana, arial, helvetica, sans-serif; */
+          }
+          .dyn-abbr a, .dyn-abbr a:active, .dyn-abbr a:visited{
+              background-color: inherit;
+              color: inherit;
+              text-decoration: inherit;;
+          }
+
+          @media screen{
+              *.reqid{
+                  float:left;
+                  font-size:90%;
+                  font-family:verdana, arial, helvetica, sans-serif;
+                  margin-right:1em;
+              }
+              *.req{
+                  margin-left:0%;
+                  margin-top:1em;
+                  margin-bottom:1em;
+              }
+              *.reqdesc{
+                  margin-left:20%;
+              }
+
+              .activity_pane.hide .toggler::after, .activity_pane.hide .toggler{
+	          content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8A\
+		  AAAPCAYAAAA71pVKAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAQOFAAEDhQGl\
+		  VDz+AAAAB3RJTUUH4gIXFC4BR3keeQAAAfZJREFUKM+d0k1PE1EUBuB37h2nQ+30\
+		  w5YObR0FhIppqBgWuDCaSBQjiQZNTIxLfoAkBHXh2vg7xID+ABPXBl3UdAMaN1CR\
+		  j5ZijZ22DKW9d44LP1KMROvZnMU5z+KcvBzAAgADwCdV1RzXlYQ26tYhrYM6u/qX\
+		  ATwCcKodrAOYv3z9IV28OuP6/NHPAGYZ45G/QQ5AAFjNbyzdTA2NewcGx7xeI5wu\
+		  FZenQOQQuasHncN/9IJo1sn+unkpbqVFIJhgydQo13VjDKCJSnnLBJAHUPoTBoA3\
+		  uzvlfiNgDhn+KMiVCB6xYCZSoaPHz5wrba/cbuztpBWFvQLI+R2DSGZqleKNuJX2\
+		  cVVjAIExDo/uV7pPjGhSNntrleI9+n7Ox33Y549Wq/ZWTyh8rNcfjPlaZ4xzZvUM\
+		  ezrNvnJ+fXFCiL2k2rpQq2wnAqH4tYjZFyZq/Y8CKZoim51z1nIZQ4jGNIC5fZhz\
+		  7fHA4JVuj26AyIWiMDSbdTi1L/T29RO7ahdfKgqbInJLANCKZ6Kx5J24dVowztW6\
+		  Y+8WNt91FNYXc4WN988BzAL4QOT+Aj/x8GFf+MHI+UlI2cBS9kVlLZfxSFdMS9GY\
+		  V1WtKETDPShhz85emLRHx++TETBLAJ4qCov8c7ajsZMr/5PtBQB3AXSpqsbagd8A\
+		  O+HMRUtPNsQAAAAASUVORK5CYII=');
+              }
+
+              .activity_pane.hide .activity_pane_body{
+                  display:none;
+              }
+              div.statustag{
+                  box-shadow:4px 4px 3px #888888;
+              }
+          }
+
+
+          @media print{
+              *.reqid{
+                  font-size:90%;
+                  font-family:verdana, arial, helvetica, sans-serif;
+              }
+              *.req{
+                  margin-left:0%;
+                  margin-top:1em;
+                  margin-bottom:1em;
+              }
+              *.reqdesc{
+                  margin-left:20%;
+              }
+              div.activity_pane_body{
+                  padding:1em;
+                  border:2px solid #888888;
+                  border-radius:3px;
+                  display:block;
+              }
+
+	            img[src="images/collapsed.png"] { display:none;}
+
+          }
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br></div><h1 class="title" style="page-break-before:auto;">Protection Profile for QQQQ</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
+      Version: 1.0<br>2015-08-14<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>Round 1</td><td>2015-04-23</td><td>First draft of version 1.0 for comment</td></tr>
+<tr><td>1.0</td><td>2015-08-14</td><td>Release - first version released</td></tr>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Description</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#man-sfrs" style="text-indent:10px">5.1<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.2<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix B - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">B.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">B.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FAU" style="text-indent:20px">B.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">B.2.2.1<span>FAU_STG_EXT Security Store Filtering</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix C - <span>Inherently Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix D - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix E - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+    <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2>
+      Content added 11 Feb 2021: 1307pm<a id="period_0" href="#period_0">. </a>      Content added 11 Feb 2021: 1249pm<a id="period_1" href="#period_1">. </a>      &#931;      
+
+      <div>
+        <table class="classic">
+           <thead><caption>Table Caption</caption>
+           <tr><th></th><th>Column 1</th><th>Column 2</th></tr></thead>
+<tbody>
+<tr><th>Row 1</th><td>Data 1 </td><td> Data 2</td></tr>
+<tr><th>Row 2</th><td rowspan="2">Data 3 </td><td> Data 4</td></tr>
+<tr><th>Row 2</th><td> Data 7</td></tr>
+<tr><th>Row 3</th><td colspan="2">Data 5 </td></tr>
+</tbody>
+</table>
+</div>
+      The scope of this Protection Profile (<abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>) is to
+      describe the security functionality of QQQQ products in terms of <a href="#bibCC">[CC]</a>
+      and to define functional and assurance requirements for such products<a id="period_2" href="#period_2">. </a>      An operating system is software that manages computer hardware and software
+      resources, and provides common services for application programs<a id="period_3" href="#period_3">. </a>The hardware
+      it manages may be <ul><li>physical</li><li>virtual</li><li>imaginary</li></ul><a id="period_4" href="#period_4">. </a>      <div> Something</div>
+      <p> This is going to show some tests:
+ 	<ul>
+	  <li> Terms with abbrs like <abbr class="dyn-abbr"><a href="#abbr_ASLR">ASLR</a></abbr>, or <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr>, should be found a linked automatically<a id="period_5" href="#period_5">. </a></li>
+          <li> And components can be refered to by their name: FQQ_QQQ.1 </li>
+          <li> And so can requirements: FQQ_QQQ.1.1 or by their unique identifier: FQQ_QQQ.1.1</li>
+ 
+   	  <li> Or you can stop them <span class="no-link">ASLR</span> </li>
+          <li> This is how you do a picture: 
+                <div class="figure" id="figure-fig-logo"><img id="fig-logo" src="images/niaplogo.png" width="" height=""><br><span class="ctr" data-myid="fig-logo" data-counter-type="ct-figure">Figure <span class="counter">1</span></span>:
+      Niap's Logo </div> </li>
+          <li> And this is how you reference it: <a onclick="showTarget('fig-logo')" href="#fig-logo" class="fig-logo-ref">Figure  <span class="counter">1</span></a></li>
+          <li> This is how you do an equation with an arbitrary counter:  
+              <table><tr><td id="quadeq">$$x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}$$</td><td style="vertical-align: middle; padding-left: 100px">(<span class="ctr" data-myid="quadeq" data-counter-type="equation"><span class="counter">1</span></span>)</td></tr></table>
+
+</li> 
+          <li> And this is how you reference it: <a onclick="showTarget('quadeq')" href="#quadeq" class="quadeq-ref">Eq.  <span class="counter">1</span></a> </li>
+          <li> <div class="dependent">The following content should be included if:<ul><li><a href="#aaa">this</a>
+             is selected from 
+             FQQ_QQQ.1.1</li></ul><div class="dependent-content"><div> 
+                    Some text </div></div></div> </li> 
+			<li> <div class="dependent">The following content should be included if:<ul><li>
+           the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
+           
+             "Widget Thing"
+           </li></ul><div class="dependent-content"><div>
+                    Someting dependent on a feature</div></div></div> </li> 
+           
+          <li> And here's the audit event table for mandatory requirements<a id="period_6" href="#period_6">. </a>
+           
+			 <a onclick="showTarget('t-audit-mandatory')" href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table  <span class="counter">t-audit-mandatory</span></a> for more information<a id="period_7" href="#period_7">. </a>
+          </li>
+          <li> Test for an xref to section <a href="#Threats" class="dynref">Section 3.1 Threats</a> </li>
+        </ul>
+        And this is another sentence (or fragment)<a id="period_8" href="#period_8">. </a>I added this sentence and deleted the next one<a id="period_9" href="#period_9">. </a>
+		This uses the plural acronym <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr><a id="period_10" href="#period_10">. </a>
+      </p>
+      <p> And here's a generic coutner 
+                       <span class="ctr" data-myid="c-abc" data-counter-type="ct-Abc " id="c-abc">Abc  <span class="counter">1</span>: Some Words</span>
+      </p>
+      <p>
+        And here's the reference to it <a onclick="showTarget('c-abc')" href="#c-abc" class="c-abc-ref">Abc  <span class="counter">1</span></a><a id="period_11" href="#period_11">. </a>      </p>
+ 
+
+
+    
+    <div class="no-link"><h2 id="glossary" class="indexable" data-level="2">1.2 Terms</h2>
+The following sections list Common Criteria and technology terms used in this document<a id="period_12" href="#period_12">. </a>    <h3 id="cc-terms" class="indexable" data-level="3">1.2.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a><a id="period_13" href="#period_13">. </a></td></tr>
+<tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
+    international technical communities and approved by multiple schemes<a id="period_14" href="#period_14">. </a></td></tr>
+<tr><td><div id="Common_Criteria_Testing_Laboratory">Common Criteria Testing Laboratory</div></td><td>
+      Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility
+      accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations<a id="period_15" href="#period_15">. </a>    </td></tr>
+<tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation<a id="period_16" href="#period_16">. </a></td></tr>
+<tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole<a id="period_17" href="#period_17">. </a></td></tr>
+<tr><td><div id="Extended_Package">Extended Package (EP)</div></td><td>A deprecated document form for collecting SFRs that implement a particular protocol, technology,
+	    or functionality<a id="period_18" href="#period_18">. </a>See Functional Packages<a id="period_19" href="#period_19">. </a></td></tr>
+<tr><td><div id="Functional_Package">Functional Package (FP)</div></td><td>A document that collects SFRs for a particular protocol, technology,
+	    or functionality<a id="period_20" href="#period_20">. </a></td></tr>
+<tr><td><div id="Operational_Environment">Operational Environment (OE)</div></td><td>Hardware and software that are outside the TOE boundary that support the TOE functionality and security policy<a id="period_21" href="#period_21">. </a></td></tr>
+<tr><td><div id="Protection_Profile">Protection Profile (PP)</div></td><td>An implementation-independent set of security requirements for a category of products<a id="period_22" href="#period_22">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Configuration">Protection Profile Configuration (PP-Configuration)</div></td><td>A comprehensive set of security requirements for a product type that consists of at least one Base-PP and at least one PP-Module<a id="period_23" href="#period_23">. </a></td></tr>
+<tr><td><div id="Protection_Profile_Module">Protection Profile Module (PP-Module)</div></td><td>An implementation-independent statement of security needs for a TOE type complementary to one or more Base-PPs<a id="period_24" href="#period_24">. </a></td></tr>
+<tr><td><div id="Security_Assurance_Requirement">Security Assurance Requirement (SAR)</div></td><td>A requirement to assure the security of the TOE<a id="period_25" href="#period_25">. </a></td></tr>
+<tr><td><div id="Security_Functional_Requirement">Security Functional Requirement (SFR)</div></td><td>A requirement for security enforcement by the TOE<a id="period_26" href="#period_26">. </a></td></tr>
+<tr><td><div id="Security_Target">Security Target (ST)</div></td><td>A set of implementation-dependent security requirements for a specific product<a id="period_27" href="#period_27">. </a></td></tr>
+<tr><td><div id="Target_of_Evaluation">Target of Evaluation (TOE)</div></td><td>The product under evaluation<a id="period_28" href="#period_28">. </a></td></tr>
+<tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation<a id="period_29" href="#period_29">. </a></td></tr>
+<tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST<a id="period_30" href="#period_30">. </a></td></tr>
+</table><h3 id="tech-terms" class="indexable" data-level="3">1.2.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Address_Space_Layout_Randomization">Address Space Layout Randomization (ASLR)</div></td><td>
+	An anti-exploitation feature which loads memory mappings into unpredictable
+	locations<a id="period_31" href="#period_31">. </a>ASLR makes it more difficult for an attacker to redirect control to code
+	that they have introduced into the address space of a process<a id="period_32" href="#period_32">. </a>      </td></tr>
+<tr><td><div id="Administrator">Administrator</div></td><td>
+	An administrator is responsible for management activities, including setting policies that are 
+	applied by the enterprise on the operating system<a id="period_33" href="#period_33">. </a>	This administrator could be acting remotely through a management server, from which the system
+	receives configuration policies<a id="period_34" href="#period_34">. </a>	An administrator can enforce settings on the system which cannot be overridden by non-administrator users<a id="period_35" href="#period_35">. </a>      </td></tr>
+<tr><td><div id="Application">Application (app)</div></td><td>
+	Software that runs on a platform and performs tasks on behalf of the user
+	or owner of the platform, as well as its supporting documentation<a id="period_36" href="#period_36">. </a>
+      </td></tr>
+<tr><td><div id="Application_Programming_Interface">Application Programming Interface (API)</div></td><td>
+	A specification of routines, data structures, object classes, and variables
+	that allows an application to make use of services provided by another software
+	component, such as a library<a id="period_37" href="#period_37">. </a>APIs are often provided for a set of libraries included
+	with the platform<a id="period_38" href="#period_38">. </a>      </td></tr>
+<tr><td><div id="Credential">Credential</div></td><td>
+	Data that establishes the identity of a user, e.g<a id="period_39" href="#period_39">. </a>a cryptographic key or
+	password<a id="period_40" href="#period_40">. </a>      </td></tr>
+<tr><td><div id="Critical_Security_Parameters">Critical Security Parameters (CSP)</div></td><td>
+	Information that is either user or system defined and
+	is used to operate a cryptographic module in processing encryption functions including
+	cryptographic keys and authentication data, such as passwords, the disclosure or modification
+	of which can compromise the security of a cryptographic module or the security of the
+	information protected by the module<a id="period_41" href="#period_41">. </a>      </td></tr>
+<tr><td><div id="DAR_Protection">DAR Protection</div></td><td>
+	Countermeasures that prevent attackers, even those with physical access,
+	from extracting data from non-volatile storage<a id="period_42" href="#period_42">. </a>	Common techniques include data encryption and wiping<a id="period_43" href="#period_43">. </a>      </td></tr>
+<tr><td><div id="Data_Execution_Prevention">Data Execution Prevention (DEP)</div></td><td>
+	An anti-exploitation feature of modern operating systems executing on
+	modern computer hardware, which enforces a non-execute permission on pages of memory<a id="period_44" href="#period_44">. </a>	DEP prevents pages of memory from containing both data and instructions, which makes
+	it more difficult for an attacker to introduce and execute code<a id="period_45" href="#period_45">. </a>      </td></tr>
+<tr><td><div id="Developer">Developer</div></td><td>
+	An entity that writes OS software<a id="period_46" href="#period_46">. </a>For the purposes of this document,
+	vendors and developers are the same<a id="period_47" href="#period_47">. </a>      </td></tr>
+<tr><td><div id="General_Purpose_Operating_System">General Purpose Operating System</div></td><td>
+	A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services<a id="period_48" href="#period_48">. </a>	Typical characteristics for OSes in this class include support for third-party applications,
+	support for multiple users, and security separation between users and their respective resources<a id="period_49" href="#period_49">. </a>	General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems (RTOS)<a id="period_50" href="#period_50">. </a>	RTOSes typically power routers, switches, and embedded devices<a id="period_51" href="#period_51">. </a>      </td></tr>
+<tr><td><div id="Host-based_Firewall">Host-based Firewall</div></td><td>
+	A software-based firewall implementation running on the OS for filtering inbound and
+	outbound network traffic to and from processes running on the OS<a id="period_52" href="#period_52">. </a>      </td></tr>
+<tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
+	Software that manages physical and logical resources and provides services
+	for applications<a id="period_53" href="#period_53">. </a>The terms <i>TOE</i> and <i>OS</i> are interchangeable in this
+	document<a id="period_54" href="#period_54">. </a>
+      </td></tr>
+<tr><td><div id="Personally_Identifiable_Information">Personally Identifiable Information (PII)</div></td><td>
+	Any information about an individual maintained by an agency, including, but
+	not limited to, education, financial transactions, medical history, and criminal or
+	employment history and information which can be used to distinguish or trace an
+	individual's identity, such as their name, social security number, date and place of
+	birth, mother's maiden name, biometric records, etc., including any other personal
+	information which is linked or linkable to an individual<a id="period_55" href="#period_55">. </a><a href="#bibOMB">[OMB]</a>
+      </td></tr>
+<tr><td><div id="Sensitive_Data">Sensitive Data</div></td><td>
+	Sensitive data may include all user or enterprise data or may be specific
+	application data such as PII, emails, messaging, documents, calendar items, and contacts<a id="period_56" href="#period_56">. </a>	Sensitive data must minimally include credentials and keys<a id="period_57" href="#period_57">. </a>Sensitive data shall
+	be identified in the OS's TSS by the ST author<a id="period_58" href="#period_58">. </a>
+      </td></tr>
+<tr><td><div id="User">User</div></td><td>
+	A user is subject to configuration policies applied
+	to the operating system by administrators<a id="period_59" href="#period_59">. </a> On some systems under certain
+	configurations, a normal user can temporarily elevate privileges to that of an administrator<a id="period_60" href="#period_60">. </a>	At that time, such a user should be considered an administrator<a id="period_61" href="#period_61">. </a>      </td></tr>
+<tr><td><div id="Virtual_Machine">Virtual Machine (VM)</div></td><td>Blah Blah Blah</td></tr>
+</table></div>    
+    <h2 class="indexable" data-level="2" id="TOEdescription">1.3 Compliant Targets of Evaluation</h2>
+      <h3 class="indexable" data-level="3" id="TOEboundary">1.3.1 TOE Boundary</h3>
+        <div class="figure" id="figure-toe"><img id="toe" src="images/Toe.png" width="" height=""><br><span class="ctr" data-myid="toe" data-counter-type="ct-figure">Figure <span class="counter">2</span></span>:
+      General <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> </div>
+      
+      <h3 class="indexable" data-level="3" id="TOEplatform">1.3.2 TOE Platform</h3>
+      
+    
+    <h2 class="indexable" data-level="2" id="usecases">1.4 Use Cases</h2>Requirements in this Protection Profile are designed to
+      address the security problems in at least the following use cases<a id="period_62" href="#period_62">. </a>These use cases are intentionally
+      very broad, as many specific use cases exist for an operating system<a id="period_63" href="#period_63">. </a>These use cases may also
+      overlap with one another<a id="period_64" href="#period_64">. </a> An operating system's functionality may even be effectively extended by
+      privileged applications installed onto it<a id="period_65" href="#period_65">. </a> However, these are out of scope of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_66" href="#period_66">. </a>
+      <dl><dt id="elephant"> [USE CASE 1] Elephant-own device</dt><dd><span class="description">This is everything we need to describe in words about this use case<a id="period_67" href="#period_67">. </a></span><p>
+            For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-elephant" class="dynref"></a><a id="period_68" href="#period_68">. </a>          </p></dd></dl>
+    
+  <h1 class="indexable" data-level="1" id="cclaims">2 Conformance Claims</h1><h1 class="indexable" data-level="1" id="spd">3 Security Problem Description</h1>The security problem is described in terms
+    of the threats that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is expected to address, assumptions about the
+    operational environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
+    is expected to enforce<a id="period_69" href="#period_69">. </a>    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
+      <dl><dt class="threat,defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK</dt><dd><span class="description"> An attacker is positioned on a communications channel or elsewhere on the
+            network infrastructure<a id="period_70" href="#period_70">. </a>Attackers may engage in communications with applications and
+            services running on or part of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> with the intent of compromise<a id="period_71" href="#period_71">. </a>Engagement may
+            consist of altering existing legitimate communications<a id="period_72" href="#period_72">. </a></span></dd><dt class="threat,defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</dt><dd><span class="description"> An attacker is positioned on a communications channel or elsewhere on the
+            network infrastructure<a id="period_73" href="#period_73">. </a>Attackers may monitor and gain access to data exchanged between
+            applications and services that are running on or part of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_74" href="#period_74">. </a></span></dd><dt class="threat,defined" id="T.LOCAL_ATTACK">T.LOCAL_ATTACK</dt><dd><span class="description"> An attacker may compromise applications running on the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr><a id="period_75" href="#period_75">. </a>The
+            compromised application may provide maliciously formatted input to the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> through a
+            variety of channels including unprivileged system calls and messaging via the
+            file system<a id="period_76" href="#period_76">. </a></span></dd><dt class="threat,defined" id="T.LIMITED_PHYSICAL_ACCESS">T.LIMITED_PHYSICAL_ACCESS</dt><dd><span class="description"> An attacker may attempt to access data on the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> while having a limited
+            amount of time with the physical device<a id="period_77" href="#period_77">. </a></span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="assumptions">3.2 Assumptions</h2>
+These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
+security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_78" href="#period_78">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
+provide all of its security functionality<a id="period_79" href="#period_79">. </a>      
+      <dl><dt class="assumption,defined" id="A.PLATFORM">A.PLATFORM</dt><dd><span class="description"> The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> relies upon a trustworthy computing platform for
+            its execution<a id="period_80" href="#period_80">. </a>This underlying platform is out of scope of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr><a id="period_81" href="#period_81">. </a></span></dd><dt class="assumption,defined" id="A.PROPER_USER">A.PROPER_USER</dt><dd><span class="description"> The user of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not willfully negligent or hostile, and uses the
+            software in compliance with the applied enterprise security policy<a id="period_82" href="#period_82">. </a>At the same time,
+            malicious software could act <i>as</i> the user, so requirements which
+            confine malicious subjects are still in scope<a id="period_83" href="#period_83">. </a></span></dd><dt class="assumption,defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description"> The administrator of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not careless, willfully negligent or hostile,
+            and administers the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> within compliance of the applied enterprise security policy<a id="period_84" href="#period_84">. </a></span></dd></dl>
+    
+
+  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOE">4.1 Security Objectives for the TOE</h2>
+      <dl><dt class="SO,defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description"> Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure that information exists that allows
+            administrators to discover unintentional issues with the configuration and operation of
+            the operating system and discover its cause<a id="period_85" href="#period_85">. </a> Gathering event information and immediately
+            transmitting it to another system can also enable incident response in the event
+            of system compromise<a id="period_86" href="#period_86">. </a></span></dd><dt class="SO,defined" id="O.INTEGRITY">O.INTEGRITY</dt><dd><span class="description">Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure the integrity of their update
+            packages<a id="period_87" href="#period_87">. </a><abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> are seldom if ever shipped without errors, and the
+            ability to deploy patches and updates with integrity is critical to enterprise network
+            security<a id="period_88" href="#period_88">. </a>Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> provide execution environment-based
+            mitigations that increase the cost to attackers by adding complexity to the task of
+            compromising systems<a id="period_89" href="#period_89">. </a></span></dd><dt class="SO,defined" id="O.MANAGEMENT">O.MANAGEMENT</dt><dd><span class="description"> To facilitate management by users and the enterprise, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>
+	    provide consistent and supported interfaces for their
+            security-relevant configuration and maintenance<a id="period_90" href="#period_90">. </a>This includes the deployment of
+            applications and application updates through the use of platform-supported deployment
+            mechanisms and formats, as well as providing mechanisms for configuration and
+            application execution control<a id="period_91" href="#period_91">. </a></span></dd><dt class="SO,defined" id="O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</dt><dd><span class="description">
+To address the issue of loss of confidentiality of credentials in the event of
+loss of physical control of the storage medium, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>
+provide data-at-rest protection for credentials<a id="period_92" href="#period_92">. </a>Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> also provide access controls which allow users to keep their files private from other
+users of the same system<a id="period_93" href="#period_93">. </a>          </span></dd><dt class="SO,defined" id="O.PROTECTED_COMMS">O.PROTECTED_COMMS</dt><dd><span class="description"> To address both passive (eavesdropping) and active (packet modification)
+            network attack threats, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> provide mechanisms to create
+            trusted channels for <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> and sensitive data<a id="period_94" href="#period_94">. </a>Both <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> and sensitive data
+            should not be exposed outside of the platform<a id="period_95" href="#period_95">. </a></span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.2 Security Objectives for the Operational Environment</h2>
+The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>)<a id="period_96" href="#period_96">. </a>The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve<a id="period_97" href="#period_97">. </a>This section defines the security objectives that are to be addressed by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> domain or by non-technical or procedural means<a id="period_98" href="#period_98">. </a>The assumptions identified in Section 3 are incorporated as security objectives for the environment<a id="period_99" href="#period_99">. </a>      The following security objectives for the operational
+      environment assist the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> in correctly providing its security functionality<a id="period_100" href="#period_100">. </a>      These track with the assumptions about the environment<a id="period_101" href="#period_101">. </a><dl><dt class="SOE,defined" id="OE.PLATFORM">OE.PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> relies on being installed on trusted
+            hardware<a id="period_102" href="#period_102">. </a></span></dd><dt class="SOE,defined" id="OE.PROPER_USER">OE.PROPER_USER</dt><dd><span class="description"> The user of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not willfully negligent or hostile,
+            and uses the software within compliance of the applied enterprise security policy<a id="period_103" href="#period_103">. </a>            Standard user accounts are provisioned in accordance with the least privilege model<a id="period_104" href="#period_104">. </a>            Users requiring higher levels of access should have a separate account dedicated for
+            that use<a id="period_105" href="#period_105">. </a></span></dd><dt class="SOE,defined" id="OE.PROPER_ADMIN">OE.PROPER_ADMIN</dt><dd><span class="description"> The administrator of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not careless, willfully
+            negligent or hostile, and administers the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> within compliance of the applied enterprise
+            security policy<a id="period_106" href="#period_106">. </a></span></dd></dl>
+    <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
+    This section describes how the assumptions, threats, and organizational 
+    security policies map to the security objectives<a id="period_107" href="#period_107">. </a>    <table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="4"><a href="#T.NETWORK_ATTACK">T.NETWORK_&#8203;ATTACK</a></td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_&#8203;COMMS</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
+              provides for integrity of transmitted data<a id="period_108" href="#period_108">. </a></td></tr><tr><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.INTEGRITY">O.INTEGRITY</a> as this provides for
+              integrity of software that is installed onto the system from the network<a id="period_109" href="#period_109">. </a></td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides for
+              the ability to configure the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to defend against network attack<a id="period_110" href="#period_110">. </a></td></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> as this
+              provides a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to report behavior that may indicate a network
+              attack has occurred<a id="period_111" href="#period_111">. </a></td></tr><tr class="major-row"><td rowspan="2"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_&#8203;EAVESDROP</a></td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_&#8203;COMMS</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
+              provides for confidentiality of transmitted data<a id="period_112" href="#period_112">. </a></td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides
+              for the ability to configure the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to protect the confidentiality of its transmitted
+              data<a id="period_113" href="#period_113">. </a></td></tr><tr class="major-row"><td rowspan="2"><a href="#T.LOCAL_ATTACK">T.LOCAL_&#8203;ATTACK</a></td><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The objective <a href="#O.INTEGRITY">O.INTEGRITY</a> protects against the use of mechanisms that weaken
+              the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with regard to attack by other software on the
+              platform<a id="period_114" href="#period_114">. </a></td></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The objective <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> protects against local attacks by providing
+              a mechanism to report behavior that may indicate a local attack is occurring or
+              has occurred<a id="period_115" href="#period_115">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#T.LIMITED_PHYSICAL_ACCESS">T.LIMITED_&#8203;PHYSICAL_&#8203;ACCESS</a></td><td><a href="#O.PROTECTED_STORAGE">O.PROTECTED_&#8203;STORAGE</a></td><td>The objective <a href="#O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</a> protects against unauthorized attempts to
+              access physical storage used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_116" href="#period_116">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PLATFORM">A.PLATFORM</a></td><td><a href="#OE.PLATFORM">OE.PLATFORM</a></td><td> The operational environment objective <a href="#OE.PLATFORM">OE.PLATFORM</a> is realized through
+              <a href="#A.PLATFORM">A.PLATFORM</a><a id="period_117" href="#period_117">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_USER">A.PROPER_&#8203;USER</a></td><td><a href="#OE.PROPER_USER">OE.PROPER_&#8203;USER</a></td><td>The operational environment objective <a href="#OE.PROPER_USER">OE.PROPER_USER</a> is realized through
+              <a href="#A.PROPER_USER">A.PROPER_USER</a><a id="period_118" href="#period_118">. </a></td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_ADMIN">A.PROPER_&#8203;ADMIN</a></td><td><a href="#OE.PROPER_ADMIN">OE.PROPER_&#8203;ADMIN</a></td><td>The operational environment objective <a href="#OE.PROPER_ADMIN">OE.PROPER_ADMIN</a> is realized through
+              <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a><a id="period_119" href="#period_119">. </a></td></tr></table>
+  <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
+      This chapter describes the security requirements which have to be fulfilled by the product under evaluation<a id="period_120" href="#period_120">. </a>     Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
+       <a href="#bibCC">[CC]</a><a id="period_121" href="#period_121">. </a>       
+    The following conventions are used for the completion of operations:
+     <ul>
+       <li>
+         <b>Refinement</b> operation (denoted by <b>bold text</b> or <strike>strikethrough
+         text</strike>): Is used to add details to a requirement (including replacing an assignment
+         with a more restrictive selection) or to remove part of the requirement that is made irrelevant
+         through the completion of another operation, and thus further restricts a requirement<a id="period_122" href="#period_122">. </a>         </li>
+       <li>
+         <b>Selection</b> (denoted by <i>italicized text</i>): Is used to select one or more options
+         provided by the [CC] in stating a requirement<a id="period_123" href="#period_123">. </a></li>
+       <li>
+         <b>Assignment</b> operation (denoted by <span class="assignable-content">italicized text</span>): Is used to assign a
+         specific value to an unspecified parameter, such as the length of a password<a id="period_124" href="#period_124">. </a>Showing the
+         value in square brackets indicates assignment<a id="period_125" href="#period_125">. </a></li>
+       <li>
+         <b>Iteration</b> operation: Is indicated by appending the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> name with a slash and unique identifier
+            suggesting the purpose of the operation, e.g<a id="period_126" href="#period_126">. </a>"/EXAMPLE1."
+       </li>
+     </ul>
+   <h2 id="man-sfrs" class="indexable" data-level="2">5.1 TOE Security Functional Requirements</h2>
+	This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr><a id="period_127" href="#period_127">. </a>      <h2 id="obj-req-map" class="indexable" data-level="2">5.2 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a><br></td><td>FAU_GEN.1</td><td>'cause FAU_GEN.1 is awesome</td></tr>
+<tr><td>FTP_ITC_EXT.1</td><td>Cause FTP reasons </td></tr>
+<tr class="major-row"><td rowspan="15"><a href="#O.INTEGRITY">O.INTEGRITY</a><br></td><td>FPT_SBOP_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FPT_ASLR_EXT.1</td><td><abbr class="dyn-abbr"><a href="#abbr_ASLR">ASLR</a></abbr> For reasons </td></tr>
+<tr><td>FPT_TUD_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FPT_TUD_EXT.2</td><td>For reasons </td></tr>
+<tr><td>FCS_COP.1/HASH</td><td>For reasons </td></tr>
+<tr><td>FCS_COP.1/SIGN</td><td>For reasons </td></tr>
+<tr><td>FCS_COP.1/KEYHMAC</td><td>For reasons </td></tr>
+<tr><td>FPT_ACF_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FPT_SRP_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FIA_X509_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FPT_TST_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FTP_ITC_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FPT_W^X_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FIA_AFL.1</td><td>For reasons </td></tr>
+<tr><td>FIA_UAU.5</td><td>For reasons </td></tr>
+<tr class="major-row"><td rowspan="4"><a href="#O.MANAGEMENT">O.MANAGEMENT</a><br></td><td>FMT_MOF_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FMT_SMF_EXT.1</td><td>For reasons </td></tr>
+<tr><td>FTA_TAB.1</td><td>For reasons </td></tr>
+<tr><td>FTP_TRP.1</td><td>For reasons </td></tr>
+<tr class="major-row"><td rowspan="1"><a href="#O.PROTECTED_STORAGE">O.PROTECTED_&#8203;STORAGE</a><br></td><td>FCS_STO_EXT.1, FCS_RBG_EXT.1, FCS_COP.1/ENCRYPT, FDP_ACF_EXT.1</td><td>Rationale for a big chunk</td></tr>
+<tr class="major-row"><td rowspan="1"><a href="#O.PROTECTED_COMMS">O.PROTECTED_&#8203;COMMS</a><br></td><td>
+            FCS_RBG_EXT.1, FCS_CKM.1, FCS_CKM.2, FCS_CKM_EXT.4, FCS_COP.1/ENCRYPT,
+            FCS_COP.1/HASH, FCS_COP.1/SIGN, FCS_COP.1/<abbr class="dyn-abbr"><a href="#abbr_HMAC">HMAC</a></abbr>, FDP_IFC_EXT.1, FIA_X509_EXT.1,
+            FIA_X509_EXT.2, FTP_ITC_EXT.1
+          </td><td>Rationale for a big chunk</td></tr>
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix B -  Extended Component Definitions</h1>
+	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_128" href="#period_128">. </a>
+    <h2 id="ext-comp-defs-bg" class="indexable" data-level="2">B.1 Extended Components Table</h2>
+
+	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
+
+<table class="sort_kids_"><caption data-sortkey="#0"><b><span class="ctr" data-myid="" data-counter-type="ct-Table" id="">Table <span class="counter">3</span></span>: Extended Component Definitions</b></caption><tr data-sortkey="#1"><th>Functional Class</th><th>Functional Components</th></tr><tr data-sortkey="Cryptographic Support (FCS)"><td>Cryptographic Support (FCS)</td><td>FCS_CKM_EXT Cryptographic Key Management<br></td></tr><tr data-sortkey="Security Audit (FAU)"><td>Security Audit (FAU)</td><td>FAU_STG_EXT Security Store Filtering<br></td></tr></table><h2 id="ext-comp-defs-bg" class="indexable" data-level="2">B.2 Extended Component Definitions</h2><span class="sort_kids_"><span data-sortkey="Cryptographic Support (FCS)"><h3 id="ext-comp-FCS" class="indexable" data-level="3">B.2.1 Cryptographic Support (FCS)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+	 FCS class originally defined by CC Part 2:
+	<h3 id="ext-comp-FCS_CKM_EXT" class="indexable" data-level="4">B.2.1.1 FCS_CKM_EXT Cryptographic Key Management</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for management of cryptographic keys<a id="period_129" href="#period_129">. </a></div><h4>Component Leveling</h4><svg style="max-height: 10px;"><text x="4" fill="black" font-size="15" y="24">FCS_CKM_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect></svg></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">B.2.2 Security Audit (FAU)</h3>
+		THis is information about the FAU class<a id="period_130" href="#period_130">. </a>	      <h3 id="ext-comp-FAU_STG_EXT" class="indexable" data-level="4">B.2.2.1 FAU_STG_EXT Security Store Filtering</h3><div style="margin-left: 1em;"></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix C -  Inherently Satisfied Requirements</h1> This
+	appendix lists requirements that should be considered satisfied by products
+	successfully evaluated against this Protection Profile<a id="period_131" href="#period_131">. </a> 
+	However, these requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be
+	included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_132" href="#period_132">. </a> 
+	They are not included as standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would
+	increase the time, cost, and complexity of evaluation<a id="period_133" href="#period_133">. </a> This approach is permitted
+	by <a href="#bibCC">[CC]</a> Part 1, <b>8.2 Dependencies between components</b><a id="period_134" href="#period_134">. </a>    <br>
+	This information benefits systems engineering activities which call for inclusion of 
+	particular security controls<a id="period_135" href="#period_135">. </a> Evaluation against the Protection Profile
+	provides evidence that these controls are present and have been evaluated<a id="period_136" href="#period_136">. </a>    <table>
+	<tr class="header">
+	<td>Requirement</td>
+	<td>Rationale for Satisfaction</td>
+	</tr>
+	<tr>
+	<td>FIA_UAU.1 - Timing of authentication</td>
+	<td>
+	  FIA_AFL.1 implicitly requires that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> perform all necessary actions, 
+	  including those on behalf of the user who has not been authenticated, 
+	  in order to authenticate;
+	  therefore it is duplicative to include these actions as a 
+	  separate assignment and test<a id="period_137" href="#period_137">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FIA_UID.1 - Timing of identification</td>
+	<td>
+	  FIA_AFL.1 implicitly requires that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> perform all necessary actions, 
+	  including those on behalf of the user who has not been identified, 
+	  in order to authenticate;
+	  therefore it is duplicative to include these actions as a 
+	  separate assignment and test<a id="period_138" href="#period_138">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FMT_SMR.1 - Security roles</td>
+	<td>
+	  FMT_MOF_EXT.1 specifies role-based management functions that implicitly defines
+	  user and privileged accounts; 
+	  therefore, it is duplicative to include separate role requirements<a id="period_139" href="#period_139">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FPT_STM.1 - Reliable time stamps</td>
+	<td>
+	  FAU_GEN.1.2 explicitly requires that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> associate timestamps with audit records;
+	  therefore it is duplicative to include a separate timestamp requirement<a id="period_140" href="#period_140">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FTA_SSL.1 - <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>-initiated session locking</td>
+	<td>
+	  FMT_MOF_EXT.1 defines requirements for managing session locking;
+	  therefore, it is duplicative to include a separate session locking requirement<a id="period_141" href="#period_141">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FTA_SSL.2 - User-initiated locking</td>
+	<td>
+	  FMT_MOF_EXT.1 defines requirements for user-initiated session locking;
+	  therefore, it is duplicative to include a separate session locking requirement<a id="period_142" href="#period_142">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FAU_STG.1 - Protected audit trail storage</td>
+	<td>
+	  FPT_ACF_EXT.1 defines a requirement to protect audit logs;
+	  therefore, it is duplicative to include a separate protection of audit trail requirements<a id="period_143" href="#period_143">. </a>	</td>
+	</tr>
+	<tr>
+	<td>FAU_GEN.2 - User identity association</td>
+	<td>
+	  FAU_GEN.1.2 explicitly requires that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> record
+	  any user account associated with each event; therefore, it is duplicative
+	  to include a separate requirement to associate a user account with each
+	  event<a id="period_144" href="#period_144">. </a>	</td>
+	</tr>
+	<tr>
+	  <td>FAU_SAR.1 - Audit review</td>
+	  <td>
+	    FPT_ACF_EXT.1.2 requires that audit logs (and other objects)
+	    are protected from reading by unprivileged users; therefore, it is duplicative
+	    to include a separate requirement to protect only the audit information<a id="period_145" href="#period_145">. </a>	  </td>
+	</tr>
+    </table>
+
+  <h1 id="acronyms" class="indexable" data-level="A">Appendix D -  Acronyms</h1><table><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_AES"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr></span></td><td><span id="long_abbr_AES">Advanced Encryption Standard</span></td></tr>
+<tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
+<tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
+<tr><td><span class="term" id="abbr_app"><abbr class="dyn-abbr"><a href="#abbr_app">app</a></abbr></span></td><td><span id="long_abbr_app">Application</span></td></tr>
+<tr><td><span class="term" id="abbr_ASLR"><abbr class="dyn-abbr"><a href="#abbr_ASLR">ASLR</a></abbr></span></td><td><span id="long_abbr_ASLR">Address Space Layout Randomization</span></td></tr>
+<tr><td><span class="term" id="abbr_CEM"><abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr></span></td><td><span id="long_abbr_CEM">Common Evaluation Methodology</span></td></tr>
+<tr><td><span class="term" id="abbr_CESG"><abbr class="dyn-abbr"><a href="#abbr_CESG">CESG</a></abbr></span></td><td><span id="long_abbr_CESG">Communications-Electronics Security Group</span></td></tr>
+<tr><td><span class="term" id="abbr_CMC"><abbr class="dyn-abbr"><a href="#abbr_CMC">CMC</a></abbr></span></td><td><span id="long_abbr_CMC">Certificate Management over <abbr class="dyn-abbr"><a href="#abbr_CMS">CMS</a></abbr></span></td></tr>
+<tr><td><span class="term" id="abbr_CMS"><abbr class="dyn-abbr"><a href="#abbr_CMS">CMS</a></abbr></span></td><td><span id="long_abbr_CMS">Cryptographic Message Syntax</span></td></tr>
+<tr><td><span class="term" id="abbr_CN"><abbr class="dyn-abbr"><a href="#abbr_CN">CN</a></abbr></span></td><td><span id="long_abbr_CN">Common Names</span></td></tr>
+<tr><td><span class="term" id="abbr_cPP" data-plural="cPPs"><abbr class="dyn-abbr"><a href="#abbr_cPP">cPP</a></abbr></span></td><td><span id="long_abbr_cPP">Collaborative Protection Profile</span></td></tr>
+<tr><td><span class="term" id="abbr_CRL"><abbr class="dyn-abbr"><a href="#abbr_CRL">CRL</a></abbr></span></td><td><span id="long_abbr_CRL">Certificate Revocation List</span></td></tr>
+<tr><td><span class="term" id="abbr_CSA"><abbr class="dyn-abbr"><a href="#abbr_CSA">CSA</a></abbr></span></td><td><span id="long_abbr_CSA">Computer Security Act</span></td></tr>
+<tr><td><span class="term" id="abbr_CSP"><abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr></span></td><td><span id="long_abbr_CSP">Critical Security Parameters</span></td></tr>
+<tr><td><span class="term" id="abbr_DAR"><abbr class="dyn-abbr"><a href="#abbr_DAR">DAR</a></abbr></span></td><td><span id="long_abbr_DAR">Data At Rest</span></td></tr>
+<tr><td><span class="term" id="abbr_DEP"><abbr class="dyn-abbr"><a href="#abbr_DEP">DEP</a></abbr></span></td><td><span id="long_abbr_DEP">Data Execution Prevention</span></td></tr>
+<tr><td><span class="term" id="abbr_DES"><abbr class="dyn-abbr"><a href="#abbr_DES">DES</a></abbr></span></td><td><span id="long_abbr_DES">Data Encryption Standard</span></td></tr>
+<tr><td><span class="term" id="abbr_DHE"><abbr class="dyn-abbr"><a href="#abbr_DHE">DHE</a></abbr></span></td><td><span id="long_abbr_DHE">Diffie-Hellman Ephemeral</span></td></tr>
+<tr><td><span class="term" id="abbr_DNS"><abbr class="dyn-abbr"><a href="#abbr_DNS">DNS</a></abbr></span></td><td><span id="long_abbr_DNS">Domain Name System</span></td></tr>
+<tr><td><span class="term" id="abbr_DRBG"><abbr class="dyn-abbr"><a href="#abbr_DRBG">DRBG</a></abbr></span></td><td><span id="long_abbr_DRBG">Deterministic Random Bit Generator</span></td></tr>
+<tr><td><span class="term" id="abbr_DSS"><abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr></span></td><td><span id="long_abbr_DSS">Digital Signature Standard</span></td></tr>
+<tr><td><span class="term" id="abbr_DSS"><abbr class="dyn-abbr"><a href="#abbr_DSS">DSS</a></abbr></span></td><td><span id="long_abbr_DSS">Digital Signature Standard</span></td></tr>
+<tr><td><span class="term" id="abbr_DT"><abbr class="dyn-abbr"><a href="#abbr_DT">DT</a></abbr></span></td><td><span id="long_abbr_DT">Date/Time Vector</span></td></tr>
+<tr><td><span class="term" id="abbr_DTLS"><abbr class="dyn-abbr"><a href="#abbr_DTLS">DTLS</a></abbr></span></td><td><span id="long_abbr_DTLS">Datagram Transport Layer Security</span></td></tr>
+<tr><td><span class="term" id="abbr_EAP"><abbr class="dyn-abbr"><a href="#abbr_EAP">EAP</a></abbr></span></td><td><span id="long_abbr_EAP">Extensible Authentication Protocol</span></td></tr>
+<tr><td><span class="term" id="abbr_ECDHE"><abbr class="dyn-abbr"><a href="#abbr_ECDHE">ECDHE</a></abbr></span></td><td><span id="long_abbr_ECDHE">Elliptic Curve Diffie-Hellman Ephemeral</span></td></tr>
+<tr><td><span class="term" id="abbr_ECDSA"><abbr class="dyn-abbr"><a href="#abbr_ECDSA">ECDSA</a></abbr></span></td><td><span id="long_abbr_ECDSA">Elliptic Curve Digital Signature Algorithm</span></td></tr>
+<tr><td><span class="term" id="abbr_EP"><abbr class="dyn-abbr"><a href="#abbr_EP">EP</a></abbr></span></td><td><span id="long_abbr_EP">Extended Package</span></td></tr>
+<tr><td><span class="term" id="abbr_EST"><abbr class="dyn-abbr"><a href="#abbr_EST">EST</a></abbr></span></td><td><span id="long_abbr_EST">Enrollment over Secure Transport</span></td></tr>
+<tr><td><span class="term" id="abbr_FIPS"><abbr class="dyn-abbr"><a href="#abbr_FIPS">FIPS</a></abbr></span></td><td><span id="long_abbr_FIPS">Federal Information Processing Standards</span></td></tr>
+<tr><td><span class="term" id="abbr_FP"><abbr class="dyn-abbr"><a href="#abbr_FP">FP</a></abbr></span></td><td><span id="long_abbr_FP">Functional Package</span></td></tr>
+<tr><td><span class="term" id="abbr_HMAC"><abbr class="dyn-abbr"><a href="#abbr_HMAC">HMAC</a></abbr></span></td><td><span id="long_abbr_HMAC">Hash-based Message Authentication Code</span></td></tr>
+<tr><td><span class="term" id="abbr_HTTP"><abbr class="dyn-abbr"><a href="#abbr_HTTP">HTTP</a></abbr></span></td><td><span id="long_abbr_HTTP">Hypertext Transfer Protocol</span></td></tr>
+<tr><td><span class="term" id="abbr_HTTPS"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span></td><td><span id="long_abbr_HTTPS">Hypertext Transfer Protocol Secure</span></td></tr>
+<tr><td><span class="term" id="abbr_IETF"><abbr class="dyn-abbr"><a href="#abbr_IETF">IETF</a></abbr></span></td><td><span id="long_abbr_IETF">Internet Engineering Task Force</span></td></tr>
+<tr><td><span class="term" id="abbr_IP"><abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr></span></td><td><span id="long_abbr_IP">Internet Protocol</span></td></tr>
+<tr><td><span class="term" id="abbr_ISO"><abbr class="dyn-abbr"><a href="#abbr_ISO">ISO</a></abbr></span></td><td><span id="long_abbr_ISO">International Organization for Standardization</span></td></tr>
+<tr><td><span class="term" id="abbr_IT"><abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr></span></td><td><span id="long_abbr_IT">Information Technology</span></td></tr>
+<tr><td><span class="term" id="abbr_ITSEF"><abbr class="dyn-abbr"><a href="#abbr_ITSEF">ITSEF</a></abbr></span></td><td><span id="long_abbr_ITSEF">Information Technology Security Evaluation Facility</span></td></tr>
+<tr><td><span class="term" id="abbr_NIAP"><abbr class="dyn-abbr"><a href="#abbr_NIAP">NIAP</a></abbr></span></td><td><span id="long_abbr_NIAP">National Information Assurance Partnership</span></td></tr>
+<tr><td><span class="term" id="abbr_NIST"><abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr></span></td><td><span id="long_abbr_NIST">National Institute of Standards and Technology</span></td></tr>
+<tr><td><span class="term" id="abbr_OCSP"><abbr class="dyn-abbr"><a href="#abbr_OCSP">OCSP</a></abbr></span></td><td><span id="long_abbr_OCSP">Online Certificate Status Protocol</span></td></tr>
+<tr><td><span class="term" id="abbr_OE"><abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr></span></td><td><span id="long_abbr_OE">Operational Environment</span></td></tr>
+<tr><td><span class="term" id="abbr_OID"><abbr class="dyn-abbr"><a href="#abbr_OID">OID</a></abbr></span></td><td><span id="long_abbr_OID">Object Identifier</span></td></tr>
+<tr><td><span class="term" id="abbr_OMB"><abbr class="dyn-abbr"><a href="#abbr_OMB">OMB</a></abbr></span></td><td><span id="long_abbr_OMB">Office of Management and Budget</span></td></tr>
+<tr><td><span class="term" id="abbr_OS" data-plural="OSes"><abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr></span></td><td><span id="long_abbr_OS">Operating System</span></td></tr>
+<tr><td><span class="term" id="abbr_PII"><abbr class="dyn-abbr"><a href="#abbr_PII">PII</a></abbr></span></td><td><span id="long_abbr_PII">Personally Identifiable Information</span></td></tr>
+<tr><td><span class="term" id="abbr_PKI"><abbr class="dyn-abbr"><a href="#abbr_PKI">PKI</a></abbr></span></td><td><span id="long_abbr_PKI">Public Key Infrastructure</span></td></tr>
+<tr><td><span class="term" id="abbr_PP"><abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span></td><td><span id="long_abbr_PP">Protection Profile</span></td></tr>
+<tr><td><span class="term" id="abbr_PP" data-plural="PPs"><abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr></span></td><td><span id="long_abbr_PP">Protection Profile</span></td></tr>
+<tr><td><span class="term" id="abbr_PP-Configuration"><abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr></span></td><td><span id="long_abbr_PP-Configuration">Protection Profile Configuration</span></td></tr>
+<tr><td><span class="term" id="abbr_PP-Module"><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr></span></td><td><span id="long_abbr_PP-Module">Protection Profile Module</span></td></tr>
+<tr><td><span class="term" id="abbr_RBG"><abbr class="dyn-abbr"><a href="#abbr_RBG">RBG</a></abbr></span></td><td><span id="long_abbr_RBG">Random Bit Generator</span></td></tr>
+<tr><td><span class="term" id="abbr_RFC"><abbr class="dyn-abbr"><a href="#abbr_RFC">RFC</a></abbr></span></td><td><span id="long_abbr_RFC">Request for Comment</span></td></tr>
+<tr><td><span class="term" id="abbr_RNG"><abbr class="dyn-abbr"><a href="#abbr_RNG">RNG</a></abbr></span></td><td><span id="long_abbr_RNG">Random Number Generator</span></td></tr>
+<tr><td><span class="term" id="abbr_RNGVS"><abbr class="dyn-abbr"><a href="#abbr_RNGVS">RNGVS</a></abbr></span></td><td><span id="long_abbr_RNGVS">Random Number Generator Validation System</span></td></tr>
+<tr><td><span class="term" id="abbr_S/MIME"><abbr class="dyn-abbr"><a href="#abbr_S/MIME">S/MIME</a></abbr></span></td><td><span id="long_abbr_S/MIME">Secure/Multi-purpose Internet Mail Extensions</span></td></tr>
+<tr><td><span class="term" id="abbr_SAN"><abbr class="dyn-abbr"><a href="#abbr_SAN">SAN</a></abbr></span></td><td><span id="long_abbr_SAN">Subject Alternative Name</span></td></tr>
+<tr><td><span class="term" id="abbr_SAR" data-plural="SARs"><abbr class="dyn-abbr"><a href="#abbr_SAR">SAR</a></abbr></span></td><td><span id="long_abbr_SAR">Security Assurance Requirement</span></td></tr>
+<tr><td><span class="term" id="abbr_SFR" data-plural="SFRs"><abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr></span></td><td><span id="long_abbr_SFR">Security Functional Requirement</span></td></tr>
+<tr><td><span class="term" id="abbr_SHA"><abbr class="dyn-abbr"><a href="#abbr_SHA">SHA</a></abbr></span></td><td><span id="long_abbr_SHA">Secure Hash Algorithm</span></td></tr>
+<tr><td><span class="term" id="abbr_SIP"><abbr class="dyn-abbr"><a href="#abbr_SIP">SIP</a></abbr></span></td><td><span id="long_abbr_SIP">Session Initiation Protocol</span></td></tr>
+<tr><td><span class="term" id="abbr_ST" data-plural="STs"><abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr></span></td><td><span id="long_abbr_ST">Security Target</span></td></tr>
+<tr><td><span class="term" id="abbr_SWID"><abbr class="dyn-abbr"><a href="#abbr_SWID">SWID</a></abbr></span></td><td><span id="long_abbr_SWID">Software Identification</span></td></tr>
+<tr><td><span class="term" id="abbr_TLS"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span></td><td><span id="long_abbr_TLS">Transport Layer Security</span></td></tr>
+<tr><td><span class="term" id="abbr_TOE" data-plural="TOEs"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr></span></td><td><span id="long_abbr_TOE">Target of Evaluation</span></td></tr>
+<tr><td><span class="term" id="abbr_TSF"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span></td><td><span id="long_abbr_TSF"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Security Functionality</span></td></tr>
+<tr><td><span class="term" id="abbr_TSFI" data-plural="TSFIs"><abbr class="dyn-abbr"><a href="#abbr_TSFI">TSFI</a></abbr></span></td><td><span id="long_abbr_TSFI"><abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Interface</span></td></tr>
+<tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
+<tr><td><span class="term" id="abbr_URI"><abbr class="dyn-abbr"><a href="#abbr_URI">URI</a></abbr></span></td><td><span id="long_abbr_URI">Uniform Resource Identifier</span></td></tr>
+<tr><td><span class="term" id="abbr_URL"><abbr class="dyn-abbr"><a href="#abbr_URL">URL</a></abbr></span></td><td><span id="long_abbr_URL">Uniform Resource Locator</span></td></tr>
+<tr><td><span class="term" id="abbr_USB"><abbr class="dyn-abbr"><a href="#abbr_USB">USB</a></abbr></span></td><td><span id="long_abbr_USB">Universal Serial Bus</span></td></tr>
+<tr><td><span class="term" id="abbr_VM"><abbr class="dyn-abbr"><a href="#abbr_VM">VM</a></abbr></span></td><td><span id="long_abbr_VM">Virtual Machine</span></td></tr>
+<tr><td><span class="term" id="abbr_XCCDF"><abbr class="dyn-abbr"><a href="#abbr_XCCDF">XCCDF</a></abbr></span></td><td><span id="long_abbr_XCCDF">eXtensible Configuration Checklist Description Format</span></td></tr>
+<tr><td><span class="term" id="abbr_XOR"><abbr class="dyn-abbr"><a href="#abbr_XOR">XOR</a></abbr></span></td><td><span id="long_abbr_XOR">Exclusive Or</span></td></tr>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix E -  Bibliography</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[CC]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+                1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
+              April 2017<a id="period_146" href="#period_146">. </a></li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+                2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5,
+              April 2017<a id="period_147" href="#period_147">. </a></li>
+            <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+                3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
+              April 2017<a id="period_148" href="#period_148">. </a></li>
+          </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">
+          <a href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
+            Evaluation Methodology for Information Technology Security - Evaluation Methodology</a>,
+          CCMB-2012-09-004, Version 3.1, Revision 4, September 2012<a id="period_149" href="#period_149">. </a></span></td></tr><tr><td><span id="bibCESG">[<abbr class="dyn-abbr"><a href="#abbr_CESG">CESG</a></abbr>]</span></td><td><span class="description"><abbr class="dyn-abbr"><a href="#abbr_CESG">CESG</a></abbr> - <a href="https://www.gov.uk/government/collections/end-user-devices-security-guidance"> End
+            User Devices Security and Configuration Guidance</a></span></td></tr><tr><td><span id="bibCSA">[<abbr class="dyn-abbr"><a href="#abbr_CSA">CSA</a></abbr>]</span></td><td><span class="description">
+          <a href="http://csrc.nist.gov/groups/SMA/ispab/documents/csa_87.txt">Computer Security Act
+            of 1987</a>, H.R<a id="period_150" href="#period_150">. </a>145, June 11, 1987<a id="period_151" href="#period_151">. </a></span></td></tr><tr><td><span id="bibOMB">[<abbr class="dyn-abbr"><a href="#abbr_OMB">OMB</a></abbr>]</span></td><td><span class="description">
+          <a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2006/m06-19.pdf">Reporting Incidents Involving Personally Identifiable Information and Incorporating the
+            Cost for Security in Agency Information Technology Investments</a>, <abbr class="dyn-abbr"><a href="#abbr_OMB">OMB</a></abbr> M-06-19, July
+          12, 2006<a id="period_152" href="#period_152">. </a></span></td></tr></table></body></html>
