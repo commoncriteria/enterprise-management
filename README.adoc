@@ -1,78 +1,32 @@
-== Protection Profile Template
+== Protection Profile for Enterprise Management
 
-=== Quickstart
+[cols="1,1,1,1,1,1,1,1"]
+|===
+8+|enterprise-management
+| https://github.com/commoncriteria/enterprise-management/tree/main[main] 
+a| https://commoncriteria.github.io/enterprise-management/main/enterprise-management-release.html[📄]
+a|[link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/ValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/validation.svg[Validation]
+a|[link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/SanityChecksOutput.md]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/warnings.svg[SanityChecks]
+a|[link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/SpellCheckReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/spell-badge.svg[SpellCheck]
+a|[link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/TDValidationReport.txt]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/tds.svg[TDs]
+a|image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/transforms.svg[transforms,150]
+a| [link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/HTMLs.adoc]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/html_count.svg[HTML Count]
+[link=https://github.com/commoncriteria/enterprise-management/blob/gh-pages/main/PDFs.adoc]
+image::https://raw.githubusercontent.com/commoncriteria/enterprise-management/gh-pages/main/pdf_count.svg[PDF Count]
 
-[arabic]
-. To make a new protection profile create a new repo, probably through
-the web interface.
-. Copy the URL to the projects git file to the clipboard. Run the
-following script, pasting the value copied into where you see
-$NEW_REPO_GIT_URL.
+|===
 
-....
-git clone --bare https://github.com/commoncriteria/pp-template.git
-# Make a bare clone of the repository
-
-cd pp-template.git
-git push --mirror $NEW_REPO_GIT_URL
-# Mirror-push to the new repository
-
-cd ..
-rm -rf pp-template.git
-# Remove our temporary local repository
-....
-
-[arabic, start=3]
-. Do a full clone of your new project
-. Rename the input file, currently named, input/pp-template.xml to the
-name of the project with xml added to it; for example, operatingsystem
-and application have operatingsystem.xml and application.xml input files
-respectively.
-+
-If something was the project name it would be,
-+
-....
-git mv input/pp-template.xml input/something.xml
-....
-. If creating a Protection Profile Module rename Module.make to Makefile
-otherwise rename ProtectionProfile.make to Makefile and delete the other
-.make file.
-. If creating a Protection Profile Module open input/something.xml and
-change the opening <PP> and closing </PP> tags to be <Module> and
-</Module> respectively. If you’re creating a standard Protection Profile
-then these tags do not need to be changed.
-. Remove this content from the readme, up to the line below and
-customize (look for `QQQQ' and `pp-template').
-
-Note: Adding this project to the Travis CI live build requires special
-permission and cannot be done without assistance. Contact the the
-framework coordinators for more informatino.
-
-For more information see the
-https://github.com/commoncriteria/pp-template/wiki[PP Development Wiki].
-
-'''''
-
-== Protection Profile or Extended Package for QQQQ
-
-image:https://img.shields.io/badge/Build-master-black.svg[Master Badges]
-image:https://github.com/commoncriteria/pp-template/workflows/Build/badge.svg[Build]
-image:https://github.com/commoncriteria/pp-template/workflows/Validate/badge.svg[Validate]
-
-image:https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/build-branch-badge.svg[Last
-QuickBuilt Branch]
-https://github.com/commoncriteria/pp-template/blob/gh-pages/ValidationReport.txt[image:https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/validation.svg[Validation]]
-https://github.com/commoncriteria/pp-template/blob/gh-pages/SanityChecksOutput.md[image:https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/warnings.svg[SanityChecks]]
-https://github.com/commoncriteria/pp-template/blob/gh-pages/SpellCheckReport.txt[image:https://raw.githubusercontent.com/commoncriteria/pp-template/gh-pages/spell-badge.svg[SpellCheck]]
-https://commoncriteria.github.io/pp-template[image:https://github.com/commoncriteria/pp-template/actions/workflows/quick_build.yml/badge.svg[QuickBuild]]
-
-https://github.com/commoncriteria/pp-template/issues[image:https://img.shields.io/github/issues/commoncriteria/pp-template.svg?maxAge=2592000[GitHub
+https://github.com/commoncriteria/enterprise-management/issues[image:https://img.shields.io/github/issues/commoncriteria/enterprise-management.svg?maxAge=2592000[GitHub
 issues Open]]
-image:https://img.shields.io/badge/license-Unlicensed-blue.svg[license]
 
-This repository hosts the draft version of the Protection Profile for
-QQQQ based on the
-https://commoncriteria.github.io/pp/QQQQ/QQQQ-esr.html[Essential
+This repository will host the draft version of the Protection Profile for
+Enterprise Management based on the
+https://github.com/commoncriteria/enterprise-management/blob/main/output/ESR-EM-Feb2024_v2.1.pdf[Essential
 Security Requirements (ESR)] for this technology class of products. This
 repository is used to facilitate collaboration and development on the
 draft document. See the link:#Release-Version[release] section if you
@@ -81,15 +35,10 @@ of products that have passed evaluation against this Protection Profile
 can be found link:QQQQ[here].
 
 === Draft Version
-
-* https://commoncriteria.github.io/pp/QQQQ/QQQQ-release.html[Protection
-Profile for QQQQ] (html)
-* https://commoncriteria.github.io/pp/QQQQ/QQQQ-release.pdf[Protection
-Profile for QQQQ] (pdf)
+In Progress
 
 === Release Version
-
-* link:QQQQ[Protection Profile for QQQQ]
+In Progress
 
 === Contributing
 
@@ -102,14 +51,14 @@ join the NIAP Technical Community (Mailing list and updates)]
 === Feedback
 
 Questions, comments, and fixes can be submitted to the
-https://github.com/commoncriteria/QQQQ/issues[repository issue tracker]
+https://github.com/commoncriteria/enterprise-management/issues[repository issue tracker]
 
 === Quickstart
 
 To clone this project along with its _transforms_ submodule run:
 
 ....
-  git clone --recursive git@github.com:commoncriteria/qqqq.git
+  git clone --recursive git@github.com:commoncriteria/enterprise-management.git
 ....
 
 To pull updates from the upstream _transforms_ submodule and commit them
