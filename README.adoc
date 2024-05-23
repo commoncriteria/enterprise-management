@@ -26,7 +26,7 @@ issues Open]]
 
 This repository will host the draft version of the Protection Profile for
 Enterprise Management based on the
-https://github.com/commoncriteria/enterprise-management/blob/main/output/ESR-EM-Feb2024_v2.2.pdf[Essential
+https://github.com/commoncriteria/enterprise-management/blob/main/output/ESR-EM.pdf[Essential
 Security Requirements (ESR)] for this technology class of products. This
 repository is used to facilitate collaboration and development on the
 draft document. See the link:#Release-Version[release] section if you
