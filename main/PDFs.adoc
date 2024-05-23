@@ -1,1 +1,1 @@
-* https://commoncriteria.github.io/enterprise-management/main/ESR-EM-Feb2024_v2.2.pdf[ESR-EM-Feb2024_v2.2.pdf]
+* https://commoncriteria.github.io/enterprise-management/main/ESR-EM.pdf[ESR-EM.pdf]
