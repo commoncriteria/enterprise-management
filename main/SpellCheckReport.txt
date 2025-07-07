@@ -15,6 +15,7 @@ output/enterprise-management-release-linkable.html: RTOS
 output/enterprise-management-release-linkable.html: RTOSes
 output/enterprise-management-release-linkable.html: SBOP
 output/enterprise-management-release-linkable.html: SMR
+output/enterprise-management-release-linkable.html: SPD
 output/enterprise-management-release-linkable.html: STM
 output/enterprise-management-release-linkable.html: STO
 output/enterprise-management-release-linkable.html: Someting
@@ -47,6 +48,7 @@ output/enterprise-management-release.html: RTOS
 output/enterprise-management-release.html: RTOSes
 output/enterprise-management-release.html: SBOP
 output/enterprise-management-release.html: SMR
+output/enterprise-management-release.html: SPD
 output/enterprise-management-release.html: STM
 output/enterprise-management-release.html: STO
 output/enterprise-management-release.html: Someting
@@ -65,6 +67,7 @@ output/enterprise-management-release.html: sqrt
 output/enterprise-management-release.html: Σ
 output/enterprise-management-sd.html: RTOS
 output/enterprise-management-sd.html: RTOSes
+output/enterprise-management-sd.html: SPD
 output/enterprise-management-sd.html: evaluator’s
 output/enterprise-management-sd.html: fail’
 output/enterprise-management-sd.html: pass’
@@ -85,6 +88,7 @@ output/enterprise-management.html: RTOS
 output/enterprise-management.html: RTOSes
 output/enterprise-management.html: SBOP
 output/enterprise-management.html: SMR
+output/enterprise-management.html: SPD
 output/enterprise-management.html: STM
 output/enterprise-management.html: STO
 output/enterprise-management.html: Someting

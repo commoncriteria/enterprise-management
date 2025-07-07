@@ -92,7 +92,9 @@ function showTarget(id){
     #toc a{
         display: block;
     }
-
+    .td-{
+        display: block;
+    }
     svg{
       width: 100%;
     }
@@ -146,7 +148,7 @@ function showTarget(id){
        max-width: 15px;
     }
 
-    a.definition{
+    a.defined{
       color: inherit;
       text-decoration: inherit;
     }
@@ -255,6 +257,21 @@ function showTarget(id){
        background-color:#F4F4F4;
    }
 
+   table.ecd_heir_dep{
+       width: 100%;
+   }
+   table.ecd_heir_dep tr{
+       background-color: inherit;
+   }
+       
+   table.ecd_heir_dep tr :first-child{
+       white-space: nowrap;
+   }
+   table.ecd_heir_dep tr :last-child{
+       width: 100%;
+   }
+
+       
    .dependent{
        border: 1px solid gray;
        border-radius: 1px
@@ -615,7 +632,7 @@ function showTarget(id){
     </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/></div><h1 class="title" style="page-break-before:auto;">Protection Profile for QQQQ</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 1.0<br/>2015-08-14<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>Round 1</td><td>2015-04-23</td><td>First draft of version 1.0 for comment</td></tr>
 <tr><td>1.0</td><td>2015-08-14</td><td>Release - first version released</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Description</span></a><a href="#Threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Security_Objectives" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">4.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">4.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#man-sfrs" style="text-indent:10px">5.1<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">5.2<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix B - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">B.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">B.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FAU" style="text-indent:20px">B.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">B.2.2.1<span>FAU_STG_EXT Security Store Filtering</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix C - <span>Inherently Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix D - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix E - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
+</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#Introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#Security_Objectives" style="text-indent:0px">3<span>Security Objectives</span></a><a href="#SecurityObjectivesTOE" style="text-indent:10px">3.1<span>Security Objectives for the TOE</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">3.2<span>Security Objectives for the Operational Environment</span></a><a href="#SOR" style="text-indent:10px">3.3<span>Security Objectives Rationale</span></a><a href="#Security_Requirements" style="text-indent:0px">4<span>Security Requirements</span></a><a href="#man-sfrs" style="text-indent:10px">4.1<span>TOE Security Functional Requirements</span></a><a href="#obj-req-map" style="text-indent:10px">4.2<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">5<span>Consistency Rationale</span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix B - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">B.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FCS" style="text-indent:20px">B.2.1<span>Cryptographic Support (FCS)</span></a><a href="#ext-comp-FCS_CKM_EXT" style="text-indent:30px">B.2.1.1<span>FCS_CKM_EXT Cryptographic Key Management</span></a><a href="#ext-comp-FAU" style="text-indent:20px">B.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_STG_EXT" style="text-indent:30px">B.2.2.1<span>FAU_STG_EXT Security Store Filtering</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix C - <span>Inherently Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix D - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix E - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="Introduction">1 Introduction</h1>
     <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2>
       Content added 11 Feb 2021: 1307pm.
       Content added 11 Feb 2021: 1249pm.
@@ -672,7 +689,7 @@ function showTarget(id){
 			 <a onclick="showTarget('t-audit-mandatory')" href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table  <span class="counter">t-audit-mandatory</span></a> for more information.
 
           </li>
-          <li> Test for an xref to section <a href="#Threats" class="dynref">Section 3.1 Threats</a> </li>
+          <li> Test for an xref to section <a href="#Threats" class="dynref">Section </a> </li>
         </ul>
         And this is another sentence (or fragment). I added this sentence and deleted the next one. 
 		This uses the plural acronym <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>. 
@@ -697,6 +714,12 @@ The following sections list Common Criteria and technology terms used in this do
       accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations.
     </td></tr>
 <tr><td><div id="Common_Evaluation_Methodology">Common Evaluation Methodology (CEM)</div></td><td>Common Evaluation Methodology for Information Technology Security Evaluation.</td></tr>
+<tr><td><div id="Direct_Rationale">Direct Rationale</div></td><td>
+		A type of Protection Profile, PP-Module, or Security Target in which the security
+		problem definition (SPD) elements are mapped directly to the SFRs and possibly to the 
+		security objectives for the operational environment. There are no security objectives
+		for the TOE.
+	</td></tr>
 <tr><td><div id="Distributed_TOE">Distributed TOE</div></td><td>A TOE composed of multiple components operating as a logical whole.</td></tr>
 <tr><td><div id="Extended_Package">Extended Package (EP)</div></td><td>A deprecated document form for collecting SFRs that implement a particular protocol, technology,
 	    or functionality. See Functional Packages.</td></tr>
@@ -815,99 +838,69 @@ The following sections list Common Criteria and technology terms used in this do
             For changes to included <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>, selections, and assignments required for this use case, see <a href="#appendix-elephant" class="dynref"></a>.
           </p></dd></dl>
     
-  <h1 class="indexable" data-level="1" id="cclaims">2 Conformance Claims</h1><h1 class="indexable" data-level="1" id="spd">3 Security Problem Description</h1>The security problem is described in terms
-    of the threats that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>
-    is expected to enforce.
-    <h2 class="indexable" data-level="2" id="Threats">3.1 Threats</h2>
-      <dl><dt class="threat,defined" id="T.NETWORK_ATTACK">T.NETWORK_ATTACK</dt><dd><span class="description"> An attacker is positioned on a communications channel or elsewhere on the
-            network infrastructure. Attackers may engage in communications with applications and
-            services running on or part of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> with the intent of compromise. Engagement may
-            consist of altering existing legitimate communications.</span></dd><dt class="threat,defined" id="T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</dt><dd><span class="description"> An attacker is positioned on a communications channel or elsewhere on the
-            network infrastructure. Attackers may monitor and gain access to data exchanged between
-            applications and services that are running on or part of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>. </span></dd><dt class="threat,defined" id="T.LOCAL_ATTACK">T.LOCAL_ATTACK</dt><dd><span class="description"> An attacker may compromise applications running on the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>. The
-            compromised application may provide maliciously formatted input to the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> through a
-            variety of channels including unprivileged system calls and messaging via the
-            file system. </span></dd><dt class="threat,defined" id="T.LIMITED_PHYSICAL_ACCESS">T.LIMITED_PHYSICAL_ACCESS</dt><dd><span class="description"> An attacker may attempt to access data on the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> while having a limited
-            amount of time with the physical device. </span></dd></dl>
-    
-    <h2 class="indexable" data-level="2" id="assumptions">3.2 Assumptions</h2>
-These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
-security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
-If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
-provide all of its security functionality.
-      
-      <dl><dt class="assumption,defined" id="A.PLATFORM">A.PLATFORM</dt><dd><span class="description"> The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> relies upon a trustworthy computing platform for
-            its execution. This underlying platform is out of scope of this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>. </span></dd><dt class="assumption,defined" id="A.PROPER_USER">A.PROPER_USER</dt><dd><span class="description"> The user of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not willfully negligent or hostile, and uses the
-            software in compliance with the applied enterprise security policy. At the same time,
-            malicious software could act <i>as</i> the user, so requirements which
-            confine malicious subjects are still in scope.</span></dd><dt class="assumption,defined" id="A.PROPER_ADMIN">A.PROPER_ADMIN</dt><dd><span class="description"> The administrator of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not careless, willfully negligent or hostile,
-            and administers the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> within compliance of the applied enterprise security policy. </span></dd></dl>
-    
-
-  <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOE">4.1 Security Objectives for the TOE</h2>
-      <dl><dt class="SO,defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description"> Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure that information exists that allows
+  <h1 class="indexable" data-level="1" id="cclaims">2 Conformance Claims</h1><h1 class="indexable" data-level="1" id="Security_Objectives">3 Security Objectives</h1>
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOE">3.1 Security Objectives for the TOE</h2>
+      <dl><dt class="SO defined" id="O.ACCOUNTABILITY">O.ACCOUNTABILITY</dt><dd><span class="description"> Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the operating system and discover its cause.  Gathering event information and immediately
             transmitting it to another system can also enable incident response in the event
-            of system compromise.</span></dd><dt class="SO,defined" id="O.INTEGRITY">O.INTEGRITY</dt><dd><span class="description">Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure the integrity of their update
+            of system compromise.</span></dd><dt class="SO defined" id="O.INTEGRITY">O.INTEGRITY</dt><dd><span class="description">Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> ensure the integrity of their update
             packages. <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> are seldom if ever shipped without errors, and the
             ability to deploy patches and updates with integrity is critical to enterprise network
             security. Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> provide execution environment-based
             mitigations that increase the cost to attackers by adding complexity to the task of
-            compromising systems. </span></dd><dt class="SO,defined" id="O.MANAGEMENT">O.MANAGEMENT</dt><dd><span class="description"> To facilitate management by users and the enterprise, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>
+            compromising systems. </span></dd><dt class="SO defined" id="O.MANAGEMENT">O.MANAGEMENT</dt><dd><span class="description"> To facilitate management by users and the enterprise, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>
 	    provide consistent and supported interfaces for their
             security-relevant configuration and maintenance. This includes the deployment of
             applications and application updates through the use of platform-supported deployment
             mechanisms and formats, as well as providing mechanisms for configuration and
-            application execution control. </span></dd><dt class="SO,defined" id="O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</dt><dd><span class="description">
+            application execution control. </span></dd><dt class="SO defined" id="O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</dt><dd><span class="description">
 To address the issue of loss of confidentiality of credentials in the event of
 loss of physical control of the storage medium, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr>
 provide data-at-rest protection for credentials.
 Conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> also provide access controls which allow users to keep their files private from other
 users of the same system.
-          </span></dd><dt class="SO,defined" id="O.PROTECTED_COMMS">O.PROTECTED_COMMS</dt><dd><span class="description"> To address both passive (eavesdropping) and active (packet modification)
+          </span></dd><dt class="SO defined" id="O.PROTECTED_COMMS">O.PROTECTED_COMMS</dt><dd><span class="description"> To address both passive (eavesdropping) and active (packet modification)
             network attack threats, conformant <abbr class="dyn-abbr"><a href="#abbr_OS">OSes</a></abbr> provide mechanisms to create
             trusted channels for <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> and sensitive data. Both <abbr class="dyn-abbr"><a href="#abbr_CSP">CSP</a></abbr> and sensitive data
             should not be exposed outside of the platform. </span></dd></dl>
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.2 Security Objectives for the Operational Environment</h2>
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">3.2 Security Objectives for the Operational Environment</h2>
 The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
 The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve.
 This section defines the security objectives that are to be addressed by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> domain or by non-technical or procedural means.
 The assumptions identified in Section 3 are incorporated as security objectives for the environment.
       The following security objectives for the operational
       environment assist the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> in correctly providing its security functionality.
-      These track with the assumptions about the environment. <dl><dt class="SOE,defined" id="OE.PLATFORM">OE.PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> relies on being installed on trusted
-            hardware.</span></dd><dt class="SOE,defined" id="OE.PROPER_USER">OE.PROPER_USER</dt><dd><span class="description"> The user of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not willfully negligent or hostile,
+      These track with the assumptions about the environment. <dl><dt class="SOE defined" id="OE.PLATFORM">OE.PLATFORM</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> relies on being installed on trusted
+            hardware.</span></dd><dt class="SOE defined" id="OE.PROPER_USER">OE.PROPER_USER</dt><dd><span class="description"> The user of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not willfully negligent or hostile,
             and uses the software within compliance of the applied enterprise security policy.
             Standard user accounts are provisioned in accordance with the least privilege model.
             Users requiring higher levels of access should have a separate account dedicated for
-            that use. </span></dd><dt class="SOE,defined" id="OE.PROPER_ADMIN">OE.PROPER_ADMIN</dt><dd><span class="description"> The administrator of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not careless, willfully
+            that use. </span></dd><dt class="SOE defined" id="OE.PROPER_ADMIN">OE.PROPER_ADMIN</dt><dd><span class="description"> The administrator of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> is not careless, willfully
             negligent or hostile, and administers the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> within compliance of the applied enterprise
             security policy. </span></dd></dl>
-    <h2 id="SOR" class="indexable,h2" data-level="2">4.3 Security Objectives Rationale</h2>   
-    This section describes how the assumptions, threats, and organizational 
-    security policies map to the security objectives.
-    <table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="4"><a href="#T.NETWORK_ATTACK">T.NETWORK_​ATTACK</a></td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_​COMMS</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
-              provides for integrity of transmitted data.</td></tr><tr><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.INTEGRITY">O.INTEGRITY</a> as this provides for
-              integrity of software that is installed onto the system from the network.</td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides for
-              the ability to configure the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to defend against network attack.</td></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat <a href="#T.NETWORK_ATTACK">T.NETWORK_ATTACK</a> is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> as this
+    <h2 id="SOR" class="indexable,h2" data-level="2">3.3 Security Objectives Rationale</h2>   
+		This section describes how the assumptions, threats, and organizational 
+		security policies map to the security objectives.
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Threat, Assumption, or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="4">T.NETWORK_​ATTACK</td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_​COMMS</a></td><td>The threat T.NETWORK_ATTACK is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
+              provides for integrity of transmitted data.</td></tr><tr><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The threat T.NETWORK_ATTACK is countered by <a href="#O.INTEGRITY">O.INTEGRITY</a> as this provides for
+              integrity of software that is installed onto the system from the network.</td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat T.NETWORK_ATTACK is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides for
+              the ability to configure the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to defend against network attack.</td></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The threat T.NETWORK_ATTACK is countered by <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> as this
               provides a mechanism for the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to report behavior that may indicate a network
-              attack has occurred.</td></tr><tr class="major-row"><td rowspan="2"><a href="#T.NETWORK_EAVESDROP">T.NETWORK_​EAVESDROP</a></td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_​COMMS</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
-              provides for confidentiality of transmitted data.</td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat <a href="#T.NETWORK_EAVESDROP">T.NETWORK_EAVESDROP</a> is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides
+              attack has occurred.</td></tr><tr class="major-row"><td rowspan="2">T.NETWORK_​EAVESDROP</td><td><a href="#O.PROTECTED_COMMS">O.PROTECTED_​COMMS</a></td><td>The threat T.NETWORK_EAVESDROP is countered by <a href="#O.PROTECTED_COMMS">O.PROTECTED_COMMS</a> as this
+              provides for confidentiality of transmitted data.</td></tr><tr><td><a href="#O.MANAGEMENT">O.MANAGEMENT</a></td><td>The threat T.NETWORK_EAVESDROP is countered by <a href="#O.MANAGEMENT">O.MANAGEMENT</a> as this provides
               for the ability to configure the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> to protect the confidentiality of its transmitted
-              data.</td></tr><tr class="major-row"><td rowspan="2"><a href="#T.LOCAL_ATTACK">T.LOCAL_​ATTACK</a></td><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The objective <a href="#O.INTEGRITY">O.INTEGRITY</a> protects against the use of mechanisms that weaken
+              data.</td></tr><tr class="major-row"><td rowspan="2">T.LOCAL_​ATTACK</td><td><a href="#O.INTEGRITY">O.INTEGRITY</a></td><td>The objective <a href="#O.INTEGRITY">O.INTEGRITY</a> protects against the use of mechanisms that weaken
               the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> with regard to attack by other software on the
               platform.</td></tr><tr><td><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a></td><td>The objective <a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a> protects against local attacks by providing
               a mechanism to report behavior that may indicate a local attack is occurring or
-              has occurred.</td></tr><tr class="major-row"><td rowspan="1"><a href="#T.LIMITED_PHYSICAL_ACCESS">T.LIMITED_​PHYSICAL_​ACCESS</a></td><td><a href="#O.PROTECTED_STORAGE">O.PROTECTED_​STORAGE</a></td><td>The objective <a href="#O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</a> protects against unauthorized attempts to
-              access physical storage used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PLATFORM">A.PLATFORM</a></td><td><a href="#OE.PLATFORM">OE.PLATFORM</a></td><td> The operational environment objective <a href="#OE.PLATFORM">OE.PLATFORM</a> is realized through
-              <a href="#A.PLATFORM">A.PLATFORM</a>. </td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_USER">A.PROPER_​USER</a></td><td><a href="#OE.PROPER_USER">OE.PROPER_​USER</a></td><td>The operational environment objective <a href="#OE.PROPER_USER">OE.PROPER_USER</a> is realized through
-              <a href="#A.PROPER_USER">A.PROPER_USER</a>.</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.PROPER_ADMIN">A.PROPER_​ADMIN</a></td><td><a href="#OE.PROPER_ADMIN">OE.PROPER_​ADMIN</a></td><td>The operational environment objective <a href="#OE.PROPER_ADMIN">OE.PROPER_ADMIN</a> is realized through
-              <a href="#A.PROPER_ADMIN">A.PROPER_ADMIN</a>.</td></tr></table>
-  <h1 id="Security_Requirements" class="indexable" data-level="1">5 Security Requirements</h1>
+              has occurred.</td></tr><tr class="major-row"><td rowspan="1">T.LIMITED_​PHYSICAL_​ACCESS</td><td><a href="#O.PROTECTED_STORAGE">O.PROTECTED_​STORAGE</a></td><td>The objective <a href="#O.PROTECTED_STORAGE">O.PROTECTED_STORAGE</a> protects against unauthorized attempts to
+              access physical storage used by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr><tr class="major-row"><td rowspan="1">A.PLATFORM</td><td><a href="#OE.PLATFORM">OE.PLATFORM</a></td><td> The operational environment objective <a href="#OE.PLATFORM">OE.PLATFORM</a> is realized through
+              A.PLATFORM. </td></tr><tr class="major-row"><td rowspan="1">A.PROPER_​USER</td><td><a href="#OE.PROPER_USER">OE.PROPER_​USER</a></td><td>The operational environment objective <a href="#OE.PROPER_USER">OE.PROPER_USER</a> is realized through
+              A.PROPER_USER.</td></tr><tr class="major-row"><td rowspan="1">A.PROPER_​ADMIN</td><td><a href="#OE.PROPER_ADMIN">OE.PROPER_​ADMIN</a></td><td>The operational environment objective <a href="#OE.PROPER_ADMIN">OE.PROPER_ADMIN</a> is realized through
+              A.PROPER_ADMIN.</td></tr></table>
+  <h1 id="Security_Requirements" class="indexable" data-level="1">4 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
        <a href="#bibCC">[CC]</a>.
@@ -916,8 +909,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
      <ul>
        <li>
          <b>Refinement</b> operation (denoted by <b>bold text</b> or <strike>strikethrough
-         text</strike>): Is used to add details to a requirement (including replacing an assignment
-         with a more restrictive selection) or to remove part of the requirement that is made irrelevant
+         text</strike>): Is used to add details to a requirement or to remove part of the requirement that is made irrelevant
          through the completion of another operation, and thus further restricts a requirement.
          </li>
        <li>
@@ -932,9 +924,9 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             suggesting the purpose of the operation, e.g. "/EXAMPLE1."
        </li>
      </ul>
-   <h2 id="man-sfrs" class="indexable" data-level="2">5.1 TOE Security Functional Requirements</h2>
+   <h2 id="man-sfrs" class="indexable" data-level="2">4.1 TOE Security Functional Requirements</h2>
 	This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not define any mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>.
-      <h2 id="obj-req-map" class="indexable" data-level="2">5.2 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+      <h2 id="obj-req-map" class="indexable" data-level="2">4.2 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each security objective for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to meet and achieve the security objectives:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">2</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Objective</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="2"><a href="#O.ACCOUNTABILITY">O.ACCOUNTABILITY</a><br/></td><td>FAU_GEN.1</td><td>'cause FAU_GEN.1 is awesome</td></tr>
 <tr><td>FTP_ITC_EXT.1</td><td>Cause FTP reasons </td></tr>
 <tr class="major-row"><td rowspan="15"><a href="#O.INTEGRITY">O.INTEGRITY</a><br/></td><td>FPT_SBOP_EXT.1</td><td>For reasons </td></tr>
@@ -962,7 +954,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             FCS_COP.1/HASH, FCS_COP.1/SIGN, FCS_COP.1/<abbr class="dyn-abbr"><a href="#abbr_HMAC">HMAC</a></abbr>, FDP_IFC_EXT.1, FIA_X509_EXT.1,
             FIA_X509_EXT.2, FTP_ITC_EXT.1
           </td><td>Rationale for a big chunk</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix B -  Extended Component Definitions</h1>
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">5 Consistency Rationale</h1><h1 id="opt-sfrs" class="indexable" data-level="A">Appendix A -  Optional SFRs</h1><h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix B -  Extended Component Definitions</h1>
 	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 
     <h2 id="ext-comp-defs-bg" class="indexable" data-level="2">B.1 Extended Components Table</h2>
@@ -1065,7 +1057,8 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 	</tr>
     </table>
 
-  <h1 id="acronyms" class="indexable" data-level="A">Appendix D -  Acronyms</h1><table><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_AES"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr></span></td><td><span id="long_abbr_AES">Advanced Encryption Standard</span></td></tr>
+  <h1 id="acronyms" class="indexable" data-level="A">Appendix D -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">4</span></span>: Acronyms
+		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_AES"><abbr class="dyn-abbr"><a href="#abbr_AES">AES</a></abbr></span></td><td><span id="long_abbr_AES">Advanced Encryption Standard</span></td></tr>
 <tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
 <tr><td><span class="term" id="abbr_app"><abbr class="dyn-abbr"><a href="#abbr_app">app</a></abbr></span></td><td><span id="long_abbr_app">Application</span></td></tr>
@@ -1140,7 +1133,7 @@ The assumptions identified in Section 3 are incorporated as security objectives 
 <tr><td><span class="term" id="abbr_VM"><abbr class="dyn-abbr"><a href="#abbr_VM">VM</a></abbr></span></td><td><span id="long_abbr_VM">Virtual Machine</span></td></tr>
 <tr><td><span class="term" id="abbr_XCCDF"><abbr class="dyn-abbr"><a href="#abbr_XCCDF">XCCDF</a></abbr></span></td><td><span id="long_abbr_XCCDF">eXtensible Configuration Checklist Description Format</span></td></tr>
 <tr><td><span class="term" id="abbr_XOR"><abbr class="dyn-abbr"><a href="#abbr_XOR">XOR</a></abbr></span></td><td><span id="long_abbr_XOR">Exclusive Or</span></td></tr>
-</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix E -  Bibliography</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[CC]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
+</table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix E -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">5</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[CC]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
                 1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
               April 2017.</li>
