@@ -1,142 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/esr2html.xsl"?>
 
-<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Operating System Fundamentals">
+<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Enterprise Management">
   
 	<intro>
-		<esrtitle>Some PP Name</esrtitle>
-		<maintainer>NIAP and CESG</maintainer>
-		<identifier>42</identifier>
-		<version>1.0</version>
+		<esrtitle>Enterprise Management (EM) Essential Security Requirements</esrtitle>
+		<maintainer>National Information Assurance Partnership (NIAP)</maintainer>
+		<identifier>00x</identifier>
+		<version>0.9x</version>
 		<status>draft</status>
-		<issuedate>19 March 2015</issuedate>
+		<issuedate>27 June 2025</issuedate>
 		<approver/>
 		<supercedes/>
 	</intro>
 
 	<section title="Background and Purpose" id="purpose">
-		This section sets the context for not only the ESR, but what is 
-		expected of the resulting Protection Profile (PP). The intent is 
-		that the remaining sections provide succinct statements that 
-		highlight the relevant aspects to be addressed by the Technical 
-		Community (TC) constructing the PP. Here, the authors provide a 
-		narrative that introduces the reader to the problem being solved, 
-		and presents key aspects that support or guide the TC, and may
-		elaborate on subtleties not apparent in the “bulleted” high level
-		statements.
+		<p>
+		This document describes a core set of security requirements for Enterprise Management (EM) systems.  These requirements cover basic security characteristics and behaviors for an EM system. 
+		</p><p>
+		EM systems are used by EM administrators to manage endpoint devices in an enterprise. EM systems typically consist of an EM server and may include endpoint host agents.
+		</p><p>
+		The intent is that the remaining sections provide succinct statements that highlight the relevant aspects to be addressed by the Technical Community (TC) contributing to the PP. Here, the authors provide a narrative that introduces the reader to the problem being solved, and present key aspects that support or guide the TC and may elaborate on subtleties not apparent in the “bulleted” high level statements.
+		</p>
 	</section>
 	<section title="Use Cases" id="usecases">
-	  This section is intended to provide the initial scope/bound of the 
-	  security problem by providing the reader with concise statements 
-	  regarding the scenarios in which the technology is being used. The 
-	  intended usage presented here should lay the groundwork for the 
-	  identifying the resources to be protected, and what threats must be
-	  considered in the drafting of the Essential Security Requirements 
-	  (ESR) and for the TC to consider when writing the PP.
+		Enterprise Management (EM) products in scope for this PP should have functionality of at least one, but potentially some combination of the following use cases, in order to enable EM administrators to manage endpoints. 
+		<br/><br/>
+		<ul>
+			<li>[USE CASE 1] Interfacing with Endpoints – enables EM administrators to manage endpoints by issuing commands to push, edit, or retrieve data; for example, this may include:
+				<ul>
+					<li>deploying software (system software like operating systems, application software, or software updates) to endpoints,</li> 
+					<li>setting configurations/policies on endpoints, </li>
+					<li>running custom scripts on endpoints to automate other management tasks,</li> 
+					<li>or interactive remote access of endpoints.</li>
+				</ul>
+			</li>
+		<li>[USE CASE 2] Storing Data – database(s) of endpoint device data that can be queried or browsed; for example, this may include an inventory of the following across endpoints:
+		<ul>
+			<li>software,</li>
+			<li>hardware,</li>
+			<li>or configuration/policy.</li>
+		</ul>
+		</li>
+		<li>
+		[USE CASE 3] Monitoring – allows for monitoring through notifications, alerts, and potentially automating other actions (e.g. remediation steps) based on endpoint states; for example, this may include monitoring for states like:
+		<ul>
+			<li>low disk space, </li>
+			<li>high memory usage, </li>
+			<li>account creations, </li>
+			<li>accounts being added or removed from groups,</li> 
+			<li>or services stopping.</li>
+		</ul>
+		</li>
+		</ul>
 	</section>
 
 	<section title="Resources to be protected" id="resourcesprotected">
-    	  This section is intended to provide the initial scope/bound of the 
-    	  security problem by providing the reader with concise statements
-    	  regarding the scenarios in which the technology is being used. The 
-    	  intended usage presented here should lay the groundwork for the 
-    	  identifying the resources to be protected, and what threats must be
-    	  considered in the drafting of the Essential Security Requirements 
-    	  (ESR) and for the TC to consider when writing the PP.
+    	<ul>
+    		<li>Sensitive data stored by the EM system.</li>
+    		<li>Credentials for authentication to or from the EM system.</li>
+    		<li>Cryptographic key material used to perform secure communications with host agents.</li>
+    		<li>Sensitive data in transit to or from the EM system.</li>
+    	</ul>
+    	
 	</section>
 
 	<section title="Attacker access" id="attackeraccess"> 
-	  The following assumptions are made about
-	  attackers' ability to develop attacks: 
-	  <ul>
-	    <li> An attacker has an arbitrary amount of time to analyze the behavior of the product, its
-	    interaction with its platform, and the data it transmits over the network. </li>
-	    <li> An attacker is able to acquire their own copy of the target product and study its
-	    behavior on a platform that they control. </li>
-	  </ul>
-	  <p/> The attacker is expected to engage in the following general classes of attack: <!-- added in order to allow for rather direct flow to Threats section in PP -->
-	  <ul>
-	    <li> Network eavesdropping, in which an attacker may monitor and gain access to data
-	    exchanged between the product and other endpoints. </li>
-	    <li> Network attack, in which an attacker may initiate malicious communications with the
-	    product or alter communications between the product and other endpoints. </li>
-	    <li> Local attack, in which an attacker has gained the ability to execute code on the
-	    system, which may be used to escalate privilege or access data without
-	    authorization. </li>
-	    <li> Limited physical access attack, in which an attacker may attempt to access data on
-	    the system by virtue of being physically present for a limited period of time. This
-	    limited physical access does not include attacks in which the attacker could
-	    disassemble the system to gain access to its storage media or manipulate the product's
-	    underlying hardware and firmware. Systems used for working remotely, such as laptops
-	    and tablets, for which an attacker could gain longer physical access to, should
-	    apply additional protections that are provided by products evaluated against other
-	    Protection Profiles (e.g. FDE cPP). </li>
-	    <li> Persistence, in which an attacker has already exploited the system and wishes to
-	    maintain presence on the system. </li>
-	  </ul>
+		Attackers are assumed to have:
+		<ul>
+		•	network access with the EM server and the endpoint devices. 
+		o	An attacker could exploit the lack of secure communication to communicate with, intercept and modify communications between, or eavesdrop on communications to EM system components. For example, an attacker could 
+			issue commands to endpoints (like deploy arbitrary policies and/or software).
+			 
+		•	local non-privileged access to the endpoint devices or EM server. 
+		o	An attacker could access or modify data stored by the EM system. For example, an attacker with access to the EM server could try to view or change authentication credentials to the management interface. 
+		•	physical access to endpoint devices. 
+		o	An attacker could access data stored on the endpoint device. 
+		</ul>
+		 
+		
+		**********************************************************
+		
+		<ul>
+			<li>An attacker can impersonate the EM server on the network or issue commands to endpoints, for example to deploy policies and/or software.</li>
+			<li>An attacker can exploit the lack of secure communication between the EM server and host agents or endpoints.</li>
+			<li>An attacker could access or modify data stored by the EM system.</li>
+			<li>An attacker with access to the EM server can view or change authentication credentials to the management interface.</li>
+		</ul>
 	</section>
 	
-	<section title="Essential Security Requirements" id="requirements">
-        	This is where the authors present an initial set of English 
-        	requirements that specify security functionality, rather than 
-        	design and/or implementation characteristics. These requirements 
-        	will provide the foundation for which the detailed set of 
-        	requirements is derived. It is important that the requirements 
-        	captured here make an attempt to fully address the categories 
-        	(e.g., access control, identification and authentication, 
-        	management capabilities, roles of administration, secure 
-        	communications, and audit). That's not to say the requirements are 
-        	fully specified or detailed enough to simply translate to Common 
-        	Criteria security functional requirements. The goal is that there 
-        	is enough information contained here, as well as the other sections
-        	of this document, to provide the TC enough information to ensure 
-        	they have an understanding of what is minimally required in breath.
 
-			<!--
-			This is where the authors explicitly state english requirements
-			that this class of product must satisfy. 
-	        -->
+	
+	<section title="Essential Security Requirements" id="requirements">
+		<ul>
+		<li>General mitigations 
+			<ul>
+			<li>Updates to the EM system
+				<ul>
+				<li>The EM server/agents shall have a mechanism to report patch levels and initiate the patching process.</li>
+				<li>Updates shall be cryptographically signed such that the platform can verify authenticity prior to installation.</li>
+				</ul>
+			</li>
+			<li>Configuration of EM system
+				<ul>
+				<li>Host agent and EM server statuses</li> 
+				<li>The EM server shall allow configuration of agent heartbeat and/or reporting intervals.</li>
+				</ul>
+			</li> 
+			<li>Anti-exploitation features
+				<ul>
+				<li>EM system binaries shall use anti-exploitation capabilities (ASLR, DEP, etc.) provided by the platform on which the EM system runs</li>
+				</ul>
+			</li>
+			</ul>	
+		</li>
+		<li>Authentication and Authorization
+			<ul>
+			<li>Identities shall be authenticated and authorized prior to accessing or modifying sensitive data, based on authentication mechanisms provided by the platform or EM system</li>
+			</ul>
+		</li>
+		<li>Confidentiality and Integrity of data at-rest and in-transit 
+			<ul>
+			<li>Communications between EM server and endpoint devices shall be cryptographically secured - for example, remote administration and audit features must employ cryptographic algorithms to secure communications</li>
+			<li>Sensitive stored data shall be cryptographically secured</li>
+			</ul>
+		</li>
+		<li>Auditing and Compliance
+			<ul>
+			<li>Auditing capabilities for all EM system components shall include
+				<ul>
+				<li>events like administrative actions, commands issued to endpoints/endpoint host agents, EM system errors</li>
+				<li>resiliency of auditing, for example, local storage of audit logs if an endpoint agent loses connectivity to the server</li>
+				<li>audit logs must be accessible outside the EM system, for example able to be forwarded (SIEM, email, syslog, etc.) or exported</li>
+				<li>accountability of actions taken (identity information, date/time, action)</li>
+				</ul>
+			</li>
+		</ul>
+		</li>
+		<li>The EM server/agents shall have a mechanism to report patch levels and initiate the patching process.</li>
+		<li>Architecture
+		<ul>
+			<li>Resiliency
+				<ul>
+				<li>Failover</li> 
+				<li>Load balanced</li>
+				</ul>
+			</li>
+			<li>Endpoint and Agent Management
+				<ul>
+				<li>Role-based access control</li>
+				<li>Agent revocation</li>
+				<li>The EM server shall configure agent heartbeat and/or reporting intervals.</li>
+				</ul>
+			</li>		
+			<li>Permission Segregation
+				<ul>
+					<li>Role based Tier model, protecting privileged accounts and resources from non-privileged.</li>
+				</ul>
+			</li>
+			<li>Compliance
+				<ul>
+				<li>Accountability of actions taken by the EM system</li>
+				<li>Auditing capabilities for all EM system components, including
+					<ul>
+					<li>of events including: administrative actions, commands issued to endpoints/endpoint host agents, EM system errors</li>
+					<li>resiliency of auditing – for example, local storage of audit logs if an endpoint agent loses connectivity to the server</li> 
+					<li>audit logs must be accessible outside the EM system, for example able to be forwarded (SIEM, email, syslog, etc.) or exported</li>
+					</ul>			
+				</li>
+				<li>Able to search data and make reports</li>  
+				<li>Security events search criteria</li>
+				</ul>
+			</li>
+			<li>Confidentiality and Integrity
+				<ul>
+				<li>Cryptographically securing communications between EM server and endpoint devices, particularly for sensitive communications</li>
+				<li>For example, remote administration and audit features must employ cryptographic algorithms to secure communications</li>
+				<li>Cryptographically securing sensitive stored data</li>
+				</ul>
+			</li>
+			</ul>
+			</li>
+			<li>Risk Management
+				<ul>
+					<li>Ties into architecture with custom defense strategies based on the capabilities of the architecture</li> 
+					<li>Zero Trust for all EM system components – verifying authentication and authorization, for example for accessing or modifying sensitive</li>
+				</ul>
+			</li>
+		</ul>
 	</section>
 
 	<section title="Assumptions" id="assumptions">
-	  Simply put, this section presents the aspects of the product and 
-	  its	intended environment that can be assumed to hold true. This 
-	  will provide additional scope on the resulting PP.
-
-	  The following assumptions are made for the operating system product and its operational
-	  environment: <ul>
-			<li>The underlying platform is physically protected, to a large extent. The hardware
-				that the product manages is secured by defensive measures that make physical attacks
-				impractical for most attackers. At the same time, casual passersby might attempt to
-				trivially access the system. </li>
-			<li>The product implements some security-relevant functionality that does not require
-				evaluation (e.g., network time synchronization, process scheduling, and virtual
-				memory management including process separation). </li>
-			<li>Depending on configuration and capability, the product may or may not be: <ul>
-					<li>configuration-managed by the enterprise</li>
-					<li>bound to directory services to support multi-user login</li> </ul>
-			</li>
-			<li> The product runs application software developed by a third-party. The applications are
-				not intentionally developed to be malicious, but can contain inadvertent coding
-				errors. These errors introduce risk that control of an application may be seized by
-				a malicious entity. The product shall confine these applications within the originally
-				designated operating environment. </li>
-			<li>The platform is connected to a network. For purposes of sending/receiving data, to
-				include software updates, the platform is connected to other entities. Other
-				entities on the network are not inherently trustable. </li>
-			<li>Administrators are not malicious in nature.</li>
-			<li> Users are not malicious in nature, though they may inadvertently or intentionally engage in risky behavior. </li>
+		The following assumptions are made for the EM software product and its operational environment. The Enterprise Management Software is not expected to provide any assurance in any of these areas, and as a result, requirements are not included to mitigate the associated threats.
+		<ul>
+		<li>A.PLATFORM<br/>
+		The TOE relies upon a trustworthy computing platform with a reliable time clock for its execution. This includes the underlying platform and whatever runtime environment it provides to the TOE.</li> 
+		<li>A.PROPER_ADMIN<br/>
+			The Administrator of the software solution is not careless, wilfully negligent or hostile, and administers the software within compliance of the applied enterprise security policy.</li>
+		<li>A.PROPER_USER<br/>
+		The user of the application software is not willfully negligent or hostile, and uses the software in compliance with the applied enterprise security policy.</li>
+		<li>A.PHYSICAL_PROTECTION<br/>
+		The Enterprise Management Software is physically protected in its operational environment and not subject to physical attacks that compromise the security or interfere with the host device’s physical interconnections or ability to operate at full capacity. This protection is assumed to be sufficient to protect the data contained within the Enterprise Management Software solution.</li>
+		<li>A.REGULAR_UPDATES<br/>
+			The Enterprise Management Software is assumed to be updated by an Administrator on a regular basis in response to the release of product updates due to known vulnerabilities.</li>
 		</ul>
 	</section>
 
-
 	<section title="Optional Extensions" id="extensions"> 
-		Additional security functionality that may
-		be appropriate for some use cases, and can be expressed in extensions to this document,
-		includes: 
-		<ul>
-			<li></li>
-		</ul>
+		None defined
 	</section>
 
 	<section title="Outside the TOE's Scope" id="outsidescope">
@@ -148,21 +219,11 @@
 			that are too subjective, or specific expertise not available in the
 			evaluation facilities expected to assess products against the PP 
 	  -->
-		The following list contains items that are explicitly out-of-scope for any evaluation
-		against the product PP <ul>
-			<li>Malicious, Highly-Privileged Administrators - Highly-privileged administrators
-				acting maliciously can disable most, if not all, security protections on the product.
-				Additionally procedural controls that are out of scope of this document should be
-				considered to help highlight administrator accounts acting suspiciously.</li>
-			<li>Zero Days - The disclosure of recently published vulnerabilities (Zero Days) should
-				not be used as a reason to fail an product undergoing evaluation.</li>
-			<li>Unofficial Versions - Non-vendor supplied install images often contain added
-				functionality and may weaken the normal operating functionality of the product</li>
-			<li>Platform - The product PP shall not address the hardware or firmware of its underlying
-				platform to include the boot sequence before control is handed off to the product. That
-				the platform itself is virtual or physical is irrelevant to any evaluations. </li>
-			<li>Applications - The product PP shall not address applications that are not delivered as
-				part of the product installation process. </li>
+		
+		Threats out of scope of this PP include attackers with:
+		<ul>
+			<li>local privileged access to the endpoint device and/or EM server.</li>
+			<li>physical access to the EM server.</li>
 		</ul>
 	</section>
 </ESR>
