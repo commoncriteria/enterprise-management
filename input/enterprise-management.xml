@@ -4,6 +4,7 @@
 
 <Module  boilerplate='yes'
     target-product="Enterprise-Management"
+    target-products="Enterprise-Management"
     name="PP-Module for Enterprise-Management"
     xmlns="https://niap-ccevs.org/cc/v1"
     xmlns:cc="https://niap-ccevs.org/cc/v1"
