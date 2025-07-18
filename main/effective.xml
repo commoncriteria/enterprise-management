@@ -1,4 +1,4 @@
-<Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:cc="https://niap-ccevs.org/cc/v1" xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yes" target-product="Enterprise-Management" name="PP-Module for Enterprise-Management">
+<Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:cc="https://niap-ccevs.org/cc/v1" xmlns:sec="https://niap-ccevs.org/cc/v1/section" xmlns:h="http://www.w3.org/1999/xhtml" boilerplate="yes" target-product="Enterprise-Management" target-products="Enterprise-Management" name="PP-Module for Enterprise-Management">
 
   <!-- <comment color='green'> Hello World QQQQ </comment> -->
   <!-- <comment color='blue' linebreak='yes'> Hello World QQQQ </comment> -->
