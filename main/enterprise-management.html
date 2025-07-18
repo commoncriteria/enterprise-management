@@ -748,7 +748,7 @@ The following sections list Common Criteria and technology terms used in this do
     
     <h2 class="indexable" data-level="2" id="sec-features">1.5 Implementation-Based Features</h2>
       A conformant <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may implement certain features that are not strictly necessary in order to achieve the desired level of security, but if these features are implemented, it is expected that they conform to certain requirements governing their behavior. 
-      <h3 class="indexable" data-level="3" id="distributed">1.5.1 Distributed TOE</h3><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements LiFi using IEEE 802.11bb. Data in transit is protected using either IPsec or RadSec (RADIUS over TLS).</span><br/><p>
+      <h3 class="indexable" data-level="3" id="distributed">1.5.1 Distributed TOE</h3><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is distributed across multiple server instances.</span><br/><p>
 	  If this feature is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the following requirements must be claimed in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>:
             <ul><li><b><a href="#FCO_CPC_EXT.1">FCO_CPC_EXT.1</a></b></li><li><b><a href="#FPT_ITT.1">FPT_ITT.1</a></b></li></ul></p>			
        
@@ -1081,7 +1081,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <h3 id="man-fia" class="indexable" data-level="3">5.2.3 Identification and Authentication (FIA)</h3>
         
         <div class="comp" id="FIA_UAU.1"><h4>FIA_UAU.1 Timing of Authentication</h4>
-          <div class="element"><div class="reqid" id="FIA_UAU.1.1"><a href="#FIA_UAU.1.1" class="abbr">FIA_UAU.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-14-">ESR: authentication and authorizatione<br/>
+          <div class="element"><div class="reqid" id="FIA_UAU.1.1"><a href="#FIA_UAU.1.1" class="abbr">FIA_UAU.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-14-">ESR: authentication and authorization<br/>
               Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br/></span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_22"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_23"><b>implement functionality</b></span>] <b>to</b> allow [<b>assignment</b>: 
      <span class="assignable-content">list of <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> mediated actions</span>] on behalf of the user to be performed before the user is authenticated.</div></div>
@@ -1397,7 +1397,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> channel. When creating the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> from the initial pair of components, either of these components may be identified as the 
               <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for the purposes of satisfying the meaning of "<abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>" in this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<br/><br/>
               
-             Registration of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components may be accomplished either using the same trusted channel that subsequent communications occur on (<a href="#FPT_ITT.1">FPT_ITT.1</a>), a separate channel that exists for the purpose of facilitaing this registration, i.e. a joining channel (<a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a>), or no channel. In the case of the latter, registration would be accomplished by independent administrative configuration of each component. </span></div></div></div>
+             Registration of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components may be accomplished either using the same trusted channel that subsequent communications occur on (<a href="#FPT_ITT.1">FPT_ITT.1</a>), a separate channel that exists for the purpose of facilitating this registration, i.e. a joining channel (<a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a>), or no channel. In the case of the latter, registration would be accomplished by independent administrative configuration of each component. </span></div></div></div>
           
         <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCO_CPC_EXT.1">FCO_CPC_EXT.1</a></div>
             

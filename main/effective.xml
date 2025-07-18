@@ -203,7 +203,7 @@
       A conformant TOE may implement certain features that are not strictly necessary in order to achieve the desired level of security, but if these features are implemented, it is expected that they conform to certain requirements governing their behavior. 
       <implements>
         <feature id="distributed" title="Distributed TOE">
-          <description>The TOE implements LiFi using IEEE 802.11bb. Data in transit is protected using either IPsec or RadSec (RADIUS over TLS).</description>
+          <description>The TOE is distributed across multiple server instances.</description>
         </feature>
       </implements>			
     </section>   
@@ -596,7 +596,7 @@
         
         <f-component cc-id="fia_uau.1" name="Timing of Authentication">
           <f-element id="fia-uau-1e1">
-            <title><comment>ESR: authentication and authorizatione<h:br/>
+            <title><comment>ESR: authentication and authorization<h:br/>
               Adapted from MDM PP requirement of the same name<h:br/></comment>
               The TSF shall <selectables>
               <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
@@ -1100,7 +1100,7 @@
               TSF channel. When creating the TSF from the initial pair of components, either of these components may be identified as the 
               TSF for the purposes of satisfying the meaning of "TSF" in this SFR.<h:br/><h:br/>
               
-             Registration of the distributed TOE components may be accomplished either using the same trusted channel that subsequent communications occur on (FPT_ITT.1), a separate channel that exists for the purpose of facilitaing this registration, i.e. a joining channel (FTP_TRP.1/Join), or no channel. In the case of the latter, registration would be accomplished by independent administrative configuration of each component. </note>
+             Registration of the distributed TOE components may be accomplished either using the same trusted channel that subsequent communications occur on (FPT_ITT.1), a separate channel that exists for the purpose of facilitating this registration, i.e. a joining channel (FTP_TRP.1/Join), or no channel. In the case of the latter, registration would be accomplished by independent administrative configuration of each component. </note>
             <aactivity>
             <no-tests/>
             </aactivity>
