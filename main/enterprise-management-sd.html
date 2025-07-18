@@ -274,7 +274,7 @@
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP Logo"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
     PP-Module for Enterprise-Managements<br/>
-      Version: 1.0<br/>2015-08-14<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
+      Version: 2.0<br/>2025-07-18<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
       and application of the standard to areas where no mutual recognition of
@@ -284,7 +284,7 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>Round 1</td><td>2015-04-23</td><td>First draft of version 1.0 for comment</td></tr><tr><td>1.0</td><td>2015-08-14</td><td>Release - first version released</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>2.0</td><td>2025-07-18</td><td>Initial draft (version numbering chosen for alignment with the ESM family of modules)</td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       Enterprise-Management      
       products.
@@ -293,13 +293,20 @@
       Enterprise-Managements
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
-      </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#man-sfrs" style="text-indent:10px">2.1<span>TOE SFR Evaluation Activities</span></a><a href="#opt-sfrs" style="text-indent:10px">2.2<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#obj-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.5<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+      </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-AppPP" style="text-indent:10px">2.1<span>Application Software</span></a><a href="#qq-sfrs-AppPP-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#man-fia" style="text-indent:20px">2.2.2<span>Identification and Authentication (FIA)</span></a><a href="#man-fmt" style="text-indent:20px">2.2.3<span>Management of the TSF (FMT)</span></a><a href="#man-ftp" style="text-indent:20px">2.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#sel-fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#impl-dep-ftp" style="text-indent:20px">2.4.2<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#impl-dep-fco" style="text-indent:20px">2.6.1<span>Communications (FCO)</span></a><a href="#impl-dep-fpt" style="text-indent:20px">2.6.2<span>Protection of the TSF (FPT)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for Enterprise-Managements is
     to describe the security functionality of 
     Enterprise-Managements
     products in terms of 
     [CC] and to define functional and assurance requirements for them.
 
+    
+    The PP-Module is intended for use with the following Base-PP:
+        <ul><li>Application Software, version 2.0.</li></ul><br/>
+    This SD is mandatory for evaluations of TOEs that claim conformance to a PP-Configuration that includes the PP-Module for :
+    <ul><li>Enterprise-Managements, Version 2.0</li></ul>
+    As such it defines Evaluation Activities for the functionality described in the PP-Module as well as any impacts to the Evaluation Activities to the Base-PP(s) it modifies.
     </p><p> 
 Although Evaluation Activities are defined mainly for the evaluators to follow, in general they also help developers to prepare for evaluation by identifying specific requirements for their TOE.
     The specific requirements in Evaluation Activities may in some cases clarify the meaning of Security
@@ -326,8 +333,10 @@ Although Evaluation Activities are defined mainly for the evaluators to follow, 
     </p><div class="no-link"><h2 id="glossary" class="indexable" data-level="1">1.3 Terms</h2>
 The following sections list Common Criteria and technology terms used in this document.
     <h3 id="cc-terms" class="indexable" data-level="2">1.3.1 Common Criteria Terms</h3><table><tr><td><div id="Assurance">Assurance</div></td><td>Grounds for confidence that a TOE meets the SFRs <a href="#bibCC">[CC]</a>.</td></tr>
+<tr><td><div id="Base_Protection_Profile">Base Protection Profile (Base-PP)</div></td><td>Protection Profile used as a basis to build a PP-Configuration.</td></tr>
 <tr><td><div id="Collaborative_Protection_Profile">Collaborative Protection Profile (cPP)</div></td><td>A Protection Profile developed by
     international technical communities and approved by multiple schemes.</td></tr>
+<tr><td><div id="Common_Criteria">Common Criteria (CC)</div></td><td>Common Criteria for Information Technology Security Evaluation (International Standard ISO/IEC 15408).</td></tr>
 <tr><td><div id="Common_Criteria_Testing_Laboratory">Common Criteria Testing Laboratory</div></td><td>
       Within the context of the Common Criteria Evaluation and Validation Scheme (CCEVS), an IT security evaluation facility
       accredited by the National Voluntary Laboratory Accreditation Program (NVLAP) and approved by the NIAP Validation Body to conduct Common Criteria-based evaluations.
@@ -354,91 +363,32 @@ The following sections list Common Criteria and technology terms used in this do
 <tr><td><div id="Target_of_Evaluation">Target of Evaluation (TOE)</div></td><td>The product under evaluation. </td></tr>
 <tr><td><div id="TOE_Security_Functionality">TOE Security Functionality (TSF)</div></td><td>The security functionality of the product under evaluation.</td></tr>
 <tr><td><div id="TOE_Summary_Specification">TOE Summary Specification (TSS)</div></td><td>A description of how a TOE satisfies the SFRs in an ST.</td></tr>
-</table><h3 id="tech-terms" class="indexable" data-level="2">1.3.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Address_Space_Layout_Randomization">Address Space Layout Randomization (ASLR)</div></td><td>
-	An anti-exploitation feature which loads memory mappings into unpredictable
-	locations. ASLR makes it more difficult for an attacker to redirect control to code
-	that they have introduced into the address space of a process.
+</table><h3 id="tech-terms" class="indexable" data-level="2">1.3.2 Technical Terms</h3><table style="width: 100%"><tr><td><div id="Endpoint">Endpoint</div></td><td>A computing device that runs a general purpose OS, mobile device OS, or network device OS. Endpoints can 
+        include desktops, servers, and mobile devices.
       </td></tr>
-<tr><td><div id="Administrator">Administrator</div></td><td>
-	An administrator is responsible for management activities, including setting policies that are 
-	applied by the enterprise on the operating system.
-	This administrator could be acting remotely through a management server, from which the system
-	receives configuration policies.
-	An administrator can enforce settings on the system which cannot be overridden by non-administrator users.
+<tr><td><div id="Endpoint_Detection_and_Response">Endpoint Detection and Response (EDR)</div></td><td>A system that analyzes collected EDR Host Agent data for detecting, 
+        investigating, and remediating unauthorized activities on endpoints. 
       </td></tr>
-<tr><td><div id="Application">Application (app)</div></td><td>
-	Software that runs on a platform and performs tasks on behalf of the user
-	or owner of the platform, as well as its supporting documentation. 
+<tr><td><div id="Enrolled_State">Enrolled State</div></td><td>The state in which an endpoint with a running Host Agent is managed by an ESM.
+        Also, referred to as Onboarding.
       </td></tr>
-<tr><td><div id="Application_Programming_Interface">Application Programming Interface (API)</div></td><td>
-	A specification of routines, data structures, object classes, and variables
-	that allows an application to make use of services provided by another software
-	component, such as a library. APIs are often provided for a set of libraries included
-	with the platform.
+<tr><td><div id="Enrollment">Enrollment</div></td><td>The process of transitioning an endpoint from an unenrolled to an enrolled state.
       </td></tr>
-<tr><td><div id="Credential">Credential</div></td><td>
-	Data that establishes the identity of a user, e.g. a cryptographic key or
-	password.
+<tr><td><div id="Enterprise_Security_Management">Enterprise Security Management (ESM)</div></td><td>A type of application hosted on a server or cloud service that provides 
+        support for security management, information flows, reporting, policy, and data analytics 
+        in complex enterprise environments.
       </td></tr>
-<tr><td><div id="Critical_Security_Parameters">Critical Security Parameters (CSP)</div></td><td>
-	Information that is either user or system defined and
-	is used to operate a cryptographic module in processing encryption functions including
-	cryptographic keys and authentication data, such as passwords, the disclosure or modification
-	of which can compromise the security of a cryptographic module or the security of the
-	information protected by the module.
+<tr><td><div id="Host_Agent">Host Agent</div></td><td>A logical piece of software that executes on endpoints to collect data about the endpoint and
+        executes commands sent to the endpoint from an ESM server
+        or service. An example command sent to an endpoint could be to enforce a policy from an 
+        ESM, to collect some files, or to run an OS command.
       </td></tr>
-<tr><td><div id="DAR_Protection">DAR Protection</div></td><td>
-	Countermeasures that prevent attackers, even those with physical access,
-	from extracting data from non-volatile storage.
-	Common techniques include data encryption and wiping.
+<tr><td><div id="Operating_System">Operating System (OS)</div></td><td>Software that manages physical and logical resources and provides services
+        for applications.
       </td></tr>
-<tr><td><div id="Data_Execution_Prevention">Data Execution Prevention (DEP)</div></td><td>
-	An anti-exploitation feature of modern operating systems executing on
-	modern computer hardware, which enforces a non-execute permission on pages of memory.
-	DEP prevents pages of memory from containing both data and instructions, which makes
-	it more difficult for an attacker to introduce and execute code.
+<tr><td><div id="Unenrolled_State">Unenrolled State</div></td><td>The state in which an endpoint, with or without a Host Agent, is not managed by an ESM.
+        Also, referred to as Offboarding.
       </td></tr>
-<tr><td><div id="Developer">Developer</div></td><td>
-	An entity that writes OS software. For the purposes of this document,
-	vendors and developers are the same.
-      </td></tr>
-<tr><td><div id="General_Purpose_Operating_System">General Purpose Operating System</div></td><td>
-	A class of OSes designed to support a wide-variety of workloads consisting of many concurrent applications or services.
-	Typical characteristics for OSes in this class include support for third-party applications,
-	support for multiple users, and security separation between users and their respective resources.
-	General Purpose Operating Systems also lack the real-time constraint that defines Real Time Operating Systems (RTOS).
-	RTOSes typically power routers, switches, and embedded devices.
-      </td></tr>
-<tr><td><div id="Host-based_Firewall">Host-based Firewall</div></td><td>
-	A software-based firewall implementation running on the OS for filtering inbound and
-	outbound network traffic to and from processes running on the OS.
-      </td></tr>
-<tr><td><div id="Operating_System">Operating System (OS)</div></td><td>
-	Software that manages physical and logical resources and provides services
-	for applications. The terms <i>TOE</i> and <i>OS</i> are interchangeable in this
-	document. 
-      </td></tr>
-<tr><td><div id="Personally_Identifiable_Information">Personally Identifiable Information (PII)</div></td><td>
-	Any information about an individual maintained by an agency, including, but
-	not limited to, education, financial transactions, medical history, and criminal or
-	employment history and information which can be used to distinguish or trace an
-	individual's identity, such as their name, social security number, date and place of
-	birth, mother's maiden name, biometric records, etc., including any other personal
-	information which is linked or linkable to an individual.<a href="#bibOMB">[OMB]</a>
-      </td></tr>
-<tr><td><div id="Sensitive_Data">Sensitive Data</div></td><td>
-	Sensitive data may include all user or enterprise data or may be specific
-	application data such as PII, emails, messaging, documents, calendar items, and contacts.
-	Sensitive data must minimally include credentials and keys. Sensitive data shall
-	be identified in the OS's TSS by the ST author. 
-      </td></tr>
-<tr><td><div id="User">User</div></td><td>
-	A user is subject to configuration policies applied
-	to the operating system by administrators.  On some systems under certain
-	configurations, a normal user can temporarily elevate privileges to that of an administrator.
-	At that time, such a user should be considered an administrator.
-      </td></tr>
-<tr><td><div id="Virtual_Machine">Virtual Machine (VM)</div></td><td>Blah Blah Blah</td></tr>
 </table></div><h1 id="sfr" class="indexable" data-level="0">2 Evaluation Activities for SFRs</h1><p>The EAs presented in this section capture the actions the evaluator performs 
     to address technology specific aspects covering specific SARs (e.g. ASE_TSS.1, 
     ADV_FSP.1, AGD_OPE.1, and ATE_IND.1) – this is in addition to the CEM workunits 
@@ -461,36 +411,126 @@ The following sections list Common Criteria and technology terms used in this do
     In this case, the evaluator must ensure the developer’s tests are executing both 
     in the manner declared by the developer and as mandated by the EA. 
     The CEM workunits that are associated with the EAs specified in this section 
-    are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.</p><h2 class="indexable" data-level="1" id="man-sfrs">2.1 TOE SFR Evaluation Activities</h2>The PP-Module does not define any mandatory requirements 
-          (i.e. Requirements that are included in every configuration regardless of the PP-Bases selected).<h2 class="indexable" data-level="1" id="opt-sfrs">2.2 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.3 Evaluation Activities for Selection-Based SFRs</h2>The PP-Module does not define any selection-based requirements.<h2 class="indexable" data-level="1" id="obj-sfrs">2.4 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.5 Evaluation Activities for Implementation-dependent SFRs</h2>The PP-Module does not define any implementation-dependent requirements.<h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
+    are: ATE_IND.1-3, ATE_IND.1-4, ATE_IND.1-5, ATE_IND.1-6, and ATE_IND.1-7.</p><h2 class="indexable" data-level="1" id="aa-AppPP">2.1 Application Software</h2>
+      The EAs defined in this section are only applicable in cases where the TOE claims conformance
+      to a PP-Configuration that includes the App PP.
+     <h3 class="indexable" data-level="2" id="qq-sfrs-AppPP-Modified">2.1.1 Modified SFRs
+        </h3>
+	  The PP-Module does not modify any requirements when the 
+	  App PP is the base.
+	<h2 class="indexable" data-level="1" id="man-sfrs">2.2 TOE SFR Evaluation Activities</h2><h2 class="indexable" data-level="2" id="fau">2.2.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_ALT_EXT.1 Server Alerts</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_ALT_EXT.1</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FAU_CRP_EXT.2 Generation of Compliance Reports</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_CRP_EXT.2</div>
+             
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FAU_GEN.1 Audit Data Generation</h4><span class="activity_pane_body"><div class="element-activity-header">FAU_GEN.1.1</div>
+         
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+            <div class="element-activity-header">FAU_GEN.1.2</div>
+             
+			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
+            </span></div><div class="comp" id=""><h4>FAU_NET_EXT.1 Network Reachability Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_NET_EXT.1</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FAU_STG.1 Audit Data Storage Location</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG.1</div>
+             
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="2" id="man-fia">2.2.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_UAU.1 Timing of Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UAU.1</div>              
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="2" id="man-fmt">2.2.3 Management of the TSF (FMT)</h2><div class="comp" id=""><h4>FMT_MOF.1/FUNCBE Management of Security Functions Behavior</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_MOF.1/FUNCBE</div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/External</div>
+          
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FMT_SMF.1/Internal Specification of Management Functions (Server Configuration of Server)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/Internal</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FMT_SMR.1/SECMAN_ROLES Security Roles</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMR.1/SECMAN_ROLES</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="2" id="man-ftp">2.2.4 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_ITC.1/INTER_XFER_IT Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1/INTER_XFER_IT</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FTP_TRP.1 Trusted Path</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1</div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="1" id="opt-sfrs">2.3 Evaluation Activities for Optional SFRs</h2>The PP-Module does not define any optional requirements.<h2 class="indexable" data-level="1" id="sel-sfrs">2.4 Evaluation Activities for Selection-Based SFRs</h2><h2 class="indexable" data-level="2" id="sel-fau">2.4.1 Security Audit (FAU)</h2><div class="comp" id=""><h4>FAU_SAR.1 Audit Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_SAR.1</div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><div class="comp" id=""><h4>FAU_STG.2 Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG.2</div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+          </span></div><h2 class="indexable" data-level="2" id="impl-dep-ftp">2.4.2 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/Join</div>
+          
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.5 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.6 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="impl-dep-fco">2.6.1 Communications (FCO)</h2><div class="comp" id=""><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><span class="activity_pane_body"><div class="component-activity-header">FCO_CPC_EXT.1</div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </span></div><h2 class="indexable" data-level="2" id="impl-dep-fpt">2.6.2 Protection of the TSF (FPT)</h2><div class="comp" id=""><h4>FPT_ITT.1 Internal TOE TSF Data Transfer</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_ITT.1</div>
+            
+            
+            
+          <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the
+              methods and protocols used to protect distributed TOE components
+              are described. The evaluator shall also confirm that all protocols listed in the
+              TSS in support of TOE administration are
+              consistent with those specified in the requirement, and are included in the
+              requirements in the ST.<br/><br/>
+              If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the MDM server; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains
+              instructions for establishing the communication paths for each supported
+              method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPT_ITT.1:1</a>:
+      The evaluator shall ensure that communications using each specified (in the
+                  operational guidance) communication method is tested during the course of the
+                  evaluation, setting up the connections as described in the operational guidance
+                  and ensuring that communication is successful.</li>
+                <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPT_ITT.1:2</a>:
+      The evaluator shall ensure, for each method of communication, the channel
+                  data is not sent in plaintext.</li>
+              </ul></span> Further evaluation activities are associated with the specific protocols.
+            </div></div></span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><p>The PP-Module does not define any SARs beyond those defined within the
     
-	base-PP to which it must claim conformance.
+	base App PP to which it must claim conformance.
 	It is important to note that a TOE that is evaluated against the PP-Module is
-	inherently evaluated against the Base-PP as well.
-
-	The Base-PP includes a number of Evaluation Activities associated with both SFRs and SARs.
+	inherently evaluated against this Base-PP as well. 
+	The App PP 
+        includes a number of Evaluation Activities associated with both SFRs and SARs.
 	Additionally, the PP-Module includes a number of SFR-based Evaluation Activities 
 	that similarly refine the SARs of the Base-PPs.
-	The evaluation laboratory will evaluate the TOE against the chosen Base-PP
+	The evaluation laboratory will evaluate the TOE against the Base-PP
       
     and supplement that evaluation with the necessary SFRs that are taken from the PP-Module.
     </p><h1 id="sup-info" class="indexable" data-level="0">4 Required Supplementary Information</h1><p>This Supporting Document has no required supplementary information beyond the ST, operational
 guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appendix A -  References</h1><table><tr class="header"><th>Identifier</th><th>Title</th></tr>
-      <tr><td><span id="bibCEM"></span>[CEM]</td><td>
-          <a href="http://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
-            Evaluation Methodology for Information Technology Security - Evaluation Methodology</a>,
-          CCMB-2012-09-004, Version 3.1, Revision 4, September 2012. </td></tr>
+    <tr><td><span id="bibCC"> [CC] </span></td><td>Common Criteria for Information Technology Security Evaluation - <ul><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+                1: Introduction and General Model</a>, CCMB-2017-04-001, Version 3.1 Revision 5,
+              April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+                2: Security Functional Components</a>, CCMB-2017-04-002, Version 3.1 Revision 5,
+              April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+                3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
+              April 2017.</li></ul></td></tr>
+    <tr><td><span id="bibAppPP"></span>[AppPP]</td><td>
+        <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a>
+      </td></tr>
 
-      <tr><td><span id="bibCESG"></span>[CESG]</td><td>CESG - <a href="https://www.gov.uk/government/collections/end-user-devices-security-guidance"> End
-            User Devices Security and Configuration Guidance</a></td></tr>
-
-      <tr><td><span id="bibCSA"></span>[CSA]</td><td>
-          <a href="http://csrc.nist.gov/groups/SMA/ispab/documents/csa_87.txt">Computer Security Act
-            of 1987</a>, H.R. 145, June 11, 1987. </td></tr>
-
-      <tr><td><span id="bibOMB"></span>[OMB]</td><td>
-          <a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2006/m06-19.pdf">Reporting Incidents Involving Personally Identifiable Information and Incorporating the
-            Cost for Security in Agency Information Technology Investments</a>, OMB M-06-19, July
-          12, 2006. </td></tr>
-
+    
   </table></body></html>

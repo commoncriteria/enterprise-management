@@ -1,7 +1,7 @@
 * Warning: This document still has at least one comment.
-* Warning: Potentially illegal 'depends' element.
-          /Module[1]""/sec:Security_Requirements[1]""/sec:SFRs[1]""/section[1]""/f-component[2]""/f-element[1]""/title[1]"The TOE s"/provides[1]""/depends[1]""
-* Warning: Detected a deprecated tag. /Module[1]""/sec:Security_Requirements[1]""/sec:SFRs[1]""/section[1]""/f-component[1]""/f-element[1]""/title[1]"The TOE s"/selectables[2]""/selectable[4]"pho"/deprecated[1]""
-* Warning: Specifying a 'config' in a 'usecase' in a module requires a 'Use Case Templates' appendix
-      
-* Rules without a 'Validation Guidelines' appendix has been detected.
+* Error: Detected dangling id-reference to sel_all_ssh from attribute
+        on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
+ Failed to find a reference to fel-smf-man-agnt.
+ Failed to find a reference to fel-smf-man-agnt.
+* Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
