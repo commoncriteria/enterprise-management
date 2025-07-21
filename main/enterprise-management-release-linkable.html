@@ -629,7 +629,7 @@ function showTarget(id){
           }
     </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br><a href="#Comment-2-">Comment: Comment-2-</a><br><a href="#Comment-3-">Comment: Comment-3-</a><br><a href="#Comment-4-">Comment: Comment-4-</a><br><a href="#Comment-5-">Comment: Comment-5-</a><br><a href="#Comment-6-">Comment: Comment-6-</a><br><a href="#Comment-7-">Comment: Comment-7-</a><br><a href="#Comment-8-">Comment: Comment-8-</a><br><a href="#Comment-9-">Comment: Comment-9-</a><br><a href="#Comment-10-">Comment: Comment-10-</a><br><a href="#Comment-11-">Comment: Comment-11-</a><br><a href="#Comment-12-">Comment: Comment-12-</a><br><a href="#Comment-13-">Comment: Comment-13-</a><br><a href="#Comment-14-">Comment: Comment-14-</a><br><a href="#Comment-15-">Comment: Comment-15-</a><br><a href="#Comment-16-">Comment: Comment-16-</a><br><a href="#Comment-17-">Comment: Comment-17-</a><br><a href="#Comment-18-">Comment: Comment-18-</a><br><a href="#Comment-19-">Comment: Comment-19-</a><br><a href="#Comment-20-">Comment: Comment-20-</a><br><a href="#Comment-21-">Comment: Comment-21-</a><br><a href="#Comment-22-">Comment: Comment-22-</a><br><a href="#Comment-23-">Comment: Comment-23-</a><br><a href="#Comment-24-">Comment: Comment-24-</a><br><a href="#Comment-25-">Comment: Comment-25-</a><br><a href="#Comment-26-">Comment: Comment-26-</a><br></div><h1 class="title" style="page-break-before:auto;">PP-Module for Enterprise-Management</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"><br>
       Version: 2.0<br>2025-07-18<br><b>National Information Assurance Partnership</b><br></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>2.0</td><td>2025-07-18</td><td>Initial draft (version numbering chosen for alignment with the <abbr class="dyn-abbr"><a href="#abbr_ESM">ESM</a></abbr> family of modules)</td></tr>
-</table><h3>TDs Applied</h3><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-features" style="text-indent:10px">1.5<span>Implementation-Based Features</span></a><a href="#distributed" style="text-indent:20px">1.5.1<span>Distributed TOE</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#obj" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#req" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#toeboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-features" style="text-indent:10px">1.5<span>Implementation-Based Features</span></a><a href="#distributed" style="text-indent:20px">1.5.1<span>Distributed TOE</span></a><a href="#Conformance_Claims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#Organizational_Security_Policies" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#obj" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#req" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
     </span></a><a href="#modsfr-AppPP" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#sec-sel-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#man-fia" style="text-indent:20px">5.2.3<span>Identification and Authentication (FIA)</span></a><a href="#man-fmt" style="text-indent:20px">5.2.4<span>Management of the TSF (FMT)</span></a><a href="#man-ftp" style="text-indent:20px">5.2.5<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-AppPP" style="text-indent:10px">6.1<span>
@@ -858,7 +858,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 		    are acceptable forms of alerts<a id="period_98" href="#period_98">. </a><br><br>            
               The expectation of this requirement is that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has a mechanism to configure the heartbeat or reporting interval of systems or agents that are under its management<a id="period_99" href="#period_99">. </a>The inability of the system or agent to maintain this mechanism should be flagged by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> as anomalous behavior requiring further examination and potential corrective action<a id="period_100" href="#period_100">. </a>This necessarily includes a mechanism to identify the assets under management and when they are added or removed<a id="period_101" href="#period_101">. </a></span></div></div></div>
 			
-		</div>
+		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
 		
         <div class="comp" id="FAU_CRP_EXT.2"><h4>FAU_CRP_EXT.2 Generation of Compliance Reports</h4>
           
@@ -884,7 +888,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               compliance information about managed systems, whether that is obtained through querying the system itself or by interfacing with an agent running on the system for this purpose<a id="period_105" href="#period_105">. </a>
             </span></div></div></div>
         	
-		</div> 
+		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_CRP_EXT.2">FAU_CRP_EXT.2</a></div>
+             
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div> 
 	
         <div class="comp" id="FAU_GEN.1"><h4>FAU_GEN.1 Audit Data Generation</h4>          
 			<div class="element"><div class="reqid" id="FAU_GEN.1.1"><a href="#FAU_GEN.1.1" class="abbr">FAU_GEN.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-11-">ESR: auditing and compliance<br>
@@ -963,7 +971,13 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
        
             </span></div></div></div>
         
-		</div>
+		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="element-activity-header"><a href="#FAU_GEN.1.1">FAU_GEN.1.1</a></div>
+         
+			TODO: You need to explain the lack of EAs for this element!!!!<br><br>
+            <div class="element-activity-header"><a href="#FAU_GEN.1.2">FAU_GEN.1.2</a></div>
+             
+			TODO: You need to explain the lack of EAs for this element!!!!<br><br>
+            </div></div></div>
         
         
         <div class="comp" id="FAU_NET_EXT.1"><h4>FAU_NET_EXT.1 Network Reachability Review</h4>
@@ -979,7 +993,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note">Depending on whether the external entity is a system or a specific agent residing on the system, the network connectivity status may be registered with an ICMP ping or other generic mechanism, or through an <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> or other function that is specific to the agent or interface the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> interacts with to perform management functions<a id="period_136" href="#period_136">. </a></span></div></div></div>
           
-        </div> 
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_NET_EXT.1">FAU_NET_EXT.1</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div> 
         
         <div class="comp" id="FAU_STG.1"><h4>FAU_STG.1 Audit Data Storage Location</h4>
           <div class="element"><div class="reqid" id="FAU_STG.1.1"><a href="#FAU_STG.1.1" class="abbr">FAU_STG.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-13-">ESR: auditing and compliance<br>
@@ -1015,7 +1033,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             
             </span></div></div></div>
           
-        </div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_STG.1">FAU_STG.1</a></div>
+             
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
         
         
 		
@@ -1035,7 +1057,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               requirement (e.g., integration with enterprise directory services for single sign-on)<a id="period_153" href="#period_153">. </a>An application that is installed in the context of a particular <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> user such that the authentication context is inherited from logging in to the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform as that user is also an example of authentication being facilitated through invocation of platform-provided functionality<a id="period_154" href="#period_154">. </a><br><br>
             </span></div></div></div>
           
-        </div> 
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FIA_UAU.1">FIA_UAU.1</a></div>              
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div> 
         
       
       
@@ -1055,7 +1081,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               Role assignment in and of itself may not be sufficient to authorize a function; it may be the case that scoping rules also define the specific set of objects that the function may be performed against<a id="period_160" href="#period_160">. </a>Examples could include a user having the ability to reset only their own password while an administrator has the ability to reset any user's password, or two different users being able to perform the same Enterprise-Management functions against two groups of external entities<a id="period_161" href="#period_161">. </a>            </span></div></div></div>
           
           
-        </div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_MOF.1">FMT_MOF.1</a></div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
           
         <div class="comp" id="FMT_SMF.1/External"><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4>
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/External"><a href="#FMT_SMF.1.1/External" class="abbr">FMT_SMF.1.1/External</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-16-">ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<br>
@@ -1074,7 +1104,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note"> This requirement captures all the configuration functionality that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provides to interact with external entities, whether these entities are standalone systems, or purpose-built agents running on these systems<a id="period_169" href="#period_169">. </a></span></div></div></div>
         	
-		</div>
+		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/External">FMT_SMF.1/External</a></div>
+          
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
 		
         <div class="comp" id="FMT_SMF.1/Internal"><h4>FMT_SMF.1/Internal Specification of Management Functions (Server Configuration of Server)</h4>
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/Internal"><a href="#FMT_SMF.1.1/Internal" class="abbr">FMT_SMF.1.1/Internal</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-18-">ESR: Compliance
@@ -1089,7 +1123,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
     </span><span class="note"> This requirement addresses the management functions the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides to manage its own behavior (as opposed to managing the behavior of external entities)     
             </span></div></div></div>
         	
-		</div> 
+		<div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/Internal">FMT_SMF.1/Internal</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div> 
         
         
         <div class="comp" id="FMT_SMR.1"><h4>FMT_SMR.1 Security Roles</h4>
@@ -1101,7 +1139,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       Note:
     </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not require a fixed set of arbitrarily-named roles<a id="period_175" href="#period_175">. </a>The purpose of this requirement is for the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author to document how users are organized for the purpose of determining the authorizations they have to interact with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, as specified in <a href="#FMT_MOF.1">FMT_MOF.1</a><a id="period_176" href="#period_176">. </a>            </span></div></div></div>
           
-        </div>   
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMR.1">FMT_SMR.1</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>   
         
       
       
@@ -1178,7 +1220,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               the services for which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can initiate the communication with
               the authorized <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity<a id="period_198" href="#period_198">. </a></span></div></div></div>
           
-        </div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_ITC.1">FTP_ITC.1</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
         
         
         
@@ -1220,7 +1266,11 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               platform-provided services<a id="period_211" href="#period_211">. </a><br><br>
               If HTTPS is chosen, FCS_HTTPS_EXT.1 must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_212" href="#period_212">. </a>            </span></div></div></div>
           
-        </div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_TRP.1">FTP_TRP.1</a></div>
+              
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
         
         
       
@@ -1269,6 +1319,12 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
         
         
         
+               
+        
+      
+        
+        
+        
         <div class="comp" id="FCO_CPC_EXT.1"><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br><ul><li><b><i><a href="#distributed">Distributed TOE</a></i></b></li></ul></div>
           
           
@@ -1294,11 +1350,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
               
              Registration of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components may be accomplished either using the same trusted channel that subsequent communications occur on (<a href="#FPT_ITT.1">FPT_ITT.1</a>), a separate channel that exists for the purpose of facilitating this registration, i.e<a id="period_229" href="#period_229">. </a>a joining channel (<a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a>), or no channel<a id="period_230" href="#period_230">. </a>In the case of the latter, registration would be accomplished by independent administrative configuration of each component<a id="period_231" href="#period_231">. </a></span></div></div></div>
           
-        </div>       
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FCO_CPC_EXT.1">FCO_CPC_EXT.1</a></div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>       
         
       
       
       <h3 id="impl-dep-fpt" class="indexable" data-level="3">A.3.2 Protection of the TSF (FPT)</h3>
+      
+      
+      
       <div class="comp" id="FPT_ITT.1"><h4>FPT_ITT.1 Internal TOE TSF Data Transfer</h4><div class="statustag"><b><i>This component must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements any of the following features:</i></b><br><ul><li><b><i><a href="#distributed">Distributed TOE</a></i></b></li></ul></div>
         
         <div class="element"><div class="reqid" id="FPT_ITT.1.1"><a href="#FPT_ITT.1.1" class="abbr">FPT_ITT.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-26-">ESR: Resiliency<br>
@@ -1329,7 +1392,29 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             This requirement is claimed if "<a href="#FPT_ITT.1">FPT_ITT.1</a>/INTER_XFER" is selected in FTP_ITC_EXT.1<a id="period_240" href="#period_240">. </a>
           </span></div></div></div>
         
-      </div>
+      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FPT_ITT.1">FPT_ITT.1</a></div>
+            
+            
+            
+          <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the
+              methods and protocols used to protect distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components
+              are described<a id="period_241" href="#period_241">. </a>The evaluator shall also confirm that all protocols listed in the
+              <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administration are
+              consistent with those specified in the requirement, and are included in the
+              requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_242" href="#period_242">. </a><br><br>
+              If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity)<a id="period_243" href="#period_243">. </a></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains
+              instructions for establishing the communication paths for each supported
+              method<a id="period_244" href="#period_244">. </a></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+              <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPT_ITT.1:1</a>:
+      The evaluator shall ensure that communications using each specified (in the
+                  operational guidance) communication method is tested during the course of the
+                  evaluation, setting up the connections as described in the operational guidance
+                  and ensuring that communication is successful<a id="period_245" href="#period_245">. </a></li>
+                <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPT_ITT.1:2</a>:
+      The evaluator shall ensure, for each method of communication, the channel
+                  data is not sent in plaintext<a id="period_246" href="#period_246">. </a></li>
+              </ul></span> Further evaluation activities are associated with the specific protocols<a id="period_247" href="#period_247">. </a>            </div></div></div></div></div>
       
       
     
@@ -1340,77 +1425,89 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
       <h2 id="sel-fau" class="indexable" data-level="2">B.1 Security Audit (FAU)</h2>
         
         <div class="comp" id="FAU_SAR.1"><h4>FAU_SAR.1 Audit Review</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FAU_STG.1.1">FAU_STG.1.1</a><a id="period_241" href="#period_241">. </a>           </i></b></div>
+           <a href="#FAU_STG.1.1">FAU_STG.1.1</a><a id="period_248" href="#period_248">. </a>           </i></b></div>
           
           <div class="element"><div class="reqid" id="FAU_SAR.1.1"><a href="#FAU_SAR.1.1" class="abbr">FAU_SAR.1.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-22-">ESR: auditing and compliance<br>
               Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br></span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_66"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_67"><b>implement functionality</b></span>] <b>to</b> provide [<i>authorized administrators</i>] with the
-              capability to read [<i>all audit information</i>] from the audit data<a id="period_242" href="#period_242">. </a></div></div>
+              capability to read [<i>all audit information</i>] from the audit data<a id="period_249" href="#period_249">. </a></div></div>
           
           <div class="element"><div class="reqid" id="FAU_SAR.1.2"><a href="#FAU_SAR.1.2" class="abbr">FAU_SAR.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_68"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_69"><b>implement functionality</b></span>] <b>to</b> provide the audit data in a manner suitable for the
-              <b>authorized administrators</b> to interpret the information<a id="period_243" href="#period_243">. </a><div class="appnote"><span class="note-header">Application
+              <b>authorized administrators</b> to interpret the information<a id="period_250" href="#period_250">. </a><div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">The intent of this requirement is to ensure that the
               administrator can view and interpret the audit data and to
-              prevent unauthorized users from accessing the logs<a id="period_244" href="#period_244">. </a></span></div></div></div>
+              prevent unauthorized users from accessing the logs<a id="period_251" href="#period_251">. </a></span></div></div></div>
           
-        </div> 
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_SAR.1">FAU_SAR.1</a></div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div> 
         
         
       <div class="comp" id="FAU_STG.2"><h4>FAU_STG.2 Audit Event Storage</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FAU_STG.1.1">FAU_STG.1.1</a><a id="period_245" href="#period_245">. </a>           </i></b></div>
+           <a href="#FAU_STG.1.1">FAU_STG.1.1</a><a id="period_252" href="#period_252">. </a>           </i></b></div>
         
         
         <div class="element"><div class="reqid" id="FAU_STG.2.1"><a href="#FAU_STG.2.1" class="abbr">FAU_STG.2.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-23-">ESR: auditing and compliance<br>
             Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br></span>
             The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_70"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_71"><b>implement functionality</b></span>] to protect the stored audit data in the audit trail from unauthorized
-            <b>modification</b><a id="period_246" href="#period_246">. </a><div class="appnote"><span class="note-header">Application
+            <b>modification</b><a id="period_253" href="#period_253">. </a><div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">If "store audit data locally" is selected in <a href="#FAU_STG.1.1">FAU_STG.1.1</a>, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_247" href="#period_247">. </a><br><br> 
-            The purpose of this requirement is to ensure that audit data are stored securely<a id="period_248" href="#period_248">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author
+    </span><span class="note">If "store audit data locally" is selected in <a href="#FAU_STG.1.1">FAU_STG.1.1</a>, this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> must be included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_254" href="#period_254">. </a><br><br> 
+            The purpose of this requirement is to ensure that audit data are stored securely<a id="period_255" href="#period_255">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author
             is responsible for selecting whether audit data 
-            are maintained when audit storage or failure occurs<a id="period_249" href="#period_249">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must choose a means by which
+            are maintained when audit storage or failure occurs<a id="period_256" href="#period_256">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must choose a means by which
             audit data are saved and select the events during which
-            the data will be saved<a id="period_250" href="#period_250">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may rely on the underlying operating system for this functionality, and the first selection should be made
-            appropriately<a id="period_251" href="#period_251">. </a>
+            the data will be saved<a id="period_257" href="#period_257">. </a>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> may rely on the underlying operating system for this functionality, and the first selection should be made
+            appropriately<a id="period_258" href="#period_258">. </a>
           </span></div></div></div>
         <div class="element"><div class="reqid" id="FAU_STG.2.2"><a href="#FAU_STG.2.2" class="abbr">FAU_STG.2.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be able to [<b>selection</b><b>, choose one of</b>: <span class="selectable-content" id="_s_72">prevent</span>, <span class="selectable-content" id="_s_73">detect</span>]
-            unauthorized modifications to the stored audit data in the audit trail<a id="period_252" href="#period_252">. </a></div></div>
+            unauthorized modifications to the stored audit data in the audit trail<a id="period_259" href="#period_259">. </a></div></div>
         
-      </div>
+      <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FAU_STG.2">FAU_STG.2</a></div>
+            
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+          </div></div></div>
       
       
       
       <h2 id="impl-dep-ftp" class="indexable" data-level="2">B.2 Trusted Path/Channels (FTP)</h2>
         
         <div class="comp" id="FTP_TRP.1/Join"><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><div class="statustag"><b><i>The inclusion of this selection-based component depends upon selection in
-           <a href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a><a id="period_253" href="#period_253">. </a>           </i></b></div>
+           <a href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a><a id="period_260" href="#period_260">. </a>           </i></b></div>
           
           <div class="element"><div class="reqid" id="FTP_TRP.1.1/Join"><a href="#FTP_TRP.1.1/Join" class="abbr">FTP_TRP.1.1/Join</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-24-">ESR: Resiliency<br>
               Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br></span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_74"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_75"><b>implement functionality</b></span>] <b>to</b> provide a communication path between itself and <b>a joining
               component</b> that is logically distinct from other communication paths and provides assured identification of [<b>selection</b>: <span class="selectable-content" id="_s_76"><b>the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> endpoint</b></span>, <span class="selectable-content" id="_s_77"><b>both joining component and <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> endpoint</b></span>] and protection of the communicated data from
-              [<i>modification</i>] <b>and</b> [<b>selection</b>: <span class="selectable-content" id="_s_78">disclosure</span>, <span class="selectable-content" id="_s_79"><b>none</b></span>]<a id="period_254" href="#period_254">. </a></div></div>
+              [<i>modification</i>] <b>and</b> [<b>selection</b>: <span class="selectable-content" id="_s_78">disclosure</span>, <span class="selectable-content" id="_s_79"><b>none</b></span>]<a id="period_261" href="#period_261">. </a></div></div>
           
-          <div class="element"><div class="reqid" id="FTP_TRP.1.2/Join"><a href="#FTP_TRP.1.2/Join" class="abbr">FTP_TRP.1.2/Join</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_80"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_81"><b>implement functionality</b></span>] <b>to</b> permit [<b>selection</b>: <span class="selectable-content" id="_s_82">the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_83"><b>the joining component</b></span>] to initiate communication via the trusted path<a id="period_255" href="#period_255">. </a></div></div>
+          <div class="element"><div class="reqid" id="FTP_TRP.1.2/Join"><a href="#FTP_TRP.1.2/Join" class="abbr">FTP_TRP.1.2/Join</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_80"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_81"><b>implement functionality</b></span>] <b>to</b> permit [<b>selection</b>: <span class="selectable-content" id="_s_82">the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr></span>, <span class="selectable-content" id="_s_83"><b>the joining component</b></span>] to initiate communication via the trusted path<a id="period_262" href="#period_262">. </a></div></div>
           
           <div class="element"><div class="reqid" id="FTP_TRP.1.3/Join"><a href="#FTP_TRP.1.3/Join" class="abbr">FTP_TRP.1.3/Join</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_84"><b>invoke platform-provided functionality</b></span>, <span class="selectable-content" id="_s_85"><b>implement functionality</b></span>] <b>to</b> require the use of the trusted path for [<i>joining components
               to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> under environmental constraints identified in [<b>assignment</b>: 
-     <span class="assignable-content">reference to operational guidance</span>]]</i><a id="period_256" href="#period_256">. </a><div class="appnote"><span class="note-header">Application
+     <span class="assignable-content">reference to operational guidance</span>]]</i><a id="period_263" href="#period_263">. </a><div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> implements one of the types of channel identified in the main selection for <a href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a><a id="period_257" href="#period_257">. </a>The "joining component" in <a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a> is the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity that is attempting to join the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> by using the registration process<a id="period_258" href="#period_258">. </a><br><br>            
-              The effect of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is to require the ability for components to communicate in a secure manner while the distributed <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is being created (or when adding components to an existing distributed <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>)<a id="period_259" href="#period_259">. </a>When creating the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> from the initial pair of components, either of these components may be identified as the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for the purposes of satisfying the meaning of "<abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>" in this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_260" href="#period_260">. </a><br><br>
-              The selection at the end of <a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a> recognises that in some cases confidentiality (i.e., protection of the data from disclosure) may not be provided by the channel<a id="period_261" href="#period_261">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author distinguishes in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> whether in this case the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> relies on the environment to provide confidentiality (as part of the constraints referenced in <a href="#FTP_TRP.1.3/Join">FTP_TRP.1.3/Join</a>) or whether the registration data exchanged does not require confidentiality (in which case this assertion must be justified)<a id="period_262" href="#period_262">. </a>If "none" is selected, then this word may be omitted in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> to improve readability<a id="period_263" href="#period_263">. </a><br><br>             
-              The assignment in <a href="#FTP_TRP.1.3/Join">FTP_TRP.1.3/Join</a> ensures that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> highlights any specific details needed to protect the registration environment<a id="period_264" href="#period_264">. </a>Note that when the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> uses <a href="#FTP_TRP.1">FTP_TRP.1</a>/TRUSTPATH_JOIN for the registration channel then this channel cannot be reused as the normal inter-component communication channel defined in <a href="#FPT_ITT.1">FPT_ITT.1</a><a id="period_265" href="#period_265">. </a><br><br>
+    </span><span class="note">This <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> implements one of the types of channel identified in the main selection for <a href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a><a id="period_264" href="#period_264">. </a>The "joining component" in <a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a> is the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity that is attempting to join the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> by using the registration process<a id="period_265" href="#period_265">. </a><br><br>            
+              The effect of this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is to require the ability for components to communicate in a secure manner while the distributed <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is being created (or when adding components to an existing distributed <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>)<a id="period_266" href="#period_266">. </a>When creating the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> from the initial pair of components, either of these components may be identified as the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> for the purposes of satisfying the meaning of "<abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>" in this <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr><a id="period_267" href="#period_267">. </a><br><br>
+              The selection at the end of <a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a> recognises that in some cases confidentiality (i.e., protection of the data from disclosure) may not be provided by the channel<a id="period_268" href="#period_268">. </a>The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author distinguishes in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> whether in this case the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> relies on the environment to provide confidentiality (as part of the constraints referenced in <a href="#FTP_TRP.1.3/Join">FTP_TRP.1.3/Join</a>) or whether the registration data exchanged does not require confidentiality (in which case this assertion must be justified)<a id="period_269" href="#period_269">. </a>If "none" is selected, then this word may be omitted in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> to improve readability<a id="period_270" href="#period_270">. </a><br><br>             
+              The assignment in <a href="#FTP_TRP.1.3/Join">FTP_TRP.1.3/Join</a> ensures that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> highlights any specific details needed to protect the registration environment<a id="period_271" href="#period_271">. </a>Note that when the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> uses <a href="#FTP_TRP.1">FTP_TRP.1</a>/TRUSTPATH_JOIN for the registration channel then this channel cannot be reused as the normal inter-component communication channel defined in <a href="#FPT_ITT.1">FPT_ITT.1</a><a id="period_272" href="#period_272">. </a><br><br>
               
             </span></div></div></div>
           
-        </div>
+        <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a></div>
+          
+		TODO: You need to explain the lack of EAs for this component!!!!
+	
+            </div></div></div>
         
       
       
     <h1 id="ext-comp-defs" class="indexable" data-level="A">Appendix C -  Extended Component Definitions</h1>
-	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_266" href="#period_266">. </a>
+	This appendix contains the definitions for all extended requirements specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr><a id="period_273" href="#period_273">. </a>
     <h2 id="ext-comp-defs-bg" class="indexable" data-level="2">C.1 Extended Components Table</h2>
 
 	All extended components specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> are listed in this table:
@@ -1419,37 +1516,37 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 	 FCO class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FCO_CPC_EXT" class="indexable" data-level="4">C.2.1.1 FCO_CPC_EXT Component Registration Channel Definition</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family describes the registration process, including the capability for
             the administrator to enable or disable communications between a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and other
-            components of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_267" href="#period_267">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCO_CPC_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCO_CPC_EXT.1">FCO_CPC_EXT.1</a>,
+            components of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_274" href="#period_274">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCO_CPC_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCO_CPC_EXT.1">FCO_CPC_EXT.1</a>,
              Component Registration Channel Definition,
-             defines requirements for the registration process for distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr><a id="period_268" href="#period_268">. </a></p><h4>Management: FCO_CPC_EXT.1</h4><p>There are no management activities foreseen<a id="period_269" href="#period_269">. </a></p><h4>Audit: FCO_CPC_EXT.1</h4><p>The following actions should be auditable if FAU_GEN security audit data generation
-            is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_270" href="#period_270">. </a>            <ul>
-              <li>Enabling or disabling communications between a pair of components<a id="period_271" href="#period_271">. </a></li>
-              <li>Identities of the endpoint's pairs enabled or disabled<a id="period_272" href="#period_272">. </a></li>
+             defines requirements for the registration process for distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr><a id="period_275" href="#period_275">. </a></p><h4>Management: FCO_CPC_EXT.1</h4><p>There are no management activities foreseen<a id="period_276" href="#period_276">. </a></p><h4>Audit: FCO_CPC_EXT.1</h4><p>The following actions should be auditable if FAU_GEN security audit data generation
+            is included in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_277" href="#period_277">. </a>            <ul>
+              <li>Enabling or disabling communications between a pair of components<a id="period_278" href="#period_278">. </a></li>
+              <li>Identities of the endpoint's pairs enabled or disabled<a id="period_279" href="#period_279">. </a></li>
             </ul>
-          </p><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_273" href="#period_273">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
+          </p><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_280" href="#period_280">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>
             <span class="no-link">FPT_ITT.1</span> <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> Data Transfer<br>
             <span class="no-link">FTP_TRP.1</span> Trusted Path
           </td></tr></table><h4 id="ext-comp-FCO_CPC_EXT.1.1">FCO_CPC_EXT.1.1</h4><span style="" class="comment " id="Comment-25-">ESR: Resiliency<br>
                 Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br></span>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_86">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_87">implement functionality</span>] to require an Administrator to enable communications between any pair of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components before such communication can take place<a id="period_274" href="#period_274">. </a>            <h4 id="ext-comp-FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_88">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_89">implement functionality</span>] to implement a registration process in which components establish and use a communications channel that uses
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_86">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_87">implement functionality</span>] to require an Administrator to enable communications between any pair of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components before such communication can take place<a id="period_281" href="#period_281">. </a>            <h4 id="ext-comp-FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_88">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_89">implement functionality</span>] to implement a registration process in which components establish and use a communications channel that uses
               [<b>selection</b>: <span class="selectable-content" id="_s_90">A channel that meets the secure channel requirements in <a href="#FPT_ITT.1">FPT_ITT.1</a>
                 </span>, <span class="selectable-content" id="joiningchannel">A channel that meets the secure registration channel requirements in <a href="#FTP_TRP.1/Join">FTP_TRP.1/Join</a></span>, <span class="selectable-content" id="_s_92">No channel</span>]
-              for at least <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data<a id="period_275" href="#period_275">. </a>            <h4 id="ext-comp-FCO_CPC_EXT.1.3">FCO_CPC_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_93">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_94">implement functionality</span>] to enable an administrator to disable communications between any pair of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components<a id="period_276" href="#period_276">. </a></div></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">C.2.2 Security Audit (FAU)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
+              for at least <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data<a id="period_282" href="#period_282">. </a>            <h4 id="ext-comp-FCO_CPC_EXT.1.3">FCO_CPC_EXT.1.3</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_93">invoke platform-provided functionality</span>, <span class="selectable-content" id="_s_94">implement functionality</span>] to enable an administrator to disable communications between any pair of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components<a id="period_283" href="#period_283">. </a></div></div></span><span data-sortkey="Security Audit (FAU)"><h3 id="ext-comp-FAU" class="indexable" data-level="3">C.2.2 Security Audit (FAU)</h3>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines the following extended components as part of the
 	 FAU class originally defined by <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2:
 	<h3 id="ext-comp-FAU_ALT_EXT" class="indexable" data-level="4">C.2.2.1 FAU_ALT_EXT Server Alerts</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to alert administrators when a set of
-		      specified events occurs<a id="period_277" href="#period_277">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_ALT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a>,
+		      specified events occurs<a id="period_284" href="#period_284">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_ALT_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a>,
              Server Alerts,
-             defines requirements for alerting the administrator to events<a id="period_278" href="#period_278">. </a></p><h4>Management: FAU_ALT_EXT.1</h4><p>The following actions could be considered for the management functions in FMT<a id="period_279" href="#period_279">. </a>          <ul>
-            <li>Install policies<a id="period_280" href="#period_280">. </a></li>
+             defines requirements for alerting the administrator to events<a id="period_285" href="#period_285">. </a></p><h4>Management: FAU_ALT_EXT.1</h4><p>The following actions could be considered for the management functions in FMT<a id="period_286" href="#period_286">. </a>          <ul>
+            <li>Install policies<a id="period_287" href="#period_287">. </a></li>
           </ul>
           </p><h4>Audit: FAU_ALT_EXT.1</h4><p>The following actions should be auditable if FAU_GEN security audit data generation
-          is include in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_281" href="#period_281">. </a>          <ul>
-            <li>Type of alert<a id="period_282" href="#period_282">. </a></li>
-            <li>Identity of external entity that sent alert<a id="period_283" href="#period_283">. </a></li>
+          is include in the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> or <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_288" href="#period_288">. </a>          <ul>
+            <li>Type of alert<a id="period_289" href="#period_289">. </a></li>
+            <li>Identity of external entity that sent alert<a id="period_290" href="#period_290">. </a></li>
           </ul>
-          </p><h4>FAU_ALT_EXT.1 Server Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_284" href="#period_284">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_285" href="#period_285">. </a></td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.1.1">FAU_ALT_EXT.1.1</h4><span style="" class="comment " id="Comment-8-">ESR: configuration of EM system, auditing and compliance<br>
+          </p><h4>FAU_ALT_EXT.1 Server Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_291" href="#period_291">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_292" href="#period_292">. </a></td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.1.1">FAU_ALT_EXT.1.1</h4><span style="" class="comment " id="Comment-8-">ESR: configuration of EM system, auditing and compliance<br>
             Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br>
-              <br>Note that the specific events that trigger an alert may need to be updated depending on the intended minimum functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_286" href="#period_286">. </a><br></span>
+              <br>Note that the specific events that trigger an alert may need to be updated depending on the intended minimum functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_293" href="#period_293">. </a><br></span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall alert the administrators in the event of any of the following:
               <ul>
                 <li>Change in management status (i.e., adding system or agent to management, removing system or agent from management)</li>
@@ -1457,38 +1554,38 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
                 <li>[<b>selection</b>: <span class="selectable-content" id="_s_1">[<b>assignment</b>: 
      <span class="assignable-content">other events</span>]</span>, <span class="selectable-content" id="_s_2">no other events</span>]</li>
               </ul>
-            </div></div><h3 id="ext-comp-FAU_CRP_EXT" class="indexable" data-level="4">C.2.2.2 FAU_CRP_EXT Support for Compliance Reporting Configuration</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate compliance reports of the configuration of external entities<a id="period_287" href="#period_287">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_CRP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_CRP_EXT.2">FAU_CRP_EXT.2</a>,
+            </div></div><h3 id="ext-comp-FAU_CRP_EXT" class="indexable" data-level="4">C.2.2.2 FAU_CRP_EXT Support for Compliance Reporting Configuration</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to generate compliance reports of the configuration of external entities<a id="period_294" href="#period_294">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_CRP_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">2</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_CRP_EXT.2">FAU_CRP_EXT.2</a>,
              Generation of Compliance Reports,
-             defines requirements for the contents and presentation of compliance reports<a id="period_288" href="#period_288">. </a></p><h4>Management: FAU_CRP_EXT.2</h4><p>No specific management functions are identified<a id="period_289" href="#period_289">. </a></p><h4>Audit: FAU_CRP_EXT.2</h4><p>There are no auditable events foreseen<a id="period_290" href="#period_290">. </a></p><h4>FAU_CRP_EXT.2 Generation of Compliance Reports</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_291" href="#period_291">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FTP_ITC.1</span> Inter-TSF Trusted Channel</td></tr></table><h4 id="ext-comp-FAU_CRP_EXT.2.1">FAU_CRP_EXT.2.1</h4><span style="" class="comment " id="Comment-9-">ESR: auditing and compliance<br>
+             defines requirements for the contents and presentation of compliance reports<a id="period_295" href="#period_295">. </a></p><h4>Management: FAU_CRP_EXT.2</h4><p>No specific management functions are identified<a id="period_296" href="#period_296">. </a></p><h4>Audit: FAU_CRP_EXT.2</h4><p>There are no auditable events foreseen<a id="period_297" href="#period_297">. </a></p><h4>FAU_CRP_EXT.2 Generation of Compliance Reports</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_298" href="#period_298">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FTP_ITC.1</span> Inter-TSF Trusted Channel</td></tr></table><h4 id="ext-comp-FAU_CRP_EXT.2.1">FAU_CRP_EXT.2.1</h4><span style="" class="comment " id="Comment-9-">ESR: auditing and compliance<br>
                 Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br>
-                <br>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e<a id="period_292" href="#period_292">. </a>is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage)<a id="period_293" href="#period_293">. </a><br></span>
+                <br>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e<a id="period_299" href="#period_299">. </a>is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage)<a id="period_300" href="#period_300">. </a><br></span>
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to generate compliance reports reports of the configuration status of managed
               [<b>selection</b>: <span class="selectable-content" id="_s_3">systems</span>, <span class="selectable-content" id="_s_4">agents</span>] based on the following configuration attributes:
-              channel that meets the secure channel requirements in <a href="#FTP_ITC.1">FTP_ITC.1</a><a id="period_294" href="#period_294">. </a>The provided information for each enrolled mobile device includes:
+              channel that meets the secure channel requirements in <a href="#FTP_ITC.1">FTP_ITC.1</a><a id="period_301" href="#period_301">. </a>The provided information for each enrolled mobile device includes:
               <ul>
               <li><span style="" class="comment " id="Comment-10-">TBD</span></li>
               <li>List of configuration policies that are in place on the device (as defined in 
                 <a href="#fel-smf-man-agnt" class="dynref" data-format=""></a>)</li>
             </ul>
             </div></div><h3 id="ext-comp-FAU_NET_EXT" class="indexable" data-level="4">C.2.2.3 FAU_NET_EXT Network Reachability Review</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for administrators to see network
-	         connectivity status of external entities managed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_295" href="#period_295">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_NET_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_NET_EXT.1">FAU_NET_EXT.1</a>,
+	         connectivity status of external entities managed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_302" href="#period_302">. </a></div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FAU_NET_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FAU_NET_EXT.1">FAU_NET_EXT.1</a>,
              Network Reachability Review,
              defines requirements for authorized administrators to read network connectivity
-            status<a id="period_296" href="#period_296">. </a></p><h4>Management: FAU_NET_EXT.1</h4><p>The following actions could be considered for the management functions in FMT<a id="period_297" href="#period_297">. </a>            <ul>
-              <li>Query connectivity status<a id="period_298" href="#period_298">. </a></li>              
-            </ul></p><h4>Audit: FAU_NET_EXT.1</h4><p>There are no auditable events foreseen<a id="period_299" href="#period_299">. </a></p><h4>FAU_NET_EXT.1 Network Reachability Review</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_300" href="#period_300">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_301" href="#period_301">. </a></td></tr></table><h4 id="ext-comp-FAU_NET_EXT.1.1">FAU_NET_EXT.1.1</h4><span style="" class="comment " id="Comment-12-">ESR: configuration of EM system, auditing and compliance<br>
+            status<a id="period_303" href="#period_303">. </a></p><h4>Management: FAU_NET_EXT.1</h4><p>The following actions could be considered for the management functions in FMT<a id="period_304" href="#period_304">. </a>            <ul>
+              <li>Query connectivity status<a id="period_305" href="#period_305">. </a></li>              
+            </ul></p><h4>Audit: FAU_NET_EXT.1</h4><p>There are no auditable events foreseen<a id="period_306" href="#period_306">. </a></p><h4>FAU_NET_EXT.1 Network Reachability Review</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_307" href="#period_307">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_308" href="#period_308">. </a></td></tr></table><h4 id="ext-comp-FAU_NET_EXT.1.1">FAU_NET_EXT.1.1</h4><span style="" class="comment " id="Comment-12-">ESR: configuration of EM system, auditing and compliance<br>
               Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br></span>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide authorized administrators with the capability to read the network connectivity status of an external entity<a id="period_302" href="#period_302">. </a></div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Inherently Satisfied Requirements</h1> This
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide authorized administrators with the capability to read the network connectivity status of an external entity<a id="period_309" href="#period_309">. </a></div></div></span></span><h1 id="satisfiedreqs" class="indexable" data-level="A">Appendix D -  Inherently Satisfied Requirements</h1> This
 	appendix lists requirements that should be considered satisfied by products
-	successfully evaluated against this Protection Profile<a id="period_303" href="#period_303">. </a> 
+	successfully evaluated against this Protection Profile<a id="period_310" href="#period_310">. </a> 
 	However, these requirements are not featured explicitly as <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and should not be
-	included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_304" href="#period_304">. </a> 
+	included in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_311" href="#period_311">. </a> 
 	They are not included as standalone <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> because it would
-	increase the time, cost, and complexity of evaluation<a id="period_305" href="#period_305">. </a> This approach is permitted
-	by <a href="#bibCC">[CC]</a> Part 1, <b>8.2 Dependencies between components</b><a id="period_306" href="#period_306">. </a>    <br>
+	increase the time, cost, and complexity of evaluation<a id="period_312" href="#period_312">. </a> This approach is permitted
+	by <a href="#bibCC">[CC]</a> Part 1, <b>8.2 Dependencies between components</b><a id="period_313" href="#period_313">. </a>    <br>
 	This information benefits systems engineering activities which call for inclusion of 
-	particular security controls<a id="period_307" href="#period_307">. </a> Evaluation against the Protection Profile
-	provides evidence that these controls are present and have been evaluated<a id="period_308" href="#period_308">. </a>
+	particular security controls<a id="period_314" href="#period_314">. </a> Evaluation against the Protection Profile
+	provides evidence that these controls are present and have been evaluated<a id="period_315" href="#period_315">. </a>
 
   <h1 id="acronyms" class="indexable" data-level="A">Appendix E -  Acronyms</h1><table><caption><span class="ctr" data-myid="t-acronyms" data-counter-type="ct-Table" id="t-acronyms">Table <span class="counter">7</span></span>: Acronyms
 		</caption><tr class="header"><th>Acronym</th><th>Meaning</th></tr><tr><td><span class="term" id="abbr_API"><abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr></span></td><td><span id="long_abbr_API">Application Programming Interface</span></td></tr>
@@ -1523,18 +1620,18 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
 <tr><td><span class="term" id="abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></span></td><td><span id="long_abbr_TSS"><abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> Summary Specification</span></td></tr>
 </table><h1 id="appendix-bibliography" class="indexable" data-level="A">Appendix F -  Bibliography</h1><table><caption><span class="ctr" data-myid="t-biblio" data-counter-type="ct-Table" id="t-biblio">Table <span class="counter">8</span></span>: Bibliography</caption><tr class="header"><th>Identifier</th><th>Title</th></tr><tr><td><span id="bibCC">[<abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>]</span></td><td><span class="description">Common Criteria for Information Technology Security Evaluation - <ul>
             <li><a href="https://www.commoncriteriaportal.org/files/ccfiles/CC2022PART1R1.pdf">Part 1: 
-				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_309" href="#period_309">. </a></li>
+				Introduction and general model</a>, CCMB-2022-11-001, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_316" href="#period_316">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART2R1.pdf">Part 2: 
-				Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_310" href="#period_310">. </a></li>
+				Security functional requirements</a>, CCMB-2022-11-002, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_317" href="#period_317">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART3R1.pdf">Part 3: 
-                Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_311" href="#period_311">. </a></li>
+                Security assurance requirements</a>, CCMB-2022-11-003, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_318" href="#period_318">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART4R1.pdf">Part 4: 
-                Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_312" href="#period_312">. </a></li>
+                Framework for the specification of evaluation methods and activities</a>, CCMB-2022-11-004, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_319" href="#period_319">. </a></li>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CC2022PART5R1.pdf">Part 5: 
-                 Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_313" href="#period_313">. </a></li>
+                 Pre-defined packages of security requirements</a>, CCMB-2022-11-005, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_320" href="#period_320">. </a></li>
           </ul></span></td></tr><tr><td><span id="bibCEM">[<abbr class="dyn-abbr"><a href="#abbr_CEM">CEM</a></abbr>]</span></td><td><span class="description">Common Methodology for Information Technology Security Evaluation - <ul>
             <li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CEM2022R1.pdf">
-                 Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_314" href="#period_314">. </a></li>
+                 Evaluation methodology</a>, CCMB-2022-11-006, <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr>:2022, Revision 1, November 2022<a id="period_321" href="#period_321">. </a></li>
           </ul></span></td></tr><tr><td><span id="bibAppPP">[AppPP]</span></td><td><span class="description">
         <a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software, Version 2.0, June 16, 2025</a>
       </span></td></tr></table></body></html>
