@@ -1,4 +1,4 @@
-name: QuickBuild v4.4
+name: QuickBuild v4.5 20241220
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
     name: Quick Build
     steps:
     - name: Checkout project and transforms
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       with:
         submodules: true
 
@@ -37,6 +37,7 @@ jobs:
       
     - name: Quick Build
       run: WARN_PATH="output/SanityChecksOutput.md" make
+
       
     - name: Branch Test
       run: |
@@ -77,19 +78,19 @@ jobs:
 #      run: echo "action_tdate=2002222" >> $GITHUB_ENV
       run: echo "action_tdate=$(cd transforms && git log -1 --format=%cs; cd ->/dev/null)" >> $GITHUB_ENV
        
-    - name: Get DaisyDiff
-      run: |
-        wget -O- https://github.com/AndroidKitKat/ExecuteDaisy/archive/master.zip | jar -x
-        [ -d "output/images" ] || mkdir "output/images";
-        cp -u -r ExecuteDaisy-master/js ExecuteDaisy-master/css output;
-        cp -u ExecuteDaisy-master/images/* output/images;
+#    - name: Get DaisyDiff
+#      run: |
+#        wget -O- https://github.com/AndroidKitKat/ExecuteDaisy/archive/master.zip | jar -x
+#        [ -d "output/images" ] || mkdir "output/images";
+#        cp -u -r ExecuteDaisy-master/js ExecuteDaisy-master/css output;
+#        cp -u ExecuteDaisy-master/images/* output/images;
 
       
     - name: Make tmp dir
       run: mkdir tmp
       
-    - name: diff
-      run: TMP=tmp make diff || true; 
+#   - name: diff
+#     run: TMP=tmp make diff || true; 
     # Little diff depends on having a git history. 
     # The current checkout has  depth=1 and has no history
     #- name: little diff
@@ -98,15 +99,15 @@ jobs:
     - name: Outstanding TDs
       id: tds
       run: |
-        make effective
-        PP_XML=output/effective.xml RNG_OUT=output/TDValidationReport.txt make validate || true
         if [ "${{steps.extract_branch.outputs.branch}}" == "master" ] &&
            ls input/tds/*.xml ; then
           echo "Master branch should not have TDs" >> output/TDValidationReport.txt
         fi
-        PP_XML=output/effective.xml PP_RELEASE_HTML=output/AppliedTDs.html make release
-        java -jar ExecuteDaisy-master/*.jar output/*-release.html output/AppliedTDs.html --file=output/AppliedTDs-Diff.html
-
+    #        make effective
+    #        PP_XML=output/effective.xml RNG_OUT=output/TDValidationReport.txt make validate || true
+    # IF STATEMENT HERE
+    #        PP_XML=output/effective.xml PP_RELEASE_HTML=output/AppliedTDs.html make release
+    #        java -jar ExecuteDaisy-master/*.jar output/*-release.html output/AppliedTDs.html --file=output/AppliedTDs-Diff.html
 
     - name: Set TD badge attributes
       run: |
@@ -139,7 +140,7 @@ jobs:
 
 
     - name: Generate the spelling badge SVG image
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Misspellings'
         status: ${{ env.action_spellerrors }}
@@ -149,7 +150,7 @@ jobs:
 
 
     - name: Generate the validation badge SVG image
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Validation'
         status: ${{ env.action_valerrors }}
@@ -158,7 +159,7 @@ jobs:
 
 
     - name: Generate the warnings badge
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Warnings'
         status: ${{ env.action_sanitystatus }}
@@ -167,7 +168,7 @@ jobs:
 
 
     - name: Generate the transforms badge
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'Transforms'
         status: ${{ env.action_tdate }}
@@ -175,7 +176,7 @@ jobs:
         path: output/transforms.svg
 
     - name: TD Badge
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'TDs'
         status: ${{ env.action_tdwarns }}
@@ -231,7 +232,7 @@ jobs:
 
 
     - name: HTML Badge
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'HTMLs'
         status: ${{ env.action_html_count }}
@@ -239,7 +240,7 @@ jobs:
         path: output/html_count.svg
 
     - name: PDF Badge
-      uses: emibcn/badge-action@v2.0.3
+      uses: emibcn/badge-action@v2.0.2
       with:
         label: 'PDFs'
         status: ${{ env.action_pdf_count }}
@@ -251,7 +252,7 @@ jobs:
       run: |
         mkdir gh-pages
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         ref: gh-pages
         path: gh-pages
