@@ -13,7 +13,6 @@ output/enterprise-management-release-linkable.html: SME
 output/enterprise-management-release-linkable.html: SPD
 output/enterprise-management-release-linkable.html: TBD
 output/enterprise-management-release-linkable.html: TODO
-output/enterprise-management-release-linkable.html: TOEis
 output/enterprise-management-release-linkable.html: auditability
 output/enterprise-management-release-linkable.html: failover
 output/enterprise-management-release-linkable.html: recognises
@@ -32,7 +31,6 @@ output/enterprise-management-release.html: Onboarding
 output/enterprise-management-release.html: SME
 output/enterprise-management-release.html: SPD
 output/enterprise-management-release.html: TBD
-output/enterprise-management-release.html: TOEis
 output/enterprise-management-release.html: auditability
 output/enterprise-management-release.html: failover
 output/enterprise-management-release.html: recognises
@@ -61,7 +59,6 @@ output/enterprise-management.html: SME
 output/enterprise-management.html: SPD
 output/enterprise-management.html: TBD
 output/enterprise-management.html: TODO
-output/enterprise-management.html: TOEis
 output/enterprise-management.html: auditability
 output/enterprise-management.html: failover
 output/enterprise-management.html: recognises

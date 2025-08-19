@@ -786,7 +786,7 @@ The following sections list Common Criteria and technology terms used in this do
 		selections made. 
 	</dd></dl>
   <h1 class="indexable" data-level="1" id="spd">3 Security Problem Definition</h1>The security problem is described in terms
-        of the threats that the TOEis expected to address, assumptions about the
+        of the threats that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to address, assumptions about the
         Operational Environment, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>
         is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
         
@@ -905,7 +905,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
           <div class="element"><div class="reqid" id="FAU_CRP_EXT.2.1"><a href="#FAU_CRP_EXT.2.1" class="abbr">FAU_CRP_EXT.2.1</a></div><div class="reqdesc"><span style="" class="comment " id="Comment-9-">ESR: auditing and compliance<br/>
                 Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br/>
                 <br/>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e. is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage).<br/></span>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to generate compliance reports reports of the configuration status of managed
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to generate compliance reports of the configuration status of managed
               [<b>selection</b>: <span class="selectable-content" id="_s_3">systems</span>, <span class="selectable-content" id="_s_4">agents</span>] based on the following configuration attributes:
               channel that meets the secure channel requirements in <a href="#FTP_ITC.1">FTP_ITC.1</a>. The provided information for each enrolled mobile device includes:
               <ul>
@@ -1087,7 +1087,8 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
             </ul> to [<b>assignment</b>: 
      <span class="assignable-content">authorized administrative roles for each function</span>].<div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note">This requirement defines the permissions necessary to execute or manage the behavior of functions used for both management of external entities (i.e. Enterprise-Management) as defined in <a href="#FMT_SMF.1/Internal">FMT_SMF.1/Internal</a> as well as the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author will define, for each claimed administrative function, any roles that are authorized to perform this function. Roles may be predefined by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, inherited from an organizational directory, or custom based on privileges assigned to a role that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has the ability to create.<br/><br/>
+    </span><span class="note">This requirement defines the permissions necessary to execute
+              or manage the behavior of functions used for both management of external entities (i.e., Enterprise-Management) as defined in <a href="#FMT_SMF.1/Internal">FMT_SMF.1/Internal</a> as well as the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> itself. The <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author will define, for each claimed administrative function, any roles that are authorized to perform this function. Roles may be predefined by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, inherited from an organizational directory, or custom based on privileges assigned to a role that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has the ability to create.<br/><br/>
               Role assignment in and of itself may not be sufficient to authorize a function; it may be the case that scoping rules also define the specific set of objects that the function may be performed against. Examples could include a user having the ability to reset only their own password while an administrator has the ability to reset any user's password, or two different users being able to perform the same Enterprise-Management functions against two groups of external entities.
             </span></div></div></div>
           
@@ -1521,7 +1522,7 @@ This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does 
              defines requirements for the contents and presentation of compliance reports.</p><h4>Management: FAU_CRP_EXT.2</h4><p>No specific management functions are identified.</p><h4>Audit: FAU_CRP_EXT.2</h4><p>There are no auditable events foreseen.</p><h4>FAU_CRP_EXT.2 Generation of Compliance Reports</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><span class="no-link">FTP_ITC.1</span> Inter-TSF Trusted Channel</td></tr></table><h4 id="ext-comp-FAU_CRP_EXT.2.1">FAU_CRP_EXT.2.1</h4><span style="" class="comment " id="Comment-9-">ESR: auditing and compliance<br/>
                 Adapted from MDM <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> requirement of the same name<br/>
                 <br/>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (i.e. is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage).<br/></span>
-              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to generate compliance reports reports of the configuration status of managed
+              The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide the ability to generate compliance reports of the configuration status of managed
               [<b>selection</b>: <span class="selectable-content" id="_s_3">systems</span>, <span class="selectable-content" id="_s_4">agents</span>] based on the following configuration attributes:
               channel that meets the secure channel requirements in <a href="#FTP_ITC.1">FTP_ITC.1</a>. The provided information for each enrolled mobile device includes:
               <ul>
