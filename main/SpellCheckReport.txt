@@ -2,10 +2,10 @@ output/enterprise-management-release-linkable.html: Adleman
 output/enterprise-management-release-linkable.html: CEM
 output/enterprise-management-release-linkable.html: DTLSC
 output/enterprise-management-release-linkable.html: DTLSS
+output/enterprise-management-release-linkable.html: ESM
 output/enterprise-management-release-linkable.html: FCS
 output/enterprise-management-release-linkable.html: ICMP
 output/enterprise-management-release-linkable.html: MDM
-output/enterprise-management-release-linkable.html: MDs
 output/enterprise-management-release-linkable.html: NTP
 output/enterprise-management-release-linkable.html: Offboarding
 output/enterprise-management-release-linkable.html: Onboarding
@@ -17,14 +17,15 @@ output/enterprise-management-release-linkable.html: auditability
 output/enterprise-management-release-linkable.html: failover
 output/enterprise-management-release-linkable.html: recognises
 output/enterprise-management-release-linkable.html: sel
+output/enterprise-management-release-linkable.html: specifed
 output/enterprise-management-release.html: Adleman
 output/enterprise-management-release.html: CEM
 output/enterprise-management-release.html: DTLSC
 output/enterprise-management-release.html: DTLSS
+output/enterprise-management-release.html: ESM
 output/enterprise-management-release.html: FCS
 output/enterprise-management-release.html: ICMP
 output/enterprise-management-release.html: MDM
-output/enterprise-management-release.html: MDs
 output/enterprise-management-release.html: NTP
 output/enterprise-management-release.html: Offboarding
 output/enterprise-management-release.html: Onboarding
@@ -35,8 +36,10 @@ output/enterprise-management-release.html: auditability
 output/enterprise-management-release.html: failover
 output/enterprise-management-release.html: recognises
 output/enterprise-management-release.html: sel
+output/enterprise-management-release.html: specifed
 output/enterprise-management-sd.html: AGD
 output/enterprise-management-sd.html: CEM
+output/enterprise-management-sd.html: ESM
 output/enterprise-management-sd.html: Offboarding
 output/enterprise-management-sd.html: Onboarding
 output/enterprise-management-sd.html: SPD
@@ -48,10 +51,10 @@ output/enterprise-management.html: Adleman
 output/enterprise-management.html: CEM
 output/enterprise-management.html: DTLSC
 output/enterprise-management.html: DTLSS
+output/enterprise-management.html: ESM
 output/enterprise-management.html: FCS
 output/enterprise-management.html: ICMP
 output/enterprise-management.html: MDM
-output/enterprise-management.html: MDs
 output/enterprise-management.html: NTP
 output/enterprise-management.html: Offboarding
 output/enterprise-management.html: Onboarding
@@ -63,3 +66,4 @@ output/enterprise-management.html: auditability
 output/enterprise-management.html: failover
 output/enterprise-management.html: recognises
 output/enterprise-management.html: sel
+output/enterprise-management.html: specifed
