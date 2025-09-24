@@ -401,7 +401,7 @@
               <selectables>
                 <selectable>systems</selectable>
                 <selectable>agents</selectable>
-              </selectables> based on the following configuration attributes:
+              </selectables> over a channel
               channel that meets the secure channel requirements in FTP_ITC.1. The provided information for each enrolled 
                 <selectables>
                   <selectable>systems</selectable>
@@ -468,7 +468,7 @@
 				events from <xref g="t-audit-optional"/>, <xref g="t-audit-sel-based"/>, and <xref g="t-audit-objective"/> in the
               ST for the requirements selected.<h:br/><h:br/>
               
-              <h:b>In item d above, "startup and shutdown of the audit functions" may refer to the independent startup and shutdown of audit functionality specifically, or it may refer to startup and shutdown of the TOE itself, if auditing cannot be disabled separately from the operation of the TOE. It is outside the scope of the TOE boundary to consider the need to audit the startup and shutdown of auditing functionality used by the TOE platform, as this would be an inherent function of the host operating system. </h:b><h:br/><h:br/>     
+              <h:p>In item d above, "startup and shutdown of the audit functions" may refer to the independent startup and shutdown of audit functionality specifically, or it may refer to startup and shutdown of the TOE itself, if auditing cannot be disabled separately from the operation of the TOE. It is outside the scope of the TOE boundary to consider the need to audit the startup and shutdown of auditing functionality used by the TOE platform, as this would be an inherent function of the host operating system. </h:p><h:br/><h:br/>     
 		    	The following table contains the events enumerated in the auditable events tables for the TLS Functional Package. Inclusion of these events
 		    	in the ST is subject to selection above, inclusion of the corresponding SFRs in the ST, and support in the FP as represented by a selection
 		    	in the FP audit table. This list is included here for reference.<h:br/><h:br/>
@@ -560,7 +560,7 @@
             <title><comment>ESR: auditing and compliance<h:br/>
               Adapted from MDM PP requirement of the same name<h:br/></comment>
               The TSF shall be able to store generated audit data on <selectables>
-                <selectable>the TOE itself</selectable>
+                <selectable id="locally">the TOE itself</selectable>
                 <selectable>an external IT entity using a trusted channel according to
                   FTP_ITC</selectable>
                 <selectable>local platform storage</selectable>
@@ -574,7 +574,7 @@
               Although the audit server is outside of the TOE, the TSF should still be able to support 
               mutual authentication. There are no requirements levied on the audit server, but the TOE should be 
               able to support TLS client certificate authentication. This way if the non-TOE audit server does 
-              support verifying client certs, the TSF is able to make use of that.<h:br/><h:br/>
+              support verifying client certs, the TSF is able to make use of that.
               </h:p>
               <h:p>
                 For distributed TOEs, each component must be able to export any audit data it generates across a
