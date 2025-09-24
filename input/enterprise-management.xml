@@ -326,7 +326,7 @@
     
     <man-sfrs>
       <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
-        <audit-table id="at-Man" table="mandatory"/>
+        <audit-table id="t-audit-mandatory" table="mandatory"/>
       </section>
       <section title="Security Audit (FAU)" id="fau">
 		
@@ -446,9 +446,10 @@
 						<h:li>Specifically defined auditable events listed in <xref g="t-audit-mandatory"/></h:li>                    
 					  <h:li><selectables linebreak="yes">
 					    <selectable>Startup and shutdown of the audit functions</selectable>
-              <selectable id="sel-at2"><refinement>Auditable events defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
-					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref g="t-audit-objective"/> for Objective SFRs</refinement></selectable>
-					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs</refinement></selectable>
+              <selectable id="sel-at2"><refinement>Auditable events defined in <xref to="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
+					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref to="t-audit-objective"/> for Objective SFRs</refinement></selectable>
+					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref to="t-audit-feat-based"/> for Selection-Based SFRs</refinement></selectable>
+					    <selectable id="sel-at5"><refinement>Auditable events defined in <xref to="t-audit-sel-based"/> for Selection-Based SFRs</refinement></selectable>
 					    <selectable id="sel-attls"><refinement>Auditable events defined in the audit table for the TLS Functional Package (see <xref to="atref-pkgs"/>)</refinement></selectable>
               <selectable>no other events</selectable>
 						</selectables>.</h:li>						
@@ -911,6 +912,10 @@
     <opt-sfrs></opt-sfrs>
     <sel-sfrs>
       
+      <section id="sec-sel-audit-table" title="Auditable Events for Selection-Based SFRs">
+        <audit-table id="t-audit-sel-based" table="sel-based"/>
+      </section>
+      
       <section id="sel-fau" title="Security Audit (FAU)">
         
         <f-component cc-id="fau_sar.1" name="Audit Review">
@@ -1038,7 +1043,12 @@
     <obj-sfrs></obj-sfrs>
     <impl-dep-sfrs>
       
+      <section id="sec-feat-audit-table" title="Auditable Events for Implementation-Dependent SFRs">
+        <audit-table id="t-audit-feat-based" table="sel-based"/>
+      </section>
+      
       <section id="impl-dep-fco" title="Communications (FCO)">
+            
         
         <ext-comp-def title="Component Registration Channel Definition" fam-id="FCO_CPC_EXT">
           <fam-behavior>This family describes the registration process, including the capability for
