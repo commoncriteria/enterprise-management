@@ -294,7 +294,7 @@
       Technical Community members, with representatives from industry, government 
       agencies, Common Criteria Test Laboratories, and members of academia.
       </p></div><h1>Table of Contents</h1><div id="toc"><a href="#introduction" style="text-indent:0px">1<span>Introduction</span></a><a href="#scope" style="text-indent:10px">1.1<span>Technology Area and Scope of Supporting Document</span></a><a href="#structure" style="text-indent:10px">1.2<span>Structure of the Document</span></a><a href="#glossary" style="text-indent:10px">1.3<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.3.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.3.2<span>Technical Terms</span></a><a href="#sfr" style="text-indent:0px">2<span>Evaluation Activities for SFRs</span></a><a href="#aa-AppPP" style="text-indent:10px">2.1<span>Application Software</span></a><a href="#qq-sfrs-AppPP-Modified" style="text-indent:20px">2.1.1<span>Modified SFRs
-        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#man-fia" style="text-indent:20px">2.2.2<span>Identification and Authentication (FIA)</span></a><a href="#man-fmt" style="text-indent:20px">2.2.3<span>Management of the TSF (FMT)</span></a><a href="#man-ftp" style="text-indent:20px">2.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#sel-fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#impl-dep-ftp" style="text-indent:20px">2.4.2<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#impl-dep-fco" style="text-indent:20px">2.6.1<span>Communications (FCO)</span></a><a href="#impl-dep-fpt" style="text-indent:20px">2.6.2<span>Protection of the TSF (FPT)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
+        </span></a><a href="#man-sfrs" style="text-indent:10px">2.2<span>TOE SFR Evaluation Activities</span></a><a href="#fau" style="text-indent:20px">2.2.1<span>Security Audit (FAU)</span></a><a href="#man-fia" style="text-indent:20px">2.2.2<span>Identification and Authentication (FIA)</span></a><a href="#man-fmt" style="text-indent:20px">2.2.3<span>Management of the TSF (FMT)</span></a><a href="#man-ftp" style="text-indent:20px">2.2.4<span>Trusted Path/Channels (FTP)</span></a><a href="#opt-sfrs" style="text-indent:10px">2.3<span>Evaluation Activities for Optional SFRs</span></a><a href="#sel-sfrs" style="text-indent:10px">2.4<span>Evaluation Activities for Selection-Based SFRs</span></a><a href="#sel-fau" style="text-indent:20px">2.4.1<span>Security Audit (FAU)</span></a><a href="#sel-fia" style="text-indent:20px">2.4.2<span>Identification and Authentication (FIA)</span></a><a href="#impl-dep-ftp" style="text-indent:20px">2.4.3<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-sfrs" style="text-indent:10px">2.5<span>Evaluation Activities for Objective SFRs</span></a><a href="#impl-sfrs-" style="text-indent:10px">2.6<span>Evaluation Activities for Implementation-dependent SFRs</span></a><a href="#impl-dep-fco" style="text-indent:20px">2.6.1<span>Communications (FCO)</span></a><a href="#impl-dep-fpt" style="text-indent:20px">2.6.2<span>Protection of the TSF (FPT)</span></a><a href="#sar_aas" style="text-indent:0px">3<span>Evaluation Activities for SARs</span></a><a href="#sup-info" style="text-indent:0px">4<span>Required Supplementary Information</span></a><a href="#biblio" style="text-indent:0px">Appendix A - <span>References</span></a></div><h1 id="introduction" class="indexable" data-level="0">1 Introduction</h1><h2 id="scope" class="indexable" data-level="1">1.1 Technology Area and Scope of Supporting Document</h2><p>The scope of the 
     PP-Module for Enterprise-Management is
     to describe the security functionality of 
     Enterprise-Management
@@ -476,7 +476,38 @@ The following sections list Common Criteria and technology terms used in this do
             
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-          </span></div><h2 class="indexable" data-level="2" id="impl-dep-ftp">2.4.2 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/Join</div>
+          </span></div><h2 class="indexable" data-level="2" id="sel-fia">2.4.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_UIA_EXT.1 User Identification and Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UIA_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall examine the TSS to determine that it describes the logon
+                process for remote authentication mechanism (e.g. SSH public key, Web GUI
+                password, etc.) and optional local authentication mechanisms supported by the
+                TOE. This description shall contain information pertaining to the credentials
+                allowed/used, any protocol transactions that take place, and what constitutes a
+                “successful logon”.
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall examine the guidance documentation to determine that
+                any necessary preparatory steps (e.g., establishing credential material such as
+                pre- shared keys, tunnels, certificates, etc.) to logging in are described. For each
+                supported the login method, the evaluator shall ensure the guidance
+                documentation provides clear instructions for successfully logging on.
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall perform the following test for each method by which administrators access the TOE, as well as 
+                for each type of credential supported by the login method:
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_UIA_EXT.1:1</a>:
+      
+                    The evaluator shall use the guidance documentation to
+                    configure the appropriate credential supported for the login method.
+                    For all combinations of supported credentials and login methods, the
+                    evaluator shall show that providing correct I&amp;A information results in
+                    the ability to access the system, while providing incorrect information
+                    results in denial of access.
+                  </li>
+                </ul></span>
+              </div></div></span></div><h2 class="indexable" data-level="2" id="impl-dep-ftp">2.4.3 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/Join</div>
           
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
@@ -498,12 +529,12 @@ The following sections list Common Criteria and technology terms used in this do
               instructions for establishing the communication paths for each supported
               method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FPT_ITT.1:1</a>:
+                <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                   operational guidance) communication method is tested during the course of the
                   evaluation, setting up the connections as described in the operational guidance
                   and ensuring that communication is successful.</li>
-                <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPT_ITT.1:2</a>:
+                <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                   data is not sent in plaintext.</li>
               </ul></span> Further evaluation activities are associated with the specific protocols.
