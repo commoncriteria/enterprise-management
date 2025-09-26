@@ -600,7 +600,7 @@
               Adapted from MDM PP requirement of the same name<h:br/></comment>
               The TSF shall <selectables>
               <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
-              <selectable><h:b>implement functionality</h:b></selectable>
+              <selectable id="sel-impl-auth"><h:b>implement functionality</h:b></selectable>
             </selectables> <h:b>to</h:b> allow <assignable>list of TSF mediated actions</assignable> on behalf of the user to be performed before the user is authenticated.</title>
             
           </f-element>
@@ -982,6 +982,81 @@
         <audit-event/>
       </f-component>
       </section>
+
+      <section id="sel-fia" title="Identification and Authentication (FIA)">
+        <ext-comp-def fam-id="FIA_UIA_EXT" title="User Identification and Authentication">
+          <fam-behavior>The TSF requires a non-TOE entity to be authenticated before any TSF-mediated actions may be taken. 
+          This is a new family defined for the FIA class.</fam-behavior>
+        </ext-comp-def>
+
+        <f-component cc-id="fia_uia_ext.1" name="User Identification and Authentication">
+          <depends on="sel-impl-auth"/>
+          <consistency-rationale/>
+          <comp-lev>requires Administrators to be identified and authenticated by the TOE before the TOE performs any 
+            mediated functions.</comp-lev>
+          <management>The following actions could be considered for the management functions in FIA_UIA_EXT.1.
+            <h:ul>
+              <h:li>Ability to configure the list of TOE services available before an entity is identified and authenticated.</h:li>              
+            </h:ul></management>
+          <audit>
+            The following actions should be auditable if FAU_GEN security audit data generation is include in the PP or ST.
+            <h:ul>
+              <h:li>All use of the identification and authentication mechanism</h:li>
+              <h:li>Provided user identity, origin of the attempt (e.g., IP address)</h:li>
+            </h:ul> 
+          </audit>
+          <dependencies>No dependencies.</dependencies>
+          <f-element>
+            <title>The TSF shall require each administrative user to be successfully identified and authenticated before allowing any other 
+               TSF-mediated actions on behalf of that administrative user.
+            </title>
+            
+          </f-element>
+          <f-element>
+            <title>The TSF shall provide the following authentication mechanisms: <selectables>
+              <selectable id="sel-auth-gui-password">Web GUI password</selectable>
+              <selectable id="sel-auth-ssh-password">SSH password</selectable>
+              <selectable>SSH public key</selectable>
+              <selectable>X.509 certificate</selectable>
+              <selectable><assignable>other authentication mechanism</assignable></selectable>
+            </selectables></title>
+            <ext-comp-def-title>
+              <title>The TSF shall provide the following authentication mechanisms: <assignable>allowable authentication mechanisms</assignable></title>
+            </ext-comp-def-title>
+            <aactivity>
+              <TSS>
+                The evaluator shall examine the TSS to determine that it describes the logon
+                process for remote authentication mechanism (e.g. SSH public key, Web GUI
+                password, etc.) and optional local authentication mechanisms supported by the
+                TOE. This description shall contain information pertaining to the credentials
+                allowed/used, any protocol transactions that take place, and what constitutes a
+                “successful logon”.
+              </TSS>
+              <Guidance>
+                The evaluator shall examine the guidance documentation to determine that
+                any necessary preparatory steps (e.g., establishing credential material such as
+                pre- shared keys, tunnels, certificates, etc.) to logging in are described. For each
+                supported the login method, the evaluator shall ensure the guidance
+                documentation provides clear instructions for successfully logging on.
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following test for each method by which administrators access the TOE, as well as 
+                for each type of credential supported by the login method:
+                <testlist>
+                  <test>
+                    The evaluator shall use the guidance documentation to
+                    configure the appropriate credential supported for the login method.
+                    For all combinations of supported credentials and login methods, the
+                    evaluator shall show that providing correct I&amp;A information results in
+                    the ability to access the system, while providing incorrect information
+                    results in denial of access.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+      </section>
       
       
       <section id="impl-dep-ftp" title="Trusted Path/Channels (FTP)">
@@ -1272,4 +1347,3 @@
   </bibliography>
 
 </Module>
-
