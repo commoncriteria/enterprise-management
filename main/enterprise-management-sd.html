@@ -476,7 +476,52 @@ The following sections list Common Criteria and technology terms used in this do
             
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-          </span></div><h2 class="indexable" data-level="2" id="sel-fia">2.4.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_UIA_EXT.1 User Identification and Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UIA_EXT.1</div>
+          </span></div><h2 class="indexable" data-level="2" id="sel-fia">2.4.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_AFL.1 Authentication Failure Handling</h4><span class="activity_pane_body"></span></div><div class="comp" id=""><h4>FIA_PMG_EXT.1 Password Management</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_PMG_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall check that the TSS:
+                <ol type="a">
+                  <li>lists the supported special character(s) for the composition of administrator passwords.</li>
+                  <li>states that the minimum password length is configurable by an administrator.</li>
+                  <li>lists the range of values supported for the minimum password length. The listed range shall include the value of 15.</li>
+                </ol>
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall examine the guidance documentation to determine that it:
+                <ol type="a">
+                  <li>identifies the characters that may be used in passwords and provides
+                  guidance to security administrators on the composition of strong
+                  passwords, and</li>
+                  <li>provides instructions on setting the minimum password length and
+                  describes the valid minimum password lengths supported.</li>
+                </ol>
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall perform the following tests:
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_PMG_EXT.1:1</a>:
+      
+                    The evaluator shall compose passwords that meet the
+                    requirements in some way. For each password, the evaluator shall
+                    verify that the TOE supports the password. While the evaluator is not
+                    required (nor is it feasible) to test all possible compositions of
+                    passwords, the evaluator shall ensure that all characters, and a
+                    minimum length listed in the requirement are supported and justify
+                    the subset of those characters chosen for testing.
+                  </li>
+                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FIA_PMG_EXT.1:2</a>:
+      
+                    The evaluator shall compose passwords that do not meet the
+                    requirements in some way. For each password, the evaluator shall
+                    verify that the TOE does not support the password. While the
+                    evaluator is not required (nor is it feasible) to test all possible
+                    compositions of passwords, the evaluator shall ensure that the TOE
+                    enforces the allowed characters and the minimum length listed in the
+                    requirement and justify the subset of those characters chosen for
+                    testing.
+                  </li>
+                </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FIA_UIA_EXT.1 User Identification and Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UIA_EXT.1</div>
               
               
               
@@ -497,7 +542,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall perform the following test for each method by which administrators access the TOE, as well as 
                 for each type of credential supported by the login method:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_UIA_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FIA_UIA_EXT.1:1</a>:
       
                     The evaluator shall use the guidance documentation to
                     configure the appropriate credential supported for the login method.
@@ -529,12 +574,12 @@ The following sections list Common Criteria and technology terms used in this do
               instructions for establishing the communication paths for each supported
               method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FPT_ITT.1:1</a>:
+                <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                   operational guidance) communication method is tested during the course of the
                   evaluation, setting up the connections as described in the operational guidance
                   and ensuring that communication is successful.</li>
-                <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FPT_ITT.1:2</a>:
+                <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                   data is not sent in plaintext.</li>
               </ul></span> Further evaluation activities are associated with the specific protocols.

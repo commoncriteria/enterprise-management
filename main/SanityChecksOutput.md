@@ -1,3 +1,7 @@
+* Error: f-element FIA_AFL.1.1  appears not to have an associated evaluation activity.:
+        /Module[1]""/section[4]""/sel-sfrs[1]""/section[3]""/f-component[1]""/f-element[1]""
+* Error: f-element FIA_AFL.1.2  appears not to have an associated evaluation activity.:
+        /Module[1]""/section[4]""/sel-sfrs[1]""/section[3]""/f-component[1]""/f-element[2]""
 * Warning: This document still has at least one comment.
 * Error: Detected dangling id-reference to sel_all_ssh from attribute
         on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
