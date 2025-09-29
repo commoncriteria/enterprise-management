@@ -600,19 +600,20 @@
               Adapted from MDM PP requirement of the same name<h:br/></comment>
               The TSF shall <selectables>
               <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
-              <selectable id="sel-impl-auth"><h:b>implement functionality</h:b></selectable>
+              <selectable id="sel-impl-preauth"><h:b>implement functionality</h:b></selectable>
             </selectables> <h:b>to</h:b> allow <assignable>list of TSF mediated actions</assignable> on behalf of the user to be performed before the user is authenticated.</title>
             
           </f-element>
           <f-element id="fel-uau-func">
             <title>The TSF shall <selectables>
               <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
-              <selectable><h:b>implement functionality</h:b></selectable>
+              <selectable id="sel-impl-postauth"><h:b>implement functionality</h:b></selectable>
             </selectables> <h:b>that</h:b> requires each user to be successfully authenticated before allowing any other TSF-mediated actions on behalf of that user.</title>
             <note role="application">This requirement ensures that any user attempting to access the TSF must be authenticated. The ST author is responsible for assigning 
               the list of actions that can take place (if any) before this authentication. The TSF or TOE platform may
               use enterprise authentication to meet this 
-              requirement (e.g., integration with enterprise directory services for single sign-on). An application that is installed in the context of a particular OS user such that the authentication context is inherited from logging in to the TOE platform as that user is also an example of authentication being facilitated through invocation of platform-provided functionality.<h:br/><h:br/>
+              requirement (e.g., integration with enterprise directory services for single sign-on). An application that is installed in the context of a particular OS user such that the authentication context is inherited from logging in to the TOE platform as that user is also an example of authentication being facilitated through invocation of platform-provided functionality.<h:br/>
+              If "implement functionality" is selected in either SFR, the ST must include the selection-based SFR FIA_UIA_EXT.1.<h:br/>
             </note>
             <aactivity>              
               <no-tests/>
@@ -984,13 +985,139 @@
       </section>
 
       <section id="sel-fia" title="Identification and Authentication (FIA)">
+
+        <f-component cc-id="fia_afl.1" name="Authentication Failure Handling">
+          <depends on="sel-auth-gui-password" or="sel-auth-ssh-password"/>
+          <f-element>
+            <title>The TSF shall detect when <h:i>an administrator configurable positive integer within <assignable>range of acceptable values</assignable></h:i> unsuccessful authentication 
+            attempts occur related to [<h:i>administrator login using passwords</h:i>].</title>
+          </f-element>
+          <f-element>
+            <title>When the defined number of unsuccessful authentication attempts has been <selectables>
+              <selectable>met</selectable>
+              <selectable>surpassed</selectable></selectables>, the TSF shall <selectables>
+                <selectable> prevent the offending administrator from successfully establishing a remote session using any authentication method that
+                  involves a password until <assignable>action to unlock</assignable>  is taken by an administrator</selectable>
+                  <selectable>prevent the offending Administrator from successfully establishing aremote session using any authentication method that 
+                    involves a password until an administrator defined time period has elapsed</selectable>
+              </selectables></title>
+              <note role="application">
+              This SFR is included in the ST if "Web GUI Password" or "SSH password" are selected in FIA_UIA_EXT.1.1.
+              </note>
+          </f-element>
+
+        </f-component>
+        <ext-comp-def fam-id="FIA_PMG_EXT" title="Password Management">
+          <fam-behavior>The TOE defines the attributes of passwords used by administrative users to
+          ensure that strong passwords and passphrases can be chosen and maintained.
+          This is a new family defined for the FIA class.</fam-behavior>
+        </ext-comp-def>
+        <f-component cc-id="fia_pmg_ext.1" name="Password Management">
+          <depends on="sel-auth-gui-password" or="sel-auth-ssh-password"/>
+          <consistency-rationale/>
+          <comp-lev> requires the TSF to support passwords
+            with varying composition requirements, minimum lengths, maximum lifetime,
+            and similarity constraints.</comp-lev>
+          <management>There are no management functions foreseen.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          
+          <f-element>
+            <title>The TSF shall provide the following password management 
+            capabilities for administrative passwords: 
+            <h:ol type="a">
+              <h:li>
+              Passwords shall be able to be composed of any combination of upper and lower
+              case letters, numbers, and the following special characters: <selectables>
+                <selectable>“!”</selectable>
+                <selectable>“@”</selectable>
+                <selectable>“#”</selectable>
+                <selectable>“$”</selectable>
+                <selectable>“%”</selectable>
+                <selectable>“^”</selectable>
+                <selectable>“&amp;”</selectable>
+                <selectable>“*”</selectable>
+                <selectable>“(“</selectable>
+                <selectable>“)”</selectable>
+                <selectable><assignable>other characters</assignable></selectable>
+              </selectables>
+              </h:li>
+              <h:li>
+              Minimum password length shall be [<h:i>configurable to between <assignable>minimum number of characters supported by the TOE</assignable> and 
+              <assignable>number of characters greater than or equal to 15</assignable> characters</h:i>].
+              </h:li>
+            </h:ol>.</title>
+            <ext-comp-def-title>
+              <title>The TSF shall provide the following password management 
+            capabilities for administrative passwords: 
+            <h:ol type="a">
+              <h:li>
+              Passwords shall be able to be composed of any combination of upper and lower
+              case letters, numbers, and the following special characters: <assignable>allowable special characters</assignable>
+              </h:li>
+              <h:li>
+              Minimum password length shall be <assignable>minimum password character length</assignable>.
+              </h:li>
+            </h:ol></title>
+            </ext-comp-def-title>
+            <note role="application">
+              This SFR is included in the ST if "Web GUI Password" or "SSH password" are selected in FIA_UIA_EXT.1.1.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall check that the TSS:
+                <h:ol type="a">
+                  <h:li>lists the supported special character(s) for the composition of administrator passwords.</h:li>
+                  <h:li>states that the minimum password length is configurable by an administrator.</h:li>
+                  <h:li>lists the range of values supported for the minimum password length. The listed range shall include the value of 15.</h:li>
+                </h:ol>
+              </TSS>
+              <Guidance>
+                The evaluator shall examine the guidance documentation to determine that it:
+                <h:ol type="a">
+                  <h:li>identifies the characters that may be used in passwords and provides
+                  guidance to security administrators on the composition of strong
+                  passwords, and</h:li>
+                  <h:li>provides instructions on setting the minimum password length and
+                  describes the valid minimum password lengths supported.</h:li>
+                </h:ol>
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following tests:
+                <testlist>
+                  <test>
+                    The evaluator shall compose passwords that meet the
+                    requirements in some way. For each password, the evaluator shall
+                    verify that the TOE supports the password. While the evaluator is not
+                    required (nor is it feasible) to test all possible compositions of
+                    passwords, the evaluator shall ensure that all characters, and a
+                    minimum length listed in the requirement are supported and justify
+                    the subset of those characters chosen for testing.
+                  </test>
+                  <test>
+                    The evaluator shall compose passwords that do not meet the
+                    requirements in some way. For each password, the evaluator shall
+                    verify that the TOE does not support the password. While the
+                    evaluator is not required (nor is it feasible) to test all possible
+                    compositions of passwords, the evaluator shall ensure that the TOE
+                    enforces the allowed characters and the minimum length listed in the
+                    requirement and justify the subset of those characters chosen for
+                    testing.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+
         <ext-comp-def fam-id="FIA_UIA_EXT" title="User Identification and Authentication">
           <fam-behavior>The TSF requires a non-TOE entity to be authenticated before any TSF-mediated actions may be taken. 
           This is a new family defined for the FIA class.</fam-behavior>
         </ext-comp-def>
 
         <f-component cc-id="fia_uia_ext.1" name="User Identification and Authentication">
-          <depends on="sel-impl-auth"/>
+          <depends on="sel-impl-preauth" or="sel-impl-postauth"/>
           <consistency-rationale/>
           <comp-lev>requires Administrators to be identified and authenticated by the TOE before the TOE performs any 
             mediated functions.</comp-lev>
@@ -1006,12 +1133,7 @@
             </h:ul> 
           </audit>
           <dependencies>No dependencies.</dependencies>
-          <f-element>
-            <title>The TSF shall require each administrative user to be successfully identified and authenticated before allowing any other 
-               TSF-mediated actions on behalf of that administrative user.
-            </title>
-            
-          </f-element>
+
           <f-element>
             <title>The TSF shall provide the following authentication mechanisms: <selectables>
               <selectable id="sel-auth-gui-password">Web GUI password</selectable>
@@ -1023,6 +1145,11 @@
             <ext-comp-def-title>
               <title>The TSF shall provide the following authentication mechanisms: <assignable>allowable authentication mechanisms</assignable></title>
             </ext-comp-def-title>
+            <note role="application">
+              This SFR is included in the ST if "implement functionality" is selected in FIA_UAU.1.1 or FIA_UAU.1.2. <h:br/>
+              If either "password" option is selected, or the assignment is used for any other password-based authentication mechanism, the ST must include the selection-based SFRs FIA_AFL.1 and FIA_PMG_EXT.1.
+            </note>
+
             <aactivity>
               <TSS>
                 The evaluator shall examine the TSS to determine that it describes the logon
