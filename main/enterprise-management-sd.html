@@ -556,7 +556,25 @@ The following sections list Common Criteria and technology terms used in this do
           
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-            </span></div><h2 class="indexable" data-level="2" id="sel-based-fta">2.4.4 TOE Access (FTA)</h2><div class="comp" id=""><h4>FTA_TAB.1 Default TOE access banners</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_TAB.1</div>
+            </span></div><h2 class="indexable" data-level="2" id="sel-based-fta">2.4.4 TOE Access (FTA)</h2><div class="comp" id=""><h4>FTA_SSL.3 TSF-initiated termination</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_SSL.3</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">
+                The evaluator shall examine the TSS to determine that it details the session termination and the related inactivity time period.
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
+                The evaluator shall confirm that the guidance documentation includes instructions for configuring the inactivity time period for session termination.
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                For each method of establishing an interactive session with the TOE, the evaluator shall perform the following test:
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FTA_SSL.3:1</a>:
+      
+                    The evaluator shall follow the guidance documentation to configure several different values for the inactivity time period referenced in the component. 
+                    For each period configured, the evaluator shall establish an interactive session with the TOE. The evaluator shall then observe that the session is terminated 
+                    after the configured time period.
+                  </li>
+                </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FTA_TAB.1 Default TOE access banners</h4><span class="activity_pane_body"><div class="component-activity-header">FTA_TAB.1</div>
               
               
               
@@ -575,7 +593,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FTA_TAB.1:1</a>:
+                  <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FTA_TAB.1:1</a>:
       
                     The evaluator shall follow the guidance documentation to
                     configure a notice and consent warning message. The evaluator shall
@@ -602,12 +620,12 @@ The following sections list Common Criteria and technology terms used in this do
               instructions for establishing the communication paths for each supported
               method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FPT_ITT.1:1</a>:
+                <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                   operational guidance) communication method is tested during the course of the
                   evaluation, setting up the connections as described in the operational guidance
                   and ensuring that communication is successful.</li>
-                <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPT_ITT.1:2</a>:
+                <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                   data is not sent in plaintext.</li>
               </ul></span> Further evaluation activities are associated with the specific protocols.
