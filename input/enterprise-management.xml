@@ -601,7 +601,10 @@
               The TSF shall <selectables>
               <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
               <selectable id="sel-impl-preauth"><h:b>implement functionality</h:b></selectable>
-            </selectables> <h:b>to</h:b> allow <assignable>list of TSF mediated actions</assignable> on behalf of the user to be performed before the user is authenticated.</title>
+            </selectables> <h:b>to</h:b> allow <selectables linebreak="yes">
+              <selectable id="sel-display-banner">display of the warning banner in accordance with FTA_TAB.1</selectable>
+              <selectable><assignable>list of TSF mediated actions</assignable></selectable>
+            </selectables> on behalf of the user to be performed before the user is authenticated.</title>
             
           </f-element>
           <f-element id="fel-uau-func">
@@ -613,7 +616,8 @@
               the list of actions that can take place (if any) before this authentication. The TSF or TOE platform may
               use enterprise authentication to meet this 
               requirement (e.g., integration with enterprise directory services for single sign-on). An application that is installed in the context of a particular OS user such that the authentication context is inherited from logging in to the TOE platform as that user is also an example of authentication being facilitated through invocation of platform-provided functionality.<h:br/>
-              If "implement functionality" is selected in either SFR, the ST must include the selection-based SFR FIA_UIA_EXT.1.<h:br/>
+              If "implement functionality" is selected in either element, the ST must include the selection-based SFR FIA_UIA_EXT.1.<h:br/>
+              If "display of the warning banner in accordance with FTA_TAB.1" is selected, the ST must include the selection-based SFR FTA_TAB.1.
             </note>
             <aactivity>              
               <no-tests/>
@@ -1239,6 +1243,46 @@
           </audit-event>
         </f-component>
         
+      </section>
+      <section id="sel-based-fta" title="TOE Access (FTA)">
+        <f-component cc-id="fta_tab.1" name="Default TOE access banners">
+          <depends on="sel-display-banner"/>
+          <f-element>
+            <title>Before establishing a user session, the <selectables>
+              <selectable>TSF</selectable>
+              <selectable>TOE platform</selectable>
+            </selectables> shall display an [<h:i>administrator-specified advisory notice and consent warning</h:i>] message.</title>
+            <note role="application">This SFR is included in the ST if "display of the warning banner in accordance with FTA_TAB.1" is selected in FIA_UAU.1.1. </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall check the TSS to ensure that it details each administrative
+                method of access (local and/or remote) available on the TOE
+                (e.g. serial port, SSH, HTTPS). The evaluator shall check the TSS to ensure that
+                all administrative methods of access available to the administrator are
+                listed and that the TSS states that the TOE is displaying an advisory notice and a
+                consent warning message for each administrative method of access. The
+                advisory notice and the consent warning message might be different for
+                different administrative methods of access and might be configured during
+                initial configuration (e.g. via configuration file).
+              </TSS>
+              <Guidance>
+                The evaluator shall check the guidance documentation to ensure that it describes how to configure the banner message.
+              </Guidance>
+              <Tests>
+                The evaluator shall perform the following test:
+                <testlist>
+                  <test>
+                    The evaluator shall follow the guidance documentation to
+                    configure a notice and consent warning message. The evaluator shall
+                    then, for each method of access specified in the TSS, establish a
+                    session with the TOE. The evaluator shall verify that the notice and
+                    consent warning message is displayed in each instance.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
       </section>
       
     </sel-sfrs>
