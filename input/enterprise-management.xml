@@ -616,7 +616,7 @@
               the list of actions that can take place (if any) before this authentication. The TSF or TOE platform may
               use enterprise authentication to meet this 
               requirement (e.g., integration with enterprise directory services for single sign-on). An application that is installed in the context of a particular OS user such that the authentication context is inherited from logging in to the TOE platform as that user is also an example of authentication being facilitated through invocation of platform-provided functionality.<h:br/>
-              If "implement functionality" is selected in either element, the ST must include the selection-based SFR FIA_UIA_EXT.1.<h:br/>
+              If "implement functionality" is selected in FIA_UAU.1.2, the ST must include the selection-based SFRs FIA_UIA_EXT.1 and FTA_SSL.3.<h:br/>
               If "display of the warning banner in accordance with FTA_TAB.1" is selected, the ST must include the selection-based SFR FTA_TAB.1.
             </note>
             <aactivity>              
@@ -1121,7 +1121,7 @@
         </ext-comp-def>
 
         <f-component cc-id="fia_uia_ext.1" name="User Identification and Authentication">
-          <depends on="sel-impl-preauth" or="sel-impl-postauth"/>
+          <depends on="sel-impl-postauth"/>
           <consistency-rationale/>
           <comp-lev>requires Administrators to be identified and authenticated by the TOE before the TOE performs any 
             mediated functions.</comp-lev>
@@ -1150,7 +1150,7 @@
               <title>The TSF shall provide the following authentication mechanisms: <assignable>allowable authentication mechanisms</assignable></title>
             </ext-comp-def-title>
             <note role="application">
-              This SFR is included in the ST if "implement functionality" is selected in FIA_UAU.1.1 or FIA_UAU.1.2. <h:br/>
+              This SFR is included in the ST if "implement functionality" is selected in FIA_UAU.1.2. <h:br/>
               If either "password" option is selected, or the assignment is used for any other password-based authentication mechanism, the ST must include the selection-based SFRs FIA_AFL.1 and FIA_PMG_EXT.1.
             </note>
 
@@ -1245,6 +1245,34 @@
         
       </section>
       <section id="sel-based-fta" title="TOE Access (FTA)">
+        <f-component cc-id="fta_ssl.3" name="TSF-initiated termination">
+          <depends on="sel-impl-postauth"/>
+          <f-element>
+            <title>The TSF shall terminate an interactive session after a [<h:i>administrator-configurable time interval of session inactivity</h:i>].</title>
+            <note role="application">
+              This SFR is included in the ST if "implement functionality" is selected in FIA_UAU.1.2.
+            </note>
+            <aactivity>
+              <TSS>
+                The evaluator shall examine the TSS to determine that it details the session termination and the related inactivity time period.
+              </TSS>
+              <Guidance>
+                The evaluator shall confirm that the guidance documentation includes instructions for configuring the inactivity time period for session termination.
+              </Guidance>
+              <Tests>
+                For each method of establishing an interactive session with the TOE, the evaluator shall perform the following test:
+                <testlist>
+                  <test>
+                    The evaluator shall follow the guidance documentation to configure several different values for the inactivity time period referenced in the component. 
+                    For each period configured, the evaluator shall establish an interactive session with the TOE. The evaluator shall then observe that the session is terminated 
+                    after the configured time period.
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <f-component cc-id="fta_tab.1" name="Default TOE access banners">
           <depends on="sel-display-banner"/>
           <f-element>
