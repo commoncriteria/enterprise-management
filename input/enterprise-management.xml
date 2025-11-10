@@ -1533,16 +1533,8 @@
 
 
   <!-- Remove this section if an Entropy Assessment is not needed -->
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibAppPP">
-      <tag>AppPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
-          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a>
-      </description>
-    </entry>
+  <bibliography/>
     
-  </bibliography>
+  
 
 </Module>
