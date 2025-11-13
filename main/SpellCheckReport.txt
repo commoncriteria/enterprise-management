@@ -13,11 +13,9 @@ output/enterprise-management-release-linkable.html: SME
 output/enterprise-management-release-linkable.html: SPD
 output/enterprise-management-release-linkable.html: TBD
 output/enterprise-management-release-linkable.html: TODO
-output/enterprise-management-release-linkable.html: aremote
 output/enterprise-management-release-linkable.html: auditability
 output/enterprise-management-release-linkable.html: failover
 output/enterprise-management-release-linkable.html: recognises
-output/enterprise-management-release-linkable.html: specifed
 output/enterprise-management-release.html: Adleman
 output/enterprise-management-release.html: CEM
 output/enterprise-management-release.html: DTLSC
@@ -32,11 +30,9 @@ output/enterprise-management-release.html: Onboarding
 output/enterprise-management-release.html: SME
 output/enterprise-management-release.html: SPD
 output/enterprise-management-release.html: TBD
-output/enterprise-management-release.html: aremote
 output/enterprise-management-release.html: auditability
 output/enterprise-management-release.html: failover
 output/enterprise-management-release.html: recognises
-output/enterprise-management-release.html: specifed
 output/enterprise-management-sd.html: AGD
 output/enterprise-management-sd.html: CEM
 output/enterprise-management-sd.html: ESM
@@ -62,8 +58,6 @@ output/enterprise-management.html: SME
 output/enterprise-management.html: SPD
 output/enterprise-management.html: TBD
 output/enterprise-management.html: TODO
-output/enterprise-management.html: aremote
 output/enterprise-management.html: auditability
 output/enterprise-management.html: failover
 output/enterprise-management.html: recognises
-output/enterprise-management.html: specifed
