@@ -99,13 +99,12 @@
       </term>
       
       <term full="Enrolled State">The state in which an endpoint with a running Host Agent is managed by an EM.
-        Also, referred to as Onboarding.
       </term>
       
       <term full="Enrollment">The process of transitioning an endpoint from an unenrolled to an enrolled state.
       </term>
       
-      <term full="Enterprise Security Management" abbr="EM">A type of application hosted on a server or cloud service that provides 
+      <term full="Enterprise Security Management" abbr="ESM">A type of application hosted on a server or cloud service that provides 
         support for security management, information flows, reporting, policy, and data analytics 
         in complex enterprise environments.
       </term>
@@ -152,7 +151,6 @@
       <!-- <term abbr="SWID" full="Software Identification"/> -->
       
       <term full="Unenrolled State">The state in which an endpoint, with or without a Host Agent, is not managed by an EM.
-        Also, referred to as Offboarding.
       </term>
       <!-- <term abbr="TLS" full="Transport Layer Security"/> -->
       <!-- <term abbr="URI" full="Uniform Resource Identifier"/> -->
@@ -203,7 +201,7 @@
           <description>The TOE collects data about endpoint systems that can be queried or browsed. This could include data about the system's hardware, software, or configuration</description>
         </usecase>
         <usecase id="monitoring" title="System Monitoring">
-          <description>The TOE has a persistent connection to endpoint systems to monitor those systems for anomalous activity, such as disk utilization, memory usage, configuration of system permissions, or the starting and stopping of executable services or processes on the system. <comment>is this meant to be the policy management side of EDR? Or is this something distinct and/or broader? If this is just meant to be the stuff that the ESM EDR module intends to capture then we should ensure consistency between the two.</comment></description>
+          <description>The TOE has a persistent connection to endpoint systems to monitor those systems for anomalous activity, such as disk utilization, memory usage, configuration of system permissions, or the starting and stopping of executable services or processes on the system. </description>
         </usecase>
       </usecases>
     </section>
@@ -221,8 +219,8 @@
   </section>
 
   <sec:Conformance_Claims boilerplate="no">
-    <!-- The new CClaimsInfo construct --><comment>Update URLs in Bib. for pp and mod cc refs</comment> 
-    <comment><h:b/><h:b/>Do we also need VPN Client here or is IPsec not an expected way these products will communicate? Note that neither EDR nor HA reference it so if we need those, we'll have to back them into the other modules</comment>
+    <!-- The new CClaimsInfo construct --> 
+    
     
     <CClaimsInfo cc-version="cc-2022r1" cc-approach="direct-rationale">
       <cc-st-conf>exact</cc-st-conf>       
@@ -233,9 +231,11 @@
         <PP-cc-ref>Protection Profile for Application Software Version 2.0 </PP-cc-ref>
         <Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version 2.0 </Mod-cc-ref>
         <Mod-cc-ref>PP-Module for Host Agent (HA), Version 2.0</Mod-cc-ref>
+        <Mod-cc-ref>PP-Module for VPN Client, Version 3.0</Mod-cc-ref>
         
       </cc-pp-config-with>
       <cc-pkg-claim>
+        <FP-cc-ref conf="conformant">Functional Package for Secure Shell (SSH), Version 2.0</FP-cc-ref>
         <FP-cc-ref conf="conformant">Functional Package for TLS, Version 2.1</FP-cc-ref>
       </cc-pkg-claim>
       
@@ -248,7 +248,9 @@
         is expected to enforce. These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
         
         <comment><h:br/><h:br/>Note that these threats are nearly duplicates of the App PP and the things that are inherited from that PP do not need to be redefined; suggest reviewing these once SFRs are fully defined to adjust specifically to the context of this TOE (versus a general App PP TOE).</comment>
-        <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats identified in the <xref to="bibAppPP"/>, though they all apply given the conformance and hence dependence of this PP-Module on the <xref to="bibAppPP"/>.
+        <section title="Threats" id="threats">Note that this PP-Module does not repeat the threats
+          identified in the Base PP, though they all apply given the conformance and hence
+          dependence of this PP-Module on the Base PP.
           
           
           <threats>
@@ -353,7 +355,7 @@
           </h:ul>
           </management>
           <audit>The following actions should be auditable if FAU_GEN security audit data generation
-          is include in the PP or ST.
+          is included in the PP or ST.
           <h:ul>
             <h:li>Type of alert.</h:li>
             <h:li>Identity of external entity that sent alert.</h:li>
@@ -402,7 +404,7 @@
                 <selectable>systems</selectable>
                 <selectable>agents</selectable>
               </selectables> over a channel
-              channel that meets the secure channel requirements in FTP_ITC.1. The provided information for each enrolled 
+               that meets the secure channel requirements in FTP_ITC.1. The provided information for each enrolled 
                 <selectables>
                   <selectable>systems</selectable>
                   <selectable>agents</selectable>
@@ -580,7 +582,9 @@
               <h:p>
                 For distributed TOEs, each component must be able to export any audit data it generates across a
                 protected channel. This may involve individual components independently transmitting
-                audit data to the same environmental audit server via FTP_ITC.1, or it may involve one component of a distributed TOE aggregating audit data generated by other components prior to external transmission. In this case, the internal communication of audit data is protected via the mechanisms specified in FTP_ITT.1. The intent of this requirement in the context of a distributed TOE is that all audit data generated by all components of the TSF be transmitted to an environmental entity entirely through trusted channels, regardless of whether it is transmitted directly from the TSF to the operational environment or whether it is first transmitted to another part of the TOE.
+                audit data to the same environmental audit server via FTP_ITC.1, or it may involve
+                one component of a distributed TOE aggregating audit data generated by other
+                components prior to external transmission. In this case, the internal communication of audit data is protected via the mechanisms specified in FPT_ITT.1. The intent of this requirement in the context of a distributed TOE is that all audit data generated by all components of the TSF be transmitted to an environmental entity entirely through trusted channels, regardless of whether it is transmitted directly from the TSF to the operational environment or whether it is first transmitted to another part of the TOE.
               </h:p>
             </note>
             <aactivity>
@@ -641,8 +645,18 @@
               <h:li>listed in FMT_SMF.1/Internal</h:li>
             </h:ul> to <assignable>authorized administrative roles for each function</assignable>.</title>
             <note role="application">This requirement defines the permissions necessary to execute
-              or manage the behavior of functions used for both management of external entities (i.e., Enterprise-Management) as defined in FMT_SMF.1/Internal as well as the TOE itself. The ST author will define, for each claimed administrative function, any roles that are authorized to perform this function. Roles may be predefined by the TOE, inherited from an organizational directory, or custom based on privileges assigned to a role that the TOE has the ability to create.<h:br/><h:br/>
-              Role assignment in and of itself may not be sufficient to authorize a function; it may be the case that scoping rules also define the specific set of objects that the function may be performed against. Examples could include a user having the ability to reset only their own password while an administrator has the ability to reset any user's password, or two different users being able to perform the same Enterprise-Management functions against two groups of external entities.
+              or manage the behavior of functions used for both management of external entities 
+              (i.e., Enterprise-Management) as defined in FMT_SMF.1/External as well as the TOE itself. 
+              The ST author will define, for each claimed administrative function, any roles that are 
+              authorized to perform this function. Roles may be predefined by the TOE, inherited from 
+              an organizational directory, or custom based on privileges assigned to a role that the 
+              TOE has the ability to create.<h:br/><h:br/>
+              Role assignment in and of itself may not be sufficient to authorize a function; it may
+              be the case that scoping rules also define the specific set of objects that the function
+              may be performed against. Examples could include a user having the ability to reset only
+              their own password while an administrator has the ability to reset any user's password,
+              or two different users being able to perform the same Enterprise-Management functions 
+              against two groups of external entities.
             </note>
             <aactivity>
             <no-tests/>
@@ -874,7 +888,7 @@
             <title>The TSF shall require the use of the trusted path for [<h:i>initial <h:b>administrator</h:b> authentication, [remote administration]</h:i>].</title>
             <note role="application">This requirement ensures that authorized remote administrators initiate all 
               communication with the TOE via a trusted path, and that all communications with 
-              the TOE by remote administrators is performed over this path. This requirement is optional because it may be the case that the TOE is launched as an application local to the server on which it is installed, such that if the administrator is accessing the TSF remotely, the remote access is achieved through a remote session with the TOE platform (as opposed to e.g. the TOE running a management application on a web server that allows for remote access to the TSF without separately accessing the underlying platform). The data passed in this trusted 
+              the TOE by remote administrators is performed over this path. The data passed in this trusted 
               communication channel are encrypted as defined in the protocol chosen in the first selection. The ST 
               author chooses the mechanism or mechanisms supported by the TOE.<h:br/><h:br/>
               If "IPsec as defined in the PP-Module for VPN Client" is selected, the TSF must claim conformance to a PP-Configuration that includes the VPN Client PP-Module.<h:br/><h:br/>              
@@ -1010,7 +1024,10 @@
               This SFR is included in the ST if "Web GUI Password" or "SSH password" are selected in FIA_UIA_EXT.1.1.
               </note>
           </f-element>
-
+            <audit-event>
+              <audit-event-descr>Unsuccessful login attempts limit is met or exceeded.</audit-event-descr>
+              <audit-event-info>Origin of the attempt (e.g., IP address).</audit-event-info>
+            </audit-event>
         </f-component>
         <ext-comp-def fam-id="FIA_PMG_EXT" title="Password Management">
           <fam-behavior>The TOE defines the attributes of passwords used by administrative users to
@@ -1113,6 +1130,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
 
 
@@ -1131,7 +1149,8 @@
               <h:li>Ability to configure the list of TOE services available before an entity is identified and authenticated.</h:li>              
             </h:ul></management>
           <audit>
-            The following actions should be auditable if FAU_GEN security audit data generation is include in the PP or ST.
+            The following actions should be auditable if FAU_GEN security audit data generation is
+            included in the PP or ST.
             <h:ul>
               <h:li>All use of the identification and authentication mechanism</h:li>
               <h:li>Provided user identity, origin of the attempt (e.g., IP address)</h:li>
@@ -1187,6 +1206,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>All use of identification and authentication mechanisms.</audit-event-descr>
+            <audit-event-info>Origin of the attempt (e.g., IP address).</audit-event-info>
+          </audit-event>
         </f-component>
       </section>
       
@@ -1272,6 +1295,10 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>The termination of a remote session by the session locking mechanism.</audit-event-descr>
+            <audit-event-info>None.</audit-event-info>
+          </audit-event>
         </f-component>
         
         <f-component cc-id="fta_tab.1" name="Default TOE access banners">
@@ -1311,6 +1338,7 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
       </section>
       
@@ -1425,7 +1453,8 @@
             <h:ul>
               <h:li>FCS_TLS_EXT.1: 
                 <h:ul>
-                  <h:li>either TLS or DTLS is selected depending on the selection made in </h:li>
+                  <h:li>either TLS or DTLS is selected depending on the selection made in
+                    FTP_ITC.1.1</h:li>
                   <h:li>either client or server is selected as appropriate</h:li>
                 </h:ul>
               </h:li>
