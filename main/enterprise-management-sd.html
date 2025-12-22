@@ -438,7 +438,35 @@ The following sections list Common Criteria and technology terms used in this do
              
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-            </span></div><h2 class="indexable" data-level="2" id="man-fia">2.2.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_UAU.1 Timing of Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UAU.1</div>              
+            </span></div><h2 class="indexable" data-level="2" id="man-fia">2.2.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_ENR_EXT.1 Enrollment of Mobile Device into Management</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_ENR_EXT.1.1</div> 
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it describes the process of enrollment for each MDM agent or platform listed as supported 
+                in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
+                (username or password, token, etc.), the method of authentication decision (local or remote authentication services), and the actions performed on
+                the MDM server upon successful authentication. </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls mobile devices into management.</div>
+              <div class="eacategory">Tests</div><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_ENR_EXT.1.1:1</a>:
+      The evaluator shall attempt to enroll a device without providing correct credentials. The evaluator shall verify that the device is not 
+                    enrolled and that the described enrollment actions are not taken.</li>
+                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FIA_ENR_EXT.1.1:2</a>:
+      The evaluator shall attempt to enroll the device providing correct credentials. The evaluator shall verify that the device is enrolled 
+                    and that the described enrollment actions are taken.</li>
+                </ul></span>
+              </div>
+            <div class="element-activity-header">FIA_ENR_EXT.1.2</div>
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it implements a policy to limit the user's enrollment of devices.</div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the administrative guidance describes the methods of restricting user enrollment and that it instructs 
+                the administrator how to configure the restrictions.<br/><br/>
+              </div>
+              <div class="eacategory">Tests</div><div class="ea">For each type of policy selected, the evaluator shall perform the following: <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FIA_ENR_EXT.1.2:1</a>:
+      The evaluator shall attempt to configure the MDM server according to the administrative guidance in order to prevent enrollment. The
+                  evaluator shall verify that the user cannot enroll a device outside of the configured limitation. (For example, the evaluator may try to enroll
+                  a disallowed device, or may try to enroll additional devices beyond the number allowed.)</li>
+              </ul></span>
+              </div>
+            </span></div><div class="comp" id=""><h4>FIA_UAU.1 Timing of Authentication</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_UAU.1</div>              
               
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
@@ -446,7 +474,11 @@ The following sections list Common Criteria and technology terms used in this do
             
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
-            </span></div><div class="comp" id=""><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/External</div>
+            </span></div><div class="comp" id=""><h4>FMT_MOF.1/MANAGEMENT_ENROLL Management of Security Functions Behavior (Enrollment)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_MOF.1/MANAGEMENT_ENROLL</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling in the MDM services.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The test of this function is performed in conjunction with FIA_ENR_EXT.1.</div></div></span></div><div class="comp" id=""><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/External</div>
           
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
@@ -497,7 +529,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_PMG_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FIA_PMG_EXT.1:1</a>:
       
                     The evaluator shall compose passwords that meet the
                     requirements in some way. For each password, the evaluator shall
@@ -507,7 +539,7 @@ The following sections list Common Criteria and technology terms used in this do
                     minimum length listed in the requirement are supported and justify
                     the subset of those characters chosen for testing.
                   </li>
-                  <li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FIA_PMG_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FIA_PMG_EXT.1:2</a>:
       
                     The evaluator shall compose passwords that do not meet the
                     requirements in some way. For each password, the evaluator shall
@@ -540,7 +572,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall perform the following test for each method by which administrators access the TOE, as well as 
                 for each type of credential supported by the login method:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FIA_UIA_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FIA_UIA_EXT.1:1</a>:
       
                     The evaluator shall use the guidance documentation to
                     configure the appropriate credential supported for the login method.
@@ -565,7 +597,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 For each method of establishing an interactive session with the TOE, the evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FTA_SSL.3:1</a>:
+                  <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FTA_SSL.3:1</a>:
       
                     The evaluator shall follow the guidance documentation to configure several different values for the inactivity time period referenced in the component. 
                     For each period configured, the evaluator shall establish an interactive session with the TOE. The evaluator shall then observe that the session is terminated 
@@ -591,7 +623,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FTA_TAB.1:1</a>:
+                  <li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FTA_TAB.1:1</a>:
       
                     The evaluator shall follow the guidance documentation to
                     configure a notice and consent warning message. The evaluator shall
@@ -618,12 +650,12 @@ The following sections list Common Criteria and technology terms used in this do
               instructions for establishing the communication paths for each supported
               method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
               <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FPT_ITT.1:1</a>:
+                <li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                   operational guidance) communication method is tested during the course of the
                   evaluation, setting up the connections as described in the operational guidance
                   and ensuring that communication is successful.</li>
-                <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FPT_ITT.1:2</a>:
+                <li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                   data is not sent in plaintext.</li>
               </ul></span> Further evaluation activities are associated with the specific protocols.

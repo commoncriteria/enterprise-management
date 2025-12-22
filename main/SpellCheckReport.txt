@@ -4,7 +4,9 @@ output/enterprise-management-release-linkable.html: DTLSC
 output/enterprise-management-release-linkable.html: DTLSS
 output/enterprise-management-release-linkable.html: FCS
 output/enterprise-management-release-linkable.html: ICMP
+output/enterprise-management-release-linkable.html: IMEI
 output/enterprise-management-release-linkable.html: MDM
+output/enterprise-management-release-linkable.html: MDs
 output/enterprise-management-release-linkable.html: NTP
 output/enterprise-management-release-linkable.html: SME
 output/enterprise-management-release-linkable.html: SPD
@@ -13,13 +15,16 @@ output/enterprise-management-release-linkable.html: TODO
 output/enterprise-management-release-linkable.html: auditability
 output/enterprise-management-release-linkable.html: failover
 output/enterprise-management-release-linkable.html: recognises
+output/enterprise-management-release-linkable.html: unenroll
 output/enterprise-management-release.html: Adleman
 output/enterprise-management-release.html: CEM
 output/enterprise-management-release.html: DTLSC
 output/enterprise-management-release.html: DTLSS
 output/enterprise-management-release.html: FCS
 output/enterprise-management-release.html: ICMP
+output/enterprise-management-release.html: IMEI
 output/enterprise-management-release.html: MDM
+output/enterprise-management-release.html: MDs
 output/enterprise-management-release.html: NTP
 output/enterprise-management-release.html: SME
 output/enterprise-management-release.html: SPD
@@ -27,10 +32,13 @@ output/enterprise-management-release.html: TBD
 output/enterprise-management-release.html: auditability
 output/enterprise-management-release.html: failover
 output/enterprise-management-release.html: recognises
+output/enterprise-management-release.html: unenroll
 output/enterprise-management-sd.html: AGD
 output/enterprise-management-sd.html: CEM
+output/enterprise-management-sd.html: MDM
 output/enterprise-management-sd.html: SPD
 output/enterprise-management-sd.html: TODO
+output/enterprise-management-sd.html: TRUSTPATH
 output/enterprise-management-sd.html: evaluator’s
 output/enterprise-management-sd.html: fail’
 output/enterprise-management-sd.html: pass’
@@ -40,7 +48,9 @@ output/enterprise-management.html: DTLSC
 output/enterprise-management.html: DTLSS
 output/enterprise-management.html: FCS
 output/enterprise-management.html: ICMP
+output/enterprise-management.html: IMEI
 output/enterprise-management.html: MDM
+output/enterprise-management.html: MDs
 output/enterprise-management.html: NTP
 output/enterprise-management.html: SME
 output/enterprise-management.html: SPD
@@ -49,3 +59,4 @@ output/enterprise-management.html: TODO
 output/enterprise-management.html: auditability
 output/enterprise-management.html: failover
 output/enterprise-management.html: recognises
+output/enterprise-management.html: unenroll
