@@ -599,7 +599,7 @@
       
       <section id="man-fia" title="Identification and Authentication (FIA)">
         
-        <f-component cc-id="fia_enr_ext.1" name="Enrollment of Mobile Device into Management">
+        <f-component cc-id="fia_enr_ext.1" name="Enrollment">
           <consistency-rationale/>
           <comp-lev>defines requirements for authenticating and limiting user actions.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT.
@@ -773,7 +773,7 @@
                 <h:li><ctr id="smf1" ctr-type="mgmt" pre=""></ctr>. Configuration of reporting interval</h:li>
                 <h:li><ctr id="smf2" ctr-type="mgmt" pre=""></ctr>. Query patch levels</h:li>
                 <h:li><ctr id="smf3" ctr-type="mgmt" pre=""></ctr>. Apply patches</h:li>
-                <h:li><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. unenroll from management</h:li>
+                <h:li><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. Unenroll from management</h:li>
               </h:ul> 
               <h:b>and the following commands against external systems:</h:b> <comment>do we actually need a separate list of "commands" vs "functions"? It seems like invoking APIs could exist separately from more holistic functions but not sure if we need to go into that granular detail or if we can just collectively bundle up related APIs into the notion of "functions" themselves</comment><h:br/>
                 <selectables>
