@@ -767,15 +767,48 @@
               ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<h:br/>  
               Adapted from MDM PP requirement of the same name<h:br/>
             Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
-            The TSF shall be capable of performing the following management functions 
-              <h:b>against external systems</h:b>
+            The TSF shall be capable of performing the following management functions <h:b>against external systems</h:b>
               <h:ul style="list-style-type:none">
                 <h:li><ctr id="smf1" ctr-type="mgmt" pre=""></ctr>. Configuration of reporting interval</h:li>
-                <h:li><ctr id="smf2" ctr-type="mgmt" pre=""></ctr>. Query patch levels</h:li>
-                <h:li><ctr id="smf3" ctr-type="mgmt" pre=""></ctr>. Apply patches</h:li>
+                <h:li><ctr id="smf2" ctr-type="mgmt" pre=""></ctr>. Query installed software to
+                  include the agent, if applicable, and firmware</h:li>
+                <h:li><ctr id="smf3" ctr-type="mgmt" pre=""></ctr>. Apply software updates to
+                  include the agent, if applicable</h:li>
                 <h:li><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. Unenroll from management</h:li>
+                <h:li>Query configuration</h:li>
+                <h:li>Apply configuration</h:li>
+                <h:li>Query connectivity status</h:li>
               </h:ul> 
-              <h:b>and the following commands against external systems:</h:b> <comment>do we actually need a separate list of "commands" vs "functions"? It seems like invoking APIs could exist separately from more holistic functions but not sure if we need to go into that granular detail or if we can just collectively bundle up related APIs into the notion of "functions" themselves</comment><h:br/>
+              and configuration settings including the following management functions.<selectables>
+                <selectable>password policy<selectables>
+                <selectable>minimum password length</selectable>
+                  <selectable>minimum password complexity</selectable>
+                  <selectable>maximum password lifetime</selectable>
+                  <selectable>authentication factors</selectable>
+                  <selectable>authentication failures, maximum before lockout</selectable>
+                  <selectable>authentication failures, lockout duration</selectable>
+                  <selectable>authentication failures, reset interval</selectable>
+                </selectables></selectable>
+                <selectable>audit policy<selectables>
+                  <selectable>audit rules</selectable>
+                  <selectable>name and address of audit or logging server to which to send audit or
+                    logging records</selectable>
+                  <selectable>local audit storage and retention policy</selectable>
+                </selectables>access banners policy</selectable>
+                <selectable>session locking policy<selectables>
+                <selectable>screen-lock enabled or disabled</selectable>
+                <selectable>screen lock timeout</selectable>
+                <selectable>display notifications</selectable>
+                </selectables></selectable>                
+                <selectable>host-based firewall policy</selectable>
+                <selectable>removable media policy</selectable>
+                <selectable>software update policy</selectable>
+                <selectable>network time server policy</selectable>
+                <selectable>cryptographic policy</selectable>                
+              </selectables>
+             
+              <h:b>and the following management functions against external systems:</h:b>
+              <comment>do we actually need a separate list of "management functions" vs "functions"? It seems like invoking APIs could exist separately from more holistic functions but not sure if we need to go into that granular detail or if we can just collectively bundle up related APIs into the notion of "functions" themselves</comment><h:br/>
                 <selectables>
                 <selectable><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
                 <selectable><ctr id="smf5" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
