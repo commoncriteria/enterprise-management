@@ -611,7 +611,7 @@
           <audit>The following actions should be auditable if FAU_GEN security audit data generation
             is included in the PP or ST.
             <h:ul>
-              <h:li>Failure of MD user authentication.</h:li>
+              <h:li>Failure of user authentication.</h:li>
               <h:li>Presented username.</h:li>
             </h:ul>
           </audit>
@@ -623,14 +623,14 @@
           <f-element id="fel-enr-tsf">
             <title>The TSF shall authenticate the remote users over a trusted channel during the
               enrollment of a Host Agent.</title>
-            <note role="application">The MDM server may use its own directory or a directory server to perform the authentication decision for users performing
-              the remote enrollment of a MD.</note>
+            <note role="application">The TSF may use its own directory or a directory server to perform the authentication decision for users performing
+              the remote enrollment of an endpoint.</note>
             <aactivity level="element"> 
-              <TSS>The evaluator shall examine the TSS and verify that it describes the process of enrollment for each MDM agent or platform listed as supported 
+              <TSS>The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
                 in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
                 (username or password, token, etc.), the method of authentication decision (local or remote authentication services), and the actions performed on
-                the MDM server upon successful authentication. </TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls mobile devices into management.</Guidance>
+                the TOE upon successful authentication. </TSS>
+              <Guidance>The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls endpoints into management.</Guidance>
               <Tests>
                 <testlist>
                   <test>The evaluator shall attempt to enroll a device without providing correct credentials. The evaluator shall verify that the device is not 
@@ -646,14 +646,14 @@
               [<assignable>a unique device ID</assignable> and [<assignable>other
                 features</assignable>.</title>
             <note role="application"> This requirement is designed to permit the enterprise to restrict users' enrollment of devices. A unique device ID is required
-              to limit the user's enrollment. The unique device ID can be the IMEI or an ID specific to a particular platform. </note>         
+              to limit the user's enrollment. The unique device ID could be an asset tag specified by the organization.</note>         
             <aactivity level="element">
               <TSS>The evaluator shall examine the TSS and verify that it implements a policy to limit the user's enrollment of devices.</TSS>
               <Guidance>The evaluator shall ensure that the administrative guidance describes the methods of restricting user enrollment and that it instructs 
                 the administrator how to configure the restrictions.<h:br/><h:br/>
               </Guidance>
               <Tests>For each type of policy selected, the evaluator shall perform the following: <testlist>
-                <test>The evaluator shall attempt to configure the MDM server according to the administrative guidance in order to prevent enrollment. The
+                <test>The evaluator shall attempt to configure the TOE according to the administrative guidance in order to prevent enrollment. The
                   evaluator shall verify that the user cannot enroll a device outside of the configured limitation. (For example, the evaluator may try to enroll
                   a disallowed device, or may try to enroll additional devices beyond the number allowed.)</test>
               </testlist>
@@ -661,7 +661,7 @@
             </aactivity>
           </f-element>
           <audit-event>
-            <audit-event-descr>Failure of MD user authentication</audit-event-descr>
+            <audit-event-descr>Failure of user authentication</audit-event-descr>
             <audit-event-info>Presented username</audit-event-info>
           </audit-event>
         </f-component> 
@@ -744,12 +744,11 @@
             <title>The TSF shall restrict the ability to [<h:b><h:i>initiate the enrollment process</h:i></h:b>]
               to [<h:i>authorized administrators</h:i>].</title>
             <note role="application">
-              This requirement outlines the enrollment functions that both administrators and MD users may perform.
+              This requirement outlines the enrollment functions that both administrators and users may perform.
               The enrollment actions are identified in the TSS as a part of FIA_ENR_EXT.1.
-              <h:br/><h:br/> The authorized administrator does not remotely initiate enrollment of the MDs that are in the possession of users but may enroll
-              MDs when they are in the possession of the administrator, for example, before distributing the MDs to the users. </note>
+             </note>
             <aactivity>
-              <TSS>The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling in the MDM services.</TSS>
+              <TSS>The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling to the TOE.</TSS>
               <Guidance>The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</Guidance>
               <Tests>The test of this function is performed in conjunction with FIA_ENR_EXT.1.</Tests>
             </aactivity>
@@ -767,14 +766,14 @@
               ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<h:br/>  
               Adapted from MDM PP requirement of the same name<h:br/>
             Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
-            The TSF shall be capable of performing the following management functions <h:b>against external systems</h:b>
-              <h:ul style="list-style-type:none">
-                <h:li><ctr id="smf1" ctr-type="mgmt" pre=""></ctr>. Configuration of reporting interval</h:li>
-                <h:li><ctr id="smf2" ctr-type="mgmt" pre=""></ctr>. Query installed software to
+            The TSF shall be capable of performing the following management functions <h:b>against external systems:
+              <h:ul>
+                <h:li>Configuration of reporting interval</h:li>
+                <h:li>Query installed software to
                   include the agent, if applicable, and firmware</h:li>
-                <h:li><ctr id="smf3" ctr-type="mgmt" pre=""></ctr>. Apply software updates to
+                <h:li>Apply software updates to
                   include the agent, if applicable</h:li>
-                <h:li><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. Unenroll from management</h:li>
+                <h:li>Unenroll from management</h:li>
                 <h:li>Query configuration</h:li>
                 <h:li>Apply configuration</h:li>
                 <h:li>Query connectivity status</h:li>
@@ -806,6 +805,8 @@
                 <selectable>network time server policy</selectable>
                 <selectable>cryptographic policy</selectable>                
               </selectables>
+              
+              
              
               <h:b>and the following management functions against external systems:</h:b>
               <comment>do we actually need a separate list of "management functions" vs "functions"? It seems like invoking APIs could exist separately from more holistic functions but not sure if we need to go into that granular detail or if we can just collectively bundle up related APIs into the notion of "functions" themselves</comment><h:br/>
@@ -813,7 +814,7 @@
                 <selectable><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
                 <selectable><ctr id="smf5" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
               
-              </selectables>.
+                </selectables></h:b>.
             </title>
             <note role="application"> This requirement captures all the configuration functionality that the TSF provides to interact with external entities, whether these entities are standalone systems, or purpose-built agents running on these systems.</note>
             <aactivity>
