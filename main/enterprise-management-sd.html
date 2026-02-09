@@ -439,11 +439,11 @@ The following sections list Common Criteria and technology terms used in this do
 		TODO: You need to explain the lack of EAs for this component!!!!
 	
             </span></div><h2 class="indexable" data-level="2" id="man-fia">2.2.2 Identification and Authentication (FIA)</h2><div class="comp" id=""><h4>FIA_ENR_EXT.1 Enrollment</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_ENR_EXT.1.1</div> 
-              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it describes the process of enrollment for each MDM agent or platform listed as supported 
+              <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
                 in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
                 (username or password, token, etc.), the method of authentication decision (local or remote authentication services), and the actions performed on
-                the MDM server upon successful authentication. </div>
-              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls mobile devices into management.</div>
+                the TOE upon successful authentication. </div>
+              <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls endpoints into management.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FIA_ENR_EXT.1.1:1</a>:
@@ -461,7 +461,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div>
               <div class="eacategory">Tests</div><div class="ea">For each type of policy selected, the evaluator shall perform the following: <span class="testlist-"><ul>
                 <li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FIA_ENR_EXT.1.2:1</a>:
-      The evaluator shall attempt to configure the MDM server according to the administrative guidance in order to prevent enrollment. The
+      The evaluator shall attempt to configure the TOE according to the administrative guidance in order to prevent enrollment. The
                   evaluator shall verify that the user cannot enroll a device outside of the configured limitation. (For example, the evaluator may try to enroll
                   a disallowed device, or may try to enroll additional devices beyond the number allowed.)</li>
               </ul></span>
@@ -478,7 +478,7 @@ The following sections list Common Criteria and technology terms used in this do
               
               
               
-            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling in the MDM services.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The test of this function is performed in conjunction with FIA_ENR_EXT.1.</div></div></span></div><div class="comp" id=""><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/External</div>
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling to the TOE.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The test of this function is performed in conjunction with FIA_ENR_EXT.1.</div></div></span></div><div class="comp" id=""><h4>FMT_SMF.1/External Specification of Management Functions (Server configuration of External Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/External</div>
           
 		TODO: You need to explain the lack of EAs for this component!!!!
 	

@@ -8,8 +8,6 @@
 * Error: Detected dangling id-reference to sel-display-banner from attribute
         on/Module[1]""/section[4]""/sel-sfrs[1]""/section[5]""/f-component[2]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 'sec-sel-audit-table'.
-* Error: Detected multiple elements with an id of 'smf4'.
-* Error: Detected multiple elements with an id of 'smf4'.
 * Error: Detected multiple elements with an id of 'sec-sel-audit-table'.
  Failed to find a reference to fel-smf-man-agnt.
  Failed to find a reference to fel-smf-man-agnt.
