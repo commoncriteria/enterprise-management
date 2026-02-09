@@ -778,7 +778,7 @@
                 <h:li>Apply configuration</h:li>
                 <h:li>Query connectivity status</h:li>
               </h:ul> 
-              and configuration settings including the following management functions.<selectables>
+              and configuration settings including the following management functions: <selectables>
                 <selectable>password policy<selectables>
                 <selectable>minimum password length</selectable>
                   <selectable>minimum password complexity</selectable>
