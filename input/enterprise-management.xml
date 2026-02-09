@@ -804,17 +804,7 @@
                 <selectable>software update policy</selectable>
                 <selectable>network time server policy</selectable>
                 <selectable>cryptographic policy</selectable>                
-              </selectables>
-              
-              
-             
-              <h:b>and the following management functions against external systems:</h:b>
-              <comment>do we actually need a separate list of "management functions" vs "functions"? It seems like invoking APIs could exist separately from more holistic functions but not sure if we need to go into that granular detail or if we can just collectively bundle up related APIs into the notion of "functions" themselves</comment><h:br/>
-                <selectables>
-                <selectable><ctr id="smf4" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
-                <selectable><ctr id="smf5" ctr-type="mgmt" pre=""></ctr>. TBD</selectable>
-              
-                </selectables></h:b>.
+              </selectables></h:b>.
             </title>
             <note role="application"> This requirement captures all the configuration functionality that the TSF provides to interact with external entities, whether these entities are standalone systems, or purpose-built agents running on these systems.</note>
             <aactivity>
