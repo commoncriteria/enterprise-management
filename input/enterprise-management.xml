@@ -643,7 +643,7 @@
           </f-element>
           <f-element id="fel-enr-limit">
             <title>The TSF shall limit the user's enrollment of devices to devices specified by
-              [<assignable>a unique device ID</assignable> and [<assignable>other
+              <assignable>a unique device ID</assignable> and <assignable>other
                 features</assignable>.</title>
             <note role="application"> This requirement is designed to permit the enterprise to restrict users' enrollment of devices. A unique device ID is required
               to limit the user's enrollment. The unique device ID could be an asset tag specified by the organization.</note>         
@@ -778,8 +778,8 @@
                 <h:li>Apply configuration</h:li>
                 <h:li>Query connectivity status</h:li>
               </h:ul> 
-              and configuration settings including the following management functions: <selectables>
-                <selectable>password policy<selectables>
+              and configuration settings including the following management functions: <selectables linebreak="yes">
+                <selectable>password policy <selectables linebreak="yes">
                 <selectable>minimum password length</selectable>
                   <selectable>minimum password complexity</selectable>
                   <selectable>maximum password lifetime</selectable>
@@ -788,13 +788,14 @@
                   <selectable>authentication failures, lockout duration</selectable>
                   <selectable>authentication failures, reset interval</selectable>
                 </selectables></selectable>
-                <selectable>audit policy<selectables>
+                <selectable>audit policy <selectables linebreak="yes">
                   <selectable>audit rules</selectable>
                   <selectable>name and address of audit or logging server to which to send audit or
                     logging records</selectable>
                   <selectable>local audit storage and retention policy</selectable>
-                </selectables>access banners policy</selectable>
-                <selectable>session locking policy<selectables>
+                </selectables></selectable>
+                <selectable>access banners policy</selectable>
+                <selectable>session locking policy <selectables linebreak="yes">
                 <selectable>screen-lock enabled or disabled</selectable>
                 <selectable>screen lock timeout</selectable>
                 <selectable>display notifications</selectable>
