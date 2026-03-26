@@ -330,7 +330,7 @@
       <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
         <audit-table id="t-audit-mandatory" table="mandatory"/>
       </section>
-      <section title="Security Audit (FAU)" id="fau">
+      <section title="Class FAU: Security Audit" id="fau">
 		
 	
 		  <ext-comp-def title="Server Alerts" fam-id="FAU_ALT_EXT">
@@ -597,7 +597,7 @@
         
 		</section>
       
-      <section id="man-fia" title="Identification and Authentication (FIA)">
+      <section id="man-fia" title="Class FIA: Identification and Authentication">
         
         <f-component cc-id="fia_enr_ext.1" name="Enrollment">
           <consistency-rationale/>
@@ -699,7 +699,7 @@
         
       </section>
       
-      <section id="man-fmt" title="Management of the TSF (FMT)">
+      <section id="man-fmt" title="Class FMT: Management of the TSF">
         
         
         <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior">
@@ -855,7 +855,7 @@
         
       </section>
       
-      <section id="man-ftp" title="Trusted Path/Channels (FTP)">
+      <section id="man-ftp" title="Class FTP: Trusted Path/Channels">
         
         <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (Authorized IT Entities)"> 
           <f-element id="fel-inter-xfer-it"> 
@@ -1050,7 +1050,7 @@
         <audit-table id="t-audit-sel-based" table="sel-based"/>
       </section>
       
-      <section id="sel-fau" title="Security Audit (FAU)">
+      <section id="sel-fau" title="Class FAU: Security Audit">
         
         <f-component cc-id="fau_sar.1" name="Audit Review">
           <depends  on-sel="locally"/>
@@ -1117,7 +1117,7 @@
       </f-component>
       </section>
 
-      <section id="sel-fia" title="Identification and Authentication (FIA)">
+      <section id="sel-fia" title="Class FIA: Identification and Authentication">
 
         <f-component cc-id="fia_afl.1" name="Authentication Failure Handling">
           <depends on="sel-auth-gui-password" or="sel-auth-ssh-password"/>
@@ -1328,7 +1328,7 @@
       </section>
       
       
-      <section id="impl-dep-ftp" title="Trusted Path/Channels (FTP)">
+      <section id="impl-dep-ftp" title="Class FTP: Trusted Path/Channels">
         
         <f-component cc-id="ftp_trp.1" name="Trusted Path (for Joining)" iteration="Join">
           <depends on-sel="joiningchannel"/>
@@ -1382,7 +1382,7 @@
         </f-component>
         
       </section>
-      <section id="sel-based-fta" title="TOE Access (FTA)">
+      <section id="sel-based-fta" title="Class FTA: TOE Access">
         <f-component cc-id="fta_ssl.3" name="TSF-initiated termination">
           <depends on="sel-impl-postauth"/>
           <f-element>
@@ -1464,7 +1464,7 @@
         <audit-table id="t-audit-feat-based" table="feat-based"/>
       </section>
       
-      <section id="impl-dep-fco" title="Communications (FCO)">
+      <section id="impl-dep-fco" title="Class FCO: Communications">
             
         
         <ext-comp-def title="Component Registration Channel Definition" fam-id="FCO_CPC_EXT">
@@ -1538,7 +1538,7 @@
         
       </section>
       
-      <section id="impl-dep-fpt" title="Protection of the TSF (FPT)">
+      <section id="impl-dep-fpt" title="Class FPT: Protection of the TSF">
       <f-component cc-id="fpt_itt.1" name="Internal TOE TSF Data Transfer">
         <depends on="distributed"/>
         <f-element id="fel-interxfer">
