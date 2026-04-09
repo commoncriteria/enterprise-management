@@ -7,10 +7,6 @@
         on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
 * Error: Detected dangling id-reference to sel-display-banner from attribute
         on/Module[1]""/section[4]""/sel-sfrs[1]""/section[5]""/f-component[2]""/depends[1]""/on[1]""
-* Error: Detected dangling id-reference to has-agent from attribute
-        on/Module[1]""/section[4]""/impl-dep-sfrs[1]""/section[4]""/f-component[1]""/depends[1]""/on[1]""
-* Error: Detected dangling id-reference to has-agent from attribute
-        on/Module[1]""/section[4]""/impl-dep-sfrs[1]""/section[5]""/f-component[1]""/depends[1]""/on[1]""
 * Error: Detected multiple elements with an id of 'sec-sel-audit-table'.
 * Error: Detected multiple elements with an id of 'sec-sel-audit-table'.
 * Error: Detected multiple elements with an id of 'impl-dep-ftp'.
