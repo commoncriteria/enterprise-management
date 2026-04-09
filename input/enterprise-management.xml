@@ -1313,7 +1313,7 @@
         
         
         <f-component cc-id="fia_enr_ext.1" name="Enrollment">
-          <depends on="has-agent"/>
+          <depends on="has-agents"/>
           <consistency-rationale/>
           <comp-lev>defines requirements for authenticating and limiting user actions.</comp-lev>
           <management>The following actions could be considered for the management functions in FMT.
@@ -1386,7 +1386,7 @@
         
         <f-component name="Management of Security Functions Behavior (Enrollment)" cc-id="fmt_mof.1"
           iteration="MANAGEMENT_ENROLL">
-          <depends on="has-agent"/>
+          <depends on="has-agents"/>
           <f-element>
             <title>The TSF shall restrict the ability to [<h:b><h:i>initiate the enrollment process</h:i></h:b>]
               to [<h:i>authorized administrators</h:i>].</title>
