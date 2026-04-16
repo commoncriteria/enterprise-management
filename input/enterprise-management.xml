@@ -161,11 +161,11 @@
     </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      The PP-Module for Enterprise-Management (EM) is intended to support Enterprise Security Management (ESM) products that are used to manage the configuration and behavior of endpoint systems in an enterprise setting, and providing monitoring and reporting capabilities for managed endpoints. EM supports ESM by defining a mechanism to enforce policies that control the security-relevant behavior of systems. An EM product is specifically a type of software application.<h:p/>
-      An EM product may control the behavior of a aystem directly, or it may accomplish this by interacting with an agent that resides on that system. If the agent is part of the product, the TOE is expected to conform to the PP-Module for Host Agent because the agent functionality is also within the TOE boundary. A conformant TOE may use different protocols to communicate with external entities. If IPsec is implemented for remote communications, the TOE boundary also includes the PP-Module for VPN Client.
+      The PP-Module for Enterprise-Management (EM) is intended to support Enterprise Security Management (ESM) products that are used to manage the configuration and behavior of endpoint systems in an enterprise setting, and providing monitoring and reporting capabilities for managed endpoints. EM supports ESM by applying policies that control the security-relevant behavior of systems. An EM product is specifically a type of software application.<h:p/>
+      An EM product may control the behavior of a system directly, or it may accomplish this by interacting with an agent that resides on that system. A conformant TOE may use different protocols to communicate with external entities. If IPsec is implemented for remote communications, the TOE boundary also includes the PP-Module for VPN Client.
       
       <section title="TOE Boundary" id="toeboundary">
-        The boundary for EMt includes 
+        The boundary for EM includes 
         all processes, all modules, and libraries bundled with the product, to be run on a single server or multiple servers in a load balancing or failover configuration. This includes any local or remote management interface that is used to access the TOE for the purpose of configuration (whether of itself or of endpoints under the TOE's control), audit review, or any other supported administrative function. The TOE boundary includes communications channels with external entities. The platform operating system or execution environment
         upon which the TOE is executing is outside the scope of an EM evaluation. The figure below shows a sample deployment of an EM product within its larger operational environment, including remote systems for which it is responsible for managing.
         <h:br/><h:br/>
@@ -234,7 +234,7 @@
       
       <implements>
         <feature id="networked" title="Network Connectivity">
-          <description>The TOE uses networking functionality to transmit policy data to logically remote entities, either to the operational environment or between separate components of a logically distributed TOE.</description>
+          <description>The TOE uses networking functionality to transmit policy data and commands to logically remote entities, either to the operational environment or between separate components of a logically distributed TOE.</description>
         </feature>
       </implements>		
       
@@ -684,7 +684,7 @@
               ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<h:br/>  
               Adapted from MDM PP requirement of the same name<h:br/>
             Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
-            The TSF shall be capable of performing the following management functions <h:b>against external systems:
+            The TSF shall be capable of performing the following management functions <h:b>against managed systems:
               <h:ul>
                 <h:li>query configuration</h:li>
                 <h:li>apply configuration</h:li>
