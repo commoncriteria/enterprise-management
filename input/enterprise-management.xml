@@ -1208,9 +1208,10 @@
       </section>
       
       <section id="impl-dep-fau" title="Class FAU: Security Audit">
-        <depends on="networked"/>
+        
         
         <f-component cc-id="fau_net_ext.1" name="Network Reachability Review">
+          <depends on="networked"/>
           <consistency-rationale/>
           <comp-lev>defines requirements for authorized administrators to read network connectivity
             status.</comp-lev>
