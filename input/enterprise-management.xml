@@ -104,6 +104,10 @@
       <term full="Enrollment">The process of transitioning an endpoint from an unenrolled to an enrolled state.
       </term>
       
+      <term full="Endpoint Detection and Response" abbr="EDR">A system that analyzes collected EDR Host Agent data for detecting, 
+        investigating, and remediating unauthorized activities on endpoints. 
+      </term>
+      
       <term full="Enterprise Security Management" abbr="ESM">A type of application hosted on a server or cloud service that provides 
         support for security management, information flows, reporting, policy, and data analytics 
         in complex enterprise environments.
@@ -173,7 +177,8 @@
         <h:br/><h:br/>
         A conformant TOE may include only EM functionality, or it may include agents within the logical boundary of the TOE. If agents are included in the logical boundary, the TOE also conforms to the PP-Module for Host Agent. Agents may also reside in the operational environment such that the TOE boundary only includes the EM functionality and its interface to remote agents is an external interface.<h:p/>
         A conformant TOE may be isolated to a single system, or it may be distributed across multiple systems, either because the TOE's EM functionality is distributed across multiple servers, or because the TOE boundary includes agents that are remote to the server.<h:p/>
-        A conformant TOE will generally communicate with external systems (whether via agents or not) that are logically remote to the TOE. However, some use cases exist where an EM product only manages policy on a central server.
+        A conformant TOE will generally communicate with external systems (whether via agents or not) that are logically remote to the TOE. However, some use cases exist where an EM product only manages policy on a central server.<h:p/>
+        A conformant TOE may provide endpoint detection and response (EDR) capability in addition to its EM capability. If this is the case, the TOE may also claim conformance to the PP-Module for Endpoint Detection and Response. 
               
         <!--
         <h:table>
@@ -234,7 +239,7 @@
       
       <implements>
         <feature id="networked" title="Network Connectivity">
-          <description>The TOE uses networking functionality to transmit policy data and commands to logically remote entities, either to the operational environment or between separate components of a logically distributed TOE.</description>
+          <description>The TOE uses networking functionality to transmit policy data, commands, or both. This data can be transmitted to logically remote entities that are in the operational environment, between separate components of a logically distributed TOE, or both. Specifically for this feature, if this is supported by the product, it must be claimed as part of the TSF.</description>
         </feature>
       </implements>		
       
@@ -253,7 +258,7 @@
       <cc-pp-conf/>
       <cc-pp-config-with>    
         <PP-cc-ref>Protection Profile for Application Software Version 2.0 </PP-cc-ref>
-       <!-- <Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version 2.0 </Mod-cc-ref> -->
+       <Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version 2.0 </Mod-cc-ref>
         <Mod-cc-ref>PP-Module for Host Agent (HA), Version 2.0</Mod-cc-ref>
         <Mod-cc-ref>PP-Module for VPN Client, Version 3.0</Mod-cc-ref>
         
@@ -423,7 +428,8 @@
           <f-element id="fau-crp-ext-2e1">
               <title><comment>ESR: auditing and compliance<h:br/>
                 Adapted from MDM PP requirement of the same name<h:br/>
-                <h:br/>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM TOE (i.e. is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage).<h:br/></comment>
+                <h:br/>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM TOE (i.e. is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage).<h:br/><h:br/>
+              The way this is currently written it expects a remote agent to generate a report and then securely transmit that report to the EM. We probably only care about the data itself because the TSF can do its own reporting based on the data it receives. Also see comment in FTP_ITC.1 - it's possible that some of this data could be transmitted over a non-trusted channel based on the protocol used for transmission and the types of data that are being transmitted. So explicitly referencing FTP_ITC.1 may not be correct here. </comment>
               The TSF shall provide the ability to generate compliance reports of the configuration status of managed
               <selectables>
                 <selectable>systems</selectable>
@@ -438,7 +444,7 @@
               <h:ul>
               <h:li><comment>TBD</comment></h:li>
               <h:li>List of configuration policies that are in place on the device (as defined in 
-                <xref to="fel-smf-man-agnt"/>)</h:li>
+                <xref to="fel-smf-man-ext"/>)</h:li>
             </h:ul>
             </title>
           
@@ -683,7 +689,8 @@
             <title><comment>ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<h:br/>
               ESR: The EM server/agents shall have a mechanism to report patch levels and initiate the patching process<h:br/>  
               Adapted from MDM PP requirement of the same name<h:br/>
-            Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
+            Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/>
+              Monitoring capability probably needs to be defined in greater detail than a generic "query configuration". Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
             The TSF shall be capable of performing the following management functions <h:b>against managed systems:
               <h:ul>
                 <h:li>query configuration</h:li>
@@ -1336,7 +1343,15 @@
           </dependencies>
           
           <f-element id="fel-enr-tsf">
-            <title>The TSF shall authenticate the remote users over a trusted channel during the
+            
+            <title>
+              <comment>Three things to consider here:<h:br/>
+                1. Right now it just talks about "user" enrollment which is an MDM specific framing. Should think about other ways that enrollment could occur (e.g. based on individual device, group of devices) and what authentication is used for those (certificate on device? Key distributed by EM during the setup process?)<h:br/>
+                2. Right now this only applies to systems with agents but enrollment could potentially apply in an agentless scenario too. Might need a separate iteration for non-agent scenarios (but selection/feature-based, not mandatory)<h:br/>
+                3. FIA_ENR_EXT.1.2 talks about limitation on enrollment because it covers the MDM case where a user has to enroll a specific device that's associated with them. Not sure if we care about any such limitations in the context of EM and if we do what all those limitations would be. If we don't want any limitations we may need to define a new extended SFR because we probably can't have 1.2 say "The TSF shall do nothing related to this function".<h:br/>
+              </comment>
+              
+              The TSF shall authenticate the remote users over a trusted channel during the
               enrollment of a Host Agent.</title>
             <note role="application">The TSF may use its own directory or a directory server to perform the authentication decision for users performing
               the remote enrollment of an endpoint.</note>
@@ -1494,6 +1509,7 @@
           <f-element id="fel-inter-xfer-it"> 
             <title><comment>ESR: confidentiality and integrity of data-at-rest and in-transit<h:br/>
               Adapted from MDM PP requirement of the same name<h:br/></comment>
+              <comment>We also need to consider how to handle an untrusted channel for interfacing with systems (probably as a collection mechanism only; "management" should not go over an untrusted channel. Unless you were to do something like encrypt a blob with a pre-shared key and then send the encrypted blob in the clear but that's probably not typical. We also need to determine what untrusted channel mechanisms exist (e.g. is it just SNMP traps or are there others) and also what types of data we do or don't allow to be collected through an untrusted channel. FDP_ITC could be considered for this (CC part 1 doesn't define "user data" but suspect it can be used as anything that is not TSF data and could work here).<h:br/></comment>
               The TSF shall <selectables>
                 <selectable><h:b>invoke platform-provided functionality to use <selectables linebreak="yes">
                   <selectable id="ITC1_IPSEC_INVOKE">IPsec</selectable>
