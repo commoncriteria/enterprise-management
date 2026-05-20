@@ -132,6 +132,8 @@
       <term abbr="IT" full="Information Technology"/>
       <!-- <term abbr="ITSEF" full="Information Technology Security Evaluation Facility"/> -->
       
+      <term full="Monitored Data">Information that the TSF collects from the enterprise for the purpose of reporting or using as a basis for exercising management functions. Depending on the design and architecture of the TOE, this may be collected from a local or remote logical entity (i.e., either on the same system that the TOE is installed on or via a network connection) and it may be collected directly from a system, or it may be collected from an agent that is either part of the TOE or in the TOE's operational environment.</term>
+      
       <term abbr="NIAP" full="National Information Assurance Partnership"/>
       <term abbr="NIST" full="National Institute of Standards and Technology"/>
       <!-- <term abbr="OCSP" full="Online Certificate Status Protocol"/> -->
@@ -418,38 +420,39 @@
 			</audit-event>
 		</f-component>
 		
-        <f-component cc-id="fau_crp_ext.2" name="Generation of Compliance Reports">
+        <f-component cc-id="fau_crp_ext.2" name="Transmission of Monitored Data">
           <consistency-rationale/>
-          <comp-lev>defines requirements for the contents and presentation of compliance reports.</comp-lev>
-          <management>No specific management functions are identified.</management>
+          <comp-lev>defines requirements for the transmission of monitored data.</comp-lev>
+          <management>The following actions could be considered for the management functions in FMT.
+            <h:ul>
+              <h:li>Configure the contents and formatting of transmitted data.</h:li>
+              <h:li>Configure the destination of transmitted data.</h:li>
+            </h:ul>
+          </management>
           <audit>There are no auditable events foreseen.</audit>
           <dependencies><no-link>FTP_ITC.1</no-link> Inter-TSF Trusted Channel</dependencies>
           
           <f-element id="fau-crp-ext-2e1">
-              <title><comment>ESR: auditing and compliance<h:br/>
-                Adapted from MDM PP requirement of the same name<h:br/>
-                <h:br/>Note that this is currently very generic because we will need TC/SME input on the minimum "compliance reporting" functionality of the EM TOE (i.e. is there a minimum set of things it needs to be able to check on, or potentially multiple such selectable sets depending on intended usage).<h:br/><h:br/>
-              The way this is currently written it expects a remote agent to generate a report and then securely transmit that report to the EM. We probably only care about the data itself because the TSF can do its own reporting based on the data it receives. Also see comment in FTP_ITC.1 - it's possible that some of this data could be transmitted over a non-trusted channel based on the protocol used for transmission and the types of data that are being transmitted. So explicitly referencing FTP_ITC.1 may not be correct here. </comment>
-              The TSF shall provide the ability to generate compliance reports of the configuration status of managed
+              <title>
+              The TSF shall provide the ability to transmit <selectables>
+                <selectable>all</selectable>
+                <selectable><assignable>pre-defined or configurable subset of</assignable></selectable>
+              </selectables>monitored data regarding managed
               <selectables>
                 <selectable>systems</selectable>
                 <selectable>agents</selectable>
               </selectables> over a channel
-               that meets the secure channel requirements in FTP_ITC.1. The provided information for each enrolled 
-                <selectables>
-                  <selectable>systems</selectable>
-                  <selectable>agents</selectable>
-                </selectables>
-              includes:
-              <h:ul>
-              <h:li><comment>TBD</comment></h:li>
-              <h:li>List of configuration policies that are in place on the device (as defined in 
-                <xref to="fel-smf-man-ext"/>)</h:li>
-            </h:ul>
+               that meets the secure channel requirements in FTP_ITC.1. 
+              </title>
+          </f-element>
+          <f-element>
+               <title>The TSF shall transmit this data in <selectables>
+                 <selectable>its original format</selectable>
+                 <selectable><assignable>aggregation, summary, or other consolidated reporting format</assignable></selectable>
+               </selectables>.
             </title>
           
-            <note role="application">The intent of this requirement is that the TOE be able to provide 
-              compliance information about managed systems, whether that is obtained through querying the system itself or by interfacing with an agent running on the system for this purpose. 
+            <note role="application">This requirement is intended to define a mechanism for the TOE to transmit some or all of the data it collects from external systems to a remote entity for storage or additional processing. This may take the form of the TSF simply aggregating the data from multiple sources to condense it into a single data stream, or it may involve the TSF summarizing or analyzing the data and outputing some subset of the data and any associated analysis of it. For example, the TSF may periodically generate compliance reports of systems that were not configured according to some enterprise policy and the specific non-conformities that were observed, and these reports may be transmitted to an external server for archiving or input to a different analytical process.
             </note>
             <aactivity>
              <no-tests/>
@@ -693,6 +696,7 @@
               Monitoring capability probably needs to be defined in greater detail than a generic "query configuration". Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
             The TSF shall be capable of performing the following management functions <h:b>against managed systems:
               <h:ul>
+                <h:li>configure systems to be managed</h:li>
                 <h:li>query configuration</h:li>
                 <h:li>apply configuration</h:li>
               </h:ul> 
@@ -749,7 +753,13 @@
               Adapted from MDM PP requirement of the same name (for management of the MDM Server itself)<h:br/>
               Incomplete/placeholder as the management functionality necessary for the server must be defined (e.g. configuration of cryptographic channels, configuration of X.509 certs/trust anchors, configuration of user accounts). Note that some of this may be selectable as being implemented by the TOE or by the platform (or not at all, depending on what is claimed).<h:br/></comment>
               
-              The TSF shall be capable of performing the following management functions <h:b>for configuration of the TSF</h:b>: <assignable>list of management functions</assignable>
+              The TSF shall be capable of performing the following management functions <h:b>for configuration of the TSF</h:b>: 
+              <selectables>
+                <selectable>configuration of remote channels for collection of monitored data</selectable>
+                <selectable>configuration of the contents and formatting for transmission of monitored data</selectable>
+                <selectable>configuration of remote trusted channel for transmission of monitored data</selectable>
+                <selectable><assignable>list of management functions</assignable> <comment>TBD: we'll want to avoid open-ended assignments like this so we should define everything we want to have be selectable as selections</comment></selectable>
+              </selectables>
               
             </title>
             <note role="application"> This requirement addresses the management functions the TOE provides to manage its own behavior (as opposed to managing the behavior of external entities)     
@@ -1166,7 +1176,7 @@
         </f-component>
         
         <f-component cc-id="fta_tab.1" name="Default TOE access banners">
-          <depends on="sel-display-banner"/>
+          <depends on="sel-impl-postauth"/>
           <f-element>
             <title>Before establishing a user session, the <selectables>
               <selectable>TSF</selectable>
@@ -1204,6 +1214,129 @@
           </f-element>
           <audit-event/>
         </f-component>
+      </section>
+      
+      
+      
+      
+      <section id="sel-ftp" title="Trusted Path/Channels">
+        
+        <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (Authorized IT Entities)"> 
+          <depends on-sel="remote-external-channel"/>
+          <f-element id="fel-inter-xfer-it"> 
+            <title>
+              The TSF shall <selectables>
+                <selectable><h:b>invoke platform-provided functionality to use <selectables linebreak="yes">
+                  <selectable id="ITC1_IPSEC_INVOKE">IPsec</selectable>
+                  <selectable id="ITC1_SSH_INVOKE">SSH</selectable>
+                  <selectable id="ITC1_TLS_INVOKE">mutually authenticated TLS</selectable>
+                  <selectable id="ITC1_DTLS_INVOKE">mutually authenticated DTLS</selectable>
+                  <selectable id="ITC1_HTTPS_INVOKE">HTTPS</selectable>
+                </selectables></h:b></selectable>
+                <selectable><h:b>implement functionality using <selectables linebreak="yes">
+                  <selectable id="ITC1_IPSEC_IMPLEMENT">IPsec as defined in the PP-Module for VPN Client</selectable>
+                  <selectable id="ITC1_SSH_IMPLEMENT">SSH as defined in the Functional Package for Secure Shell</selectable>
+                  <selectable id="ITC1_TLS_IMPLEMENT">mutually authenticated TLS as defined in the Package for Transport Layer Security</selectable>
+                  <selectable id="ITC1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in the Package for Transport Layer Security</selectable>
+                  <selectable id="ITC1_HTTPS_IMPLEMENT">HTTPS in accordance with FCS_HTTPS_EXT.1 as defined in the Base PP</selectable>
+                </selectables></h:b></selectable></selectables> <h:b>to</h:b> provide a <h:b>trusted</h:b>
+              communication channel between itself and <h:b>authorized</h:b> IT <h:b>entities supporting the following capabilities: connectivity to remote <selectables><selectable>systems</selectable><selectable>agents</selectable></selectables>, audit server,
+                <selectables>
+                  <selectable>authentication server</selectable>
+                  <selectable>remote destination for monitored data</selectable>
+                  <selectable><assignable>other capabilities</assignable></selectable>
+                </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its endpoints
+              and protection of the channel data from modification or disclosure.</title>
+            <note role="application">The intent of the mandatory portion of the above requirement is to use the cryptographic 
+              protocols identified in the requirement to establish and maintain a trusted channel with authorized IT entities 
+              that the TOE interacts with to perform its functions.<h:br/><h:br/> 
+              Protection (by one of the listed protocols) is required at least for communications with the IT entities managed by the TOE (whether those are systems that are managed using APIs provided by those systems by default, specialized agents running on systems that are designed for the purpose of interacting with the TOE, or both) and with
+              the server that collects 
+              the audit information. If it communicates with an authentication server (e.g., RADIUS), then the ST 
+              author chooses "authentication server" in FTP_ITC.1.1 and this connection must be protected 
+              by one of the listed protocols. 
+              
+              The TSF collects data from remote systems or agents and it may or may not transmit this data further to another remote entity. For example, the TSF may generate reports of the monitored data and transmit these reports to an external system for archival purposes. If such an interface exists, then the ST author chooses "remote destination for monitored data" in the selection and this connection must similarly be protected by one of the listed protocols.
+              
+              If other authorized IT entities (e.g., NTP server) are protected, the 
+              ST author makes the appropriate assignments (for those entities) and selections (for the protocols 
+              that are used to protect those connections).<h:br/><h:br/> 
+              To summarize, all communications with external entities that require protection of data in transit must be defined and must use one of the protocols specified in the requirement. At minimum, the TSF must communicate with external entities for the purpose of performing Enterprise-Management functions against them, and with a remote audit server for external storage of audit data. Additional channels are not required in order for the TOE to achieve its minimum required functionality, but if any such channels are implemented, appropriate protections must be provided for them.<h:br/><h:br/>
+              
+              The trusted channel uses IPsec, TLS, DTLS, or HTTPS as the protocol that preserves the confidentiality and integrity of external communications. The ST 
+              author chooses the mechanism or mechanisms supported by the TOE.<h:br/><h:br/>
+              If "IPsec as defined in the PP-Module for VPN Client" is selected, the TSF must claim conformance to a PP-Configuration that includes the VPN Client 
+              PP-Module.<h:br/><h:br/>
+              If HTTPS is chosen, FCS_HTTPS_EXT.1 must be included in the ST.<h:br/><h:br/>
+              If the ST author selects "SSH as defined in the Functional Package for Secure Shell," the TSF must be validated against the FP for Secure Shell. It should be noted that due to constraints imposed by this PP that SHA-1 cannot be used.<h:br/><h:br/>
+              If the ST author selects "mutually authenticated TLS as defined in the Package for Transport Layer Security" or "mutually authenticated DTLS as 
+              defined in the Package for Transport Layer Security," the TSF must be validated against requirements from the Package for Transport Layer Security,
+              with the following selections made:
+              <h:ul>
+                <h:li>FCS_TLS_EXT.1: 
+                  <h:ul>
+                    <h:li>either TLS or DTLS is selected depending on the selection made in FTP_ITC.1.1</h:li>
+                    <h:li>either client or server is selected as appropriate</h:li>
+                  </h:ul>
+                </h:li>
+                <h:li>FCS_TLSC_EXT.1.1 or FCS_TLSS_EXT.1.1 (as appropriate):
+                  <h:ul>
+                    <h:li>The cipher suites selected must correspond with the algorithms and hash functions allowed in FCS_COP.1.</h:li>
+                    <h:li>mutual authentication must be selected</h:li>
+                  </h:ul>
+                </h:li>
+                <h:li>FCS_DTLSC_EXT.1.1 or FCS_DTLSS_EXT.1.1 (as appropriate):
+                  <h:ul>
+                    <h:li>The cipher suites selected must correspond with the algorithms and hash functions allowed in FCS_COP.1.</h:li>
+                    <h:li>mutual authentication must be selected</h:li>
+                  </h:ul>
+                </h:li>
+              </h:ul> 
+              Protocol, RBG, Certificate validation, algorithm, and similar services may be met with
+              platform-provided 
+              services.<h:br/><h:br/> 
+              The requirement implies that not only are communications protected when they are initially established, but 
+              also on resumption after an outage. It may be the case that some part of the TOE setup involves 
+              manually setting up tunnels to protect other communication, and if after an outage the TOE attempts 
+              to re-establish the communication automatically with (the necessary) manual intervention, there may be a window created 
+              where an attacker might be able to gain critical information or compromise a connection.<h:br/><h:br/>
+            </note>            
+          </f-element>
+          
+          <f-element id="ftp-itc-1e2-ixi">
+            <title>The TSF shall <selectables>
+              <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
+              <selectable><h:b>implement functionality</h:b></selectable>
+            </selectables> <h:b>to</h:b> permit <selectables>
+              <selectable>the TSF</selectable>
+              <selectable>another trusted IT product</selectable>
+            </selectables> to initiate communication via the trusted channel.</title>
+          </f-element>
+          
+          <f-element id="fel-itc-init">
+            <title>The TSF shall <selectables>
+              <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
+              <selectable><h:b>implement functionality</h:b></selectable>
+            </selectables> <h:b>to</h:b> initiate communication via the trusted channel for
+              <assignable>list of functions for which a trusted channel is required</assignable>.</title>
+            <note role="application">While there are no requirements on the party initiating the
+              communication, the ST author lists in the assignment for <xref to="fel-itc-init"/>
+              the services for which the TOE can initiate the communication with
+              the authorized IT entity.
+              <h:p/>
+              This SFR is claimed if "a remote, external trusted channel" is selected in FDP_MON_EXT.1.1. 
+            </note>
+            <aactivity>
+              <no-tests/>
+            </aactivity>
+          </f-element>
+          <audit-event>
+            <audit-event-descr>Initiation and termination of the trusted channel</audit-event-descr>
+            <audit-event-info>Trusted channel protocol</audit-event-info>
+            <audit-event-info>Non-TOE endpoint of connection</audit-event-info>
+          </audit-event>
+        </f-component>
+        
       </section>
       
     </sel-sfrs>
@@ -1317,6 +1450,53 @@
         
       </section>
       
+      
+      
+      <section id="impl-dep-fdp" title="Class FDP: User Data Protection">
+        
+        
+        <ext-comp-def title="Collection of Monitored Data" fam-id="FDP_MON_EXT">
+          <fam-behavior>This family defines requirements for collection of monitored data for the purpose of visibility or to use as a basis for executing management functions on the system being monitored. This differs from "user data" as defined by FDP_ITC in that the data may be generated by a system or other automated process and not associated with any individual user.</fam-behavior>
+        </ext-comp-def>		
+        
+        <f-component cc-id="fdp_mon_ext.1" name="Collection of Monitored Data">
+          <depends on="networked"/>
+          <consistency-rationale/>
+          <comp-lev>defines requirements for the interfaces the TOE has for data collection and the data that is expected to be collected over these interfaces.</comp-lev>
+          <management>The following actions could be considered for the management functions in FMT.
+            <h:ul>
+              <h:li>Configuration of monitored sources and interfaces.</h:li>              
+            </h:ul></management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          
+          <f-element id="fdp-mon-ext-1e1">
+            
+            
+            <title>A conformant TOE shall use the following types of communications channels for monitored data collection: <selectables linebreak="yes">
+              <selectable id="remote-internal-channel"><assignable>types of data collected</assignable> via secure remote internal collection over <assignable>one or more trusted channels as defined in FPT_ITT.1</assignable> <comment>idea: we could make this a selection and then have FPT_ITT.1 be selectable if this is chosen and then we have a cleaner trigger than the implementation-based "TOE is distributed" thing</comment></selectable>
+              <selectable id="remote-external-channel"><assignable>types of data collected</assignable> via secure remote external collection over <assignable>one or more trusted channels as defined in FTP_ITC.1</assignable></selectable>
+              <selectable id="remote-insecure-channel"><assignable>types of data collected</assignable> via unsecured remote collection over <assignable>untrusted channels (e.g., SNMP)</assignable> protected separately by <assignable>protection mechanism</assignable></selectable>
+              </selectables>.</title>
+            <note role="application">This requirement is intended to define how the TOE collects the data that it uses for monitoring or management purposes. Data collected over a remote trusted channel that is either internal to the TOE, as defined in the first selection, or external to the TOE, as defined in the selection. In the context of this requirement, a channel that is internal to the TOE would be an agent that is part of a distributed TOE that is running on a system that is remote to the part of the TOE defined by this PP-Module. A channel that is external to the TOE would be either a remote agent in the TOE's operational environment, or a aystem itself that is communicating without using an agent. An unsecured remote channel is a mechanism such as SNMP that is used specifically for the transmission of data that is not security-relevant on its own such that its modification or disclosure would not impair the ability of the TSF to enforce its security functions. Alternatively, the use of such channels could still be protected because data was transmitted over the clear using a pre-shared key configured outside the TOE boundary.<h:p/>
+            The ST author is expected to define the general types of data that are collected over each type of channel. This is not meant to be an exhaustive list of all data that is collected, only a general summary so that the purpose of each channel is well-understood. For example, it would be sufficient to specify that configuration data about a system is collected remotely from that system via the Security Content Automation Protocol (SCAP) without going into detail about the specific configuration settings that can be communicated over this protocol.
+            </note>
+            <aactivity>
+              <TSS>TBD but we need to make sure we cover the following: <h:ul>
+                <h:li>list all the types of data the TOE is expecting to collect remotely and from where - remote OE agent or system on secure channel, remote agent that is part of a distributed TOE on secure channel, remote OE system on insecure channel</h:li>
+                <h:li>for each type of collection that can be done specify the channel that is used - will line up with FPT_ITT.1 or FTP_ITC.1 for secure comms.</h:li>
+                <h:li>if insecure comms are used in particular, we should probably expect some sort of justification for why the data going over that doesn't reasonably need to be protected in transit. based on either the unimportance of the data or on an alternate mechanism such as pre-shared keys transmitting ciphertext over an insecure channel, or a physically isolated interface where the method of data transmission is irrelevant.</h:li>
+                <h:li>also if insecure comms are used in particular, do you have any way to configure the TOE to "expect" that only certain types of data be transmitted over this interface. e.g. if the TOE is set up to receive SNMP traps from the environment is there some sort of specific OIDs it's expecting to be handling</h:li>
+              </h:ul></TSS>
+              <Guidance>TBD but will include instructions for how to set up each channel (specify endpoint location, connection method, possibly authentication). If it's a distributed TOE that'll probably be covered by FCO. </Guidance>
+              <Tests>TBD but we'll need to show we can collect all the things and that we can do it over the channels that we say the TOE uses.</Tests>
+            </aactivity>
+          </f-element>
+          <audit-event/>
+        </f-component> 
+        
+      </section>
+      
       <section id="impl-dep-fia" title="Class FIA: Identification and Authentication">
         
         
@@ -1351,9 +1531,12 @@
                 3. FIA_ENR_EXT.1.2 talks about limitation on enrollment because it covers the MDM case where a user has to enroll a specific device that's associated with them. Not sure if we care about any such limitations in the context of EM and if we do what all those limitations would be. If we don't want any limitations we may need to define a new extended SFR because we probably can't have 1.2 say "The TSF shall do nothing related to this function".<h:br/>
               </comment>
               
-              The TSF shall authenticate the remote users over a trusted channel during the
-              enrollment of a Host Agent.</title>
-            <note role="application">The TSF may use its own directory or a directory server to perform the authentication decision for users performing
+              The TSF shall authenticate the remote <h:b>subjects</h:b> over a trusted channel during the
+              enrollment of a <selectables>
+                <selectable>Host Agent</selectable>
+                <selectable>Agentless System</selectable></selectables>
+                </title>
+            <note role="application">The TSF may use its own directory or a directory server to perform the authentication decision for remote enrollment (e.g. the device is assigned to a user; does that user's organizational role permit the enrollment of that device. 
               the remote enrollment of an endpoint.</note>
             <aactivity level="element"> 
               <TSS>The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
@@ -1371,14 +1554,26 @@
               </Tests>
             </aactivity>
           </f-element>
+          <f-element>
+            <title>Registration shall occur through the following processes: <selectables linebreak="yes">
+              <selectable>The TOE through FCO_CPC_EXT.1 adds another agent to the distributed TOE, which is considered inherently enrolled by the process of joining the TOE.</selectable>
+              <selectable>The TOE administrator accesses a remote agent or system as a sufficiently privileged user on the remote entity to enroll that remote agent or system directly.</selectable>
+              <selectable>An external agent or system requests to be enrolled or has sufficient privileges to initiate enrollment on their own.</selectable>
+              <selectable>The TOE interacts with some environmental process that causes a system or agent to be enrolled indirectly through environmental mechanisms. </selectable>
+              <selectable>The TOE interacts with remote systems solely through transactional sessions. No separate 'enrollment' activity occurs on the TSF because it is not a prerequisite to collecting data from these systems.</selectable>
+              <selectable>The TOE does not perform registration because the entire physical boundary of the TOE is limited to one system so this system is implicitly already registered to to the TOE without separate actions.</selectable>
+            </selectables>
+              
+            
+            </title>
+          </f-element>
           <f-element id="fel-enr-limit">
-            <title>The TSF shall limit the user's enrollment of devices to devices specified by
-              <assignable>a unique device ID</assignable> and <assignable>other
+            <title><comment>pretty big departure from this SFR was originally written, we might need to get it a new name.</comment> The TSF shall limit the <h:strike>user's</h:strike> enrollment of <h:b><selectables><selectable>agents</selectable><selectable>systems</selectable></selectables></h:b> to <h:b>those</h:b>specified by
+              <assignable>other
                 features</assignable>.</title>
-            <note role="application"> This requirement is designed to permit the enterprise to restrict users' enrollment of devices. A unique device ID is required
-              to limit the user's enrollment. The unique device ID could be an asset tag specified by the organization.</note>         
+            <note role="application"> This requirement is designed to permit the enterprise to restrict enrollment of systems or agents. There may be certain cases where the TSF does not want to unconditionally permit the registration of a system or agent to occur. For example, there may be maximum number of devices a user isallowed to have and attempts to register additional devices beyond this should fail.</note>         
             <aactivity level="element">
-              <TSS>The evaluator shall examine the TSS and verify that it implements a policy to limit the user's enrollment of devices.</TSS>
+              <TSS><comment>todo update these</comment> The evaluator shall examine the TSS and verify that it implements a policy to limit the user's enrollment of devices.</TSS>
               <Guidance>The evaluator shall ensure that the administrative guidance describes the methods of restricting user enrollment and that it instructs 
                 the administrator how to configure the restrictions.<h:br/><h:br/>
               </Guidance>
@@ -1503,116 +1698,7 @@
     
       
       <section id="impl-dep-ftp" title="Class FTP: Trusted Path/Channels">
-        
-        <f-component cc-id="ftp_itc.1" name="Inter-TSF Trusted Channel (Authorized IT Entities)"> 
-          <depends on="networked"/>
-          <f-element id="fel-inter-xfer-it"> 
-            <title><comment>ESR: confidentiality and integrity of data-at-rest and in-transit<h:br/>
-              Adapted from MDM PP requirement of the same name<h:br/></comment>
-              <comment>We also need to consider how to handle an untrusted channel for interfacing with systems (probably as a collection mechanism only; "management" should not go over an untrusted channel. Unless you were to do something like encrypt a blob with a pre-shared key and then send the encrypted blob in the clear but that's probably not typical. We also need to determine what untrusted channel mechanisms exist (e.g. is it just SNMP traps or are there others) and also what types of data we do or don't allow to be collected through an untrusted channel. FDP_ITC could be considered for this (CC part 1 doesn't define "user data" but suspect it can be used as anything that is not TSF data and could work here).<h:br/></comment>
-              The TSF shall <selectables>
-                <selectable><h:b>invoke platform-provided functionality to use <selectables linebreak="yes">
-                  <selectable id="ITC1_IPSEC_INVOKE">IPsec</selectable>
-                  <selectable id="ITC1_SSH_INVOKE">SSH</selectable>
-                  <selectable id="ITC1_TLS_INVOKE">mutually authenticated TLS</selectable>
-                  <selectable id="ITC1_DTLS_INVOKE">mutually authenticated DTLS</selectable>
-                  <selectable id="ITC1_HTTPS_INVOKE">HTTPS</selectable>
-                </selectables></h:b></selectable>
-                <selectable><h:b>implement functionality using <selectables linebreak="yes">
-                  <selectable id="ITC1_IPSEC_IMPLEMENT">IPsec as defined in the PP-Module for VPN Client</selectable>
-                  <selectable id="ITC1_SSH_IMPLEMENT">SSH as defined in the Functional Package for Secure Shell</selectable>
-                  <selectable id="ITC1_TLS_IMPLEMENT">mutually authenticated TLS as defined in the Package for Transport Layer Security</selectable>
-                  <selectable id="ITC1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in the Package for Transport Layer Security</selectable>
-                  <selectable id="ITC1_HTTPS_IMPLEMENT">HTTPS in accordance with FCS_HTTPS_EXT.1 as defined in the Base PP</selectable>
-                </selectables></h:b></selectable></selectables> <h:b>to</h:b> provide a <h:b>trusted</h:b>
-              communication channel between itself and <h:b>authorized</h:b> IT <h:b>entities supporting the following capabilities: connectivity to remote <selectables><selectable>systems</selectable><selectable>agents</selectable></selectables>, audit server,
-                <selectables>
-                  <selectable>authentication server</selectable>
-                  <selectable><assignable>other capabilities</assignable></selectable>
-                </selectables></h:b> that is logically distinct from other communication channels and provides assured identification of its endpoints
-              and protection of the channel data from modification or disclosure.</title>
-            <note role="application">The intent of the mandatory portion of the above requirement is to use the cryptographic 
-              protocols identified in the requirement to establish and maintain a trusted channel with authorized IT entities 
-              that the TOE interacts with to perform its functions.<h:br/><h:br/> 
-              Protection (by one of the listed protocols) is required at least for communications with the IT entities managed by the TOE (whether those are systems that are managed using APIs provided by those systems by default, specialized agents running on systems that are designed for the purpose of interacting with the TOE, or both) and with
-              the server that collects 
-              the audit information. If it communicates with an authentication server (e.g., RADIUS), then the ST 
-              author chooses "authentication server" in FTP_ITC.1.1 and this connection must be protected 
-              by one of the listed protocols. If other authorized IT entities (e.g., NTP server) are protected, the 
-              ST author makes the appropriate assignments (for those entities) and selections (for the protocols 
-              that are used to protect those connections).<h:br/><h:br/> 
-              To summarize, all communications with external entities that require protection of data in transit must be defined and must use one of the protocols specified in the requirement. At minimum, the TSF must communicate with external entities for the purpose of performing Enterprise-Management functions against them, and with a remote audit server for external storage of audit data. Additional channels are not required in order for the TOE to achieve its minimum required functionality, but if any such channels are implemented, appropriate protections must be provided for them.<h:br/><h:br/>
-              
-              The trusted channel uses IPsec, TLS, DTLS, or HTTPS as the protocol that preserves the confidentiality and integrity of external communications. The ST 
-              author chooses the mechanism or mechanisms supported by the TOE.<h:br/><h:br/>
-              If "IPsec as defined in the PP-Module for VPN Client" is selected, the TSF must claim conformance to a PP-Configuration that includes the VPN Client 
-              PP-Module.<h:br/><h:br/>
-              If HTTPS is chosen, FCS_HTTPS_EXT.1 must be included in the ST.<h:br/><h:br/>
-              If the ST author selects "SSH as defined in the Functional Package for Secure Shell," the TSF must be validated against the FP for Secure Shell. It should be noted that due to constraints imposed by this PP that SHA-1 cannot be used.<h:br/><h:br/>
-              If the ST author selects "mutually authenticated TLS as defined in the Package for Transport Layer Security" or "mutually authenticated DTLS as 
-              defined in the Package for Transport Layer Security," the TSF must be validated against requirements from the Package for Transport Layer Security,
-              with the following selections made:
-              <h:ul>
-                <h:li>FCS_TLS_EXT.1: 
-                  <h:ul>
-                    <h:li>either TLS or DTLS is selected depending on the selection made in FTP_ITC.1.1</h:li>
-                    <h:li>either client or server is selected as appropriate</h:li>
-                  </h:ul>
-                </h:li>
-                <h:li>FCS_TLSC_EXT.1.1 or FCS_TLSS_EXT.1.1 (as appropriate):
-                  <h:ul>
-                    <h:li>The cipher suites selected must correspond with the algorithms and hash functions allowed in FCS_COP.1.</h:li>
-                    <h:li>mutual authentication must be selected</h:li>
-                  </h:ul>
-                </h:li>
-                <h:li>FCS_DTLSC_EXT.1.1 or FCS_DTLSS_EXT.1.1 (as appropriate):
-                  <h:ul>
-                    <h:li>The cipher suites selected must correspond with the algorithms and hash functions allowed in FCS_COP.1.</h:li>
-                    <h:li>mutual authentication must be selected</h:li>
-                  </h:ul>
-                </h:li>
-              </h:ul> 
-              Protocol, RBG, Certificate validation, algorithm, and similar services may be met with
-              platform-provided 
-              services.<h:br/><h:br/> 
-              The requirement implies that not only are communications protected when they are initially established, but 
-              also on resumption after an outage. It may be the case that some part of the TOE setup involves 
-              manually setting up tunnels to protect other communication, and if after an outage the TOE attempts 
-              to re-establish the communication automatically with (the necessary) manual intervention, there may be a window created 
-              where an attacker might be able to gain critical information or compromise a connection.<h:br/><h:br/>
-            </note>            
-          </f-element>
-          
-          <f-element id="ftp-itc-1e2-ixi">
-            <title>The TSF shall <selectables>
-              <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
-              <selectable><h:b>implement functionality</h:b></selectable>
-            </selectables> <h:b>to</h:b> permit <selectables>
-              <selectable>the TSF</selectable>
-              <selectable>another trusted IT product</selectable>
-            </selectables> to initiate communication via the trusted channel.</title>
-          </f-element>
-          
-          <f-element id="fel-itc-init">
-            <title>The TSF shall <selectables>
-              <selectable><h:b>invoke platform-provided functionality</h:b></selectable>
-              <selectable><h:b>implement functionality</h:b></selectable>
-            </selectables> <h:b>to</h:b> initiate communication via the trusted channel for
-              <assignable>list of functions for which a trusted channel is required</assignable>.</title>
-            <note role="application">While there are no requirements on the party initiating the
-              communication, the ST author lists in the assignment for <xref to="fel-itc-init"/>
-              the services for which the TOE can initiate the communication with
-              the authorized IT entity.</note>
-            <aactivity>
-              <no-tests/>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>Initiation and termination of the trusted channel</audit-event-descr>
-            <audit-event-info>Trusted channel protocol</audit-event-info>
-            <audit-event-info>Non-TOE endpoint of connection</audit-event-info>
-          </audit-event>
-        </f-component>
+     
         
         
         
@@ -1716,7 +1802,10 @@
     this PP, the baseline requirements (those that must be performed by the OS or its underlying
     platform) are contained in the body of this PP. There are additional requirements based on
     selections in the body of the PP: if certain selections are made, then additional requirements
-    below will need to be included. </appendix>
+    below will need to be included. 
+ 
+  
+  </appendix>
 
   <!-- 
        Do NOT put SFRs in this section. All SFR belong up above in SFR section. 
