@@ -437,7 +437,7 @@
               The TSF shall provide the ability to transmit <selectables>
                 <selectable>all</selectable>
                 <selectable><assignable>pre-defined or configurable subset of</assignable></selectable>
-              </selectables>monitored data regarding managed
+              </selectables> monitored data regarding managed
               <selectables>
                 <selectable>systems</selectable>
                 <selectable>agents</selectable>
