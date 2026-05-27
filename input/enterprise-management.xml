@@ -228,18 +228,10 @@
         <feature id="has-agents" title="Agent Integration">
           <description>A conformant TOE may implement policy by communicating configuration instructions to a software agent on a system rather than through direct interaction with the system itself. An agent may reside locally on the same system as the TOE or may be remote. If the product is integrated with agents, the agents must be included in the TOE boundary. It is possible that agents are a separate "product" and are in the TOE's operational environment. If this is the case, the reason for their exclusion from the TOE boundary must be clear.</description>
         </feature>
-      </implements>		
       
-      
-      <implements>
         <feature id="distributed" title="Distributed TOE">
           <description>The TOE is distributed across multiple server instances. These instances must have the ability to communicate securely with one another and exchange authentication data so that sensitive data in transit between them is protected and only sent to the appropriate destination.</description>
         </feature>
-      </implements>
-      
-      
-      
-      <implements>
         <feature id="networked" title="Network Connectivity">
           <description>The TOE uses networking functionality to transmit policy data, commands, or both. This data can be transmitted to logically remote entities that are in the operational environment, between separate components of a logically distributed TOE, or both. Specifically for this feature, if this is supported by the product, it must be claimed as part of the TSF.</description>
         </feature>
