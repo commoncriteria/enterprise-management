@@ -1,5 +1,3 @@
-* Error: f-element FAU_SAR.1.1  appears not to have an associated evaluation activity.:
-        /Module[1]""/section[4]""/man-sfrs[1]""/section[2]""/f-component[4]""/f-element[1]""
 * Error: f-element FIA_AFL.1.1  appears not to have an associated evaluation activity.:
         /Module[1]""/section[4]""/sel-sfrs[1]""/section[3]""/f-component[1]""/f-element[1]""
 * Error: f-element FIA_AFL.1.2  appears not to have an associated evaluation activity.:

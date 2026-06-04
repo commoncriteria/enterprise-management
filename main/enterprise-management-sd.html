@@ -431,7 +431,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="element-activity-header">FAU_GEN.1.2</div>
              
 			TODO: You need to explain the lack of EAs for this element!!!!<br/><br/>
-            </span></div><div class="comp" id=""><h4>FAU_SAR.1 Audit Review</h4><span class="activity_pane_body"></span></div><div class="comp" id=""><h4>FAU_SAR.1 Audit Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_SAR.1</div>
+            </span></div><div class="comp" id=""><h4>FAU_SAR.1 Audit Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_SAR.1</div>
               
               
               
@@ -625,7 +625,7 @@ The following sections list Common Criteria and technology terms used in this do
                 <li>list all the types of data the TOE is expecting to collect remotely and from where - remote OE agent or system on secure channel, remote agent that is part of a distributed TOE on secure channel, remote OE system on insecure channel</li>
                 <li>for each type of collection that can be done specify the channel that is used - will line up with FPT_ITT.1 or FTP_ITC.1 for secure comms.</li>
                 <li>if insecure comms are used in particular, we should probably expect some sort of justification for why the data going over that doesn't reasonably need to be protected in transit, based on either the unimportance of the data or on an alternate mechanism such as pre-shared keys transmitting ciphertext over an insecure channel, or a physically isolated interface where the method of data transmission is irrelevant.</li>
-                <li>also if insecure comms are used in particular, do you have any way to configure the TOE to "expect" that only certain types of data be transmitted over this interface. e.g.,. if the TOE is set up to receive SNMP traps from the environment is there some sort of specific OIDs it's expecting to be handling</li>
+                <li>also if insecure comms are used in particular, do you have any way to configure the TOE to "expect" that only certain types of data be transmitted over this interface. e.g., if the TOE is set up to receive SNMP traps from the environment is there some sort of specific OIDs it's expecting to be handling</li>
               </ul></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">TBD but will include instructions for how to set up each channel (specify endpoint location, connection method, possibly authentication). If it's a distributed TOE that'll probably be covered by FCO. </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">TBD but we'll need to show we can collect all the things and that we can do it over the channels that we say the TOE uses.</div></div></span></div><h2 class="indexable" data-level="2" id="impl-dep-fia">2.6.4 Class FIA: Identification and Authentication</h2><div class="comp" id=""><h4>FIA_ENR_EXT.1 Enrollment</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_ENR_EXT.1.1</div> 
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
                 in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
