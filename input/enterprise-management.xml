@@ -565,10 +565,9 @@
             <title>The TSF shall provide <assignable>authorized users</assignable> with the capability to read <assignable>list of audit information</assignable> from the
             audit data.</title>
           </f-element>
-        </f-component>
+       
         
-        <f-component name="Audit Review" cc-id="fau_sar.1">
-          <f-element id="fau-sar-1e2">
+       <f-element id="fau-sar-1e2">
             <title>The TSF shall provide the audit data in a manner suitable for the user to interpret the information.</title>
             <note>TBD</note>
             <aactivity>
@@ -1276,7 +1275,7 @@
               <selectable>TSF</selectable>
               <selectable>TOE platform</selectable>
             </selectables> shall display an [<h:i>administrator-specified advisory notice and consent warning</h:i>] message.</title>
-            <note/>
+          
             <aactivity>
               <TSS>
                 The evaluator shall check the TSS to ensure that it details each administrative
@@ -1580,7 +1579,7 @@
                 <h:li>list all the types of data the TOE is expecting to collect remotely and from where - remote OE agent or system on secure channel, remote agent that is part of a distributed TOE on secure channel, remote OE system on insecure channel</h:li>
                 <h:li>for each type of collection that can be done specify the channel that is used - will line up with FPT_ITT.1 or FTP_ITC.1 for secure comms.</h:li>
                 <h:li>if insecure comms are used in particular, we should probably expect some sort of justification for why the data going over that doesn't reasonably need to be protected in transit, based on either the unimportance of the data or on an alternate mechanism such as pre-shared keys transmitting ciphertext over an insecure channel, or a physically isolated interface where the method of data transmission is irrelevant.</h:li>
-                <h:li>also if insecure comms are used in particular, do you have any way to configure the TOE to "expect" that only certain types of data be transmitted over this interface. e.g.,. if the TOE is set up to receive SNMP traps from the environment is there some sort of specific OIDs it's expecting to be handling</h:li>
+                <h:li>also if insecure comms are used in particular, do you have any way to configure the TOE to "expect" that only certain types of data be transmitted over this interface. e.g., if the TOE is set up to receive SNMP traps from the environment is there some sort of specific OIDs it's expecting to be handling</h:li>
               </h:ul></TSS>
               <Guidance>TBD but will include instructions for how to set up each channel (specify endpoint location, connection method, possibly authentication). If it's a distributed TOE that'll probably be covered by FCO. </Guidance>
               <Tests>TBD but we'll need to show we can collect all the things and that we can do it over the channels that we say the TOE uses.</Tests>
@@ -1620,7 +1619,7 @@
             
             <title>
               <comment>Three things to consider here:<h:br/>
-                1. Right now it just talks about "user" enrollment which is an MDM specific framing. Should think about other ways that enrollment could occur (e.g.,. based on individual device, group of devices) and what authentication is used for those (certificate on device? Key distributed by EM during the setup process?)<h:br/>
+                1. Right now it just talks about "user" enrollment which is an MDM specific framing. Should think about other ways that enrollment could occur (e.g., based on individual device, group of devices) and what authentication is used for those (certificate on device? Key distributed by EM during the setup process?)<h:br/>
                 2. Right now this only applies to systems with agents but enrollment could potentially apply in an agentless scenario too. Might need a separate iteration for non-agent scenarios (but selection/feature-based, not mandatory)<h:br/>
                 3. FIA_ENR_EXT.1.2 talks about limitation on enrollment because it covers the MDM case where a user has to enroll a specific device that's associated with them. Not sure if we care about any such limitations in the context of EM and if we do what all those limitations would be. If we don't want any limitations we may need to define a new extended SFR because we probably can't have 1.2 say "The TSF shall do nothing related to this function".<h:br/>
               </comment>
@@ -1629,7 +1628,6 @@
               enrollment of a <selectables>
                 <selectable>Host Agent</selectable>
                 <selectable>Agentless System</selectable></selectables>.</title>
-            <note role="application">The TSF may use its own directory or a directory server to perform the authentication decision for remote enrollment. Enrollment could be based on characteristics of a system such as its name or IP address, or group membership, or it could be based on the assignment of a system to a particular user or user's administrative role (e.g.,. the device is assigned to a user); does that user's organizational role permit the enrollment of that device. </note>
             <aactivity level="element"> 
               <TSS>The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
                 in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
