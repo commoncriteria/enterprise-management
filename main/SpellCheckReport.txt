@@ -7,6 +7,7 @@ output/enterprise-management-release-linkable.html: FCS
 output/enterprise-management-release-linkable.html: ICMP
 output/enterprise-management-release-linkable.html: MDM
 output/enterprise-management-release-linkable.html: NTP
+output/enterprise-management-release-linkable.html: Newtork
 output/enterprise-management-release-linkable.html: OIDs
 output/enterprise-management-release-linkable.html: SCAP
 output/enterprise-management-release-linkable.html: SFP
@@ -18,7 +19,6 @@ output/enterprise-management-release-linkable.html: TODO
 output/enterprise-management-release-linkable.html: agentless
 output/enterprise-management-release-linkable.html: auditability
 output/enterprise-management-release-linkable.html: comms
-output/enterprise-management-release-linkable.html: conformities
 output/enterprise-management-release-linkable.html: doesn
 output/enterprise-management-release-linkable.html: failover
 output/enterprise-management-release-linkable.html: recognises
@@ -33,6 +33,7 @@ output/enterprise-management-release.html: FCS
 output/enterprise-management-release.html: ICMP
 output/enterprise-management-release.html: MDM
 output/enterprise-management-release.html: NTP
+output/enterprise-management-release.html: Newtork
 output/enterprise-management-release.html: SCAP
 output/enterprise-management-release.html: SFP
 output/enterprise-management-release.html: SME
@@ -41,7 +42,6 @@ output/enterprise-management-release.html: SPD
 output/enterprise-management-release.html: TBD
 output/enterprise-management-release.html: agentless
 output/enterprise-management-release.html: auditability
-output/enterprise-management-release.html: conformities
 output/enterprise-management-release.html: failover
 output/enterprise-management-release.html: recognises
 output/enterprise-management-release.html: unenroll
@@ -68,6 +68,7 @@ output/enterprise-management.html: FCS
 output/enterprise-management.html: ICMP
 output/enterprise-management.html: MDM
 output/enterprise-management.html: NTP
+output/enterprise-management.html: Newtork
 output/enterprise-management.html: OIDs
 output/enterprise-management.html: SCAP
 output/enterprise-management.html: SFP
@@ -79,7 +80,6 @@ output/enterprise-management.html: TODO
 output/enterprise-management.html: agentless
 output/enterprise-management.html: auditability
 output/enterprise-management.html: comms
-output/enterprise-management.html: conformities
 output/enterprise-management.html: doesn
 output/enterprise-management.html: failover
 output/enterprise-management.html: recognises
