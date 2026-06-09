@@ -695,9 +695,7 @@
         
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
         <f-element>
-          <title>The TSF shall enforce the <assignable>information flow control SFP</assignable> on <assignable>list of
-        subjects, information, and operations that cause controlled information to flow to and from
-        controlled subjects covered by the SFP</assignable>.</title>
+          <title>The TSF shall enforce the <assignable>data monitoring SFP</assignable> on <assignable>types of systems, agents, or other entities from which the TSF can collect monitored data</assignable>.</title>
           <note>TBD</note>
           <aactivity>
             <TSS>TBD</TSS>
@@ -712,18 +710,34 @@
         
         <f-component cc-id="fdp_iff.1" name="Simple Security Attributes">
           <f-element id="fdp-iff-1e1">
-            <title>The TSF shall enforce the <assignable>information flow control SFP</assignable> based on the following
+            <title>The TSF shall enforce the <assignable>data monitoring SFP</assignable> based on the following
               types of subject and information security attributes: <assignable>list of subjects and
                 information controlled under the indicated SFP, and for each, the security attributes</assignable>.</title>
           </f-element>
           <f-element id="fdp-iff-1e2">
             <title>The TSF shall permit an information flow between a controlled subject and controlled
-              information via a controlled operation if the following rules hold: <assignable>for each
-              operation, the security attribute-based relationship that hold between subject and
-              information security attributes</assignable>.</title>
+              information via a controlled operation if the following rules hold: <assignable>rules for what data is collected, what sources that data is collected from, and what input validation if any is performed on that data to ensure that it is correctly formatted or that its content is consistent with what is expected.</assignable>.</title>
           </f-element>
           <f-element id="fdp-iff-1e3">
-            <title>The TSF shall enforce the <assignable>additional information flow control SFP rules</assignable>.</title>
+            <title>The TSF shall enforce the [<h:i>data monitoring SFP to collect monitored data over the following interfaces: 
+              <selectables linebreak="yes">
+                <selectable>secure remote <selectables>
+                  <selectable>internal</selectable>
+                  <selectable>external</selectable>
+                </selectables> collection over <selectables>
+                  <selectable><assignable>one or more remote trusted channels as defined in FPT_ITT.1</assignable></selectable>
+                  <selectable><assignable>one or more remote trusted channels as defined in FTP_ITC.1</assignable></selectable>
+                  <selectable>a remote channel using an alternate protection mechanism of <selectables>
+                    <selectable>encryption of data prior to transmission</selectable>
+                    <selectable>physically isolated channel</selectable>
+                  </selectables></selectable>
+                  <selectable>a local interface to a system or agent that is local to the TOE</selectable>
+                </selectables>.
+                  
+                  remote internal collection over <assignable>one or more trusted channels as defined in FPT_ITT.1</assignable></selectable>
+                <selectable>secure remote external collection over <assignable>one or more trusted channels as defined in FTP_ITC.1</assignable></selectable>
+                <selectable>local collection from a system or agent local to the TOE</selectable>
+              </selectables></h:i>.</title>
           </f-element>
           <f-element id="fdp-iff-1e4">
             <title>The TSF shall explicitly authorize an information flow based on the following rules:
@@ -749,8 +763,7 @@
         
         <f-component name="Import of User Data Without Security Attributes" cc-id="fdp_itc.1">
           <f-element id="fdp-itc-1e1">
-            <title>The TSF shall enforce the <assignable>access control SFP(s) and/or information flow
-              control SFP(s)</assignable> when importing user data, controlled under the SFP, from outside of the
+            <title><comment>We could also use .2 if the "ignore any security attributes" wording is problematic (not actually clear from Part 2 what an example of that would be because 'security attributes' arguably are just an inherent part of the data that is collected</comment>The TSF shall enforce the <assignable>data monitoring SFP(s)</assignable> when importing <h:b>monitored</h:b> data, controlled under the SFP, from outside of the
               TOE.</title>
           </f-element>
           <f-element id="fdp-itc-1e2">
@@ -1600,7 +1613,7 @@
       
       <section id="impl-dep-fdp" title="Class FDP: User Data Protection">
         
-        
+        <!--
         <ext-comp-def title="Collection of Monitored Data" fam-id="FDP_MON_EXT">
           <fam-behavior>This family defines requirements for collection of monitored data for the purpose of visibility or to use as a basis for executing management functions on the system being monitored. This differs from "user data" as defined by FDP_ITC in that the data may be generated by a system or other automated process and not associated with any individual user.</fam-behavior>
         </ext-comp-def>		
@@ -1640,7 +1653,7 @@
           </f-element>
           <audit-event/>
         </f-component> 
-        
+        -->
       </section>
       
      
@@ -1855,8 +1868,8 @@
               communication, the ST author lists in the assignment for <xref to="fel-itc-init"/>
               the services for which the TOE can initiate the communication with
               the authorized IT entity.
-              <h:p/>
-              This SFR is claimed if "a remote, external trusted channel" is selected in FDP_MON_EXT.1.1. 
+      <!--        <h:p/>
+              This SFR is claimed if "a remote, external trusted channel" is selected in FDP_MON_EXT.1.1. --> 
             </note>
             <aactivity>
               <no-tests/>
