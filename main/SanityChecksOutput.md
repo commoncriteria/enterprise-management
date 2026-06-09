@@ -18,9 +18,5 @@
 * Warning: Detected an empty _p_ element./Module[1]""/section[1]""/section[2]"The PP-Mo"/section[1]"The bound"/h:p[2]""
 * Warning: Detected an empty _p_ element./Module[1]""/section[1]""/section[2]"The PP-Mo"/section[1]"The bound"/h:p[3]""
 * Warning: Detected an empty _p_ element./Module[1]""/section[4]""/man-sfrs[1]""/section[5]""/f-component[2]""/f-element[1]""/note[1]"This requ"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/section[4]""/impl-dep-sfrs[1]""/section[4]""/f-component[1]""/f-element[1]""/note[1]"This requ"/h:p[1]""
-* Warning: Detected an empty _p_ element./Module[1]""/section[4]""/impl-dep-sfrs[1]""/section[7]""/f-component[1]""/f-element[3]""/note[1]"While the"/h:p[1]""
 * Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
-                       
-* Warning: Since FDP_MON_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
