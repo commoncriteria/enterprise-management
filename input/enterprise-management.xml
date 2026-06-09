@@ -731,12 +731,9 @@
                     <selectable>encryption of data prior to transmission</selectable>
                     <selectable>physically isolated channel</selectable>
                   </selectables></selectable>
-                  <selectable>a local interface to a system or agent that is local to the TOE</selectable>
                 </selectables>.
-                  
-                  remote internal collection over <assignable>one or more trusted channels as defined in FPT_ITT.1</assignable></selectable>
-                <selectable>secure remote external collection over <assignable>one or more trusted channels as defined in FTP_ITC.1</assignable></selectable>
-                <selectable>local collection from a system or agent local to the TOE</selectable>
+                </selectable>
+                <selectable>a local interface to a system or agent that is local to the TOE</selectable>
               </selectables></h:i>.</title>
           </f-element>
           <f-element id="fdp-iff-1e4">
@@ -744,9 +741,6 @@
               <assignable>rules, based on security attributes, that explicitly authorize information flows</assignable>.</title>
           </f-element>
           <f-element id="fdp-iff-1e5">
-            <title></title>
-          </f-element>
-          <f-element>
             <title>The TSF shall explicitly deny an information flow based on the following rules:
               <assignable>rules, based on security attributes, that explicitly deny information flows</assignable>.</title>         
           <note>TBD</note>
