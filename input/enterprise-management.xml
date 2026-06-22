@@ -132,7 +132,7 @@
       <term abbr="IT" full="Information Technology"/>
       <!-- <term abbr="ITSEF" full="Information Technology Security Evaluation Facility"/> -->
       
-      <term full="Monitored Data">Information that the TSF collects from the enterprise for the purpose of reporting or using as a basis for exercising management functions. Depending on the design and architecture of the TOE. This may be collected from a local or remote logical entity (i.e., either on the same system that the TOE is installed on or via a network connection). It may also be collected either directly from the system itself or from an agent that is running on that system.</term>
+      <term full="Monitored Data">Information that the TSF collects from the enterprise for the purpose of reporting or using as a basis for exercising management functions. Depending on the design and architecture of the TOE, this may be collected through an agent or directly from a system.</term>
       
       <term abbr="NIAP" full="National Information Assurance Partnership"/>
       <term abbr="NIST" full="National Institute of Standards and Technology"/>
@@ -225,12 +225,13 @@
       A conformant TOE may implement certain features that are not strictly necessary in order to achieve the desired level of security, but if these features are implemented, they are required to be included within the TOE boundary.
       
       <implements>
+        <!--
         <feature id="has-agents" title="Agent Integration">
           <description>A conformant TOE may implement policy by communicating configuration instructions to a software agent on a system rather than through direct interaction with the system itself. An agent may reside locally on the same system as the TOE or may be remote. If the product is integrated with agents, the agents must be included in the TOE boundary. It is possible that agents are a separate "product" and are in the TOE's operational environment. If this is the case, the reason for their exclusion from the TOE boundary must be clear.</description>
         </feature>
-      
+      -->
         <feature id="distributed" title="Distributed TOE">
-          <description>The TOE is distributed across multiple systems (whether multiple server instances or a TOE that has a server component connected to one or more agents on remote systems). These instances must have the ability to communicate securely with one another and exchange authentication data so that sensitive data in transit between them is protected and only sent to the appropriate destination. Note that a distributed TOE by definition also includes the Newtork Connectivity feature; a TOE that operates on a single system is not distributed even if it includes both management and agent components.</description>
+          <description>The TOE is distributed across multiple systems (whether multiple server instances or a TOE that has a server component connected to one or more agents on remote systems). These instances must have the ability to communicate securely with one another and exchange authentication data so that sensitive data in transit between them is protected and only sent to the appropriate destination. Note that a distributed TOE by definition also includes the Network Connectivity feature; a TOE that operates on a single system is not distributed even if it includes both management and agent components.</description>
         </feature>
         <feature id="networked" title="Network Connectivity">
           <description>The TOE uses networking functionality to transmit policy data, commands, or both. This data can be transmitted to logically remote entities that are in the operational environment, between separate components of a logically distributed TOE, or both. Specifically for this feature, if this is supported by the product, it must be claimed as part of the TSF.</description>
@@ -582,27 +583,7 @@
           </f-element>
           <audit-event/>
         </f-component>
-        
-        <f-component name="Audit Review" cc-id="fau_sar.1">
-          <f-element id="fau-sar-1e1">
-            <title>The TSF shall provide <assignable>authorized users</assignable> with the capability to read <assignable>list of audit information</assignable> from the
-            audit data.</title>
-          </f-element>
        
-        
-       <f-element id="fau-sar-1e2">
-            <title>The TSF shall provide the audit data in a manner suitable for the user to interpret the information.</title>
-            <note>TBD</note>
-            <aactivity>
-              <TSS>TBD</TSS>
-              <Guidance>TBD</Guidance>
-              <Tests>TBD</Tests>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>TBD</audit-event-descr>
-          </audit-event>
-        </f-component>
         
         <f-component cc-id="fau_stg.1" name="Audit Data Storage Location">
           <f-element id="fau-stg-1e1">
@@ -695,8 +676,8 @@
         
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
         <f-element>
-          <title>The TSF shall enforce the <assignable>data monitoring SFP</assignable> on <assignable>types of systems, agents, or other entities from which the TSF can collect monitored data</assignable>.</title>
-          <note>TBD</note>
+          <title>The TSF shall enforce the [<h:i>data monitoring SFP</h:i>] on <assignable>types of systems, agents, or other entities from which the TSF can collect monitored data</assignable>.</title>
+          <note role="Application">The "data monitoring SFP" is a logical construct that references the TOE's ability to collect certain types of data from certain locations for the purpose of enterprise management. This SFR is intended for defining the objects the TSF interfaces with for data collection (e.g., its own local system, remote systems, agents running on remote systems) and the general types of data collected from these objects for monitoring and management purposes (e.g., user account data, system configuration data). FDP_IFF.1 and FDP_ITC.1 reference this policy and define the means by which it is enforced (e.g. what rules may exist for where to collect data, what data is collected, and by what means it this data collected). It is not necessary for the TSF to explicitly define a 'policy' for this behavior; if the TOE is inherently designed to collect certain types of data from certain objects, the existence of this SFP is implicit.</note>
           <aactivity>
             <TSS>TBD</TSS>
             <Guidance>TBD</Guidance>
@@ -733,7 +714,7 @@
                   </selectables></selectable>
                 </selectables>.
                 </selectable>
-                <selectable>a local interface to a system or agent that is local to the TOE</selectable>
+                <selectable>a secure local interface to a system or agent that is local to the TOE</selectable>
               </selectables></h:i>.</title>
           </f-element>
           <f-element id="fdp-iff-1e4">
@@ -886,8 +867,13 @@
               Adapted from MDM PP requirement of the same name<h:br/>
             Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/>
               Monitoring capability probably needs to be defined in greater detail than a generic "query configuration". Incomplete/placeholder as more things will likely be needed (whether mandatory or selectable) based on desired EM functionality.<h:br/></comment>
-            The TSF shall be capable of performing the following management functions <h:b>against managed systems: <selectables linebreak="yes">
-                <selectable>agent functions:<h:ul> 
+            The TSF shall be capable of performing the following management functions <h:b>against managed systems: 
+              <h:ul>
+                <h:li>query configuration</h:li>
+                <h:li>apply configuration</h:li>
+              </h:ul>
+              <selectables linebreak="yes">
+              <selectable>agent functions:<h:ul> 
                   <h:li>query installed agent software version</h:li>
                   <h:li>update the agent software</h:li>
                   <h:li>query agent connectivity status</h:li>
@@ -942,8 +928,6 @@
               The TSF shall be capable of performing the following management functions <h:b>for configuration of the TSF</h:b>: 
               <h:ul>
                 <h:li>specify systems to be managed</h:li>
-                <h:li>query configuration</h:li>
-                <h:li>apply configuration</h:li>
               </h:ul> and <selectables>
                 <selectable>configuration of remote channels for collection of monitored data</selectable>
                 <selectable>configuration of the contents and formatting for transmission of monitored data</selectable>
@@ -1024,7 +1008,10 @@
               <h:b>authorized administrators</h:b> to interpret the information.</title>
             <note role="application">The intent of this requirement is to ensure that the
               administrator can view and interpret the audit data and to
-              prevent unauthorized users from accessing the logs.</note>
+              prevent unauthorized users from accessing the logs.
+            <h:p/>
+            This SFR is claimed if "the TOE itself" or "local platform storage" is selected in FAU_STG.1.1.
+            </note>
             <aactivity>
             <no-tests/>
             </aactivity>
@@ -1360,7 +1347,38 @@
       </section>
       
       
-      <section id="impl-dep-ftp" title="Class FTP: Trusted Path/Channels">
+      <section id="sel-fmt" title="Class FMT: Security Management">
+        
+        
+        <f-component name="Management of Security Functions Behavior (Enrollment)" cc-id="fmt_mof.1"
+          iteration="MANAGEMENT_ENROLL">
+          <depends on="toe-registers-agent"/>
+          <depends on="admin-registers-agent"/>
+          <depends on="agent-registers-itself"/>
+          <depends on="toe-has-environment-register"/>
+          <f-element>
+            <title>The TSF shall restrict the ability to [<h:b><h:i>initiate the enrollment process</h:i></h:b>]
+              to [<h:i>authorized administrators</h:i>].</title>
+            <note role="application">
+              This requirement outlines the enrollment functions that both administrators and users may perform.
+              The enrollment actions are identified in the TSS as a part of FIA_ENR_EXT.1.
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling to the TOE.</TSS>
+              <Guidance>The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</Guidance>
+              <Tests>The test of this function is performed in conjunction with FIA_ENR_EXT.1.</Tests>
+            </aactivity>
+          </f-element>
+          <audit-event>
+            <audit-event-descr>Enrollment by a user</audit-event-descr>
+            <audit-event-info>Identity of user</audit-event-info>
+          </audit-event>          
+        </f-component>
+        
+        
+      </section>
+      
+      <section id="sel-ftp" title="Class FTP: Trusted Path/Channels">
         
         <f-component cc-id="ftp_trp.1" name="Trusted Path (for Joining)" iteration="Join">
           <depends on-sel="joiningchannel"/>
@@ -1651,32 +1669,6 @@
       </section>
       
      
-      
-      <section id="impl-dep-fmt" title="Class FMT: Security Management">
-        
-        <f-component name="Management of Security Functions Behavior (Enrollment)" cc-id="fmt_mof.1"
-          iteration="MANAGEMENT_ENROLL">
-          <depends on="has-agents"/>
-          <f-element>
-            <title>The TSF shall restrict the ability to [<h:b><h:i>initiate the enrollment process</h:i></h:b>]
-              to [<h:i>authorized administrators</h:i>].</title>
-            <note role="application">
-              This requirement outlines the enrollment functions that both administrators and users may perform.
-              The enrollment actions are identified in the TSS as a part of FIA_ENR_EXT.1.
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling to the TOE.</TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</Guidance>
-              <Tests>The test of this function is performed in conjunction with FIA_ENR_EXT.1.</Tests>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>Enrollment by a user</audit-event-descr>
-            <audit-event-info>Identity of user</audit-event-info>
-          </audit-event>          
-        </f-component>
-        
-      </section>
       
       <section id="impl-dep-fpt" title="Class FPT: Protection of the TSF">
       <f-component cc-id="fpt_itt.1" name="Internal TOE TSF Data Transfer">
