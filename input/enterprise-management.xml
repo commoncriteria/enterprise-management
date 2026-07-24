@@ -63,7 +63,7 @@
 
   <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      The scope of this PP-Module is to describe the security functionality of an Enterprise-Management product (EM) in terms of [CC] 
+      The scope of this Protection Profile (PP) is to describe the security functionality of an Enterprise-Management product (EM) in terms of [CC] 
       and to define functional and assurance requirements for such products. 
     </section>
     <tech-terms>
@@ -159,7 +159,7 @@
     </tech-terms>
     
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      The PP-Module for Enterprise-Management (EM) is intended to support Enterprise Security Management (ESM) products that are used to manage the configuration and behavior of endpoint systems in an enterprise setting, and providing monitoring and reporting capabilities for managed endpoints. EM supports ESM by applying policies that control the security-relevant behavior of systems. An EM product is specifically a type of software application.<h:p/>
+      The PP for Enterprise-Management (EM) is intended to support Enterprise Security Management (ESM) products that are used to manage the configuration and behavior of endpoint systems in an enterprise setting, and providing monitoring and reporting capabilities for managed endpoints. EM supports ESM by applying policies that control the security-relevant behavior of systems. An EM product is specifically a type of software application.<h:p/>
       An EM product may control the behavior of a system directly, or it may accomplish this by interacting with an agent that resides on that system. A conformant TOE may use different protocols to communicate with external entities. If IPsec is implemented for remote communications, the TOE boundary also includes the PP-Module for VPN Client.
       
       <section title="TOE Boundary" id="toeboundary">
@@ -172,7 +172,7 @@
         A conformant TOE may include only EM functionality, or it may include agents within the logical boundary of the TOE. If agents are included in the logical boundary, the TOE also conforms to the PP-Module for Host Agent. Agents may also reside in the operational environment such that the TOE boundary only includes the EM functionality and its interface to remote agents is an external interface. If agents are supported by the product but are not included within the TOE boundary, appropriate justification must be provided for their exclusion from the TOE.<h:p/>
         A conformant TOE may be isolated to a single system, or it may be distributed across multiple systems, either because the TOE's EM functionality is distributed across multiple servers, or because the TOE boundary includes agents that are remote to the server.<h:p/>
         A conformant TOE will generally communicate with external systems (whether via agents or not) that are logically remote to the TOE. However, some use cases exist where an EM product only manages policy on a central server.<h:p/>
-        A conformant TOE may provide endpoint detection and response (EDR) capability in addition to its EM capability. If this is the case, the TOE may also claim conformance to the PP-Module for Endpoint Detection and Response. 
+        A conformant TOE may provide endpoint detection and response (EDR) capability in addition to its EM capability. If this is the case, the TOE may also 
               
         <!--
         <h:table>
@@ -194,9 +194,9 @@
       </section>
     </section>
     
-    <section title="Use Cases" id="usecases">Requirements in this  PP-Module are designed to
+    <section title="Use Cases" id="usecases">Requirements in this  PP are designed to
       address the security problem for the following use cases. These use cases are intentionally
-      very broad, as many different types of EM products may exist. As this PP-Module is revised to allow for more specific types of EM products, additional use cases
+      very broad, as many different types of EM products may exist. As this PP is revised to allow for more specific types of EM products, additional use cases
       may be devised. 
       <usecases>
         <usecase title="Interfacing with Endpoints" id="endpoints">
@@ -5149,7 +5149,7 @@
           </f-element>
           <f-element id="fel-smr-users-roles">
             <title>The TSF shall be able to associate users with roles.</title>
-            <note role="application">This PP-Module does not require a fixed set of arbitrarily-named roles. The purpose of this requirement is for the ST author to document how users are organized for the purpose of determining the authorizations they have to interact with the TSF, as specified in FMT_MOF.1.
+            <note role="application">This PP does not require a fixed set of arbitrarily-named roles. The purpose of this requirement is for the ST author to document how users are organized for the purpose of determining the authorizations they have to interact with the TSF, as specified in FMT_MOF.1.
             </note>
             <aactivity>
               <no-tests/>
