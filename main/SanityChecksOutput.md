@@ -37,10 +37,10 @@
 * Error: Detected multiple elements with an id of 'ITT1_DTLS_IMPLEMENT'.
 * Error: Detected multiple elements with an id of 'ITT1_HTTPS_IMPLEMENT'.
 * Error: Detected multiple elements with an id of 'ITT1_SSH_IMPLEMENT'.
-* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP-Mo"/h:p[1]""
-* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP-Mo"/section[1]"The bound"/h:p[1]""
-* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP-Mo"/section[1]"The bound"/h:p[2]""
-* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP-Mo"/section[1]"The bound"/h:p[3]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP fo"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP fo"/section[1]"The bound"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP fo"/section[1]"The bound"/h:p[2]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[1]""/section[2]"The PP fo"/section[1]"The bound"/h:p[3]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[2]""/f-component[4]""/f-element[2]""/note[1]"The inten"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[1]""/f-element[1]""/title[1]"The TSF s"/selectables[2]""/tabularize[1]""/reqtext[3]"."/h:p[1]""
