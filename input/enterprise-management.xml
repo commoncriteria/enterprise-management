@@ -277,9 +277,9 @@
       (the "gatekeeper"). The two components will use one or more specified authentication and communication channel options so that the components
       authenticate each other and protect any sensitive data that is transmitted during the registration process (e.g., a key might be sent by a gatekeeper 
       to the joiner as a result of the registration). The following figures illustrate the three supported registration models. <xref to="DTF1"/> illustrates a
-      distributed TOE registration approach which uses an instance of FPT_ITT.1/INTRA_XFER / FPT_ITT.1/INTRA_XFER_AGENT or
-      FTP_ITC.1/OE_XFER_IT to protect the registration exchange.<h:br/><h:br/>
-      <figure entity="images/DistributedToeFig1.png" pre="Figure " title="Distributed TOE registration using channel satisfying FPT_ITT.1/INTRA_XFER / FPT_ITT.1/INTRA_XFER_AGENT or FTP_ITC.1/OE_XFER_IT" id="DTF1"/>
+      distributed TOE registration approach which uses an instance of FPT_ITT.1 or
+      FTP_ITC.1 to protect the registration exchange.<h:br/><h:br/>
+      <figure entity="images/DistributedToeFig1.png" pre="Figure " title="Distributed TOE registration using channel satisfying FPT_ITT.1 or FTP_ITC.1." id="DTF1"/>
       <h:br/><h:br/>
       The second approach (<xref to="DTF2"/>) uses an alternative registration channel and supports use cases where the channel relies on environmental security
       constraints to provide the necessary protection of the registration exchange.<h:br/><h:br/>
@@ -287,7 +287,7 @@
       <h:br/><h:br/>
       The final approach (<xref to="DTF3"/>) supports use cases where registration is performed manually through direct configuration of both the Joiner and Gatekeeper 
       devices. Once configured, the two components establish an internal TSF channel that satisfies
-      FPT_ITT.1/INTRA_XFER / FPT_ITT.1/INTRA_XFER_AGENT or FTP_ITC.1/OE_XFER_IT.<h:br/><h:br/>
+      FPT_ITT.1 or FTP_ITC.1.<h:br/><h:br/>
       <figure entity="images/DistributedToeFig3.png" pre="Figure " title="Distributed TOE registration without a registration channel" id="DTF3"/>
       <h:br/><h:br/>
       In each case, during the registration process, the administrator must positively enable the joining components before it can act as part of the TSF.
@@ -297,11 +297,10 @@
       Note that in the case where no registration channel is required, that is the joiner and gatekeeper are directly configured (<xref to="DTF3"/>), enablement is
       implied as part of this direct configuration process.<h:br/><h:br/>
       After registration, the components will communicate between themselves using a normal SSH, TLS, DTLS, IPsec, or HTTPS channel (which is specified in an ST as 
-      an instance of FPT_ITT.1/INTRA_XFER / FPT_ITT.1/INTRA_XFER_AGENT or FTP_ITC.1/OE_XFER_IT in
+      an instance of FPT_ITT.1 or FTP_ITC.1 in
       terms of <xref to="req"/> <!--Section 6--> and <xref g="t-audit-optional"/> <!--Appendix A-->). This channel for
       inter-component communications is specified at the top level with the new (extended) SFR FCO_CPC_EXT.1 and is in addition to the other communication 
-      channels required for communication with entities outside the TOE (which are specified in an ST as instances of FTP_ITC.1/OE_XFER_IT and 
-      FTP_TRP.1/TRUSTPATH_REM_ADMIN. 
+      channels required for communication with any entities outside the TOE specified in FTP_ITC.1 or FTP_TRP.1. 
     </section>
     
     <!-- 3.2 Allocation of Requirements in Distributed TOEs -->
@@ -4659,7 +4658,7 @@
                   <selectable>internal</selectable>
                   <selectable>external</selectable>
                 </selectables> collection over <selectables>
-                  <selectable><assignable>one or more remote trusted channels as defined in FPT_ITT.1</assignable></selectable>
+                  <selectable id="distributed_toe_import"><assignable>one or more remote trusted channels as defined in FPT_ITT.1</assignable></selectable>
                   <selectable><assignable>one or more remote trusted channels as defined in FTP_ITC.1</assignable></selectable>
                   <selectable>a remote channel using an alternate protection mechanism of encryption of data prior to transmission.</selectable>
                 </selectables></selectable>
@@ -5303,8 +5302,8 @@
           </audit-event>
         </f-component>
         
-        <f-component cc-id="fpt_itt.1" name="Internal TOE TSF Data Transfer" status="sel-based" iteration="INTRA_XFER">
-          <depends on-sel="ITC_DISTRIBUTED_TOE"/>
+        <f-component cc-id="fpt_itt.1" name="Internal TOE TSF Data Transfer" status="sel-based">
+          <depends on-sel="distributed_toe_import"/>
           <f-element id="fel-intraxfer">
             <title>The TSF shall <selectables linebreak="yes">
               <selectable><h:b>invoke platform-provided functionality to use <selectables linebreak="yes">
@@ -5322,7 +5321,7 @@
                 <selectable id="ITT1_SSH_IMPLEMENT">SSH as defined in <xref to="ssh"/></selectable>
               </selectables></h:b></selectable></selectables> <h:b>to</h:b> protect <h:b>all</h:b> data from [<h:i>disclosure and modification</h:i>] when it is <h:b>transferred</h:b> between
               separate parts of the TOE.</title>
-            <note role="application">This requirement ensures that all communications between MDM server components of a distributed TOE are protected through the use of an encrypted communications channel. If the TOE boundary includes MDM agents, that is covered by FPT_ITT.1/INTRA_XFER_AGENT.<h:br/><h:br/> 
+            <note role="application">This requirement ensures that all communications between MDM server components of a distributed TOE are protected through the use of an encrypted communications channel. If the TOE boundary includes MDM agents, that is covered by FPT_ITT.1.<h:br/><h:br/> 
               The trusted channel uses secure protocols that preserve the confidentiality and integrity of MDM communications. For this particular use, any of IPsec, TLS, DTLS, HTTPS, or SSH can be used. If TLS or DTLS is used, mutual authentication must be supported regardless of whether the TOE acts as the client or the server in this connection. Where X.509 validation is needed (e.g., if the TOE acts as a TLS server that supports mutual authentication), <xref to="X509"/> must be claimed. To distinguish X.509 validation for internal communications from validation for external communications (e.g., communication between TOE components versus communication to a remote IT entity in the operational environment), FIA_X509_EXT.1 from <xref to="X509"/> must be iterated for this use as "FIA_X509_EXT.1/Internal" per the guidance in <xref to="package-usage"/>. This channel may also be used as the registration channel for the registration process, as described in section 3.1 and <xref to="fel-cpc-func"/>.<h:br/><h:br/>              
               If the ST author selects that the TSF implements "IPsec as defined in <xref to="mod-vpnclient"/>," the TSF must claim conformance to a PP-Configuration that includes the VPN Client PP-Module.<h:br/><h:br/>
               If the ST author selects that the TSF implements "SSH as defined in <xref to="ssh"/>," the TSF must be validated against <xref to="ssh"/>.<h:br/><h:br/>
@@ -5349,7 +5348,7 @@
               </h:ul> 
               Protocol, DRBG, Certificate validation, algorithm, and similar services may be met with
               platform-provided services. <h:br/><h:br/>
-              This requirement is claimed if "FPT_ITT.1/INTRA_XFER" is selected in FTP_ITC_EXT.1.<h:br/><h:br/>
+              This requirement is claimed if "FPT_ITT.1" is selected in FDP_IFF.1.<h:br/><h:br/>
               If HTTPS is selected, FCS_HTTPS_EXT.1 must be included in the ST. FCS_HTTPS_EXT.1 includes selections for both TSF and platform-provided HTTPS functionality, so this must be claimed if either of the HTTPS selections above are made.
             </note>
             <aactivity>
