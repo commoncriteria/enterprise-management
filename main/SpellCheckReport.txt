@@ -42,7 +42,6 @@ output/enterprise-management-release-linkable.html: FFC
 output/enterprise-management-release-linkable.html: GFSBox
 output/enterprise-management-release-linkable.html: GPOS
 output/enterprise-management-release-linkable.html: ICMP
-output/enterprise-management-release-linkable.html: INTRA
 output/enterprise-management-release-linkable.html: KAS2
 output/enterprise-management-release-linkable.html: KeyGen
 output/enterprise-management-release-linkable.html: KeySbox
@@ -75,7 +74,6 @@ output/enterprise-management-release-linkable.html: VarTxt
 output/enterprise-management-release-linkable.html: Winternitz
 output/enterprise-management-release-linkable.html: XCCDF
 output/enterprise-management-release-linkable.html: XEX
-output/enterprise-management-release-linkable.html: XFER
 output/enterprise-management-release-linkable.html: XMSS
 output/enterprise-management-release-linkable.html: agentless
 output/enterprise-management-release-linkable.html: amd
@@ -91,7 +89,6 @@ output/enterprise-management-release-linkable.html: ffdhe4096
 output/enterprise-management-release-linkable.html: ffdhe6144
 output/enterprise-management-release-linkable.html: ffdhe8192
 output/enterprise-management-release-linkable.html: hLen
-output/enterprise-management-release-linkable.html: href
 output/enterprise-management-release-linkable.html: intra
 output/enterprise-management-release-linkable.html: lifecycle
 output/enterprise-management-release-linkable.html: pseudocode
@@ -154,7 +151,6 @@ output/enterprise-management-release.html: FFC
 output/enterprise-management-release.html: GFSBox
 output/enterprise-management-release.html: GPOS
 output/enterprise-management-release.html: ICMP
-output/enterprise-management-release.html: INTRA
 output/enterprise-management-release.html: KAS2
 output/enterprise-management-release.html: KeyGen
 output/enterprise-management-release.html: KeySbox
@@ -187,7 +183,6 @@ output/enterprise-management-release.html: VarTxt
 output/enterprise-management-release.html: Winternitz
 output/enterprise-management-release.html: XCCDF
 output/enterprise-management-release.html: XEX
-output/enterprise-management-release.html: XFER
 output/enterprise-management-release.html: XMSS
 output/enterprise-management-release.html: agentless
 output/enterprise-management-release.html: amd
@@ -244,7 +239,6 @@ output/enterprise-management-sd.html: Decapsulation
 output/enterprise-management-sd.html: ERB
 output/enterprise-management-sd.html: FFC
 output/enterprise-management-sd.html: GFSBox
-output/enterprise-management-sd.html: INTRA
 output/enterprise-management-sd.html: KAS2
 output/enterprise-management-sd.html: KeySbox
 output/enterprise-management-sd.html: LMS
@@ -266,7 +260,6 @@ output/enterprise-management-sd.html: TestMAC
 output/enterprise-management-sd.html: VarKey
 output/enterprise-management-sd.html: VarTxt
 output/enterprise-management-sd.html: Winternitz
-output/enterprise-management-sd.html: XFER
 output/enterprise-management-sd.html: XMSS
 output/enterprise-management-sd.html: XMSSMT
 output/enterprise-management-sd.html: amd
@@ -334,7 +327,6 @@ output/enterprise-management.html: FFC
 output/enterprise-management.html: GFSBox
 output/enterprise-management.html: GPOS
 output/enterprise-management.html: ICMP
-output/enterprise-management.html: INTRA
 output/enterprise-management.html: KAS2
 output/enterprise-management.html: KeyGen
 output/enterprise-management.html: KeySbox
@@ -367,7 +359,6 @@ output/enterprise-management.html: VarTxt
 output/enterprise-management.html: Winternitz
 output/enterprise-management.html: XCCDF
 output/enterprise-management.html: XEX
-output/enterprise-management.html: XFER
 output/enterprise-management.html: XMSS
 output/enterprise-management.html: agentless
 output/enterprise-management.html: amd
