@@ -421,7 +421,7 @@ The following sections list Common Criteria and technology terms used in this do
 			      <p>                        
 			        If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported
 			        platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the 
-			        MDM server; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).
+			        TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).
 			      </p>
 			    </div>
 			    <div class="eacategory">Guidance</div><div class="ea">
@@ -965,7 +965,7 @@ The following sections list Common Criteria and technology terms used in this do
                   the key that may have been created internally by the TOE during normal cryptographic
                   processing with that key.</p>
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FCS_CKM.6:1</a>:
+                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FCS_CKM.6:1</a>:
        Applied to each key held as plaintext in volatile memory and subject to
                     destruction by overwrite by the TOE (whether or not the plaintext value is
                     subsequently encrypted for storage in volatile or non-volatile memory). In the
@@ -992,7 +992,7 @@ The following sections list Common Criteria and technology terms used in this do
                     should be repeated with a different key in Step #1. If a fragment is found the
                     test fails. <br/><br/>
                   </li>
-                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FCS_CKM.6:2</a>:
+                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FCS_CKM.6:2</a>:
        Applied to each key held in non-volatile memory and subject to destruction
                     by overwrite by the TOE. The evaluator shall use special tools (as needed),
                     provided by the TOE developer if necessary, to view the key storage location: <br/>
@@ -1011,7 +1011,7 @@ The following sections list Common Criteria and technology terms used in this do
                     </ol>
                     <br/><br/>
                   </li>
-                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCS_CKM.6:3</a>:
+                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FCS_CKM.6:3</a>:
        Applied to each key held as non-volatile memory and subject to destruction
                     by overwrite by the TOE. The evaluator shall use special tools (as needed),
                     provided by the TOE developer if necessary, to view the key storage location: <br/>
@@ -2017,9 +2017,9 @@ The following sections list Common Criteria and technology terms used in this do
                 <li>Any mechanisms the TSF uses to ensure that data transmitted from systems or agents is valid (e.g., must the data be formatted in accordance with a specific protocol such as SCAP)</li>
               </ul> </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to specify a system or agent to be managed (e.g., is there an enrollment process initiated from a remote agent, does an administrator on the TOE specify a remote endpoint to communicate with, etc.), and whether any configuration options exist for the act of management (e.g., a periodic scanning interval).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests for each distinct type of system or agent that the TOE can communicate with (e.g. if the TOE supports both Windows and macOS agents, this would be two distinct types of agents):
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FDP_IFF.1:1</a>:
+                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FDP_IFF.1:1</a>:
       The evaluator shall follow the operational guidance to enter a system or agent into management. This may be performed in conjunction with FIA_ENR_EXT.1 (if claimed) and FIA_ENR_EXT.2.</li>
-                  <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FDP_IFF.1:2</a>:
+                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FDP_IFF.1:2</a>:
       The evaluator shall operate the TOE to exercise its management functions against the managed system or agent. The evaluator shall verify in doing so that the TOE is collecting accurate data about the managed system or agent, that any management functions being performed have the intended effect on the system or agent, and that data is transmitted in the expected format. This may be performed in conjunction with FMT_SMF.1/EXTERNAL and FDP_IFC.1.</li>
                 </ul></span>
           
@@ -2030,9 +2030,9 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea"><p>None.</p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"><p>The evaluator shall verify the guidance documents contain any instructions necessary to configure the restriction of network communications.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FDP_NET_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FDP_NET_EXT.1:1</a>:
       The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are documented in the TSS or are user-initiated.</li>
-                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FDP_NET_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FDP_NET_EXT.1:2</a>:
       The evaluator shall run the application. After the application initializes, the evaluator shall run network port scans to verify that any ports opened by the application have been captured in the ST for the third selection and its assignment. This includes connection-based protocols (e.g. TCP, DCCP) as well as connectionless protocols (e.g. UDP).</li>
                 </ul></span>
                 <span class="testlist-"><ul>
@@ -2061,9 +2061,9 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes the process by which subjects accessing the TOE are authenticated (e.g., by running the TOE on a system that requires prior authentication or by providing its own authentication function on a remote management interface), and any functions that may be performed without authentication.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes any procedures used for configuring the authentication mechanism used to gain access to the TSF (e.g., if the TOE defines its own authentication mechanism and supports multiple administrators, the operational guidance should describe the process of creating a new administrator).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_UAU.1:1</a>:
+                  <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FIA_UAU.1:1</a>:
       The evaluator shall access the TOE without authentication and verify that only the functions specified in FIA_UAU.1.1 (if any) are accessible.</li>
-                  <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_UAU.1:2</a>:
+                  <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FIA_UAU.1:2</a>:
       The evaluator shall verify that the TSF is accessible after the specified authentication mechanism is used (e.g. by ensuring that a valid username and password grants access to a management interface).</li>
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="2" id="man-fmt">2.1.5 Class FMT: Management of the TSF</h2><div class="comp" id="FMT-CFG-EXT-1"><h4>FMT_CFG_EXT.1 Secure by Default Configuration</h4><span class="activity_pane_body"><div class="element-activity-header">FMT_CFG_EXT.1.1</div>
@@ -2072,11 +2072,11 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Tests</div><div class="ea">
                 If the application uses any default credentials the evaluator shall run the following tests.
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FMT_CFG_EXT.1.1:1</a>:
+                  <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FMT_CFG_EXT.1.1:1</a>:
       For any application provided credentials the evaluator shall install and run the application without generating or loading new credentials and verify that only the minimal application functionality required to set new credentials is available.</li>
-                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FMT_CFG_EXT.1.1:2</a>:
+                  <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FMT_CFG_EXT.1.1:2</a>:
       For any application provided credentials the evaluator shall attempt to clear all credentials and verify that only the minimal application functionality required to set new credentials is available.</li>
-                  <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FMT_CFG_EXT.1.1:3</a>:
+                  <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FMT_CFG_EXT.1.1:3</a>:
       For any application provided credentials the evaluator shall run the application, establish new credentials and verify that the original default credentials no longer provide access to the application.</li>
                 </ul></span>
               </div>
@@ -2223,7 +2223,7 @@ The following sections list Common Criteria and technology terms used in this do
                 administrator and what actions can be taken for each management function. The evaluator shall verify that the security management functions are 
                 restricted to authorized administrators.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the management functions that are available to authorized administrators and how administrators are authorized to perform those particular functions (e.g., default for the account, role membership, group membership).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FMT_MOF.1:1</a>:
+                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FMT_MOF.1:1</a>:
       The evaluator shall attempt to access the functions and policies in FMT_SMF.1/INTERNAL and FMT_SMF.1/MANAGED as an unauthorized user and verify that the attempt fails. This may require the evaluator to use multiple different accounts with differing levels of privilege to interact with the TSF.</li> 
                 </ul></span>
               </div></div></span></div><div class="comp" id=""><h4>FMT_SMF.1/INTERNAL Specification of Management Functions (Server Configuration of Server)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/INTERNAL</div>
@@ -2232,13 +2232,27 @@ The following sections list Common Criteria and technology terms used in this do
 	
             </span></div><div class="comp" id=""><h4>FMT_SMF.1/MANAGED Specification of Management Functions (Server configuration of Managed Systems)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/MANAGED</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><div class="comp" id=""><h4>FMT_SMR.1 Security Roles</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMR.1</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><h2 class="indexable" data-level="2" id="man-fpt">2.1.6 Protection of the TSF (FPT)</h2><div class="comp" id=""><h4>FPT_API_EXT.1 Use of Supported Services and APIs</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_API_EXT.1</div>
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to ensure that it describes each management function claimed. The evaluator shall examine the TSS to
+                ensure that it identifies the management functions implemented for each supported type of system or agent. If multiple systems or agents are supported, the evaluator shall examine the TSS to verify that any
+                differences between management functions and policies for each supported system or agent are clearly indicated (e.g., a product that can manage endpoint systems with multiple operating systems may have OS-specified differences in the functions on those operating systems that can be managed).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">For each management function that can be performed against each type of managed system or agent, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">For each type of managed agent or system claimed by the TOE:<span class="testlist-"><ul>
+                <li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FMT_SMF.1/MANAGED:1</a>:
+      The evaluator shall verify that for each supported management function, the TSF can collect data on the current status of that function to determine its configuration, and can execute function to change its behavior or data on the managed agent or system.</li>
+              </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FMT_SMR.1 Security Roles</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMR.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to ensure that it describes the management roles implemented by the TOE and how these roles are associated with users (e.g. is the role an intrinsic property of a user account, or can a user be reassigned different permissions).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to associate administrators with management roles, and the different privileges associated with each role.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                The evaluator shall perform the following tests:
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FMT_SMR.1:1</a>:
+      
+                    The evaluator shall follow the operational guidance to create administrator accounts or assign roles to administrators in order to demonstrate that each of the defined roles can be assumed.
+                  </li>
+                </ul></span>
+              </div></div></span></div><h2 class="indexable" data-level="2" id="man-fpt">2.1.6 Protection of the TSF (FPT)</h2><div class="comp" id=""><h4>FPT_API_EXT.1 Use of Supported Services and APIs</h4><span class="activity_pane_body"><div class="component-activity-header">FPT_API_EXT.1</div>
               
               
               
@@ -2270,9 +2284,9 @@ The following sections list Common Criteria and technology terms used in this do
                 If "implement functionality" is selected, the evaluator shall examine the TSS and verify that it describes the standards by which the updates are digitally signed and how the signature verification process is implemented.</div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it identifies how the TOE will verify the integrity of an update and how the administrator is made aware of a failure to verify the integrity of the update.</div>
               <div class="eacategory">Tests</div><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FPT_TUD_EXT.1.3:1</a>:
+                <li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FPT_TUD_EXT.1.3:1</a>:
       The evaluator shall attempt to initiate an update digitally signed by the vendor and verify that the update is successfully installed.</li>
-                <li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FPT_TUD_EXT.1.3:2</a>:
+                <li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FPT_TUD_EXT.1.3:2</a>:
       The evaluator shall attempt to install an update not digitally signed by the vendor and verify that either the signature can be checked (allowing the update to be aborted) or the update is not installed.</li>
               </ul></span>
               </div>
@@ -2282,7 +2296,7 @@ The following sections list Common Criteria and technology terms used in this do
                 
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported
                 platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the
-                MDM server; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it describes how the administrator accesses the audit data and describes
+                TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall check the operational guidance and ensure that it describes how the administrator accesses the audit data and describes
                 the format of audit data.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall attempt to view the audit data as the authorized administrator and verify that the action succeeds. The evaluator 
                 shall ensure the audit data generated during testing match the format specified in the administrative guide.
               </div></div></span></div><div class="comp" id="FAU-STG-2"><h4>FAU_STG.2 Audit Event Storage</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_STG.2</div>
@@ -2291,7 +2305,7 @@ The following sections list Common Criteria and technology terms used in this do
               
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported
                 platform) how the audit data protection functionality is invoked (it should be noted that this may be through a mechanism that is not 
-                implemented by the MDM server; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<br/><br/>
+                implemented by the TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<br/><br/>
                 If "implement functionality" is selected, the evaluator shall ensure that the TSS
                 describes how the audit data are protected from unauthorized 
                 modification or deletion. The evaluator shall ensure that the TOE uses audit trail specific protection mechanisms.
@@ -2739,7 +2753,7 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify that the TSS describes whether the TOE's HTTPS functionality is implemented by the TOE or invoked from the TOE platform. If the TOE implements HTTPS, the evaluator shall verify that the corresponding claims from the TLS Functional Package (client, server, or both) are present.</div></div><div class="eacategory">Guidance</div><div class="ea">
 			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FCS_HTTPS_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_HTTPS_EXT.1:1</a>:
       The evaluator shall attempt to establish an HTTPS connection with a web server, web a client, or both (depending on whether the TOE acts as a web client, a web server, or both), observe the traffic with a packet analyzer, and verify 
                     that the connection succeeds and that the traffic is identified as TLS or HTTPS.</li>
                 </ul></span>
@@ -2808,7 +2822,24 @@ The following sections list Common Criteria and technology terms used in this do
                 nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).
               </div></div><div class="eacategory">Guidance</div><div class="ea">
 			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea">
-			There are no test activities for this component.<br/></div></span></div><h2 class="indexable" data-level="2" id="man-fia">2.3.3 Class FIA: Identification and Authentication</h2><div class="comp" id=""><h4>FIA_AFL.1 Authentication Failure Handling</h4><span class="activity_pane_body"></span></div><div class="comp" id=""><h4>FIA_ENR_EXT.1 Enrollment</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_ENR_EXT.1.1</div> 
+			There are no test activities for this component.<br/></div></span></div><h2 class="indexable" data-level="2" id="man-fia">2.3.3 Class FIA: Identification and Authentication</h2><div class="comp" id=""><h4>FIA_AFL.1 Authentication Failure Handling</h4><span class="activity_pane_body"><div class="component-activity-header">FIA_AFL.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes the existence of a lockout function for password-based administrator authentication and the action that is taken when it is triggered, and the mechanism by which a locked account is restored.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to configure the number of authentication failures that trigger a lockout, and the allowed range of values for this parameter. If the means for a locked account to be unlocked is time-based, the evaluator shall examine the operational guidance to verify that it describes how to configure the time period for the lockout, and the allowed values for this parameter. If the means for a locked account to be unlocked is based on administrative action, the evaluator shall examine the operational guidance to ensure that it identifies how an administrator may unlock a locked account.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests for each TSF management interface that supports password-based authentication:
+              <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FIA_AFL.1:1</a>:
+      The evaluator shall configure the lockout behavior to lock an account after some number of invalid authentication attempts. The evaluator shall then deliberately enter invalid credentials on an administrator account and verify that further attempts are prevented when the configured value is met or exceeded, per the ST.</li>
+                <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_AFL.1:2</a>:
+      The evaluator shall repeat the previous test with a different configured value to ensure that the TSF enforces the new value.</li>
+                <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FIA_AFL.1:3</a>:
+      [Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall configure the lockout period to be a certain amount of time, cause an account to be locked, and verify that the account is unlocked once the configured time period has elapsed.</li>
+                <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_AFL.1:4</a>:
+      [Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall repeat the previous test with a different configured time value and verify that the TSF enforces the new value.</li>
+                <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_AFL.1:5</a>:
+      [Conditional, an administrative unlock is supported] If a locked account is restored in response to some administrator action, the evaluator shall cause an account to be locked and then use a different account to restore it using the manner specified in the operational guidance.</li>
+              </ul></span>
+              </div></div></span></div><div class="comp" id=""><h4>FIA_ENR_EXT.1 Enrollment</h4><span class="activity_pane_body"><div class="element-activity-header">FIA_ENR_EXT.1.1</div> 
               <div class="eacategory">TSS</div><div class="ea">The evaluator shall examine the TSS and verify that it describes the process of enrollment for each agent or platform listed as supported 
                 in the ST. This description shall include the trusted path used for enrollment (FTP_TRP.1/TRUSTPATH_ENROLL), the method of user authentication
                 (username or password, token, etc.), the method of authentication decision (local or remote authentication services), and the actions performed on
@@ -2816,10 +2847,10 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the process by which the TOE enrolls endpoints into management.</div>
               <div class="eacategory">Tests</div><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_ENR_EXT.1.1:1</a>:
+                  <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_ENR_EXT.1.1:1</a>:
       The evaluator shall attempt to enroll a device without providing correct credentials. The evaluator shall verify that the device is not 
                     enrolled and that the described enrollment actions are not taken.</li>
-                  <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FIA_ENR_EXT.1.1:2</a>:
+                  <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_ENR_EXT.1.1:2</a>:
       The evaluator shall attempt to enroll the device providing correct credentials. The evaluator shall verify that the device is enrolled 
                     and that the described enrollment actions are taken.</li>
                 </ul></span>
@@ -2830,7 +2861,7 @@ The following sections list Common Criteria and technology terms used in this do
                 the administrator how to configure the restrictions.<br/><br/>
               </div>
               <div class="eacategory">Tests</div><div class="ea">For each type of policy selected, the evaluator shall perform the following: <span class="testlist-"><ul>
-                <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FIA_ENR_EXT.1.2:1</a>:
+                <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_ENR_EXT.1.2:1</a>:
       The evaluator shall attempt to configure the TOE according to the administrative guidance in order to prevent enrollment. The
                   evaluator shall verify that the user cannot enroll a device outside of the configured limitation. (For example, the evaluator may try to enroll
                   a disallowed device, or may try to enroll additional devices beyond the number allowed.)</li>
@@ -2859,7 +2890,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FIA_PMG_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_PMG_EXT.1:1</a>:
       
                     The evaluator shall compose passwords that meet the
                     requirements in some way. For each password, the evaluator shall
@@ -2869,7 +2900,7 @@ The following sections list Common Criteria and technology terms used in this do
                     minimum length listed in the requirement are supported and justify
                     the subset of those characters chosen for testing.
                   </li>
-                  <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FIA_PMG_EXT.1:2</a>:
+                  <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_PMG_EXT.1:2</a>:
       
                     The evaluator shall compose passwords that do not meet the
                     requirements in some way. For each password, the evaluator shall
@@ -2902,7 +2933,7 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall perform the following test for each method by which administrators access the TOE, as well as 
                 for each type of credential supported by the login method:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_UIA_EXT.1:1</a>:
+                  <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FIA_UIA_EXT.1:1</a>:
       
                     The evaluator shall use the guidance documentation to
                     configure the appropriate credential supported for the login method.
@@ -2935,12 +2966,12 @@ The following sections list Common Criteria and technology terms used in this do
                 instructions for establishing the communication paths for each supported
                 method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FPT_ITT.1:1</a>:
+                  <li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                     operational guidance) communication method is tested during the course of the
                     evaluation, setting up the connections as described in the operational guidance
                     and ensuring that communication is successful.</li>
-                  <li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FPT_ITT.1:2</a>:
+                  <li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                     data is not sent in plaintext.</li>
                 </ul></span> Further evaluation activities are associated with the specific protocols.
@@ -2975,7 +3006,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 For each method of establishing an interactive session with the TOE, the evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FTA_SSL.3:1</a>:
+                  <li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FTA_SSL.3:1</a>:
       
                     The evaluator shall follow the guidance documentation to configure several different values for the inactivity time period referenced in the component. 
                     For each period configured, the evaluator shall establish an interactive session with the TOE. The evaluator shall then observe that the session is terminated 
@@ -3001,7 +3032,7 @@ The following sections list Common Criteria and technology terms used in this do
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following test:
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FTA_TAB.1:1</a>:
+                  <li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FTA_TAB.1:1</a>:
       
                     The evaluator shall follow the guidance documentation to
                     configure a notice and consent warning message. The evaluator shall
@@ -3012,17 +3043,53 @@ The following sections list Common Criteria and technology terms used in this do
                 </ul></span>
               </div></div></span></div><h2 class="indexable" data-level="2" id="_sec_26">2.3.6 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1/Join</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.4 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.5 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="fau">2.5.1 Class FAU: Security Audit</h2><div class="comp" id=""><h4>FAU_NET_EXT.1 Network Reachability Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_NET_EXT.1</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><h2 class="indexable" data-level="2" id="man-fco">2.5.2 Class FCO: Communication</h2><div class="comp" id=""><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><span class="activity_pane_body"><div class="component-activity-header">FCO_CPC_EXT.1</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><h2 class="indexable" data-level="2" id="man-fcs">2.5.3 Cryptographic Support (FCS)</h2><div class="comp" id=""><h4>FCS_CKM.2 Cryptographic Key Distribution</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2</div>
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the methods of joining TOE components are indicated, along with how those communications are protected. The evaluator shall also confirm that all protocols listed in the TSS in support of joining are consistent with those specified in the requirement, and are included in the requirements in the ST.<br/><br/>              
+                If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for joining TOE components for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FTP_TRP.1/Join:1</a>:
+      The evaluator shall ensure that the communications path for joining components to the TSF is tested for each distinct (nonequivalent) component type, setting up the connections as described in the guidance documentation and ensuring that communication is successful. In particular the evaluator shall confirm that requirements on environment protection for the registration process are consistent with observations made on the test configuration (for example, a requirement to isolate the components from the Internet during registration might be inconsistent with the need for a component to contact a license server). If no requirements on the registration environment are identified as necessary to protect confidentiality, then the evaluator shall confirm that the key used for registration can be configured (following the instructions in the guidance documentation) to be at least the same length as the key used for the internal TSF channel that is being enabled. The evaluator shall confirm that the key used for the channel is unique to the pair of components (this is done by identifying the relevant key during the registration test: it is not necessary to examine the key value).</li>
+                <li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FTP_TRP.1/Join:2</a>:
+      The evaluator shall follow the guidance documentation to ensure that in fact the communication channel can be enabled by an administrator for all the TOE components identified in the guidance documentation as capable of initiation.</li>
+                <li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FTP_TRP.1/Join:3</a>:
+      The evaluator shall ensure that if the guidance documentation states that the channel data is encrypted then the data observed on the channel is not plaintext.</li>
+                <li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FTP_TRP.1/Join:4</a>:
+       The evaluator shall ensure that, for each different pair of nonequivalent component types that can use the registration channel, the connection is physically interrupted during a joining attempt. The evaluator shall ensure that when physical connectivity is restored, communications are appropriately protected.</li>
+              </ul></span> Further evaluation activities are associated with the specific protocols.
+              </div></div></span></div><h2 class="indexable" data-level="1" id="obj-sfrs">2.4 Evaluation Activities for Objective SFRs</h2>The PP-Module does not define any objective requirements.<h2 class="indexable" data-level="1" id="impl-sfrs-">2.5 Evaluation Activities for Implementation-dependent SFRs</h2><h2 class="indexable" data-level="2" id="fau">2.5.1 Class FAU: Security Audit</h2><div class="comp" id=""><h4>FAU_NET_EXT.1 Network Reachability Review</h4><span class="activity_pane_body"><div class="component-activity-header">FAU_NET_EXT.1</div>
+                
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes the mechanism by which the TSF can query the connectivity status of any managed sytems or agents.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it includes instructions for how to query the connectivity status of managed systems or agents (e.g., this may be shown as a status indicator on a table entry).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall follow the steps in the operational guidance to identify the connectivity status of a system or agent managed by the TOE. The evaluator shall change the state of that connection (e.g. by powering down the managed system or the system a managed agent runs on) and verify that the connectivity status accurately reflects the change.</div></div></span></div><h2 class="indexable" data-level="2" id="man-fco">2.5.2 Class FCO: Communication</h2><div class="comp" id=""><h4>FCO_CPC_EXT.1 Component Registration Channel Definition</h4><span class="activity_pane_body"><div class="component-activity-header">FCO_CPC_EXT.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to verify that it describes the mechanism for registering distributed TOE components using a secure channel, whether this is a dedicated registration channel or the same channel that is used for protected communications once registered, and whether the functionality is implemented by the TSF or invoked from its platform.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the guidance documentation to confirm that it contains instructions for enabling and disabling
+                communications with any individual component of a distributed TOE. The evaluator shall confirm that the method of disabling is such that
+                all other components can be prevented from communicating with the component that is being removed from the TOE (preventing the remaining 
+                components from either attempting to initiate communications to the disabled component, or from responding to communications from the
+                disabled component).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FCO_CPC_EXT.1:1</a>:
+      The evaluator shall confirm that an IT entity that is not currently a member of the distributed TOE cannot communicate with any
+                    component of the TOE until the non-member entity is enabled by an administrator for each of the non-equivalent TOE components that
+                    it is required to communicate with (non-equivalent TOE components are as defined in the minimum configuration for the distributed 
+                    TOE).</li>
+                  <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FCO_CPC_EXT.1:2</a>:
+      The evaluator shall confirm that after enablement, an IT entity can communicate only with the components that it has been enabled for. 
+                    This includes testing that the enabled communication is successful for the enabled component pair, and that communication remains
+                    unsuccessful with any other component for which communication is possible but has not been explicitly enabled. <br/> 
+                    Some TOEs may set up the registration channel before the enablement step is carried out, but in such a case the channel must not allow
+                    communications until after the enablement step has been completed.</li>
+                  <li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCO_CPC_EXT.1:3</a>:
+      The evaluator shall separately disable each TOE component in turn and ensure that the other TOE components cannot then communicate 
+                    with the disabled component, whether by attempting to initiate communications with the disabled component or by responding to 
+                    communication attempts from the disabled component. In situations where one component acts as
+                    the 'Gatekeeper' for all other components, 
+                    the test would involve disabling the components in turn on the Gatekeeper and ensuring that the TOE no longer communicates with disabled
+                    components.</li>
+                </ul></span>
+              </div></div></span></div><h2 class="indexable" data-level="2" id="man-fcs">2.5.3 Cryptographic Support (FCS)</h2><div class="comp" id=""><h4>FCS_CKM.2 Cryptographic Key Distribution</h4><span class="activity_pane_body"><div class="component-activity-header">FCS_CKM.2</div>
               
               
               
@@ -3195,24 +3262,59 @@ The following sections list Common Criteria and technology terms used in this do
                 instructions for establishing the communication paths for each supported
                 method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <span class="testlist-"><ul>
-                  <li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FPT_ITT.1:1</a>:
+                  <li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FPT_ITT.1:1</a>:
       The evaluator shall ensure that communications using each specified (in the
                     operational guidance) communication method is tested during the course of the
                     evaluation, setting up the connections as described in the operational guidance
                     and ensuring that communication is successful.</li>
-                  <li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FPT_ITT.1:2</a>:
+                  <li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FPT_ITT.1:2</a>:
       The evaluator shall ensure, for each method of communication, the channel
                     data is not sent in plaintext.</li>
                 </ul></span> Further evaluation activities are associated with the specific protocols.
               </div></div></span></div><h2 class="indexable" data-level="2" id="_sec_26">2.5.5 Trusted Path/Channels (FTP)</h2><div class="comp" id=""><h4>FTP_ITC.1 Inter-TSF Trusted Channel (Authorized IT Entities)</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_ITC.1</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><div class="comp" id=""><h4>FTP_TRP.1 Trusted Path</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1</div>
               
-		TODO: You need to explain the lack of EAs for this component!!!!
-	
-            </span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><h1 class="indexable" data-level="1" id="ase">3.1 Class ASE: Security Target</h1><div class="comp" id=""><h4>ASE_TSS.1 TOE summary specification</h4><span class="activity_pane_body"></span></div><h1 class="indexable" data-level="1" id="adv">3.2 Class ADV: Development</h1><div class="comp" id=""><h4>ADV_FSP.1 Basic Functional Specification (ADV_FSP.1)</h4><span class="activity_pane_body"><div class="component-activity-header">ADV_FSP.1</div>
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the
+                methods of communication with authorized IT entities are indicated, along with how
+                those communications are protected.<br/><br/> 
+                If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS 
+                to verify that it describes (for each supported platform) 
+                how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by 
+                the TSF; nonetheless, that mechanism will be identified in the TSS as part 
+                of this evaluation activity).
+              </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains
+                instructions for configuring the communication channel between the TSF and authorized IT entities for each supported
+                method.
+              </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
+                <span class="testlist-"><ul>
+                  <li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FTP_ITC.1:1</a>:
+      The evaluator shall ensure that communications using each specified (in the
+                    operational guidance) communication method is tested during the course of the
+                    evaluation, setting up the connections as described in the operational guidance
+                    and ensuring that communication is successful.</li>
+                  <li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FTP_ITC.1:2</a>:
+      The evaluator shall ensure, for each method of communication, the channel
+                    data is not sent in plaintext.</li>
+                  
+                  <li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FTP_ITC.1:3</a>:
+      The evaluator shall ensure, for each communication channel with the TSF, that a protocol analyzer identifies the traffic as the
+                    protocol under testing.</li>
+                </ul></span> Further evaluation activities are associated with the specific protocols.
+              </div></div></span></div><div class="comp" id=""><h4>FTP_TRP.1 Trusted Path</h4><span class="activity_pane_body"><div class="component-activity-header">FTP_TRP.1</div>
+              
+              
+              
+            <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall examine the TSS to determine that the methods of remote TOE administration are indicated, along with how those communications are protected. The evaluator shall also confirm that all protocols listed in the TSS in support of TOE administration are consistent with those specified in the requirement, and are included in the requirements in the ST.<br/><br/>
+                If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for establishing the remote administrative sessions for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: <span class="testlist-"><ul>
+                <li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FTP_TRP.1:1</a>:
+      The evaluator shall ensure that communications using each specified (in the operational guidance) remote administration method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</li>
+                <li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FTP_TRP.1:2</a>:
+      For each method of remote administration supported, the evaluator shall follow the operational guidance to ensure that there is no available interface that can be used by a remote user to establish remote administrative sessions without invoking the trusted path.</li>
+                <li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FTP_TRP.1:3</a>:
+      The evaluator shall ensure, for each method of remote administration, the channel data is not sent in plaintext.</li>
+              </ul></span> Further evaluation activities are associated with the specific protocols.
+              </div></div></span></div><h1 id="sar_aas" class="indexable" data-level="0">3 Evaluation Activities for SARs</h1><h1 class="indexable" data-level="1" id="ase">3.1 Class ASE: Security Target</h1><div class="comp" id=""><h4>ASE_TSS.1 TOE summary specification</h4><span class="activity_pane_body"></span></div><h1 class="indexable" data-level="1" id="adv">3.2 Class ADV: Development</h1><div class="comp" id=""><h4>ADV_FSP.1 Basic Functional Specification (ADV_FSP.1)</h4><span class="activity_pane_body"><div class="component-activity-header">ADV_FSP.1</div>
                 There are no specific evaluation activities associated with these SARs, except ensuring the information is provided. The functional specification documentation is provided to support the evaluation activities described in Section 5 and the relevant appendices, and other activities described for AGD, ATE, and AVA SARs. The requirements on the content of the functional specification information is implicitly assessed by virtue of the other evaluation activities being performed; if the evaluator is unable to perform an activity because there is insufficient interface information, then an adequate functional specification has not been provided.
               </span></div><h1 class="indexable" data-level="1" id="agd">3.3 Class AGD: Guidance Documentation</h1><div class="comp" id=""><h4>AGD_OPE.1 Operational User Guidance (AGD_OPE.1)</h4><span class="activity_pane_body"><div class="component-activity-header">AGD_OPE.1</div> 
                 Some of the contents of the operational guidance will be verified by the evaluation
