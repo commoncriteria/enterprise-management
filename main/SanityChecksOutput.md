@@ -11,6 +11,38 @@
         on/PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[3]""/depends[2]""/on[1]""
 * Error: Detected dangling id-reference to key-agreement-support from attribute
         on/PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[5]""/depends[1]""/on[1]""
+* Error: Detected dangling id-reference to android from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:div[1]"The evalu"/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to windows from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:div[2]"The Windo"/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to linux from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:div[3]"The Linux"/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to Solaris from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:div[4]"The Solar"/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to mac from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:div[5]"The macOS"/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to android from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[4]""/f-element[1]""/aactivity[1]""/Tests[1]"The evalu"/testlist[2]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to android from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[1]""/f-element[2]""/aactivity[1]""/Tests[1]"The evalu"/testlist[1]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to windows from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[1]""/f-element[2]""/aactivity[1]""/Tests[1]"The evalu"/testlist[2]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to linux from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[1]""/f-element[2]""/aactivity[1]""/Tests[1]"The evalu"/testlist[3]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to Solaris from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[1]""/f-element[2]""/aactivity[1]""/Tests[1]"The evalu"/testlist[4]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to mac from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[1]""/f-element[2]""/aactivity[1]""/Tests[1]"The evalu"/testlist[5]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to android from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[1]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to windows from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[2]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to linux from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[3]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to Solaris from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[4]""/test[1]""/depends[1]""/ref[1]""
+* Error: Detected dangling id-reference to mac from attribute
+        ref/PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[5]""/test[1]""/depends[1]""/ref[1]""
 * Error: Detected multiple elements with an id of 'sel-exp-skg-256'.
 * Error: Detected multiple elements with an id of 'sel-exp-skg-256'.
 * Error: Detected multiple elements with an id of 'fel-sign-how'.
@@ -415,7 +447,18 @@
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[14]""/f-element[1]""/aactivity[1]""/Tests[1]"The follo"/h:p[14]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[17]""/f-element[1]""/title[1]"The TSF s"/selectables[1]""/tabularize[1]""/reqtext[3]"after ini"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[17]""/f-element[1]""/title[1]"The TSF s"/selectables[1]""/tabularize[1]""/reqtext[3]"after ini"/h:p[2]""
-* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[3]""/f-element[1]""/note[1]"This requ"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/note[1]""/h:p[1]"If ""/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:p[2]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:p[3]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:p[4]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"If any se"/h:p[5]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[5]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]""/h:p[1]"The evalu"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/note[1]""/h:p[1]"Configura"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/TSS[1]""/h:p[1]"The evalu"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[1]""/test[1]""/h:p[1]"The evalu"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[2]""/f-element[1]""/aactivity[1]""/Tests[1]"If ""/testlist[2]""/test[1]""/h:p[1]"The evalu"/h:p[1]""
+* Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[7]""/f-component[5]""/f-element[1]""/note[1]"This requ"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[2]"The Secur"/h:p[1]""
  Failed to find a reference to t-audit-feat-based.
  Failed to find a reference to t-audit-sel-based.
@@ -451,9 +494,14 @@ warning: failed to load external entity "output/tls.xml"
  Failed to find a reference to tls.
  Failed to find a reference to tls.
  Failed to find a reference to tls.
- Failed to find a reference to Threats.
 * Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
  Failed to find a reference to tls.
 * Warning: Since FCS_STG_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FDP_DAR_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FMT_CFG_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
+                       
+* Warning: Since FMT_MEC_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
