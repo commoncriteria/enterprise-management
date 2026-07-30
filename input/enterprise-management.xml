@@ -1104,7 +1104,7 @@
         </f-component>    
       </section>
       
-      <section id="man-fcs" title="Cryptographic Support (FCS)">
+      <section id="man-fcs" title="Class FCS: Cryptographic Support">
         
           <ext-comp-def title="Cryptographic Key Management" fam-id="FCS_CKM_EXT">
           <fam-behavior>This family defines requirements for management of cryptographic keys using mechanisms beyond what are specified in CC Part 2.
