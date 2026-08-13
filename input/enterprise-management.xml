@@ -4852,12 +4852,18 @@
                 <h:li>The means by which the TOE is configured to bring these systems or agents under management (e.g., does a process exist by which agents are registered to the TOE via an enrollment process, is the TOE configured to interact with systems at administrator-defined network addresses).</h:li>
                 <h:li>How the TOE's interactions with managed systems or agents are protected (e.g., use of a trusted protocol or a local-only interface)</h:li>
                 <h:li>Any mechanisms the TSF uses to ensure that data transmitted from systems or agents is valid (e.g., must the data be formatted in accordance with a specific protocol such as SCAP)</h:li>
-              </h:ul> </TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it describes how to specify a system or agent to be managed (e.g., is there an enrollment process initiated from a remote agent, does an administrator on the TOE specify a remote endpoint to communicate with, etc.), and whether any configuration options exist for the act of management (e.g., a periodic scanning interval).</Guidance>
+              </h:ul> 
+              If the ST defines any positive or negative exceptions to its enforced rules as defined in FDP_IFF.1.4 or FDP_IFF.1.5, the evaluator shall verify that the TSS identifies these exceptions.
+              </TSS>
+              <Guidance>The evaluator shall examine the operational guidance to verify that it describes how to specify a system or agent to be managed (e.g., is there an enrollment process initiated from a remote agent, does an administrator on the TOE specify a remote endpoint to communicate with, etc.), and whether any configuration options exist for the act of management (e.g., a periodic scanning interval).<h:p/>
+              The evaluator shall also ensure that if any positive or negative exceptions to its enforced rules as defined in FDP_IFF.1.4 or FDP_IFF.1.5 exist, the operational guidance defines the behavior of these exceptions and describes how to configure them, to the extent that they are configurable versus existing by default.
+              </Guidance>
               <Tests>The evaluator shall perform the following tests for each distinct type of system or agent that the TOE can communicate with (e.g. if the TOE supports both Windows and macOS agents, this would be two distinct types of agents):
                 <testlist>
                   <test>The evaluator shall follow the operational guidance to enter a system or agent into management. This may be performed in conjunction with FIA_ENR_EXT.1 (if claimed) and FIA_ENR_EXT.2.</test>
                   <test>The evaluator shall operate the TOE to exercise its management functions against the managed system or agent. The evaluator shall verify in doing so that the TOE is collecting accurate data about the managed system or agent, that any management functions being performed have the intended effect on the system or agent, and that data is transmitted in the expected format. This may be performed in conjunction with FMT_SMF.1/EXTERNAL and FDP_IFC.1.</test>
+                  <test>If any positive exceptions to the enterprise management functionality exist as defined in FDP_IFF.1.4 (e.g., some data is always collected or some management activity always occurs regardless of configuration settings that would otherwise prohibit it), the evaluator shall configure the excepted behavior to be disallowed and then perform the associated action, observing that it was permitted per the exception.</test>
+                  <test>If any negative exceptions to the enterprise management functionality exist as defined in FDP_IFF.1.5 (e.g., some action is always prohibited regardless of configuration settings that would otherwise permit it), the evaluator shall configure the excepted behavior to be allowed and then perform the associated action, observing that it was prohibited per the exception.</test>
                 </testlist>
           
               </Tests>
@@ -5059,9 +5065,9 @@
           </title>
           <note role="application">In all cases where agent enrollment explicitly or implicitly occurs (i.e., each of the first four selections), FIA_ENR_EXT.1 is claimed to further describe the enrollment process and FMT_MOF.1/MANAGEMENT_ENROLL is claimed to define the ability of the TSF to authorize this function.</note>
           <aactivity>
-            <TSS>TBD</TSS>
-            <Guidance>TBD</Guidance>
-            <Tests>TBD</Tests>
+            <TSS>The evaluator shall examine the TSS to verify that it describes the mechanism by which a system or agent becomes managed by the TSF.</TSS>
+            <Guidance>The evaluator shall examine the operational guidance to verify that it describes how to specify a given system or agent to be managed. This may include behavior that is not performed on the TOE itself (e.g., if the registration process is directed through an agent in the operational environment requesting to be enrolled to the TOE).</Guidance>
+            <Tests>For each specified method of enrollment, the evaluator shall perform the steps in the operational guidance to enroll an agent or system into management. The evaluator shall verify that the enrollment has occurred by using the TOE's management interface to verify its presence (e.g. if the TSF provides a dashboard that lists all enrolled systems by name or IP address, the evaluator shall verify that the enrolled agent or system is present in it).</Tests>
           </aactivity>
         </f-element>
           <audit-event/>
