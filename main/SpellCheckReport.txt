@@ -305,7 +305,6 @@ output/enterprise-management-sd.html: SharedPreferences
 output/enterprise-management-sd.html: Solaris
 output/enterprise-management-sd.html: Subclause
 output/enterprise-management-sd.html: SysInternals
-output/enterprise-management-sd.html: TBD
 output/enterprise-management-sd.html: TODO
 output/enterprise-management-sd.html: TRUSTPATH
 output/enterprise-management-sd.html: TestMAC
