@@ -622,8 +622,8 @@
 					    <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
 					    <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
               <selectable>no other events</selectable>
-					  </selectables></h:i>].</h:li>						
-					</h:ol>
+					  </selectables></h:li>						
+					</h:ol></h:i>].
 				</title>
             <note role="application">
               <h:p>
