@@ -602,8 +602,9 @@
 						<selectable>invoke platform-provided functionality</selectable>
 						<selectable>implement functionality</selectable>
 					</selectables> to generate audit data of the following auditable events: 
-			    <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li> [
-					<h:ol type="a">
+			    <h:li>Startup and shutdown of the audit functions</h:li>
+			    <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li> [<h:i>
+					<h:ol>
 						<h:li>All administrative actions</h:li>
 						<h:li>
 							Commands issued to managed <selectables>
@@ -613,7 +614,6 @@
 						</h:li>
 						<h:li>Specifically defined auditable events listed in <xref g="t-audit-mandatory"/></h:li>                    
 					  <h:li><selectables linebreak="yes">
-					    <selectable>Startup and shutdown of the audit functions,</selectable>
       <!--        <selectable id="sel-at2"><refinement>Auditable events defined in <xref to="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
 					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref to="t-audit-objective"/> for Objective SFRs</refinement></selectable> -->
 					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref to="t-audit-feat-based"/> for Implementation-Based SFRs,</refinement></selectable>
@@ -622,7 +622,7 @@
 					    <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
 					    <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
               <selectable>no other events</selectable>
-						</selectables>.</h:li>						
+					  </selectables></h:i>].</h:li>						
 					</h:ol>
 				</title>
             <note role="application">
@@ -721,7 +721,7 @@
               <h:li>and the outcome (success or failure) of the event</h:li>
               <h:li>additional information in <xref g="t-audit-mandatory"/></h:li>
               <h:li><selectables linebreak="yes">
-                    <selectable id="sel-at2-i">additional information defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs,</selectable>
+         <!--           <selectable id="sel-at2-i">additional information defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs,</selectable> -->
 					          <selectable id="sel-at3-i">additional information defined in <xref g="t-audit-objective"/> for Objective SFRs,</selectable>
                     <selectable id="sel-at4-i">additional information defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs,</selectable>
                 <selectable id="sel-atssh">Auditable events for <xref to="ssh"/>,</selectable>
