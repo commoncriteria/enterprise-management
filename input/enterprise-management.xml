@@ -29,7 +29,7 @@
   </RevisionHistory>
 
 
-  <include-pkg id="pkg-ssh">
+  <include-pkg id="ssh">
     <git>
       <url>https://github.com/commoncriteria/ssh</url>
       <branch>release-2.0</branch>
@@ -37,14 +37,14 @@
     <url>https://www.niap-ccevs.org/protectionprofiles/515</url>
     <depends on-sel="sel_all_ssh"/>
   </include-pkg>
-  <include-pkg id="pkg-tls">
+  <include-pkg id="tls">
     <git>
       <url>https://github.com/commoncriteria/tls</url>
       <branch>release-2.1</branch>
     </git>
     <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439</url>
   </include-pkg>
-  <include-pkg id="pkg-x509">
+  <include-pkg id="x509">
     <git>
       <url>https://github.com/commoncriteria/x509</url>
       <branch>release-1.0</branch>
@@ -172,8 +172,9 @@
         A conformant TOE may include only EM functionality, or it may include agents within the logical boundary of the TOE. If agents are included in the logical boundary, the TOE also conforms to the PP-Module for Host Agent. Agents may also reside in the operational environment such that the TOE boundary only includes the EM functionality and its interface to remote agents is an external interface. If agents are supported by the product but are not included within the TOE boundary, appropriate justification must be provided for their exclusion from the TOE.<h:p/>
         A conformant TOE may be isolated to a single system, or it may be distributed across multiple systems, either because the TOE's EM functionality is distributed across multiple servers, or because the TOE boundary includes agents that are remote to the server.<h:p/>
         A conformant TOE will generally communicate with external systems (whether via agents or not) that are logically remote to the TOE. However, some use cases exist where an EM product only manages policy on a central server.<h:p/>
-        A conformant TOE may provide endpoint detection and response (EDR) capability in addition to its EM capability. If this is the case, the TOE may also 
-              
+        <!-- 
+        A conformant TOE may provide endpoint detection and response (EDR) capability in addition to its EM capability. If this is the case, the TOE may also claim conformance to the PP-Module for Endpoint Detection and Response
+              --> 
         <!--
         <h:table>
           <h:tr>
@@ -282,7 +283,7 @@
       <h:br/><h:br/>
       The second approach (<xref to="DTF2"/>) uses an alternative registration channel and supports use cases where the channel relies on environmental security
       constraints to provide the necessary protection of the registration exchange.<h:br/><h:br/>
-      <figure entity="images/DistributedToeFig2.png" pre="Figure " title="Distributed TOE registration using channel satisfying FTP_TRP.1/TRUSTPATH_JOIN" id="DTF2"/>
+      <figure entity="images/DistributedToeFig2.png" pre="Figure " title="Distributed TOE registration using channel satisfying FTP_TRP.1" id="DTF2"/>
       <h:br/><h:br/>
       The final approach (<xref to="DTF3"/>) supports use cases where registration is performed manually through direct configuration of both the Joiner and Gatekeeper 
       devices. Once configured, the two components establish an internal TSF channel that satisfies
@@ -446,7 +447,7 @@
                 for every TOE component that the audit functionality is running properly. </description>
             </SOE>
             <SOE name="OE.IT_ENTERPRISE">
-              <description>The enterprise IT infrastructure provides security for a network that is available to the TOE and MDs that prevents 
+              <description>The enterprise IT infrastructure provides security for a network that is available to the TOE and any systems or agents that it manages that prevents 
                 unauthorized access.</description>
             </SOE>
         
@@ -524,6 +525,7 @@
               The TSF shall alert the administrators in the event of any of the following:
               <h:ul>
                 <h:li>Change in management status (i.e., adding system or agent to management, removing system or agent from management)</h:li>
+                <h:li>Failure to apply policy or configuration</h:li>
                 <h:li>Failure to respond to heartbeat or check in during designated reporting interval</h:li>
                 <h:li><selectables><selectable><assignable>other events</assignable></selectable><selectable>no other events</selectable></selectables></h:li>
               </h:ul>
@@ -535,7 +537,7 @@
             <aactivity>
               <TSS>The evaluator shall examine the TSS and verify that it describes the events that trigger the detection of an alert and the mechanism by which the alert is generated or transmitted (e.g., displayed in GUI, email notification). The evaluator shall also examine the TSS to verify that it identifies the reporting interval that the TSF uses to verify the availability of managed systems or agents.</TSS>
               <Guidance>The evaluator shall examine the operational guidance to determine that it describes the process for configuring the behavior that triggers alerts and how the alerts are generated (e.g., if alerts are transmitted via email, the operational guidance would describe how to specify the recipients). If either aspect of this behavior operates in the evaluated configuration by default and no configuration of the functionality is performed, the evaluator shall examine the operational guidance to verify that it describes this.</Guidance>
-              <Tests>The following tests are performed for each distinct type of entity with which the TSF communicates (if more than one such type is supported) and for each distinct alert mechanism (if more than one is supported):<testlist>
+              <Tests>The following tests are performed for each distinct type of managed entity with which the TSF communicates (if more than one such type is supported) and for each distinct alert mechanism (if more than one is supported):<testlist>
                 <test>The evaluator shall add a remote entity to management by the TSF through the process defined in FIA_ENR_EXT.2 and subsequently remove it from management. The evaluator shall verify in both cases that the expected alert mechanism is triggered.</test>
                 <test>The evaluator shall cause a managed entity to be inaccessible and verify that the expected alert mechanism is triggered for this entity's absence after no more than the maximum period of time specified in the TSS for the reporting interval.</test>
                 <test>For any other events that are described as triggering alerts, the evaluator shall cause the event to occur and verify that the expected alert mechanism is triggered.</test>
@@ -600,6 +602,7 @@
 						<selectable>invoke platform-provided functionality</selectable>
 						<selectable>implement functionality</selectable>
 					</selectables> to generate audit data of the following auditable events: 
+			    <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li> [
 					<h:ol type="a">
 						<h:li>All administrative actions</h:li>
 						<h:li>
@@ -610,34 +613,35 @@
 						</h:li>
 						<h:li>Specifically defined auditable events listed in <xref g="t-audit-mandatory"/></h:li>                    
 					  <h:li><selectables linebreak="yes">
-					    <selectable>Startup and shutdown of the audit functions</selectable>
+					    <selectable>Startup and shutdown of the audit functions,</selectable>
       <!--        <selectable id="sel-at2"><refinement>Auditable events defined in <xref to="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
 					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref to="t-audit-objective"/> for Objective SFRs</refinement></selectable> -->
-					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref to="t-audit-feat-based"/> for Implementation-Based SFRs</refinement></selectable>
-					    <selectable id="sel-at5"><refinement>Auditable events defined in <xref to="t-audit-sel-based"/> for Selection-Based SFRs</refinement></selectable>
-					    <selectable id="sel-attls"><refinement>Auditable events defined in the audit table for the TLS Functional Package (see <xref to="atref-pkgs"/>)</refinement></selectable>
+					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref to="t-audit-feat-based"/> for Implementation-Based SFRs,</refinement></selectable>
+					    <selectable id="sel-at5"><refinement>Auditable events defined in <xref to="t-audit-sel-based"/> for Selection-Based SFRs,</refinement></selectable>
+					    <selectable id="sel-atssh">Auditable events for <xref to="ssh"/>,</selectable>
+					    <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
+					    <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
               <selectable>no other events</selectable>
 						</selectables>.</h:li>						
 					</h:ol>
 				</title>
             <note role="application">
-				This requirement outlines the events for which audit data must be generated by either the TOE or by its underlying platform. It is acceptable for this requirement to be met through a combination of platform-provided and TOE-provided audit functions, so long as the full set of required events are generated and include the required data.<h:br/><h:br/>
-           
-				Item <h:b>a</h:b> above requires all administrative actions to be auditable. Administrative actions refer to any management functions specified by 
+              <h:p>
+                This requirement outlines the events for which audit data must be generated by either the TOE or by its underlying platform. It is acceptable for this requirement to be met through a combination of platform-provided and TOE-provided audit functions, so long as the full set of required events are generated and include the required data.</h:p>
+           <h:p>Item a above requires all administrative actions to be auditable. Administrative actions refer to any management functions specified by 
 				FMT_MOF.1. Thus no additional specification for the auditability of these actions is specified in <xref g="t-audit-mandatory"/> aside 
-				from those that require additional record content.<h:br/><h:br/>
-              
-				Item <h:b>b</h:b> includes any commands that are performed against a managed system or agent. This need not go to the granularity of individual API calls, but it is expected that there is sufficient data to be clear to an administrator what actions the TOE may be performing against an external entity or what data it may be receiving from it.<h:br/><h:br/>
-              
+             from those that require additional record content.</h:p>
+            <h:p>Item b above includes any commands that are performed against a managed system or agent. This need not go to the granularity of individual API calls, but it is expected that there is sufficient data to be clear to an administrator what actions the TOE may be performing against an external entity or what data it may be receiving from it.</h:p>
+              <h:p>
 				Depending on the specific requirements selected by the ST author from SFR, optional requirements, selection-based
 				requirements, and objective requirements, the ST author should include the appropriate auditable
 				events from <xref g="t-audit-optional"/>, <xref g="t-audit-sel-based"/>, and <xref g="t-audit-objective"/> in the
-              ST for the requirements selected.<h:br/><h:br/>
-              
-              <h:p>In item d above, "startup and shutdown of the audit functions" may refer to the independent startup and shutdown of audit functionality specifically, or it may refer to startup and shutdown of the TOE itself, if auditing cannot be disabled separately from the operation of the TOE. It is outside the scope of the TOE boundary to consider the need to audit the startup and shutdown of auditing functionality used by the TOE platform, as this would be an inherent function of the host operating system. </h:p><h:br/><h:br/>     
+                ST for the requirements selected.</h:p>
+              <h:p>In item d above, "startup and shutdown of the audit functions" may refer to the independent startup and shutdown of audit functionality specifically, or it may refer to startup and shutdown of the TOE itself, if auditing cannot be disabled separately from the operation of the TOE. It is outside the scope of the TOE boundary to consider the need to audit the startup and shutdown of auditing functionality used by the TOE platform, as this would be an inherent function of the host operating system. </h:p>
+              <h:p>
 		    	The following table contains the events enumerated in the auditable events tables for the TLS Functional Package. Inclusion of these events
 		    	in the ST is subject to selection above, inclusion of the corresponding SFRs in the ST, and support in the FP as represented by a selection
-		    	in the FP audit table. This list is included here for reference.<h:br/><h:br/>
+		    	in the FP audit table. This list is included here for reference.</h:p>
 							<h:b><ctr ctr-type='Table' id="atref-pkgs" pre="Table ">: Auditable Events for Functional Packages</ctr></h:b>							
 							<h:table>
 								<h:tr class="header"><h:td>Requirement</h:td><h:td>Auditable Events</h:td><h:td>Additional
@@ -717,10 +721,12 @@
               <h:li>and the outcome (success or failure) of the event</h:li>
               <h:li>additional information in <xref g="t-audit-mandatory"/></h:li>
               <h:li><selectables linebreak="yes">
-                    <selectable id="sel-at2-i">additional information defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs</selectable>
-					          <selectable id="sel-at3-i">additional information defined in <xref g="t-audit-objective"/> for Objective SFRs</selectable>
-                    <selectable id="sel-at4-i">additional information defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs</selectable>
-					          <selectable id="sel-attls-i">additional information defined in the audit table for the TLS Functional Package (see <xref to="atref-pkgs"/>)</selectable>
+                    <selectable id="sel-at2-i">additional information defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs,</selectable>
+					          <selectable id="sel-at3-i">additional information defined in <xref g="t-audit-objective"/> for Objective SFRs,</selectable>
+                    <selectable id="sel-at4-i">additional information defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs,</selectable>
+                <selectable id="sel-atssh">Auditable events for <xref to="ssh"/>,</selectable>
+                <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
+                <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
                     <selectable>no other additional information</selectable>
 				</selectables></h:li>
             </h:ul>
@@ -771,7 +777,12 @@
             <aactivity>
                 <TSS>The evaluator shall examine the TSS to verify that it describes the mechanism by which the TSF can query the connectivity status of any managed systems or agents.</TSS>
               <Guidance>The evaluator shall examine the operational guidance to verify that it includes instructions for how to query the connectivity status of managed systems or agents (e.g., this may be shown as a status indicator on a table entry).</Guidance>
-              <Tests>The evaluator shall follow the steps in the operational guidance to identify the connectivity status of a system or agent managed by the TOE. The evaluator shall change the state of that connection (e.g. by powering down the managed system or the system a managed agent runs on) and verify that the connectivity status accurately reflects the change.</Tests>
+              <Tests>The evaluator shall perform the following test for each type of system or agent managed by the TOE:
+                <testlist>
+                <test>The evaluator shall follow the steps in the operational guidance to identify the connectivity status of a system or agent managed by the TOE. The evaluator shall change the state of that connection (e.g. by powering down the managed system or the system a managed agent runs on) and verify that the connectivity status accurately reflects the change.
+                </test>
+                </testlist>
+              </Tests>
             </aactivity>
           </f-element>
           <audit-event/>
@@ -849,7 +860,7 @@
             <note role="application">The purpose of this requirement is to allow the ST author to specify the monitored data that is retained by the TSF for subsequent review and reporting purposes. It may be the case that the TSF preserves all of the raw data that it collects, in which case "monitored data is retained in its original format" is selected. If only a subset of this data is retained (e.g. if compliance data is collected and only the violations are retained for review and reporting purposes), the ST author completes the assignment to describe this behavior, and whether it is configurable. </note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to verify that it identifies the monitored data that the TSF ensures is retained and whether this is configurable.</TSS>
-              <Guidance>If the functionality to retain monitored data is configurable, the evaluator shall examine the operational guidance to verify that instructions are provided for how to specify what monitored data is retained.</Guidance>
+              <Guidance>If the functionality to retain monitored data is configurable, the evaluator shall examine the operational guidance to verify that instructions are provided for how to specify what monitored data is retained. The evaluator shall also verify in this case that the operational guidance identifies the data that is always collected that cannot be disabled by configuration.</Guidance>
               <Tests>The evaluator shall also perform the following tests:<testlist>
                 <test>The evaluator shall perform actions that cause monitored data to be collected by the TOE and verify on review of this data that the information present is consistent with what the TSS identifies as being retained.</test>
                 <test>[Conditional, the TSF supports configuration of this function] If the TSF supports configuring the monitored data that is retained, the evaluator shall enable and disable these configuration elements, cause monitored data to be collected, and verify that the TSF suppresses the collection of any data that is configured to be suppressed.</test>  
@@ -941,7 +952,7 @@
               <Tests> Testing of the trusted channel mechanism will be performed as defined in the associated evaluation activities for the particular 
                 trusted channel mechanism.<h:br/><h:br/> 
                 The evaluator shall perform the following tests: <testlist>
-                  <test>The evaluator shall cause monitored data to be collected by the TOE and then review this data to verify that it includes the attributes specified in the TSS. This test may be performed in conjunction with FAU_SAR_EXT.1 to verify the ability to review this data and with FAU_SEL_EXT.1 to verify that configuring the suppression of any monitored data attributes has the intended effect and data with those attributes are not stored.
+                  <test>The evaluator shall cause monitored data to be collected by the TOE and then review this data to verify that it includes the data that is specified in the TSS. This test may be performed in conjunction with FAU_SAR_EXT.1 to verify the ability to review this data and with FAU_SEL_EXT.1 to verify that configuring the suppression of any monitored data attributes has the intended effect and data with those attributes are not stored.
                   </test>
                     <test>[Conditional, the TOE stores monitored data remotely]
                     If the TOE stores monitored data remotely, the evaluator shall establish a session between the TOE and the server used for storing monitored data according to the configuration guidance provided. The
@@ -978,10 +989,7 @@
             </note>
           </f-element>
           <f-element>
-            <title>The TSF shall be able to <selectables onlyone="yes">
-              <selectable>prevent</selectable>
-              <selectable>detect</selectable>
-            </selectables>
+            <title>The TSF shall be able to [<h:i>prevent</h:i>]
               unauthorized modifications to the stored audit data in the audit trail.</title>
             <aactivity level="component">
               <TSS>If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported
@@ -4792,7 +4800,8 @@
               conformance to a PP-Configuration that includes the PP-Module for File Encryption.<h:p/>Any file that may potentially contain sensitive data (to include temporary files) shall be protected. The only exception is if the user intentionally exports the sensitive data to non-protected files. ST authors should select "<h:b>protect sensitive data in accordance with FCS_STO_EXT.1</h:b>" for the sensitive data that is covered by the FCS_STO_EXT.1 SFR.</h:p></note>
             <aactivity level="component">
               <TSS><h:p>If any selection other than <h:b>not store any sensitive data</h:b> is
-                selected the evaluator shall examine the TSS to ensure that it describes the sensitive data processed by the application. The evaluator shall then ensure that the following activities cover all of the sensitive data identified in the TSS.<h:p/>If <h:b>not store any sensitive data</h:b> is selected, the evaluator shall inspect the TSS to ensure that it describes how sensitive data cannot be written to non-volatile memory. The evaluator shall also ensure that this is consistent with the file system test below.<h:p/>If <h:b>implement functionality to encrypt sensitive data</h:b> is selected the evaluator shall confirm the TSS describes how the application ensures all sensitive data is protected by the file encryption functions.<h:p/> If <h:b>protect sensitive data in accordance with FCS_STO_EXT.1</h:b> is selected the evaluator shall confirm the TSS describes which data is protected via this mechanism and the selections within FCS_STO_EXT.1 that are leveraged. If multiple selections are included the evaluator shall ensure the TSS describes which sensitive data is captured by which selection.<h:p/>If "<h:b>leverage platform-provided functionality...</h:b>" is selected, the evaluation activities will be performed as stated in the following requirements, which vary on a per-platform basis.<h:p/> <h:div><depends ref="android"/>The evaluator shall inspect the TSS and verify that it describes how files containing sensitive data are stored with the <h:code>MODE_PRIVATE </h:code> flag set. </h:div>   <h:div><depends ref="windows"/>The Windows platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>  <h:div><depends ref="linux"/>The Linux platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>   <h:div><depends ref="Solaris"/>The Solaris platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>   <h:div><depends ref="mac"/>The macOS platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>  </h:p></TSS>
+                selected the evaluator shall examine the TSS to ensure that it describes the sensitive data processed by the application. The evaluator shall then ensure that the following activities cover all of the sensitive data identified in the TSS.<h:p/>If <h:b>not store any sensitive data</h:b> is selected, the evaluator shall inspect the TSS to ensure that it describes how sensitive data cannot be written to non-volatile memory. The evaluator shall also ensure that this is consistent with the file system test below.<h:p/>If <h:b>implement functionality to encrypt sensitive data</h:b> is selected the evaluator shall confirm the TSS describes how the application ensures all sensitive data is protected by the file encryption functions.<h:p/> If <h:b>protect sensitive data in accordance with FCS_STO_EXT.1</h:b> is selected the evaluator shall confirm the TSS describes which data is protected via this mechanism and the selections within FCS_STO_EXT.1 that are leveraged. If multiple selections are included the evaluator shall ensure the TSS describes which sensitive data is captured by which selection.<h:p/>If "<h:b>leverage platform-provided functionality...</h:b>" is selected, the evaluation activities will be performed as stated in the following requirements, which vary on a per-platform basis.<h:p/> 
+                <h:div><depends ref="windows"/>The Windows platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>   <h:div><depends ref="ios"/>The evaluator shall inspect the TSS and ensure that it describes how the application uses the Complete Protection, Protected Unless Open, or Protected Until First User Authentication Data Protection Class for each data file stored locally. </h:div>   <h:div><depends ref="linux"/>The Linux platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>   <h:div><depends ref="Solaris"/>The Solaris platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>   <h:div><depends ref="mac"/>The macOS platform currently does not provide data-at-rest encryption services which depend upon invocation by application developers. </h:div>  </h:p></TSS>
               <Guidance><h:p>The evaluator shall confirm the operational guidance contains any instructions necessary for configuring the storage and protection of any sensitive data.<h:p/>If <h:b>leverage platform-provided functionality to encrypt sensitive data</h:b> is selected the evaluator shall confirm the operational guidance contains the list of supported operational environments and any steps necessary to ensure the platform captures any sensitive data that is stored.</h:p></Guidance>
               <Tests> <h:p>If "<h:b>implement functionality to encrypt sensitive data as defined in the PP-Module for File Encryption</h:b>" or "<h:b>protect sensitive data in accordance with FCS_STO_EXT.1</h:b>" is selected, the evaluator shall inventory the file system locations where the application may write data. The evaluator shall run the application and attempt to store sensitive data. The evaluator shall then inspect those areas of the file system to note where data was stored (if any), and verify it has been encrypted.</h:p> <h:p>If "<h:b>leverage platform-provided functionality...</h:b>" is selected no additional testing is required.</h:p></Tests>
             </aactivity>
@@ -4801,10 +4810,10 @@
      
         <f-component cc-id="fdp_ifc.1" name="Subset Information Flow Control">
         <f-element>
-          <title>The TSF shall enforce the [<h:i>data monitoring SFP</h:i>] on <assignable>types of systems, agents, or other entities from which the TSF can collect monitored data</assignable>.</title>
+          <title>The TSF shall enforce the [<h:i>data monitoring SFP</h:i>] on <assignable>types of systems, agents, or other entities from which the TSF can manage</assignable>.</title>
           <note role="Application">The "data monitoring SFP" is a logical construct that references the TOE's ability to collect certain types of data from certain locations for the purpose of enterprise management. This SFR is intended for defining the objects the TSF interfaces with for data collection (e.g., its own local system, remote systems, agents running on remote systems) and the general types of data collected from these objects for monitoring and management purposes (e.g., user account data, system configuration data). FDP_IFF.1 and FDP_ITC.1 reference this policy and define the means by which it is enforced (e.g. what rules may exist for where to collect data, what data is collected, and by what means is this data collected). It is not necessary for the TSF to explicitly define a 'policy' for this behavior; if the TOE is inherently designed to collect certain types of data from certain objects, the existence of this SFP is implicit.</note>
           <aactivity>
-            <TSS>The evaluator shall examine the TSS to verify that it describes the types of agents or systems the TSF manages and the functions or data that is associated with these agents or system. For example, a conformant TOE may interact with agents installed on end user devices to manage the configuration of the behavior of these devices.</TSS>
+            <TSS>The evaluator shall examine the TSS to verify that it describes the types of agents or systems the TSF manages and the functions or data that is associated with these agents, systems, or other entities. For example, a conformant TOE may interact with agents installed on end user devices to manage the configuration of the behavior of these devices.</TSS>
             <Guidance>There are no guidance EAs for this component.</Guidance>
             <Tests>There are no test EAs for this component.</Tests>
           </aactivity>
@@ -4833,7 +4842,7 @@
                 </selectables> collection over <selectables>
                   <selectable id="distributed_toe_import"><assignable>one or more remote trusted channels as defined in FPT_ITT.1</assignable></selectable>
                   <selectable><assignable>one or more remote trusted channels as defined in FTP_ITC.1</assignable></selectable>
-                  <selectable>a remote channel using an alternate protection mechanism of encryption of data prior to transmission.</selectable>
+          <!--        <selectable>a remote channel using an alternate protection mechanism of encryption of data prior to transmission.</selectable> -->
                 </selectables></selectable>
                 <selectable>a secure local interface to a system or agent that is local to the TOE</selectable>
               </selectables></h:i>].</title>
@@ -4845,7 +4854,6 @@
           <f-element id="fdp-iff-1e5">
             <title>The TSF shall explicitly deny an information flow based on the following rules:
               <assignable>rules, based on security attributes, that explicitly deny information flows</assignable>.</title>         
-          <note>TBD</note>
             <aactivity>
               <TSS>The evaluator shall examine the TSS to verify that it describes how the TOE implements its enterprise management functionality, specifically in regards to the following: <h:ul>
                 <h:li>The systems or agents that the TOE manages and the functions or data that it manages</h:li>
@@ -4911,11 +4919,11 @@
               TOE.</title>
           </f-element>
           <f-element id="fdp-itc-1e2">
-            <title>The TSF shall ignore any security attributes associated with the user data when imported
+            <title>The TSF shall ignore any security attributes associated with the <h:b>monitored</h:b> data when imported
               from outside the TOE.</title>
           </f-element>
           <f-element id="fdp-itc-1e3">
-            <title>The TSF shall enforce the following rules when importing user data controlled under the
+            <title>The TSF shall enforce the following rules when importing <h:b>monitored</h:b>data controlled under the
               SFP from outside the TOE: <assignable>additional importation control rules</assignable>.</title>
             <note>TBD</note>
             <aactivity>
@@ -5341,7 +5349,7 @@
                   <test>
                     <depends ref="android"/>
                     
-                    The evaluator shall run the command <h:code>find -L. -perm /002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files (for this test, directories are not considered to be files).
+                    The evaluator shall run the command <h:code>find -L . -perm /002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files (for this test, directories are not considered to be files).
                     
                   </test>
                 </testlist>
@@ -5358,7 +5366,7 @@
                   <test>
                     <depends ref="linux"/>
                     
-                    The evaluator shall run the command <h:code>find -L. -perm /002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
+                    The evaluator shall run the command <h:code>find -L . -perm /002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
                   </test>
                 </testlist>
@@ -5366,7 +5374,7 @@
                   <test>
                     <depends ref="Solaris"/>
                     
-                    The evaluator shall run the command <h:code>find. \( -perm -002 \)</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
+                    The evaluator shall run the command <h:code> find . \( -perm -002 \)</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
                   </test>
                 </testlist>
@@ -5374,7 +5382,7 @@
                   <test>
                     <depends ref="mac"/>
                     
-                    The evaluator shall run the command <h:code>find. -perm +002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
+                    The evaluator shall run the command <h:code>find . -perm +002</h:code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
                   </test>
                 </testlist>
@@ -5396,12 +5404,7 @@
               <Guidance><h:p>The evaluator shall verify the guidance documentation contains any information necessary to configure the protection of configuration settings.</h:p></Guidance>
               <Tests>
                 If " <h:b>invoke the mechanisms recommended by the platform vendor for storing and setting configuration options</h:b>" is selected, the method of testing varies per platform as follows:
-                <testlist>
-                  <test>
-                    <depends ref="android"/>
-                    <h:p>The evaluator shall inspect the TSS and verify that it describes what Android API is used (and provides a link to the documentation of the API) when storing configuration data. The evaluator shall run the application and verify that the behavior of the TOE is consistent with where and how the API documentation says the configuration data will be stored.<h:p/>For SharedPreferences, the evaluator shall examine the XML file to make sure it reflects the changes made to the configuration to verify that the application used SharedPreferences or PreferenceActivity to store the configuration data. For DataStore, the evaluator shall use a protocol buffer analyzer to examine the file to make sure it reflects the changes made to the configuration to verify that the application used DataStore to store the configuration data.</h:p>
-                  </test>
-                </testlist>
+                
                 <testlist>
                   <test>
                     <depends ref="windows"/>
@@ -5409,10 +5412,17 @@
                       https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/</h:a> or <h:a href="https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/zzdt0e7f(v=vs.100)">
                         https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/zzdt0e7f(v=vs.100)</h:a> or <h:a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/">
                           https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/</h:a> or <h:a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config">
-                            https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config</h:a> for storing application specific (whether application-wide or user-specific) settings.<h:p/>For Classic Desktop applications, the evaluator shall run the application while monitoring it with the SysInternals tool <h:span class="util">Process Monitor</h:span> and make changes to its configuration. The evaluator shall verify that <h:span class="util">Process Monitor</h:span> logs show corresponding changes to the Windows Registry or C:\Prograta\ directory.</h:p>
+                            https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config</h:a> for storing application specific (whether application-wide or user-specific) settings.<h:p/>For Classic Desktop applications, the evaluator shall run the application while monitoring it with the SysInternals tool <h:span class="util">Process Monitor</h:span> and make changes to its configuration. The evaluator shall verify that <h:span class="util">Process Monitor</h:span> logs show corresponding changes to the Windows Registry or C:\ProgramData\ directory.</h:p>
                   </test>
                 </testlist>
-               
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall verify that the app uses the <h:code>user defaults system</h:code> or <h:code>key-value store</h:code> for storing all settings.
+                    
+                  </test>
+                </testlist>
                 <testlist>
                   <test>
                     <depends ref="linux"/>
@@ -5441,15 +5451,50 @@
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event>
+            <audit-event-descr>Issuance of command to perform function</audit-event-descr>
+            <audit-event-info>Command sent and identity external recipients</audit-event-info>
+          </audit-event>
+          <audit-event>
+            <audit-event-descr>Change of policy settings</audit-event-descr>
+            <audit-event-info>Policy changed and value or full policy</audit-event-info>
+          </audit-event>
         </f-component>
         
+        
+        
+        <f-component name="Management of Security Functions Behavior (Enrollment)" cc-id="fmt_mof.1"
+          iteration="MANAGEMENT_ENROLL" status="sel-based">
+          <depends on="toe-registers-agent"/>
+          <depends on="admin-registers-agent"/>
+          <depends on="agent-registers-itself"/>
+          <depends on="toe-has-environment-register"/>
+          <f-element>
+            <title>The TSF shall restrict the ability to [<h:b><h:i>initiate the enrollment process</h:i></h:b>]
+              to [<h:i>authorized administrators</h:i>].</title>
+            <note role="application">
+              This requirement outlines the enrollment functions that both administrators and users may perform.
+              The enrollment actions are identified in the TSS as a part of FIA_ENR_EXT.1.
+            </note>
+            <aactivity>
+              <TSS>The evaluator shall examine the TSS and verify that it describes how unauthorized users are prevented from enrolling to the TOE.</TSS>
+              <Guidance>The evaluator shall examine the operational guidance to verify that it describes the enrollment process and any restrictions that may prevent unauthorized enrollment.</Guidance>
+              <Tests>The test of this function is performed in conjunction with FIA_ENR_EXT.1.</Tests>
+            </aactivity>
+          </f-element>
+          <audit-event>
+            <audit-event-descr>Enrollment by a user</audit-event-descr>
+            <audit-event-info>Identity of user</audit-event-info>
+          </audit-event>          
+        </f-component>
+   
         <f-component cc-id="fmt_mof.1" name="Management of Security Functions Behavior">
           <f-element id="fel-gen-mas">
             <title>
               The TSF shall restrict the ability to <h:b>perform</h:b> the functions <h:ul>
-              <h:li>listed in FMT_SMF.1/Managed</h:li>
-              <h:li>listed in FMT_SMF.1/Internal</h:li>
-            </h:ul> to <assignable>authorized administrative roles for each function</assignable>.</title>
+                <h:li>listed in FMT_SMF.1/Managed</h:li>
+                <h:li>listed in FMT_SMF.1/Internal</h:li>
+              </h:ul> to <assignable>authorized administrative roles for each function</assignable>.</title>
             <note role="application">This requirement defines the permissions necessary to execute
               or manage the behavior of functions used for both management of external entities 
               (i.e., Enterprise-Management) as defined in FMT_SMF.1/Internal as well as the TOE itself. 
@@ -5471,7 +5516,7 @@
               <Guidance>The evaluator shall examine the operational guidance to verify that it describes the management functions that are available to authorized administrators and how administrators are authorized to perform those particular functions (e.g., default for the account, role membership, group membership).</Guidance>
               <Tests>
                 <testlist>
-                  <test>The evaluator shall attempt to access the functions and policies in FMT_SMF.1/INTERNAL and FMT_SMF.1/MANAGED as an unauthorized user and verify that the attempt fails. This may require the evaluator to use multiple different accounts with differing levels of privilege to interact with the TSF.</test> 
+                  <test>The evaluator shall attempt to access the functions and policies in FMT_SMF.1/INTERNAL and FMT_SMF.1/MANAGED as an unauthorized user and verify that the attempt fails. This may require the evaluator to use multiple different accounts with differing levels of privilege to interact with the TSF. If the TOE has multiple management interfaces, the evaluator shall repeat this test as necessary to demonstrate the access enforcement to each supported function on each claimed management interface.</test> 
                 </testlist>
               </Tests>
             </aactivity>
@@ -5485,9 +5530,7 @@
             <audit-event-info>Policy changed and value or full policy</audit-event-info>
           </audit-event>
         </f-component>
-        
-     
-          
+		
 		
         <f-component cc-id="fmt_smf.1" iteration="INTERNAL" name="Specification of Management Functions (Server Configuration of Server)">
           <f-element id="fmt-smf-1e1">
@@ -5509,7 +5552,13 @@
             <note role="application"> This requirement addresses the management functions the TOE provides to manage its own behavior (as opposed to managing the behavior of external entities)     
             </note>
             <aactivity>
-              <no-tests/>
+              <TSS>The evaluator shall examine the TSS to ensure that it describes each management function claimed. The evaluator shall examine the TSS to
+                ensure that it identifies the management functions that exist for configuration of the TOE.</TSS>
+              <Guidance>For each management function that can be performed to configure the behavior of the TOE, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</Guidance>
+              <Tests><testlist>
+                <test>The evaluator shall verify that for each supported management function, the TSF provides a means to perform the function as described in the operational guidance and that its execution has the intended effect. If the TOE has multiple management interfaces, the evaluator shall repeat this test as necessary to ensure that the supported management functionality of each claimed interface can be performed.</test>
+              </testlist>
+              </Tests>
             </aactivity>
           </f-element>
         	<audit-event>
@@ -5572,7 +5621,7 @@
                 ensure that it identifies the management functions implemented for each supported type of system or agent. If multiple systems or agents are supported, the evaluator shall examine the TSS to verify that any
                 differences between management functions and policies for each supported system or agent are clearly indicated (e.g., a product that can manage endpoint systems with multiple operating systems may have OS-specified differences in the functions on those operating systems that can be managed).</TSS>
               <Guidance>For each management function that can be performed against each type of managed system or agent, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</Guidance>
-              <Tests>For each type of managed agent or system claimed by the TOE:<testlist>
+              <Tests>For each type of managed agent or system claimed by the TOE, the evaluator shall perform the following test. For each management function that can be performed using multiple interfaces, the evaluator shall repeat this test for each interface that supports each function.<testlist>
                 <test>The evaluator shall verify that for each supported management function, the TSF can collect data on the current status of that function to determine its configuration, and can execute function to change its behavior or data on the managed agent or system.</test>
               </testlist>
               </Tests>
@@ -5627,6 +5676,235 @@
             query software versions, initiate updates, and verify software updates prior to
             installation.</fam-behavior>
         </ext-comp-def>
+        
+        <f-component cc-id="fpt_aex_ext.1" id="fpt-aex-ext-1" name="Anti-Exploitation Capabilities">
+          <comp-lev>requires the application to implement functionality that protects against common software exploits.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>No dependencies.</dependencies>
+          <f-element id="fel-aslr">
+            <title>The application shall not request to map memory at an explicit address except for  <assignable>list of explicit exceptions</assignable>.</title>
+            <note role="application">Requesting a memory mapping at an explicit address subverts address space layout randomization (ASLR).</note>
+            <aactivity level="element">
+              <TSS><h:p>The evaluator shall ensure that the TSS describes the compiler flags used to enable ASLR when the application is compiled. If any explicitly-mapped exceptions are claimed, the evaluator shall check that the TSS identifies these exceptions, describes the static memory mapping that is used, and provides justification for why static memory mapping is appropriate in this case.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                The evaluator shall perform either a static or dynamic analysis to determine that no memory mappings are placed at an explicit and consistent address except for any exceptions claimed in the SFR. For these exceptions, the evaluator shall verify that this analysis shows explicit mappings that are consistent with what is claimed in the TSS. The method of doing so varies per platform. For those platforms requiring the same application running on two different systems, the evaluator may alternatively use the same device. After collecting the first instance of mappings, the evaluator must uninstall the application, reboot the device, and reinstall the application to collect the second instance of mappings.
+                
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    The evaluator shall run the same application on two different Windows systems and run a tool that will list all memory mapped addresses for the application. The evaluator shall then verify the two different instances share no mapping locations. The Microsoft SysInternals tool, VMMap, could be used to view memory addresses of a running application. The evaluator shall use a tool such as Microsoft's BinScope Binary Analyzer to confirm that the application has ASLR enabled.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall perform a static analysis to search for any mmap calls (or API calls that call mmap), and ensure that no arguments are provided that request a mapping at a fixed address.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="linux"/>
+                    
+                    The evaluator shall run the same application on two different Linux systems. The evaluator shall then compare their memory maps using <h:code>pmap -x <h:i>PID</h:i></h:code> to ensure the two different instances share no mapping locations.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="Solaris"/>
+                    
+                    The evaluator shall run the same application on two different Solaris systems. The evaluator shall then compare their memory maps using <h:code>pmap -x <h:i>PID</h:i></h:code> to ensure the two different instances share no mapping locations.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall run the same application on two different Mac systems. The evaluator shall then compare their memory maps using <h:code>vmmap <h:i>PID</h:i></h:code> to ensure the two different instances share no mapping locations.
+                    
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-nwx">
+            <title>The application shall  <selectables onlyone="yes" linebreak="yes"><selectable id="fpt_aex_ext.1.2_1" >not allocate any memory region with both write and execute permissions</selectable><selectable id="fpt_aex_ext.1.2_2">allocate memory regions with write and execute permissions for only <assignable>list of functions performing just-in-time compilation</assignable> </selectable> </selectables>.</title>
+            <note role="application">Requesting a memory mapping with both write and execute permissions subverts the platform protection provided by DEP. If the application performs no just-in-time compiling, then the first selection must be chosen.</note>
+            <aactivity level="element">
+              <TSS><h:p>None.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                The evaluator shall verify that no memory mapping requests are made with write and execute permissions. The method of doing so varies per platform.
+                
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    The evaluator shall use a tool such as Microsoft's BinScope Binary Analyzer to confirm that the application passes the NXCheck. The evaluator may also ensure that the <h:code>/NXCOMPAT</h:code> flag was used during compilation to verify that DEP protections are enabled for the application.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall perform static analysis on the application to verify that mprotect is never invoked with the PROT_EXEC permission.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="linux"/>
+                    
+                    The evaluator shall perform static analysis on the application to verify that both <h:ul><h:li>mmap is never invoked with both the PROT_WRITE and PROT_EXEC permissions, and</h:li><h:li>mprotect is never invoked with the PROT_EXEC permission.</h:li></h:ul>
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="Solaris"/>
+                    
+                    The evaluator shall perform static analysis on the application to verify that both <h:ul><h:li>mmap is never invoked with both the PROT_WRITE and PROT_EXEC permissions, and</h:li><h:li>mprotect is never invoked with the PROT_EXEC permission.</h:li></h:ul>
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall perform static analysis on the application to verify that mprotect is never invoked with the PROT_EXEC permission.
+                    
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-plays-nice">
+            <title>The application shall be compatible with security features provided by the platform vendor.</title>
+            <note role="application">This requirement is designed to ensure that platform security features do not need to be disabled in order for the application to run.</note>
+            <aactivity level="element">
+              <TSS><h:p>None.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                The evaluator shall configure the platform in the necessary manner and carry out one of the prescribed tests:
+                
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    <h:p>If the OS platform supports Windows Defender Exploit Guard, then the evaluator shall ensure that the application can run successfully with Windows Defender Exploit Guard Exploit Protection configured with the following minimum mitigations enabled; Control Flow Guard (CFG), Randomize memory allocations (Bottom-Up ASLR), Export address filtering (EAF), Import address filtering (IAF), and Data Execution Prevention (DEP). The following link describes how to enable Exploit Protection, https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/enable-exploit-protection?view=o365-worldwide.</h:p>
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    Applications running on iOS cannot disable security features, therefore this requirement is met and no evaluation activity is required.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="linux"/>
+                    
+                    The evaluator shall ensure that the application can successfully run on a system with either SELinux or AppArmor enabled and in enforce mode.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="Solaris"/>
+                    
+                    The evaluator shall ensure that the application can run with Solaris Trusted Extensions enabled and enforcing.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall ensure that the application can successfully run on macOS without disabling any security features.
+                    
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-ro-exe">
+            <title>The application shall not write user-modifiable files to directories that contain executable files unless explicitly directed by the user to do so.</title>
+            <note role="application"><h:p>The purpose of this requirement is to help ensure the integrity of application binaries by supporting file protection mechanisms such as directory-level file permissions and application allowlisting.<h:p/>A user-modifiable file for purposes of this requirement is a file that is writable by an unprivileged user of the application -- either directly through application execution or independently of the application. If the application runs in the context of the application user, then the application should not be able to write to the directory containing the application binaries -- regardless of whether the files are configuration data, audit data, or temporary files.<h:p/>Executables and user-modifiable files may not share the same parent directory, but may share directories above the parent.</h:p></note>
+            <aactivity level="element">
+              <TSS><h:p>None.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                The evaluator shall run the application and determine where it writes its files. For files where the user does not choose the destination, the evaluator shall check whether the destination directory contains executable files. This varies per platform:
+                
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    For Windows Universal Applications the evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox). For Windows Desktop Applications the evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
+                    
+                  </test>
+                </testlist>
+                
+                <testlist>
+                  <test>
+                    <depends ref="linux"/>
+                    
+                    The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="Solaris"/>
+                    
+                    The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
+                    
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-stackcookies">
+            <title>The application shall be built with stack-based buffer overflow protection enabled.</title>
+            <aactivity level="element">
+              <TSS><h:p>(Conditional: The PE or ELF automated tests fail) The evaluator shall ensure that the TSS describes the stack-based buffer overflow compiler flags.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                The evaluator will inspect every native executable included in the TOE to ensure that stack-based buffer overflow protection is present.
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    Applications that run as Managed Code in the .NET Framework do not require these stack protections. Applications developed in Object Pascal using the Delphi IDE compiled with RangeChecking enabled comply with this element. For other code, the evaluator shall review the TSS and verify that the /GS flag was used during compilation. The evaluator shall run a tool like, BinSkim, that can verify the correct usage of /GS.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test><h:p><h:i><h:b>For PE</h:b></h:i>, the evaluator will disassemble each and ensure the following sequence appears:</h:p><h:code>mov rcx, QWORD PTR [rsp+(...)]</h:code><h:br/><h:code>xor rcx, (...)</h:code><h:br/><h:code>call (...)</h:code><h:br/></test>
+                </testlist>
+                <testlist>
+                  <test><h:p><h:i><h:b>For ELF executables</h:b></h:i>, the evaluator will ensure that each contains references to the symbol <h:b>__stack_chk_fail</h:b>.<h:p/>If these automated tests fail, the evaluator shall perform the above, conditional TSS activity.</h:p></test>
+                </testlist>
+                <h:p>Tools such as <h:a href="https://github.com/commoncriteria/canary-detector">Canary Detector</h:a> may help automate these activities.</h:p>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
         
         <f-component cc-id="fpt_api_ext.1" name="Use of Supported Services and APIs">
           <consistency-rationale/>
@@ -5759,78 +6037,7 @@
           </audit-event>
         </f-component>
         
-        <f-component cc-id="fpt_itt.1" name="Internal TOE TSF Data Transfer" status="feat-based">
-          <depends on="distributed"/>
-          <f-element id="fel-interxfer">
-            <title>
-              The TSF shall <selectables linebreak="yes">
-                <selectable><h:b>invoke platform-provided functionality to use <selectables linebreak="yes">
-                  <selectable id="ITT1_IPSEC_INVOKE">IPsec</selectable>
-                  <selectable id="ITT1_TLS_INVOKE">mutually authenticated TLS</selectable>
-                  <selectable id="ITT1_DTLS_INVOKE">mutually authenticated DTLS</selectable>
-                  <selectable id="ITT1_HTTPS_INVOKE">HTTPS</selectable>
-                  <selectable id="ITT1_SSH_INVOKE">SSH</selectable>
-                </selectables></h:b></selectable>
-                <selectable><h:b>implement functionality using <selectables linebreak="yes">
-                  <selectable id="ITT1_IPSEC_IMPLEMENT">IPsec as defined in the PP-Module for VPN Client</selectable>
-                  <selectable id="ITT1_TLS_IMPLEMENT">mutually authenticated TLS as defined in the Package for Transport Layer Security</selectable>
-                  <selectable id="ITT1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in the Package for Transport Layer Security</selectable>
-                  <selectable id="ITT1_HTTPS_IMPLEMENT">HTTPS in accordance with FCS_HTTPS_EXT.1</selectable>
-                  <selectable id="ITT1_SSH_IMPLEMENT">SSH as defined in the Functional Package for Secure Shell</selectable>
-                </selectables></h:b></selectable></selectables> <h:b>to</h:b> protect <h:b>all</h:b> data from [<h:i>disclosure and modification</h:i>] when it is <h:b>transferred</h:b> between
-              separate parts of the TOE.</title>
-            <note role="application">This requirement ensures all communications between components of a distributed TOE are protected through the use of an encrypted communications channel. The data passed in this trusted communication channel are encrypted as defined in the protocol chosen in the second selection.<h:br/><h:br/>              
-              If "IPsec as defined in the PP-Module for VPN Client" is selected, the TSF must claim conformance to a PP-Configuration that includes the VPN Client PP-Module.<h:br/><h:br/>
-              If the ST author selects "SSH as defined in the Functional Package for Secure Shell," the TSF must be validated against the FP for Secure Shell. It should be noted that due to constraints imposed by this PP that SHA-1 cannot be used.<h:br/><h:br/>
-              If the ST author selects "mutually authenticated TLS as defined in the Package for Transport Layer Security" or "mutually authenticated DTLS as defined in the Package for Transport Layer Security," the TSF must be validated against requirements from the Package for Transport Layer Security, with the following selections made:
-              <h:ul>
-                <h:li>FCS_TLS_EXT.1: 
-                  <h:ul>
-                    <h:li>either TLS or DTLS is selected depending on the selection made in
-                      FTP_ITC.1.1</h:li>
-                    <h:li>either client or server is selected as appropriate</h:li>
-                  </h:ul>
-                </h:li>
-                <h:li>FCS_TLSC_EXT.1.1 or FCS_TLSS_EXT.1.1 (as appropriate):
-                  <h:ul>
-                    <h:li>The cipher suites selected must correspond with the algorithms and hash functions allowed in FCS_COP.1.</h:li>
-                    <h:li>mutual authentication must be selected</h:li>
-                  </h:ul>
-                </h:li>
-              </h:ul>
-              Protocol, RBG, Certificate validation, algorithm, and similar services may be met with
-              platform-provided services. <h:br/><h:br/>
-              
-            </note>
-            <aactivity>
-              <TSS>The evaluator shall examine the TSS to determine that the
-                methods and protocols used to protect distributed TOE components
-                are described. The evaluator shall also confirm that all protocols listed in the
-                TSS in support of TOE administration are
-                consistent with those specified in the requirement, and are included in the
-                requirements in the ST.<h:br/><h:br/>
-                If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the TOE; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</TSS>
-              <Guidance>The evaluator shall confirm that the operational guidance contains
-                instructions for establishing the communication paths for each supported
-                method.</Guidance>
-              <Tests>
-                <testlist>
-                  <test>The evaluator shall ensure that communications using each specified (in the
-                    operational guidance) communication method is tested during the course of the
-                    evaluation, setting up the connections as described in the operational guidance
-                    and ensuring that communication is successful.</test>
-                  <test>The evaluator shall ensure, for each method of communication, the channel
-                    data is not sent in plaintext.</test>
-                </testlist> Further evaluation activities are associated with the specific protocols.
-              </Tests>
-            </aactivity>
-          </f-element>
-          <audit-event>
-            <audit-event-descr>Initiation and termination of the trusted channel</audit-event-descr>
-            <audit-event-info>Trusted channel protocol</audit-event-info>
-            <audit-event-info>Identity of initiator and recipient</audit-event-info>
-          </audit-event>
-        </f-component>
+      
         
         
         <f-component cc-id="fpt_lib_ext.1" name="Use of Third-Party Libraries">
@@ -5916,81 +6123,186 @@
           </audit-event>
         </f-component>
         
-        
-        
-        <f-component cc-id="fpt_tud_ext.1" name="Trusted Update">
-          <consistency-rationale/>
-          <comp-lev>defines requirements for authorized administrators to manage software versions
-            and updates.</comp-lev>
-          <management>The following actions could be considered for the management functions in FMT.
-            <h:ul>
-              <h:li>Query the current version of system software.</h:li>
-              <h:li>Update system software.</h:li>
-            </h:ul>
-          </management>
-          <audit>The following actions should be auditable if FAU_GEN Security audit data generation is included
-            in the PP, PP-Module, functional package or ST:
-            <h:ul>
-              <h:li>Success or failure of signature verification</h:li>
-            </h:ul>
-          </audit>
+        <!--FPT_TUD_EXT.1 Support for Trusted Updates-->
+        <f-component cc-id="fpt_tud_ext.1" id="fpt-tud-ext-1" name="Support for Trusted Updates">
+          <comp-lev>requires the TSF to specify how updates to it are acquired and verified.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
-          
-          <f-element id="fpt-tud-ext-1e1">
-            <title>The TSF shall provide authorized administrators the ability to query the current version of the software.</title>
-            <note role="application">
-              For a distributed TOE, the method of determining the installed versions on each component of the TOE is described in the operational guidance.
-              In the requirement, "software" refers to the component of the distributed TOE to which the requirement is being applied. 
+          <f-element id="fel-update-check">
+            <title>The application shall  <selectables><selectable id="fpt_tud_ext.1.1_1" >provide the ability</selectable><selectable id="fpt_tud_ext.1.1_2" >use platform-provided services</selectable> </selectables>  to check for updates and patches to the TOE.</title>
+            <note role="application"><h:p>This requirement is about the ability to "check" for updates. The actual installation of any updates should be done by the platform. This requirement is intended to ensure that the TOE can check for updates provided by the vendor (either directly through a function on the TOE itself or distribution through a platform's official application store), as updates provided by another source may contain malicious code.</h:p>
+            <h:p>
+              Updates for different components of a distributed TOE may be checked in different ways. The means must exist for each component to be checked individually.
+            </h:p>
             </note>
             <aactivity level="element">
-              <TSS>The evaluator shall verify that the TSS identifies the mechanism by which the current version of the TOE can be identified.</TSS>
-              <Guidance>The evaluator shall ensure that the administrator guidance includes instructions for determining the current version of the TOE.</Guidance>
-              <Tests>The evaluator shall query the TSF for the current version of the software
-                according to the operational guidance and shall verify that the current version matches that of the documented and installed version.</Tests>
+              <TSS>The evaluator shall verify the TSS contains a description of the update mechanism leveraged, how new updates are checked for, how the current version is checked for, and how the updates are signed.</TSS>
+              <Guidance>The evaluator shall check to ensure the guidance includes a description of how to check for and apply new updates.</Guidance>
+              <Tests>The evaluator shall check for an update using procedures described in either the application documentation or the platform documentation and verify that the application does not issue an error. If it is updated or if it reports that no update is available this requirement is considered to be met.</Tests>
             </aactivity>
           </f-element>
-          <f-element id="fpt-tud-ext-1e2">
-            <title>The TSF shall <selectables>
-              <selectable>invoke platform-provided functionality</selectable>
-              <selectable>implement functionality</selectable>
-            </selectables> to provide authorized administrators the ability to initiate updates to the TOE.</title>
+          <f-element id="fel-version-check">
+            <title>The application shall  <selectables><selectable id="fpt_tud_ext.1.2_1" >provide the ability</selectable><selectable id="fpt_tud_ext.1.2_2" >use platform-provided services</selectable> </selectables>  to query the current version of the application software.</title>
+            <note role="application">Different components in a distributed TOE may have different application versions and different means of checking the current version. It is expected that all TOE components support some mechanism for implementing this requirement, even if that mechanism differs between components.</note>
             <aactivity level="element">
-              <TSS>If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).</TSS>
-              <Guidance>The evaluator shall verify that the operational guidance provides instructions for how to initiate an update to the TOE and any restrictions on this function such that only an authorized administrator can perform it.</Guidance>
+              <TSS>
+                <h:p>            
+                  If the TOE is distributed, the evaluator shall examine the TSS to verify that it describes the mechanisms that support the continuous proper functioning of the TOE during the update process update. Updating a distributed TOE might lead to the situation where different TOE components are running different software versions. Depending on the differences between the different software versions the impact of a mixture of different software versions might be no problem at all or critical to the proper functioning of the TOE.
+                </h:p>
+                
+                
+              </TSS>
+              <Guidance>The evaluator shall verify guidance includes a description of how to query the current version of the application.</Guidance>
+              <Tests>The evaluator shall query the application for the current version of the software according to the operational user guidance. The evaluator shall then verify that the current version matches that of the documented and installed version. This operation may be performed alongside the act of checking for updates, i.e., updating the TOE to a newer version would require awareness of what version was running prior to the update.</Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-nomod-exe">
+            <title>The application shall  <selectables linebreak="yes"><selectable id="toe-update" >perform trusted updates</selectable><selectable id="fpt_tud_ext.1.3_1" >not download, modify, replace or update its own binary code</selectable> </selectables>.</title>
+            <note role="application"><h:p>This requirement applies to the code of the application; it does not apply to mobile code technologies that are designed for download and execution by the application.<h:p/>If "perform trusted updates" is selected then FPT_TUD_EXT.2 must be included in the ST.</h:p></note>
+            <aactivity level="element">
+              <TSS/>
+              <Guidance/>
+              <Tests>
+                Conditional: If "not download, modify, replace or update its own binary code" is selected the evaluator shall verify that the application's executable files are not changed by the application with the following tests:
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox).
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    <depends ref="linux"/>
+                    <depends ref="Solaris"/>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall install the application and then locate all of its executable files. The evaluator shall then, for each file, save off either a hash of the file or a copy of the file itself. The evaluator shall then run the application and exercise all features of the application as described in the ST. The evaluator shall then compare each executable file with either the saved hash or the saved copy of the files. The evaluator shall verify that these are identical.
+                    
+                  </test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-patch-sign">
+            <title>Application updates shall be digitally signed such that the application platform can cryptographically verify them prior to installation.</title>
+            <note role="application">The specifics of the verification of updates involves requirements on the platform (and not the application), so these are not fully specified here.</note>
+            <aactivity level="element">
+              <TSS>The evaluator shall verify that the TSS identifies how updates to the application are signed by an authorized source. The definition of an authorized source must be contained in the TSS. The evaluator shall also ensure that the TSS (or the operational guidance) describes how candidate updates are obtained.</TSS>
+              <Guidance/>
               <Tests/>
             </aactivity>
           </f-element>
-          <f-element id="fel-tud-func">
-            <title>The TSF shall <selectables>
-              <selectable>invoke platform-provided functionality</selectable>
-              <selectable>implement functionality</selectable>
-            </selectables> to provide a means to verify software updates to the TSF using a digital signature mechanism prior to installing those updates.</title>
-            <note role="application">
-              <h:p>
-                The software on the TSF will occasionally need to be updated. This requirement is intended to ensure that the TSF only installs updates provided by the vendor, as updates provided by another source may contain malicious code.
-              </h:p>
-              <h:p>           
-                For distributed TOEs, all TOE components must support Trusted Update. The verification of the signature or hash on the update must either be done by each TOE component itself (signature verification) or for each TOE component (hash verification).
-              </h:p>
-              <h:p>            
-                Updating a distributed TOE might lead to the situation where different TOE components are running different software versions. Depending on the differences between the different software versions the impact of a mixture of different software versions might be no problem at all or critical to the proper functioning of the TOE. The TSS must detail the mechanisms that support the continuous proper functioning of the TOE during trusted update of distributed TOEs.
-              </h:p>
-            </note>
+          <f-element id="fel-distro">
+            <title>The application is distributed  <selectables><selectable id="sel_with_plat" >with the platform OS</selectable><selectable id="sel_add_plat" >as an additional software package to the platform OS</selectable> </selectables>.</title>
+            <note role="application">Application software that is distributed as part of the platform operating system is not required to be packaged for installation or uninstallation. If "<h:b>as an additional software package to the platform OS</h:b>" is selected, the requirements from FPT_TUD_EXT.2 must be included in the ST.</note>
             <aactivity level="element">
-              <TSS>If "invoke platform-provided functionality" is selected, the evaluator shall examine the TSS to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the TSF; nonetheless, that mechanism will be identified in the TSS as part of this evaluation activity).<h:br/><h:br/>
-                If "implement functionality" is selected, the evaluator shall examine the TSS and verify that it describes the standards by which the updates are digitally signed and how the signature verification process is implemented.</TSS>
-              <Guidance>The evaluator shall examine the operational guidance to verify that it identifies how the TOE will verify the integrity of an update and how the administrator is made aware of a failure to verify the integrity of the update.</Guidance>
-              <Tests>The evaluator shall perform the following tests: <testlist>
-                <test>The evaluator shall attempt to initiate an update digitally signed by the vendor and verify that the update is successfully installed.</test>
-                <test>The evaluator shall attempt to install an update not digitally signed by the vendor and verify that either the signature can be checked (allowing the update to be aborted) or the update is not installed.</test>
-              </testlist>
+              <TSS><h:p>The evaluator shall verify that the TSS identifies how the application is distributed. If "<h:b>as an additional package...</h:b>" is selected, the evaluator shall perform the tests in FPT_TUD_EXT.2.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>If " <h:b>with the platform OS</h:b>" is selected, the evaluator shall perform a clean installation or factory reset to confirm that TOE software is included as part of the platform OS.</Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        <!--FPT_TUD_EXT.2 Integrity for Installation and Update-->
+        <f-component cc-id="fpt_tud_ext.2" id="fpt-tud-ext-2" name="Integrity for Installation and Update" status="sel-based">
+          <depends on-sel="sel_add_plat"/>
+          <depends on-sel="toe-update"/>
+          <comp-lev>requires TOE updates to be packaged in a certain manner.</comp-lev>
+          <management>No specific management functions are identified.</management>
+          <audit>There are no auditable events foreseen.</audit>
+          <dependencies>FPT_TUD_EXT.1 Integrity for Installation and Update</dependencies>
+          <f-element id="fel-patch-native">
+            <title>The application shall be distributed using  <selectables><selectable id="fpt_tud_ext.2.1_1" >the format of the platform-supported package manager</selectable><selectable id="fpt_tud_ext.2.1_2" >a container image</selectable> </selectables>.</title>
+            <aactivity level="element">
+              <TSS><h:p>The evaluator shall verify that the TSS describes how the application is distributed and verify that description aligns with the selections in the ST.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                If a container image is claimed, the evaluator shall verify that application updates are distributed as container images. If the format of the platform-supported package manager is claimed, the evaluator shall verify that application updates are distributed in the format supported by the platform. This varies per platform:
+                
+                <testlist>
+                  <test>
+                    <depends ref="windows"/>
+                    
+                    The evaluator shall ensure that the application is packaged in the standard Windows Installer (.MSI) format, the Windows Application Software (.EXE) format signed using the Microsoft Authenticode process, or the Windows Universal Application package (.APPX) format. See https://msdn.microsoft.com/en-us/library/ms537364(v=vs.85).aspx for details regarding Authenticode signing.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall ensure that the application is packaged in the IPA format.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="linux"/>
+                    
+                    The evaluator shall ensure that the application is packaged in the format of the package management infrastructure of the chosen distribution. For example, applications running on Red Hat and Red Hat derivatives shall be packaged in <h:code>RPM</h:code> format. Applications running on Debian and Debian derivatives shall be packaged in <h:code>DEB</h:code> format.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="Solaris"/>
+                    
+                    The evaluator shall ensure that the application is packaged in the PKG format.
+                    
+                  </test>
+                </testlist>
+                <testlist>
+                  <test>
+                    <depends ref="mac"/>
+                    
+                    The evaluator shall ensure that the application is packaged in the DMG format, the PKG format, or the MPKG format.
+                    
+                  </test>
+                </testlist>
               </Tests>
             </aactivity>
-          </f-element>       
-          <audit-event>
-            <audit-event-descr>Success or failure of signature verification</audit-event-descr>
-          </audit-event>
-        </f-component>    
+          </f-element>
+          <f-element id="fel-removal">
+            <title>The application shall be packaged such that its removal results in the deletion of all traces of the application, with the exception of configuration settings, output files, and audit/log events.</title>
+            <note role="application">Application software bundled with the system/firmware image are not subject to this requirement if the user is unable to remove the application through means provided by the OS.</note>
+            <aactivity level="element">
+              <TSS><h:p>None.</h:p></TSS>
+              <Guidance><h:p>The evaluator shall verify the guidance documentation details how uninstallation of the application is performed.</h:p></Guidance>
+              <Tests>
+                
+                <testlist>
+                  <test>
+                    <depends ref="ios"/>
+                    
+                    The evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox).
+                    
+                  </test>
+                </testlist>
+                <h:p>For all other platforms, the evaluator shall record the path of every file on the entire file system prior to installation of the application, and then install and run the application. Afterward, the evaluator shall uninstall the application, and compare the resulting file system to the initial record to verify that no files, other than configuration, output, and audit or log files, have been added to the file system.</h:p>
+              </Tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fel-verify">
+            <title>The application installation package shall be digitally signed such that  <selectables><selectable id="fpt_tud_ext.2.3_1" >its platform can cryptographically verify them prior to installation.</selectable><selectable id="fpt_tud_ext.2.3_2">the application can verify them using <selectables><selectable id="toe-lms" >Leighton-Micali Signature.</selectable><selectable id="toe-xmss" >eXtended Merkle Signature Scheme</selectable></selectables> </selectable> </selectables>.</title>
+            <note role="application"><h:p>The specifics of the verification of installation packages involves requirements on the platform (and not the application), so these are not fully specified here.<h:p/>If "<h:b>Leighton-Micali Signature</h:b>" or "<h:b>eXtended Merkle Signature Scheme</h:b>" is selected, the corresponding selection must be made in FCS_COP.1/SigVer.</h:p></note>
+            <aactivity level="element">
+              <TSS><h:p>The evaluator shall verify that the TSS identifies how the application installation package is signed by an authorized source. The definition of an authorized source must be contained in the TSS.</h:p></TSS>
+              <Guidance><h:p>None.</h:p></Guidance>
+              <Tests>
+                Conditional: if "the application can verify them using" is selected the evaluator shall perform the following tests:
+                <testlist>
+                  <test>The evaluator shall ensure that the update has a digital signature belonging to the vendor prior to its installation. The evaluator shall modify the downloaded update in such a way that the digital signature is no longer valid. The evaluator will then attempt to install the modified update. The evaluator shall ensure that the modified update fails to install.</test>
+                  <test>The evaluator shall ensure that the update has a digital signature belonging to the vendor. The evaluator shall then attempt to install the update (or permit installation to continue). The evaluator shall ensure that the update successfully installs.</test>
+                </testlist>
+              </Tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         
       </section>
       
