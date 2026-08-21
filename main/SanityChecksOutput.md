@@ -513,11 +513,7 @@ xsltStylePreCompute: unknown xsl:apply-template
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[2]"The Secur"/h:p[1]""
  Failed to find a reference to t-audit-feat-based.
  Failed to find a reference to t-audit-sel-based.
- Failed to find a reference to X509.
- Failed to find a reference to X509.
  Failed to find a reference to mod-vpnclient.
- Failed to find a reference to X509.
- Failed to find a reference to X509.
  Failed to find a reference to package-usage.
  Failed to find a reference to mod-vpnclient.
 * Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
