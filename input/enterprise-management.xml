@@ -44,9 +44,9 @@
     </git>
     <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439</url>
   </include-pkg>
-  <include-pkg id="x509">
+  <include-pkg id="X509">
     <git>
-      <url>https://github.com/commoncriteria/x509</url>
+      <url>https://github.com/commoncriteria/X509</url>
       <branch>release-1.0</branch>
     </git>
     <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
