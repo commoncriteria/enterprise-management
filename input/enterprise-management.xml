@@ -604,7 +604,7 @@
 					</selectables> to generate audit data of the following auditable events: 
 			    <h:li>Startup and shutdown of the audit functions</h:li>
 			    <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit;</h:li> [<h:i>
-					<h:ol>
+					<h:ul>
 						<h:li>All administrative actions</h:li>
 						<h:li>
 							Commands issued to managed <selectables>
@@ -623,7 +623,7 @@
 					    <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
               <selectable>no other events</selectable>
 					  </selectables></h:li>						
-					</h:ol></h:i>].
+					</h:ul></h:i>].
 				</title>
             <note role="application">
               <h:p>
