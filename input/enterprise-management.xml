@@ -614,10 +614,10 @@
 						</h:li>
 						<h:li>Specifically defined auditable events listed in <xref g="t-audit-mandatory"/></h:li>                    
 					  <h:li><selectables linebreak="yes">
-      <!--        <selectable id="sel-at2"><refinement>Auditable events defined in <xref to="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
-					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref to="t-audit-objective"/> for Objective SFRs</refinement></selectable> -->
-					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref to="t-audit-feat-based"/> for Implementation-Based SFRs,</refinement></selectable>
-					    <selectable id="sel-at5"><refinement>Auditable events defined in <xref to="t-audit-sel-based"/> for Selection-Based SFRs,</refinement></selectable>
+      <!--        <selectable id="sel-at2"><refinement>Auditable events defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs</refinement></selectable>
+					    <selectable id="sel-at3"><refinement>Auditable events defined in <xref g="t-audit-objective"/> for Objective SFRs</refinement></selectable> -->
+					    <selectable id="sel-at4"><refinement>Auditable events defined in <xref g="t-audit-feat-based"/> for Implementation-Based SFRs,</refinement></selectable>
+					    <selectable id="sel-at5"><refinement>Auditable events defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs,</refinement></selectable>
 					    <selectable id="sel-atssh">Auditable events for <xref to="ssh"/>,</selectable>
 					    <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
 					    <selectable id="sel-atssh">Auditable events for <xref to="X509"/>,</selectable>
