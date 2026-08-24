@@ -135,7 +135,6 @@ output/enterprise-management-release-linkable.html: recognises
 output/enterprise-management-release-linkable.html: reinstantiating
 output/enterprise-management-release-linkable.html: sLen
 output/enterprise-management-release-linkable.html: sdk
-output/enterprise-management-release-linkable.html: sel
 output/enterprise-management-release-linkable.html: sk
 output/enterprise-management-release-linkable.html: strace
 output/enterprise-management-release-linkable.html: todo
@@ -285,7 +284,6 @@ output/enterprise-management-release.html: recognises
 output/enterprise-management-release.html: reinstantiating
 output/enterprise-management-release.html: sLen
 output/enterprise-management-release.html: sdk
-output/enterprise-management-release.html: sel
 output/enterprise-management-release.html: sk
 output/enterprise-management-release.html: strace
 output/enterprise-management-release.html: todo
