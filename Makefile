@@ -3,5 +3,4 @@ TRANS?=transforms
 -include User.make
 -include ~/commoncriteria/User.make
 DIFF_TAGS="v1.0"
-
-include $(TRANS)/module/Module.make
+include $(TRANS)/Helper.make
