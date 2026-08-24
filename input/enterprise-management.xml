@@ -724,7 +724,7 @@
               <h:li>additional information in <xref g="t-audit-mandatory"/></h:li>
               <h:li><selectables linebreak="yes">
          <!--           <selectable id="sel-at2-i">additional information defined in <xref g="t-audit-optional"/> for Strictly Optional SFRs,</selectable> -->
-					          <selectable id="sel-at3-i">additional information defined in <xref g="t-audit-objective"/> for Objective SFRs,</selectable>
+					          <selectable id="sel-at3-i">additional information defined in <xref g="t-audit-feat-based"/> for Objective SFRs,</selectable>
                     <selectable id="sel-at4-i">additional information defined in <xref g="t-audit-sel-based"/> for Selection-Based SFRs,</selectable>
                 <selectable id="sel-atssh">Auditable events for <xref to="ssh"/>,</selectable>
                 <selectable id="sel-attls">Auditable events for <xref to="tls"/>,</selectable>
