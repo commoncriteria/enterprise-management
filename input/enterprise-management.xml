@@ -59,7 +59,9 @@
     <url>https://commoncriteria.github.io/vpnclient/master/vpnclient.html</url>
   </include-pkg>
 
-
+  <pp-preferences>
+    <audit-events-in-sfrs/>
+  </pp-preferences>
 
   <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
