@@ -1,8 +1,6 @@
-compilation error: file transforms/xsl/boilerplates.xsl line 113 element apply-template
-xsltStylePreCompute: unknown xsl:apply-template
 * Warning: This document still has at least one comment.
 * Error: Detected dangling id-reference to sel_all_ssh from attribute
-        on-sel/PP[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
+        on-sel/PP[1]""/sec:Conformance_Claims[1]""/CClaimsInfo[1]""/cc-pkg-claim[1]""/FP-cc-ref[1]""/cc-doc-ref[1]""/depends[1]""/on-sel[1]""
 * Error: Detected dangling id-reference to key-encap-support from attribute
         on/PP[1]""/section[5]"For a dis"/section[1]""/section[4]""/f-component[3]""/depends[1]""/on[1]""
 * Error: Detected dangling id-reference to key-wrap-support from attribute
@@ -511,9 +509,16 @@ xsltStylePreCompute: unknown xsl:apply-template
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[8]""/f-component[7]""/f-element[3]""/note[1]""/h:p[1]"This requ"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[8]""/f-component[8]""/f-element[3]""/note[1]""/h:p[1]"The speci"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[2]"The Secur"/h:p[1]""
- Failed to find a reference to mod-vpnclient.
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
  Failed to find a reference to package-usage.
- Failed to find a reference to mod-vpnclient.
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
+warning: failed to load external entity "output/vpnclient.xml"
 * Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_STG_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.

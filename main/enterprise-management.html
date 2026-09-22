@@ -763,10 +763,24 @@ The following sections list Common Criteria and technology terms used in this do
 					any Protection Profile.
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>:
-					<ul><li>Protection Profile for Application Software Version 2.0 </li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>), Version 2.0 </li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Host Agent (HA), Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for VPN Client, Version 3.0</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
-					Functional Package for Secure Shell Version 2.0 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
-					Functional Package for Transport Layer Security Version 2.1 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
-					Functional Package for X.509 Version 1.0 conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not conform to any 
+					<ul><li><a href="https://www.niap-ccevs.org/protectionprofiles/516">Protection Profile for Application Software
+        Version 
+        2.0</a>.</li><li><a href="https://www.niap-ccevs.org/protectionprofiles/526">PP-Module for Endpoint Detection And Response (EDR)
+        Version 
+        2.0</a>.</li><li><a href="https://www.niap-ccevs.org/protectionprofiles/525">PP-Module for Host Agent
+        Version 
+        2.0</a>.</li><li><a href="https://www.niap-ccevs.org/protectionprofiles/522">PP-Module for 
+        Version 
+        </a>.</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
+					<a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
+        2.0</a> conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
+					<a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a> conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is 
+					<a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509
+        Version 
+        1.0</a> conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> does not conform to any 
 						assurance packages.</li></ul></dd><p></p><dd>
 		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
 		to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional 
@@ -971,10 +985,7 @@ The following sections list Common Criteria and technology terms used in this do
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and verify that it describes the events that trigger the detection of an alert and the mechanism by which the alert is generated or transmitted (e.g., displayed in GUI, email notification). The evaluator shall also examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it identifies the reporting interval that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses to verify the availability of managed systems or agents.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it describes the process for configuring the behavior that triggers alerts and how the alerts are generated (e.g., if alerts are transmitted via email, the operational guidance would describe how to specify the recipients). If either aspect of this behavior operates in the evaluated configuration by default and no configuration of the functionality is performed, the evaluator shall examine the operational guidance to verify that it describes this.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The following tests are performed for each distinct type of managed entity with which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> communicates (if more than one such type is supported) and for each distinct alert mechanism (if more than one is supported)::<span class="testlist-"><ul><li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_ALT_EXT.1:1</a>:
-      The evaluator shall add a remote entity to management by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> through the process defined in <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and subsequently remove it from management. The evaluator shall verify in both cases that the expected alert mechanism is triggered.</li><li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FAU_ALT_EXT.1:2</a>:
-      The evaluator shall cause a managed entity to be inaccessible and verify that the expected alert mechanism is triggered for this entity's absence after no more than the maximum period of time specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for the reporting interval.</li><li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FAU_ALT_EXT.1:3</a>:
-      For any other events that are described as triggering alerts, the evaluator shall cause the event to occur and verify that the expected alert mechanism is triggered.</li></ul></span>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and verify that it describes the events that trigger the detection of an alert and the mechanism by which the alert is generated or transmitted (e.g., displayed in GUI, email notification). The evaluator shall also examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it identifies the reporting interval that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses to verify the availability of managed systems or agents.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to determine that it describes the process for configuring the behavior that triggers alerts and how the alerts are generated (e.g., if alerts are transmitted via email, the operational guidance would describe how to specify the recipients). If either aspect of this behavior operates in the evaluated configuration by default and no configuration of the functionality is performed, the evaluator shall examine the operational guidance to verify that it describes this.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The following tests are performed for each distinct type of managed entity with which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> communicates (if more than one such type is supported) and for each distinct alert mechanism (if more than one is supported):<span class="testlist-"><ul><li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_ALT_EXT.1:1</a>The evaluator shall add a remote entity to management by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> through the process defined in <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a> and subsequently remove it from management. The evaluator shall verify in both cases that the expected alert mechanism is triggered.</li><li class="test-"><a id="_t_2" class="defined" href="#_t_2">Test FAU_ALT_EXT.1:2</a>The evaluator shall cause a managed entity to be inaccessible and verify that the expected alert mechanism is triggered for this entity's absence after no more than the maximum period of time specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> for the reporting interval.</li><li class="test-"><a id="_t_3" class="defined" href="#_t_3">Test FAU_ALT_EXT.1:3</a>For any other events that are described as triggering alerts, the evaluator shall cause the event to occur and verify that the expected alert mechanism is triggered.</li></ul></span>
               </div></div></div></div></div>
 		
 		
@@ -991,12 +1002,12 @@ The following sections list Common Criteria and technology terms used in this do
 							Commands issued to managed [<b>selection</b>: <span class="selectable-content" id="_s_5">system</span>, <span class="selectable-content" id="_s_6">agent</span>]
 						</li>
 						<li>Specifically defined auditable events listed in <a onclick="showTarget('t-audit-mandatory')" href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table  <span class="counter">2</span></a></li>                    
-					  <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="sel-at4"><span class="refinement">Auditable events defined in <a onclick="showTarget('t-audit-feat-based')" href="#t-audit-feat-based" class="t-audit-feat-based-ref">Table  <span class="counter">t-audit-feat-based</span></a> for Implementation-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></span></li><li style=""><span class="selectable-content" id="sel-at5"><span class="refinement">Auditable events defined in <a onclick="showTarget('t-audit-sel-based')" href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table  <span class="counter">t-audit-sel-based</span></a> for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
-        2.0</a>,</span></li><li style=""><span class="selectable-content" id="sel-attls">Auditable events for <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
-        version 
+					  <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="sel-at4"><span class="refinement">Auditable events defined in <a onclick="showTarget('t-audit-feat-based')" href="#t-audit-feat-based" class="t-audit-feat-based-ref">Table  <span class="counter">t-audit-feat-based</span></a> for Implementation-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></span></li><li style=""><span class="selectable-content" id="sel-at5"><span class="refinement">Auditable events defined in <a onclick="showTarget('t-audit-sel-based')" href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table  <span class="counter">t-audit-sel-based</span></a> for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
+        2.0</a>,</span></li><li style=""><span class="selectable-content" id="sel-attls">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509
+        Version 
         1.0</a>,</span></li><li style=""><span class="selectable-content" id="_s_12">no other events</span></li></ul>]</li>						
 					</ul></i>].
 				<div class="appnote"><span class="note-header">Application
@@ -1051,12 +1062,12 @@ The following sections list Common Criteria and technology terms used in this do
               <li>subject identity (if applicable)</li>
               <li>and the outcome (success or failure) of the event</li>
               <li>additional information in <a onclick="showTarget('t-audit-mandatory')" href="#t-audit-mandatory" class="t-audit-mandatory-ref">Table  <span class="counter">2</span></a></li>
-              <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="sel-at3-i">additional information defined in <a onclick="showTarget('t-audit-feat-based')" href="#t-audit-feat-based" class="t-audit-feat-based-ref">Table  <span class="counter">t-audit-feat-based</span></a> for Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></li><li style=""><span class="selectable-content" id="sel-at4-i">additional information defined in <a onclick="showTarget('t-audit-sel-based')" href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table  <span class="counter">t-audit-sel-based</span></a> for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
-        2.0</a>,</span></li><li style=""><span class="selectable-content" id="sel-attls">Auditable events for <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
-        version 
+              <li>[<b>selection</b>: <ul><li style=""><span class="selectable-content" id="sel-at3-i">additional information defined in <a onclick="showTarget('t-audit-feat-based')" href="#t-audit-feat-based" class="t-audit-feat-based-ref">Table  <span class="counter">t-audit-feat-based</span></a> for Objective <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></li><li style=""><span class="selectable-content" id="sel-at4-i">additional information defined in <a onclick="showTarget('t-audit-sel-based')" href="#t-audit-sel-based" class="t-audit-sel-based-ref">Table  <span class="counter">t-audit-sel-based</span></a> for Selection-Based <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
+        2.0</a>,</span></li><li style=""><span class="selectable-content" id="sel-attls">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>,</span></li><li style=""><span class="selectable-content" id="sel-atssh">Auditable events for <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509
+        Version 
         1.0</a>,</span></li><li style=""><span class="selectable-content" id="_s_18">no other additional information</span></li></ul>]</li>
             </ul>
             <div class="appnote"><span class="note-header">Application
@@ -1150,8 +1161,7 @@ The following sections list Common Criteria and technology terms used in this do
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the mechanism by which the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> can query the connectivity status of any managed systems or agents.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it includes instructions for how to query the connectivity status of managed systems or agents (e.g., this may be shown as a status indicator on a table entry).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following test for each type of system or agent managed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FAU_NET_EXT.1:1</a>:
-      The evaluator shall follow the steps in the operational guidance to identify the connectivity status of a system or agent managed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall change the state of that connection (e.g. by powering down the managed system or the system a managed agent runs on) and verify that the connectivity status accurately reflects the change.
+                <span class="testlist-"><ul><li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FAU_NET_EXT.1:1</a>The evaluator shall follow the steps in the operational guidance to identify the connectivity status of a system or agent managed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall change the state of that connection (e.g. by powering down the managed system or the system a managed agent runs on) and verify that the connectivity status accurately reflects the change.
                 </li></ul></span>
               </div></div></div></div></div> 
         
@@ -1216,9 +1226,7 @@ The following sections list Common Criteria and technology terms used in this do
               
               
               
-            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it identifies the monitored data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> ensures is retained and whether this is configurable.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If the functionality to retain monitored data is configurable, the evaluator shall examine the operational guidance to verify that instructions are provided for how to specify what monitored data is retained. The evaluator shall also verify in this case that the operational guidance identifies the data that is always collected that cannot be disabled by configuration.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests::<span class="testlist-"><ul><li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FAU_SEL_EXT.1:1</a>:
-      The evaluator shall perform actions that cause monitored data to be collected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and verify on review of this data that the information present is consistent with what the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies as being retained.</li><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FAU_SEL_EXT.1:2</a>:
-      [Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports configuration of this function] If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports configuring the monitored data that is retained, the evaluator shall enable and disable these configuration elements, cause monitored data to be collected, and verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> suppresses the collection of any data that is configured to be suppressed.</li></ul></span></div></div></div></div></div>
+            <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it identifies the monitored data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> ensures is retained and whether this is configurable.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">If the functionality to retain monitored data is configurable, the evaluator shall examine the operational guidance to verify that instructions are provided for how to specify what monitored data is retained. The evaluator shall also verify in this case that the operational guidance identifies the data that is always collected that cannot be disabled by configuration.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests:<span class="testlist-"><ul><li class="test-"><a id="_t_5" class="defined" href="#_t_5">Test FAU_SEL_EXT.1:1</a>The evaluator shall perform actions that cause monitored data to be collected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and verify on review of this data that the information present is consistent with what the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies as being retained.</li><li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FAU_SEL_EXT.1:2</a>[Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports configuration of this function] If the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports configuring the monitored data that is retained, the evaluator shall enable and disable these configuration elements, cause monitored data to be collected, and verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> suppresses the collection of any data that is configured to be suppressed.</li></ul></span></div></div></div></div></div>
           
         
         
@@ -1261,8 +1269,7 @@ The following sections list Common Criteria and technology terms used in this do
                 well as describe any requirements on the audit server (particular audit server protocol, version of the protocol required, etc.), as well
                 as configuration of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> needed to communicate with the audit server.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> Testing of the trusted channel mechanism will be performed as defined in the associated evaluation activities for the particular 
                 trusted channel mechanism.<br/><br/> 
-                The evaluator shall perform the following test for this requirement: :<span class="testlist-"><ul><li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FAU_STG.1:1</a>:
-      The evaluator shall establish a session between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the audit server according to the configuration guidance provided. The
+                The evaluator shall perform the following test for this requirement: <span class="testlist-"><ul><li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FAU_STG.1:1</a>The evaluator shall establish a session between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the audit server according to the configuration guidance provided. The
                     evaluator shall then examine the traffic that passes between the audit server and the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during several activities of the evaluator's
                     choice designed to generate audit data to be transferred to the audit server. The evaluator shall observe that these data are not able
                     to be viewed in the clear during this transfer, and that they are successfully received by the audit server. The evaluator shall
@@ -1283,15 +1290,12 @@ The following sections list Common Criteria and technology terms used in this do
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the monitored data that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> stores and whether this data is stored locally within the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary, locally on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform, or remotely. If monitored data is stored remotely, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it identifies the trusted channel used for these communications, and how the monitored data is handled if this connection is unavailable.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> 
                 If monitored data is stored remotely, the evaluator shall examine the operational guidance to ensure it describes how to establish the trusted channel to the remote server in terms of how to specify the destination as well as any specific configuration needed to ensure that a trusted channel is used for this transmission.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> Testing of the trusted channel mechanism will be performed as defined in the associated evaluation activities for the particular 
                 trusted channel mechanism.<br/><br/> 
-                The evaluator shall perform the following tests: :<span class="testlist-"><ul><li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FAU_STG_EXT.1:1</a>:
-      The evaluator shall cause monitored data to be collected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and then review this data to verify that it includes the data that is specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>. This test may be performed in conjunction with <a href="#FAU_SAR_EXT.1">FAU_SAR_EXT.1</a> to verify the ability to review this data and with <a href="#FAU_SEL_EXT.1">FAU_SEL_EXT.1</a> to verify that configuring the suppression of any monitored data attributes has the intended effect and data with those attributes are not stored.
-                  </li><li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FAU_STG_EXT.1:2</a>:
-      [Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely]
+                The evaluator shall perform the following tests: <span class="testlist-"><ul><li class="test-"><a id="_t_8" class="defined" href="#_t_8">Test FAU_STG_EXT.1:1</a>The evaluator shall cause monitored data to be collected by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and then review this data to verify that it includes the data that is specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>. This test may be performed in conjunction with <a href="#FAU_SAR_EXT.1">FAU_SAR_EXT.1</a> to verify the ability to review this data and with <a href="#FAU_SEL_EXT.1">FAU_SEL_EXT.1</a> to verify that configuring the suppression of any monitored data attributes has the intended effect and data with those attributes are not stored.
+                  </li><li class="test-"><a id="_t_9" class="defined" href="#_t_9">Test FAU_STG_EXT.1:2</a>[Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely]
                     If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely, the evaluator shall establish a session between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and the server used for storing monitored data according to the configuration guidance provided. The
                     evaluator shall then examine the traffic that passes between the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and this server <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during several activities of the evaluator's
                     choice designed to generate monitored data to be transferred to the server. The evaluator shall observe that the monitored data is not able
-                    to be viewed in the clear during this transfer, and that it is successfully received by the server.</li><li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FAU_STG_EXT.1:3</a>:
-      [Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely]
+                    to be viewed in the clear during this transfer, and that it is successfully received by the server.</li><li class="test-"><a id="_t_10" class="defined" href="#_t_10">Test FAU_STG_EXT.1:3</a>[Conditional, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely]
                     If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> stores monitored data remotely, the evaluator shall establish a connection to the remote server as in the previous test and cause the server to become inaccessible by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall then cause monitored data to be collected and then re-establish the connection to the server to determine that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> handles the monitored data consistent with the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>.
                   </li></ul></span></div></div></div></div></div>
         
@@ -1326,11 +1330,9 @@ The following sections list Common Criteria and technology terms used in this do
                 describes how the audit data are protected from unauthorized 
                 modification or deletion. The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> uses audit trail specific protection mechanisms.
               </div></div><div class="eacategory">Guidance</div><div class="ea">
-			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: :<span class="testlist-"><ul><li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_STG.2:1</a>:
-      The evaluator shall access the audit trail as an unauthorized user and
+			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests: <span class="testlist-"><ul><li class="test-"><a id="_t_11" class="defined" href="#_t_11">Test FAU_STG.2:1</a>The evaluator shall access the audit trail as an unauthorized user and
                   attempt to modify and delete the audit data. The evaluator
-                  shall verify that these attempts fail.</li><li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_STG.2:2</a>:
-      The evaluator shall access the audit trail as an authorized user and attempt
+                  shall verify that these attempts fail.</li><li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_STG.2:2</a>The evaluator shall access the audit trail as an authorized user and attempt
                   to modify and delete the audit data. The evaluator
                   shall verify that these attempts succeed. The evaluator shall verify that only the records intended for modification and deletion
                   are modified and deleted.</li></ul></span>
@@ -1381,17 +1383,14 @@ The following sections list Common Criteria and technology terms used in this do
                 all other components can be prevented from communicating with the component that is being removed from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (preventing the remaining 
                 components from either attempting to initiate communications to the disabled component, or from responding to communications from the
                 disabled component).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FCO_CPC_EXT.1:1</a>:
-      The evaluator shall confirm that an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity that is not currently a member of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> cannot communicate with any
+                <span class="testlist-"><ul><li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FCO_CPC_EXT.1:1</a>The evaluator shall confirm that an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity that is not currently a member of the distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> cannot communicate with any
                     component of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> until the non-member entity is enabled by an administrator for each of the non-equivalent <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components that
                     it is required to communicate with (non-equivalent <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components are as defined in the minimum configuration for the distributed 
-                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).</li><li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCO_CPC_EXT.1:2</a>:
-      The evaluator shall confirm that after enablement, an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity can communicate only with the components that it has been enabled for. 
+                    <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).</li><li class="test-"><a id="_t_14" class="defined" href="#_t_14">Test FCO_CPC_EXT.1:2</a>The evaluator shall confirm that after enablement, an <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity can communicate only with the components that it has been enabled for. 
                     This includes testing that the enabled communication is successful for the enabled component pair, and that communication remains
                     unsuccessful with any other component for which communication is possible but has not been explicitly enabled. <br/> 
                     Some <abbr class="dyn-abbr"><a href="#abbr_TOE">TOEs</a></abbr> may set up the registration channel before the enablement step is carried out, but in such a case the channel must not allow
-                    communications until after the enablement step has been completed.</li><li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FCO_CPC_EXT.1:3</a>:
-      The evaluator shall separately disable each <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component in turn and ensure that the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components cannot then communicate 
+                    communications until after the enablement step has been completed.</li><li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FCO_CPC_EXT.1:3</a>The evaluator shall separately disable each <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> component in turn and ensure that the other <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components cannot then communicate 
                     with the disabled component, whether by attempting to initiate communications with the disabled component or by responding to 
                     communication attempts from the disabled component. In situations where one component acts as
                     the 'Gatekeeper' for all other components, 
@@ -2070,8 +2069,7 @@ The following sections list Common Criteria and technology terms used in this do
                   (debuggers, simulators, etc.) to test that keys are cleared, including all copies of
                   the key that may have been created internally by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> during normal cryptographic
                   processing with that key.</p>
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FCS_CKM.6:1</a>:
-       Applied to each key held as plaintext in volatile memory and subject to
+                <span class="testlist-"><ul><li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FCS_CKM.6:1</a> Applied to each key held as plaintext in volatile memory and subject to
                     destruction by overwrite by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> (whether or not the plaintext value is
                     subsequently encrypted for storage in volatile or non-volatile memory). In the
                     case where the only selection made for the destruction method key was removal of
@@ -2096,8 +2094,7 @@ The following sections list Common Criteria and technology terms used in this do
                     (e.g., some random bits that happen to match). If this is the case the test
                     should be repeated with a different key in Step #1. If a fragment is found the
                     test fails. <br/><br/>
-                  </li><li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FCS_CKM.6:2</a>:
-       Applied to each key held in non-volatile memory and subject to destruction
+                  </li><li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FCS_CKM.6:2</a> Applied to each key held in non-volatile memory and subject to destruction
                     by overwrite by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall use special tools (as needed),
                     provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> developer if necessary, to view the key storage location: <br/>
                     <ol>
@@ -2114,8 +2111,7 @@ The following sections list Common Criteria and technology terms used in this do
                         repeated test then the test fails.</li>
                     </ol>
                     <br/><br/>
-                  </li><li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_CKM.6:3</a>:
-       Applied to each key held as non-volatile memory and subject to destruction
+                  </li><li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FCS_CKM.6:3</a> Applied to each key held as non-volatile memory and subject to destruction
                     by overwrite by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall use special tools (as needed),
                     provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> developer if necessary, to view the key storage location: <br/>
                     <ol>
@@ -3757,93 +3753,93 @@ The following sections list Common Criteria and technology terms used in this do
 	  
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_TLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>
 work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
       from 
-      <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+      <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>.
       </i></b></div>
           
@@ -4240,8 +4236,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
           
           <div class="element"><div class="reqid" id="FCS_HTTPS_EXT.1.1"><a href="#FCS_HTTPS_EXT.1.1" class="abbr">FCS_HTTPS_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_330">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_331">implement</span>] the HTTPS protocol that complies with RFC 2818.</div></div>
           <div class="element"><div class="reqid" id="FCS_HTTPS_EXT.1.2"><a href="#FCS_HTTPS_EXT.1.2" class="abbr">FCS_HTTPS_EXT.1.2</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <span class="selectable-content" id="_s_332">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_333">implement</span>] HTTPS using TLS in accordance with <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+              [<b>selection</b>: <span class="selectable-content" id="_s_332">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_333">implement</span>] HTTPS using TLS in accordance with <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>. 
             <div class="appnote"><span class="note-header">Application
       Note:
@@ -4255,8 +4251,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>'s HTTPS functionality is implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> or invoked from the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements HTTPS, the evaluator shall verify that the corresponding claims from the TLS Functional Package (client, server, or both) are present.</div></div><div class="eacategory">Guidance</div><div class="ea">
 			There are no additional Guidance evaluation activities for this component.<br/></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_HTTPS_EXT.1:1</a>:
-      The evaluator shall attempt to establish an HTTPS connection with a web server, web a client, or both (depending on whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as a web client, a web server, or both), observe the traffic with a packet analyzer, and verify 
+                <span class="testlist-"><ul><li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FCS_HTTPS_EXT.1:1</a>The evaluator shall attempt to establish an HTTPS connection with a web server, web a client, or both (depending on whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as a web client, a web server, or both), observe the traffic with a packet analyzer, and verify 
                     that the connection succeeds and that the traffic is identified as TLS or HTTPS.</li></ul></span>
                 Other tests are performed in conjunction with the TLS evaluation activities.
               </div></div></div></div></div>     
@@ -4816,11 +4811,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               </div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to specify a system or agent to be managed (e.g., is there an enrollment process initiated from a remote agent, does an administrator on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> specify a remote endpoint to communicate with, etc.), and whether any configuration options exist for the act of management (e.g., a periodic scanning interval).<p></p>
               The evaluator shall also ensure that if any positive or negative exceptions to its enforced rules as defined in <a href="#FDP_IFF.1.4">FDP_IFF.1.4</a> or <a href="#FDP_IFF.1.5">FDP_IFF.1.5</a> exist, the operational guidance defines the behavior of these exceptions and describes how to configure them, to the extent that they are configurable versus existing by default.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests for each distinct type of system or agent that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> can communicate with (e.g. if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports both Windows and macOS agents, this would be two distinct types of agents):
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FDP_IFF.1:1</a>:
-      The evaluator shall follow the operational guidance to enter a system or agent into management. This may be performed in conjunction with <a href="#FIA_ENR_EXT.1">FIA_ENR_EXT.1</a> (if claimed) and <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a>.</li><li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FDP_IFF.1:2</a>:
-      The evaluator shall operate the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to exercise its management functions against the managed system or agent. The evaluator shall verify in doing so that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is collecting accurate data about the managed system or agent, that any management functions being performed have the intended effect on the system or agent, and that data is transmitted in the expected format. This may be performed in conjunction with FMT_SMF.1/EXTERNAL and <a href="#FDP_IFC.1">FDP_IFC.1</a>.</li><li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FDP_IFF.1:3</a>:
-      If any positive exceptions to the enterprise management functionality exist as defined in <a href="#FDP_IFF.1.4">FDP_IFF.1.4</a> (e.g., some data is always collected or some management activity always occurs regardless of configuration settings that would otherwise prohibit it), the evaluator shall configure the excepted behavior to be disallowed and then perform the associated action, observing that it was permitted per the exception.</li><li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FDP_IFF.1:4</a>:
-      If any negative exceptions to the enterprise management functionality exist as defined in <a href="#FDP_IFF.1.5">FDP_IFF.1.5</a> (e.g., some action is always prohibited regardless of configuration settings that would otherwise permit it), the evaluator shall configure the excepted behavior to be allowed and then perform the associated action, observing that it was prohibited per the exception.</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FDP_IFF.1:1</a>The evaluator shall follow the operational guidance to enter a system or agent into management. This may be performed in conjunction with <a href="#FIA_ENR_EXT.1">FIA_ENR_EXT.1</a> (if claimed) and <a href="#FIA_ENR_EXT.2">FIA_ENR_EXT.2</a>.</li><li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FDP_IFF.1:2</a>The evaluator shall operate the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to exercise its management functions against the managed system or agent. The evaluator shall verify in doing so that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is collecting accurate data about the managed system or agent, that any management functions being performed have the intended effect on the system or agent, and that data is transmitted in the expected format. This may be performed in conjunction with FMT_SMF.1/EXTERNAL and <a href="#FDP_IFC.1">FDP_IFC.1</a>.</li><li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FDP_IFF.1:3</a>If any positive exceptions to the enterprise management functionality exist as defined in <a href="#FDP_IFF.1.4">FDP_IFF.1.4</a> (e.g., some data is always collected or some management activity always occurs regardless of configuration settings that would otherwise prohibit it), the evaluator shall configure the excepted behavior to be disallowed and then perform the associated action, observing that it was permitted per the exception.</li><li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FDP_IFF.1:4</a>If any negative exceptions to the enterprise management functionality exist as defined in <a href="#FDP_IFF.1.5">FDP_IFF.1.5</a> (e.g., some action is always prohibited regardless of configuration settings that would otherwise permit it), the evaluator shall configure the excepted behavior to be allowed and then perform the associated action, observing that it was prohibited per the exception.</li></ul></span>
           
               </div></div></div></div></div>
         
@@ -4842,10 +4833,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea"><p>None.</p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"><p>The evaluator shall verify the guidance documents contain any instructions necessary to configure the restriction of network communications.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FDP_NET_EXT.1:1</a>:
-      The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are documented in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> or are user-initiated.</li><li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FDP_NET_EXT.1:2</a>:
-      The evaluator shall run the application. After the application initializes, the evaluator shall run network port scans to verify that any ports opened by the application have been captured in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for the third selection and its assignment. This includes connection-based protocols (e.g. TCP, DCCP) as well as connectionless protocols (e.g. UDP).</li></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FDP_NET_EXT.1:1</a>The evaluator shall run the application. While the application is running, the evaluator shall sniff network traffic ignoring all non-application associated traffic and verify that any network communications witnessed are documented in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> or are user-initiated.</li><li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FDP_NET_EXT.1:2</a>The evaluator shall run the application. After the application initializes, the evaluator shall run network port scans to verify that any ports opened by the application have been captured in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> for the third selection and its assignment. This includes connection-based protocols (e.g. TCP, DCCP) as well as connectionless protocols (e.g. UDP).</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FDP_NET_EXT.1:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -4854,7 +4843,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     If "<b>no network communication</b>" is selected, the evaluator shall ensure that the application's AndroidManifest.xml file does not contain a uses-permission or uses-permission-sdk-23 tag containing android:name="android.permission.INTERNET". In this case, it is not necessary to perform the above Tests 1 and 2, as the platform will not allow the application to perform any network communication.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div></div></div></div></div>
         
         <div class="comp" id="FDP_ITC.1"><h4>FDP_ITC.1 Import of User Data Without Security Attributes</h4>
@@ -4899,12 +4888,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the existence of a lockout function for password-based administrator authentication and the action that is taken when it is triggered, and the mechanism by which a locked account is restored.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to configure the number of authentication failures that trigger a lockout, and the allowed range of values for this parameter. If the means for a locked account to be unlocked is time-based, the evaluator shall examine the operational guidance to verify that it describes how to configure the time period for the lockout, and the allowed values for this parameter. If the means for a locked account to be unlocked is based on administrative action, the evaluator shall examine the operational guidance to ensure that it identifies how an administrator may unlock a locked account.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests for each <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> management interface that supports password-based authentication:
-              :<span class="testlist-"><ul><li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_AFL.1:1</a>:
-      The evaluator shall configure the lockout behavior to lock an account after some number of invalid authentication attempts. The evaluator shall then deliberately enter invalid credentials on an administrator account and verify that further attempts are prevented when the configured value is met or exceeded, per the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.</li><li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_AFL.1:2</a>:
-      The evaluator shall repeat the previous test with a different configured value to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> enforces the new value.</li><li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_AFL.1:3</a>:
-      [Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall configure the lockout period to be a certain amount of time, cause an account to be locked, and verify that the account is unlocked once the configured time period has elapsed.</li><li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_AFL.1:4</a>:
-      [Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall repeat the previous test with a different configured time value and verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> enforces the new value.</li><li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_AFL.1:5</a>:
-      [Conditional, an administrative unlock is supported] If a locked account is restored in response to some administrator action, the evaluator shall cause an account to be locked and then use a different account to restore it using the manner specified in the operational guidance.</li></ul></span>
+              <span class="testlist-"><ul><li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FIA_AFL.1:1</a>The evaluator shall configure the lockout behavior to lock an account after some number of invalid authentication attempts. The evaluator shall then deliberately enter invalid credentials on an administrator account and verify that further attempts are prevented when the configured value is met or exceeded, per the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.</li><li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FIA_AFL.1:2</a>The evaluator shall repeat the previous test with a different configured value to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> enforces the new value.</li><li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FIA_AFL.1:3</a>[Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall configure the lockout period to be a certain amount of time, cause an account to be locked, and verify that the account is unlocked once the configured time period has elapsed.</li><li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FIA_AFL.1:4</a>[Conditional, a time-based unlock is supported] If a locked account is restored after a configurable time period, the evaluator shall repeat the previous test with a different configured time value and verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> enforces the new value.</li><li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FIA_AFL.1:5</a>[Conditional, an administrative unlock is supported] If a locked account is restored in response to some administrator action, the evaluator shall cause an account to be locked and then use a different account to restore it using the manner specified in the operational guidance.</li></ul></span>
               </div></div></div></div></div>
         
         
@@ -4945,10 +4929,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> upon successful authentication. </div>
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the process by which the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> enrolls endpoints into management.</div>
               <div class="eacategory">Tests</div><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_ENR_EXT.1.1:1</a>:
-      The evaluator shall attempt to enroll a device without providing correct credentials. The evaluator shall verify that the device is not 
-                    enrolled and that the described enrollment actions are not taken.</li><li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_ENR_EXT.1.1:2</a>:
-      The evaluator shall attempt to enroll the device providing correct credentials. The evaluator shall verify that the device is enrolled 
+                <span class="testlist-"><ul><li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FIA_ENR_EXT.1.1:1</a>The evaluator shall attempt to enroll a device without providing correct credentials. The evaluator shall verify that the device is not 
+                    enrolled and that the described enrollment actions are not taken.</li><li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FIA_ENR_EXT.1.1:2</a>The evaluator shall attempt to enroll the device providing correct credentials. The evaluator shall verify that the device is enrolled 
                     and that the described enrollment actions are taken.</li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FIA_ENR_EXT.1.2">FIA_ENR_EXT.1.2</a></div>
@@ -4956,8 +4938,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Guidance</div><div class="ea">The evaluator shall ensure that the administrative guidance describes the methods of restricting user enrollment and that it instructs 
                 the administrator how to configure the restrictions.<br/><br/>
               </div>
-              <div class="eacategory">Tests</div><div class="ea">For each type of policy selected, the evaluator shall perform the following: :<span class="testlist-"><ul><li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FIA_ENR_EXT.1.2:1</a>:
-      The evaluator shall attempt to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> according to the administrative guidance in order to prevent enrollment. The
+              <div class="eacategory">Tests</div><div class="ea">For each type of policy selected, the evaluator shall perform the following: <span class="testlist-"><ul><li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FIA_ENR_EXT.1.2:1</a>The evaluator shall attempt to configure the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> according to the administrative guidance in order to prevent enrollment. The
                   evaluator shall verify that the user cannot enroll a device outside of the configured limitation. (For example, the evaluator may try to enroll
                   a disallowed device, or may try to enroll additional devices beyond the number allowed.)</li></ul></span>
               </div>
@@ -5031,8 +5012,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 </ol>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FIA_PMG_EXT.1:1</a>:
-      
+                <span class="testlist-"><ul><li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FIA_PMG_EXT.1:1</a>
                     The evaluator shall compose passwords that meet the
                     requirements in some way. For each password, the evaluator shall
                     verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> supports the password. While the evaluator is not
@@ -5040,8 +5020,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     passwords, the evaluator shall ensure that all characters, and a
                     minimum length listed in the requirement are supported and justify
                     the subset of those characters chosen for testing.
-                  </li><li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FIA_PMG_EXT.1:2</a>:
-      
+                  </li><li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FIA_PMG_EXT.1:2</a>
                     The evaluator shall compose passwords that do not meet the
                     requirements in some way. For each password, the evaluator shall
                     verify that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> does not support the password. While the
@@ -5074,9 +5053,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes the process by which subjects accessing the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are authenticated (e.g., by running the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> on a system that requires prior authentication or by providing its own authentication function on a remote management interface), and any functions that may be performed without authentication.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes any procedures used for configuring the authentication mechanism used to gain access to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> (e.g., if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> defines its own authentication mechanism and supports multiple administrators, the operational guidance should describe the process of creating a new administrator).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FIA_UAU.1:1</a>:
-      The evaluator shall access the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> without authentication and verify that only the functions specified in <a href="#FIA_UAU.1.1">FIA_UAU.1.1</a> (if any) are accessible.</li><li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FIA_UAU.1:2</a>:
-      The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is accessible after the specified authentication mechanism is used (e.g. by ensuring that a valid username and password grants access to a management interface).</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FIA_UAU.1:1</a>The evaluator shall access the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> without authentication and verify that only the functions specified in <a href="#FIA_UAU.1.1">FIA_UAU.1.1</a> (if any) are accessible.</li><li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FIA_UAU.1:2</a>The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is accessible after the specified authentication mechanism is used (e.g. by ensuring that a valid username and password grants access to a management interface).</li></ul></span>
               </div></div></div></div></div> 
         
         
@@ -5121,8 +5098,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following test for each method by which administrators access the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, as well as 
                 for each type of credential supported by the login method:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FIA_UIA_EXT.1:1</a>:
-      
+                <span class="testlist-"><ul><li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FIA_UIA_EXT.1:1</a>
                     The evaluator shall use the guidance documentation to
                     configure the appropriate credential supported for the login method.
                     For all combinations of supported credentials and login methods, the
@@ -5155,17 +5131,14 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Guidance</div><div class="ea"><p>The evaluator shall verify the guidance documentation details regarding any default or null application provided credentials being used and how they would be updated.</p></div>
               <div class="eacategory">Tests</div><div class="ea">
                 If the application uses any default credentials the evaluator shall run the following tests.
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FMT_CFG_EXT.1.1:1</a>:
-      For any application provided credentials the evaluator shall install and run the application without generating or loading new credentials and verify that only the minimal application functionality required to set new credentials is available.</li><li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FMT_CFG_EXT.1.1:2</a>:
-      For any application provided credentials the evaluator shall attempt to clear all credentials and verify that only the minimal application functionality required to set new credentials is available.</li><li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FMT_CFG_EXT.1.1:3</a>:
-      For any application provided credentials the evaluator shall run the application, establish new credentials and verify that the original default credentials no longer provide access to the application.</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FMT_CFG_EXT.1.1:1</a>For any application provided credentials the evaluator shall install and run the application without generating or loading new credentials and verify that only the minimal application functionality required to set new credentials is available.</li><li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FMT_CFG_EXT.1.1:2</a>For any application provided credentials the evaluator shall attempt to clear all credentials and verify that only the minimal application functionality required to set new credentials is available.</li><li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FMT_CFG_EXT.1.1:3</a>For any application provided credentials the evaluator shall run the application, establish new credentials and verify that the original default credentials no longer provide access to the application.</li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FMT_CFG_EXT.1.2">FMT_CFG_EXT.1.2</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>None.</p></div>
               <div class="eacategory">Guidance</div><div class="ea"><p>None.</p></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall install and run the application. The evaluator shall inspect the file system of the platform (to the extent possible) for any files created by the application and ensure that their permissions are adequate to protect them. The method of doing so varies per platform.
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FMT_CFG_EXT.1.2:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5174,8 +5147,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the command <code>find -L . -perm /002</code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files (for this test, directories are not considered to be files).
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_44" class="defined" href="#_t_44">Test FMT_CFG_EXT.1.2:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5184,9 +5157,9 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the SysInternals tools Process Monitor and Access Check (or tools of equivalent capability, like icacls.exe) for Classic Desktop applications to verify that files written to disk during an application's installation have the correct file permissions, such that a standard user cannot modify the application or its data files. For Windows Universal Applications the evaluator shall consider the requirement met because of the AppContainer sandbox.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
                
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_45" class="defined" href="#_t_45">Test FMT_CFG_EXT.1.2:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5195,8 +5168,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the command <code>find -L . -perm /002</code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_46" class="defined" href="#_t_46">Test FMT_CFG_EXT.1.2:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5205,8 +5178,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the command <code> find . \( -perm -002 \)</code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_47" class="defined" href="#_t_47">Test FMT_CFG_EXT.1.2:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5215,7 +5188,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the command <code>find . -perm +002</code> inside the application's data directories to ensure that all files are not world-writable. The command should not print any files.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             </div></div></div>
         
@@ -5236,7 +5209,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea"><p>The evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to identify the application's configuration options (e.g., settings) and determine whether these are stored and set using the mechanisms supported by the platform or implemented by the application in accordance with the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for File Encryption. At a minimum the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> shall list settings related to any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> and any settings that are mandated in the operational guidance in response to an <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>.<p></p>Conditional: If "<b>implement functionality to encrypt and store configuration options as defined by FDP_PRT_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for File Encryption</b>" is selected, the evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies those options, as well as indicates where the encrypted representation of these options is stored.</p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"><p>The evaluator shall verify the guidance documentation contains any information necessary to configure the protection of configuration settings.</p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 If " <b>invoke the mechanisms recommended by the platform vendor for storing and setting configuration options</b>" is selected, the method of testing varies per platform as follows:
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_48" class="defined" href="#_t_48">Test FMT_MEC_EXT.1:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5247,8 +5220,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                         https://learn.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/zzdt0e7f(v=vs.100)</a> or <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/">
                           https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/</a> or <a href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config">
                             https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/web-config</a> for storing application specific (whether application-wide or user-specific) settings.<p></p>For Classic Desktop applications, the evaluator shall run the application while monitoring it with the SysInternals tool <span class="util">Process Monitor</span> and make changes to its configuration. The evaluator shall verify that <span class="util">Process Monitor</span> logs show corresponding changes to the Windows Registry or C:\ProgramData\ directory.</p>
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_49" class="defined" href="#_t_49">Test FMT_MEC_EXT.1:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5257,8 +5230,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall verify that the app uses the <code>user defaults system</code> or <code>key-value store</code> for storing all settings.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_50" class="defined" href="#_t_50">Test FMT_MEC_EXT.1:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5267,8 +5240,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the application while monitoring it with the utility <span class="util">strace</span>. The evaluator shall make security-related changes to its configuration. The evaluator shall verify that <span class="util">strace</span> logs corresponding changes to configuration files that reside in /etc (for system-specific configuration), in the user's home directory (for user-specific configuration), or /var/lib/ (for configurations controlled by UI and not intended to be directly modified by an administrator).
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_51" class="defined" href="#_t_51">Test FMT_MEC_EXT.1:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5277,8 +5250,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the application while monitoring it with the utility <span class="util">dtrace</span>. The evaluator shall make security-related changes to its configuration. The evaluator shall verify that <span class="util">dtrace</span> logs corresponding changes to configuration files that reside in /etc (for system-specific configuration) or in the user's home directory (for user-specific configuration).
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_52" class="defined" href="#_t_52">Test FMT_MEC_EXT.1:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5287,7 +5260,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall verify that the application stores and retrieves settings using the <code>NSUserDefaults</code> class.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
                 If " <b>implement functionality to encrypt and store configuration options as defined by FDP_PRT_EXT.1 in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for File Encryption</b>" is selected, for all configuration options listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as being stored and protected using encryption, the evaluator shall examine the contents of the configuration option storage (identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>) to determine that the options have been encrypted.
               </div></div></div></div></div>
         
@@ -5345,8 +5318,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes what security management functions are restricted to the
                 administrator and what actions can be taken for each management function. The evaluator shall verify that the security management functions are 
                 restricted to authorized administrators.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes the management functions that are available to authorized administrators and how administrators are authorized to perform those particular functions (e.g., default for the account, role membership, group membership).</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FMT_MOF.1:1</a>:
-      The evaluator shall attempt to access the functions and policies in <a href="#FMT_SMF.1/INTERNAL">FMT_SMF.1/INTERNAL</a> and <a href="#FMT_SMF.1/MANAGED">FMT_SMF.1/MANAGED</a> as an unauthorized user and verify that the attempt fails. This may require the evaluator to use multiple different accounts with differing levels of privilege to interact with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has multiple management interfaces, the evaluator shall repeat this test as necessary to demonstrate the access enforcement to each supported function on each claimed management interface.</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_53" class="defined" href="#_t_53">Test FMT_MOF.1:1</a>The evaluator shall attempt to access the functions and policies in <a href="#FMT_SMF.1/INTERNAL">FMT_SMF.1/INTERNAL</a> and <a href="#FMT_SMF.1/MANAGED">FMT_SMF.1/MANAGED</a> as an unauthorized user and verify that the attempt fails. This may require the evaluator to use multiple different accounts with differing levels of privilege to interact with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has multiple management interfaces, the evaluator shall repeat this test as necessary to demonstrate the access enforcement to each supported function on each claimed management interface.</li></ul></span>
               </div></div></div></div></div>
 		
 		
@@ -5370,8 +5342,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes each management function claimed. The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to
-                ensure that it identifies the management functions that exist for configuration of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">For each management function that can be performed to configure the behavior of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">:<span class="testlist-"><ul><li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FMT_SMF.1/INTERNAL:1</a>:
-      The evaluator shall verify that for each supported management function, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provides a means to perform the function as described in the operational guidance and that its execution has the intended effect. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has multiple management interfaces, the evaluator shall repeat this test as necessary to ensure that the supported management functionality of each claimed interface can be performed.</li></ul></span>
+                ensure that it identifies the management functions that exist for configuration of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">For each management function that can be performed to configure the behavior of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"><span class="testlist-"><ul><li class="test-"><a id="_t_54" class="defined" href="#_t_54">Test FMT_SMF.1/INTERNAL:1</a>The evaluator shall verify that for each supported management function, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> provides a means to perform the function as described in the operational guidance and that its execution has the intended effect. If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> has multiple management interfaces, the evaluator shall repeat this test as necessary to ensure that the supported management functionality of each claimed interface can be performed.</li></ul></span>
               </div></div></div></div></div> 
         
         
@@ -5403,8 +5374,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes each management function claimed. The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to
                 ensure that it identifies the management functions implemented for each supported type of system or agent. If multiple systems or agents are supported, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that any
-                differences between management functions and policies for each supported system or agent are clearly indicated (e.g., a product that can manage endpoint systems with multiple operating systems may have <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-specified differences in the functions on those operating systems that can be managed).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">For each management function that can be performed against each type of managed system or agent, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">For each type of managed agent or system claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the evaluator shall perform the following test. For each management function that can be performed using multiple interfaces, the evaluator shall repeat this test for each interface that supports each function.:<span class="testlist-"><ul><li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FMT_SMF.1/MANAGED:1</a>:
-      The evaluator shall verify that for each supported management function, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> can collect data on the current status of that function to determine its configuration, and can execute function to change its behavior or data on the managed agent or system.</li></ul></span>
+                differences between management functions and policies for each supported system or agent are clearly indicated (e.g., a product that can manage endpoint systems with multiple operating systems may have <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr>-specified differences in the functions on those operating systems that can be managed).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">For each management function that can be performed against each type of managed system or agent, the evaluator shall examine the operational guidance to verify that it includes instructions on how to perform these actions, and what particular parameters or options can be specified for them.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">For each type of managed agent or system claimed by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the evaluator shall perform the following test. For each management function that can be performed using multiple interfaces, the evaluator shall repeat this test for each interface that supports each function.<span class="testlist-"><ul><li class="test-"><a id="_t_55" class="defined" href="#_t_55">Test FMT_SMF.1/MANAGED:1</a>The evaluator shall verify that for each supported management function, the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> can collect data on the current status of that function to determine its configuration, and can execute function to change its behavior or data on the managed agent or system.</li></ul></span>
               </div></div></div></div></div>
         
         <div class="comp" id="FMT_SMR.1"><h4>FMT_SMR.1 Security Roles</h4>
@@ -5422,8 +5392,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to ensure that it describes the management roles implemented by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> and how these roles are associated with users (e.g. is the role an intrinsic property of a user account, or can a user be reassigned different permissions).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall examine the operational guidance to verify that it describes how to associate administrators with management roles, and the different privileges associated with each role.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following tests:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FMT_SMR.1:1</a>:
-      
+                <span class="testlist-"><ul><li class="test-"><a id="_t_56" class="defined" href="#_t_56">Test FMT_SMR.1:1</a>
                     The evaluator shall follow the operational guidance to create administrator accounts or assign roles to administrators in order to demonstrate that each of the defined roles can be assumed.
                   </li></ul></span>
               </div></div></div></div></div>   
@@ -5463,7 +5432,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall perform either a static or dynamic analysis to determine that no memory mappings are placed at an explicit and consistent address except for any exceptions claimed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. For these exceptions, the evaluator shall verify that this analysis shows explicit mappings that are consistent with what is claimed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>. The method of doing so varies per platform. For those platforms requiring the same application running on two different systems, the evaluator may alternatively use the same device. After collecting the first instance of mappings, the evaluator must uninstall the application, reboot the device, and reinstall the application to collect the second instance of mappings.
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_57" class="defined" href="#_t_57">Test FPT_AEX_EXT.1.1:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5472,8 +5441,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the same application on two different Windows systems and run a tool that will list all memory mapped addresses for the application. The evaluator shall then verify the two different instances share no mapping locations. The Microsoft SysInternals tool, VMMap, could be used to view memory addresses of a running application. The evaluator shall use a tool such as Microsoft's BinScope Binary Analyzer to confirm that the application has ASLR enabled.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_58" class="defined" href="#_t_58">Test FPT_AEX_EXT.1.1:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5482,8 +5451,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall perform a static analysis to search for any mmap calls (or <abbr class="dyn-abbr"><a href="#abbr_API">API</a></abbr> calls that call mmap), and ensure that no arguments are provided that request a mapping at a fixed address.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_59" class="defined" href="#_t_59">Test FPT_AEX_EXT.1.1:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5492,8 +5461,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the same application on two different Linux systems. The evaluator shall then compare their memory maps using <code>pmap -x <i>PID</i></code> to ensure the two different instances share no mapping locations.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_60" class="defined" href="#_t_60">Test FPT_AEX_EXT.1.1:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5502,8 +5471,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the same application on two different Solaris systems. The evaluator shall then compare their memory maps using <code>pmap -x <i>PID</i></code> to ensure the two different instances share no mapping locations.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_61" class="defined" href="#_t_61">Test FPT_AEX_EXT.1.1:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5512,7 +5481,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the same application on two different Mac systems. The evaluator shall then compare their memory maps using <code>vmmap <i>PID</i></code> to ensure the two different instances share no mapping locations.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_AEX_EXT.1.2">FPT_AEX_EXT.1.2</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>None.</p></div>
@@ -5520,7 +5489,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall verify that no memory mapping requests are made with write and execute permissions. The method of doing so varies per platform.
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_62" class="defined" href="#_t_62">Test FPT_AEX_EXT.1.2:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5529,8 +5498,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall use a tool such as Microsoft's BinScope Binary Analyzer to confirm that the application passes the NXCheck. The evaluator may also ensure that the <code>/NXCOMPAT</code> flag was used during compilation to verify that DEP protections are enabled for the application.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_63" class="defined" href="#_t_63">Test FPT_AEX_EXT.1.2:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5539,8 +5508,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall perform static analysis on the application to verify that mprotect is never invoked with the PROT_EXEC permission.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_64" class="defined" href="#_t_64">Test FPT_AEX_EXT.1.2:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5548,8 +5517,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     
                     The evaluator shall perform static analysis on the application to verify that both <ul><li>mmap is never invoked with both the PROT_WRITE and PROT_EXEC permissions, and</li><li>mprotect is never invoked with the PROT_EXEC permission.</li></ul>
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_65" class="defined" href="#_t_65">Test FPT_AEX_EXT.1.2:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5557,8 +5526,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     
                     The evaluator shall perform static analysis on the application to verify that both <ul><li>mmap is never invoked with both the PROT_WRITE and PROT_EXEC permissions, and</li><li>mprotect is never invoked with the PROT_EXEC permission.</li></ul>
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_66" class="defined" href="#_t_66">Test FPT_AEX_EXT.1.2:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5567,7 +5536,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall perform static analysis on the application to verify that mprotect is never invoked with the PROT_EXEC permission.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_AEX_EXT.1.3">FPT_AEX_EXT.1.3</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>None.</p></div>
@@ -5575,15 +5544,15 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall configure the platform in the necessary manner and carry out one of the prescribed tests:
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_67" class="defined" href="#_t_67">Test FPT_AEX_EXT.1.3:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
            </li></ul><div class="dependent-content"><test>
                     
                     <p>If the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> platform supports Windows Defender Exploit Guard, then the evaluator shall ensure that the application can run successfully with Windows Defender Exploit Guard Exploit Protection configured with the following minimum mitigations enabled; Control Flow Guard (CFG), Randomize memory allocations (Bottom-Up ASLR), Export address filtering (EAF), Import address filtering (IAF), and Data Execution Prevention (DEP). The following link describes how to enable Exploit Protection, https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/enable-exploit-protection?view=o365-worldwide.</p>
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_68" class="defined" href="#_t_68">Test FPT_AEX_EXT.1.3:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5592,8 +5561,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     Applications running on iOS cannot disable security features, therefore this requirement is met and no evaluation activity is required.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_69" class="defined" href="#_t_69">Test FPT_AEX_EXT.1.3:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5602,8 +5571,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application can successfully run on a system with either SELinux or AppArmor enabled and in enforce mode.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_70" class="defined" href="#_t_70">Test FPT_AEX_EXT.1.3:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5612,8 +5581,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application can run with Solaris Trusted Extensions enabled and enforcing.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_71" class="defined" href="#_t_71">Test FPT_AEX_EXT.1.3:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5622,7 +5591,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application can successfully run on macOS without disabling any security features.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_AEX_EXT.1.4">FPT_AEX_EXT.1.4</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>None.</p></div>
@@ -5630,7 +5599,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator shall run the application and determine where it writes its files. For files where the user does not choose the destination, the evaluator shall check whether the destination directory contains executable files. This varies per platform:
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_72" class="defined" href="#_t_72">Test FPT_AEX_EXT.1.4:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5639,9 +5608,9 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     For Windows Universal Applications the evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox). For Windows Desktop Applications the evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_73" class="defined" href="#_t_73">Test FPT_AEX_EXT.1.4:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5650,8 +5619,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_74" class="defined" href="#_t_74">Test FPT_AEX_EXT.1.4:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5660,8 +5629,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_75" class="defined" href="#_t_75">Test FPT_AEX_EXT.1.4:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5670,14 +5639,14 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall run the program, mimicking normal usage, and note where all user-modifiable files are written. The evaluator shall ensure that there are no executable files stored in the same directories to which the application wrote user-modifiable files.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_AEX_EXT.1.5">FPT_AEX_EXT.1.5</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>(Conditional: The PE or ELF automated tests fail) The evaluator shall ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> describes the stack-based buffer overflow compiler flags.</p></div>
               <div class="eacategory">Guidance</div><div class="ea"><p>None.</p></div>
               <div class="eacategory">Tests</div><div class="ea">
                 The evaluator will inspect every native executable included in the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to ensure that stack-based buffer overflow protection is present.
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_76" class="defined" href="#_t_76">Test FPT_AEX_EXT.1.5:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5686,11 +5655,9 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     Applications that run as Managed Code in the .NET Framework do not require these stack protections. Applications developed in Object Pascal using the Delphi IDE compiled with RangeChecking enabled comply with this element. For other code, the evaluator shall review the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and verify that the /GS flag was used during compilation. The evaluator shall run a tool like, BinSkim, that can verify the correct usage of /GS.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FPT_AEX_EXT.1.5:1</a>:
-      <p><i><b>For PE</b></i>, the evaluator will disassemble each and ensure the following sequence appears:</p><code>mov rcx, QWORD PTR [rsp+(...)]</code><br/><code>xor rcx, (...)</code><br/><code>call (...)</code><br/></li></ul></span>
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FPT_AEX_EXT.1.5:2</a>:
-      <p><i><b>For ELF executables</b></i>, the evaluator will ensure that each contains references to the symbol <b>__stack_chk_fail</b>.<p></p>If these automated tests fail, the evaluator shall perform the above, conditional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> activity.</p></li></ul></span>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_77" class="defined" href="#_t_77">Test FPT_AEX_EXT.1.5:2</a><p><i><b>For PE</b></i>, the evaluator will disassemble each and ensure the following sequence appears:</p><code>mov rcx, QWORD PTR [rsp+(...)]</code><br/><code>xor rcx, (...)</code><br/><code>call (...)</code><br/></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_78" class="defined" href="#_t_78">Test FPT_AEX_EXT.1.5:3</a><p><i><b>For ELF executables</b></i>, the evaluator will ensure that each contains references to the symbol <b>__stack_chk_fail</b>.<p></p>If these automated tests fail, the evaluator shall perform the above, conditional <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> activity.</p></li></ul></span>
                 <p>Tools such as <a href="https://github.com/commoncriteria/canary-detector">Canary Detector</a> may help automate these activities.</p>
               </div>
             </div></div></div>
@@ -5747,33 +5714,37 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
 	  <a href="#FDP_IFF.1.3">FDP_IFF.1.3</a>.
       </i></b></div>
           
-          <div class="element"><div class="reqid" id="FPT_ITT.1.1"><a href="#FPT_ITT.1.1" class="abbr">FPT_ITT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_460"><b>invoke platform-provided functionality to use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ITT1_IPSEC_INVOKE">IPsec,</span></li><li style=""><span class="selectable-content" id="ITT1_TLS_INVOKE">mutually authenticated TLS,</span></li><li style=""><span class="selectable-content" id="ITT1_DTLS_INVOKE">mutually authenticated DTLS,</span></li><li style=""><span class="selectable-content" id="ITT1_HTTPS_INVOKE">HTTPS,</span></li><li style=""><span class="selectable-content" id="ITT1_SSH_INVOKE">SSH</span></li></ul>]</b></span></li><li style=""><span class="selectable-content" id="_s_466"><b>implement functionality using [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ITT1_IPSEC_IMPLEMENT">IPsec as defined in <a href="#mod-vpnclient" class="dynref" data-format=""></a>,</span></li><li style=""><span class="selectable-content" id="ITT1_TLS_IMPLEMENT">mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_HTTPS_IMPLEMENT">HTTPS in accordance with <a href="#FCS_HTTPS_EXT.1">FCS_HTTPS_EXT.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_SSH_IMPLEMENT">SSH as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
+          <div class="element"><div class="reqid" id="FPT_ITT.1.1"><a href="#FPT_ITT.1.1" class="abbr">FPT_ITT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="_s_460"><b>invoke platform-provided functionality to use [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ITT1_IPSEC_INVOKE">IPsec,</span></li><li style=""><span class="selectable-content" id="ITT1_TLS_INVOKE">mutually authenticated TLS,</span></li><li style=""><span class="selectable-content" id="ITT1_DTLS_INVOKE">mutually authenticated DTLS,</span></li><li style=""><span class="selectable-content" id="ITT1_HTTPS_INVOKE">HTTPS,</span></li><li style=""><span class="selectable-content" id="ITT1_SSH_INVOKE">SSH</span></li></ul>]</b></span></li><li style=""><span class="selectable-content" id="_s_466"><b>implement functionality using [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ITT1_IPSEC_IMPLEMENT">IPsec as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/522">PP-Module for 
+        Version 
+        </a>,</span></li><li style=""><span class="selectable-content" id="ITT1_TLS_IMPLEMENT">mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_HTTPS_IMPLEMENT">HTTPS in accordance with <a href="#FCS_HTTPS_EXT.1">FCS_HTTPS_EXT.1</a>,</span></li><li style=""><span class="selectable-content" id="ITT1_SSH_IMPLEMENT">SSH as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
         2.0</a></span></li></ul>]</b></span></li></ul>] <b>to</b> protect <b>all</b> data from [<i>disclosure and modification</i>] when it is <b>transferred</b> between
               separate parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">This requirement ensures that all communications between components of a distributed <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> are protected through the use of an encrypted communications channel. <br/><br/> 
-              The trusted channel uses secure protocols that preserve the confidentiality and integrity of communications. For this particular use, any of IPsec, TLS, DTLS, HTTPS, or SSH can be used. If TLS or DTLS is used, mutual authentication must be supported regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as the client or the server in this connection. Where X.509 validation is needed (e.g., if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as a TLS server that supports mutual authentication), <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
-        version 
-        1.0</a> must be claimed. To distinguish X.509 validation for internal communications from validation for external communications (e.g., communication between <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components versus communication to a remote <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity in the operational environment), FIA_X509_EXT.1 from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509,
-        version 
+              The trusted channel uses secure protocols that preserve the confidentiality and integrity of communications. For this particular use, any of IPsec, TLS, DTLS, HTTPS, or SSH can be used. If TLS or DTLS is used, mutual authentication must be supported regardless of whether the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as the client or the server in this connection. Where X.509 validation is needed (e.g., if the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> acts as a TLS server that supports mutual authentication), <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509
+        Version 
+        1.0</a> must be claimed. To distinguish X.509 validation for internal communications from validation for external communications (e.g., communication between <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components versus communication to a remote <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entity in the operational environment), FIA_X509_EXT.1 from <a href="https://www.niap-ccevs.org/protectionprofiles/511">Functional Package for X.509
+        Version 
         1.0</a> must be iterated for this use as "FIA_X509_EXT.1/Internal" per the guidance in <a href="#package-usage" class="dynref" data-format=""></a>. This channel may also be used as the registration channel for the registration process, as described in section 3.1 and <a href="#FCO_CPC_EXT.1.2">FCO_CPC_EXT.1.2</a>.<br/><br/>              
-              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "IPsec as defined in <a href="#mod-vpnclient" class="dynref" data-format=""></a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must claim conformance to a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the VPN Client <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.<br/><br/>
-              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "SSH as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
-        2.0</a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must be validated against <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH),
-        version 
+              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "IPsec as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/522">PP-Module for 
+        Version 
+        </a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must claim conformance to a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes the VPN Client <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.<br/><br/>
+              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "SSH as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
+        2.0</a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must be validated against <a href="https://www.niap-ccevs.org/protectionprofiles/515">Functional Package for Secure Shell (SSH)
+        Version 
         2.0</a>.<br/><br/>
-              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>" or "mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
-        2.1</a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must be validated against requirements from <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+              If the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author selects that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> implements "mutually authenticated TLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>" or "mutually authenticated DTLS as defined in <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
+        2.1</a>," the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> must be validated against requirements from <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>, with the following selections made:
               <ul>
                 <li>FCS_TLS_EXT.1: 
@@ -5814,12 +5785,10 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains
                 instructions for establishing the communication paths for each supported
                 method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FPT_ITT.1:1</a>:
-      The evaluator shall ensure that communications using each specified (in the
+                <span class="testlist-"><ul><li class="test-"><a id="_t_79" class="defined" href="#_t_79">Test FPT_ITT.1:1</a>The evaluator shall ensure that communications using each specified (in the
                     operational guidance) communication method is tested during the course of the
                     evaluation, setting up the connections as described in the operational guidance
-                    and ensuring that communication is successful.</li><li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FPT_ITT.1:2</a>:
-      The evaluator shall ensure, for each method of communication, the channel
+                    and ensuring that communication is successful.</li><li class="test-"><a id="_t_80" class="defined" href="#_t_80">Test FPT_ITT.1:2</a>The evaluator shall ensure, for each method of communication, the channel
                     data is not sent in plaintext.</li></ul></span> Further evaluation activities are associated with the specific protocols.
               </div></div></div></div></div>
         
@@ -5943,7 +5912,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
 			There are no additional Guidance evaluation activities for this element.<br/><br/>
               <div class="eacategory">Tests</div><div class="ea">
                 Conditional: If "not download, modify, replace or update its own binary code" is selected the evaluator shall verify that the application's executable files are not changed by the application with the following tests:
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_81" class="defined" href="#_t_81">Test FPT_TUD_EXT.1.3:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5952,8 +5921,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox).
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_82" class="defined" href="#_t_82">Test FPT_TUD_EXT.1.3:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -5978,7 +5947,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall install the application and then locate all of its executable files. The evaluator shall then, for each file, save off either a hash of the file or a copy of the file itself. The evaluator shall then run the application and exercise all features of the application as described in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The evaluator shall then compare each executable file with either the saved hash or the saved copy of the files. The evaluator shall verify that these are identical.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_TUD_EXT.1.4">FPT_TUD_EXT.1.4</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea">The evaluator shall verify that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> identifies how updates to the application are signed by an authorized source. The definition of an authorized source must be contained in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>. The evaluator shall also ensure that the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> (or the operational guidance) describes how candidate updates are obtained.</div>
@@ -6014,7 +5983,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Tests</div><div class="ea">
                 If a container image is claimed, the evaluator shall verify that application updates are distributed as container images. If the format of the platform-supported package manager is claimed, the evaluator shall verify that application updates are distributed in the format supported by the platform. This varies per platform:
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_83" class="defined" href="#_t_83">Test FPT_TUD_EXT.2.1:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6023,8 +5992,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application is packaged in the standard Windows Installer (.MSI) format, the Windows Application Software (.EXE) format signed using the Microsoft Authenticode process, or the Windows Universal Application package (.APPX) format. See https://msdn.microsoft.com/en-us/library/ms537364(v=vs.85).aspx for details regarding Authenticode signing.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_84" class="defined" href="#_t_84">Test FPT_TUD_EXT.2.1:2</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6033,8 +6002,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application is packaged in the IPA format.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_85" class="defined" href="#_t_85">Test FPT_TUD_EXT.2.1:3</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6043,8 +6012,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application is packaged in the format of the package management infrastructure of the chosen distribution. For example, applications running on Red Hat and Red Hat derivatives shall be packaged in <code>RPM</code> format. Applications running on Debian and Debian derivatives shall be packaged in <code>DEB</code> format.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_86" class="defined" href="#_t_86">Test FPT_TUD_EXT.2.1:4</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6053,8 +6022,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application is packaged in the PKG format.
                     
-                  </test></div></div></ul></span>
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                  </test></div></div></li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_87" class="defined" href="#_t_87">Test FPT_TUD_EXT.2.1:5</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6063,14 +6032,14 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall ensure that the application is packaged in the DMG format, the PKG format, or the MPKG format.
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
               </div>
             <div class="element-activity-header"><a href="#FPT_TUD_EXT.2.2">FPT_TUD_EXT.2.2</a></div>
               <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><p>None.</p></div>
               <div class="eacategory">Guidance</div><div class="ea"><p>The evaluator shall verify the guidance documentation details how uninstallation of the application is performed.</p></div>
               <div class="eacategory">Tests</div><div class="ea">
                 
-                :<span class="testlist-"><ul><div class="dependent">The following content should be included if:<ul><li>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_88" class="defined" href="#_t_88">Test FPT_TUD_EXT.2.2:1</a><div class="dependent">The following content should be included if:<ul><li>
            the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements 
            
              ""
@@ -6079,7 +6048,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                     
                     The evaluator shall consider the requirement met because the platform forces applications to write all data within the application working directory (sandbox).
                     
-                  </test></div></div></ul></span>
+                  </test></div></div></li></ul></span>
                 <p>For all other platforms, the evaluator shall record the path of every file on the entire file system prior to installation of the application, and then install and run the application. Afterward, the evaluator shall uninstall the application, and compare the resulting file system to the initial record to verify that no files, other than configuration, output, and audit or log files, have been added to the file system.</p>
               </div>
             <div class="element-activity-header"><a href="#FPT_TUD_EXT.2.3">FPT_TUD_EXT.2.3</a></div>
@@ -6087,9 +6056,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               <div class="eacategory">Guidance</div><div class="ea"><p>None.</p></div>
               <div class="eacategory">Tests</div><div class="ea">
                 Conditional: if "the application can verify them using" is selected the evaluator shall perform the following tests:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_89" class="defined" href="#_t_89">Test FPT_TUD_EXT.2.3:1</a>:
-      The evaluator shall ensure that the update has a digital signature belonging to the vendor prior to its installation. The evaluator shall modify the downloaded update in such a way that the digital signature is no longer valid. The evaluator will then attempt to install the modified update. The evaluator shall ensure that the modified update fails to install.</li><li class="test-"><a id="_t_90" class="defined" href="#_t_90">Test FPT_TUD_EXT.2.3:2</a>:
-      The evaluator shall ensure that the update has a digital signature belonging to the vendor. The evaluator shall then attempt to install the update (or permit installation to continue). The evaluator shall ensure that the update successfully installs.</li></ul></span>
+                <span class="testlist-"><ul><li class="test-"><a id="_t_89" class="defined" href="#_t_89">Test FPT_TUD_EXT.2.3:1</a>The evaluator shall ensure that the update has a digital signature belonging to the vendor prior to its installation. The evaluator shall modify the downloaded update in such a way that the digital signature is no longer valid. The evaluator will then attempt to install the modified update. The evaluator shall ensure that the modified update fails to install.</li><li class="test-"><a id="_t_90" class="defined" href="#_t_90">Test FPT_TUD_EXT.2.3:2</a>The evaluator shall ensure that the update has a digital signature belonging to the vendor. The evaluator shall then attempt to install the update (or permit installation to continue). The evaluator shall ensure that the update successfully installs.</li></ul></span>
               </div>
             </div></div></div>
         
@@ -6118,8 +6085,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 The evaluator shall confirm that the guidance documentation includes instructions for configuring the inactivity time period for session termination.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 For each method of establishing an interactive session with the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, the evaluator shall perform the following test:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_91" class="defined" href="#_t_91">Test FTA_SSL.3:1</a>:
-      
+                <span class="testlist-"><ul><li class="test-"><a id="_t_91" class="defined" href="#_t_91">Test FTA_SSL.3:1</a>
                     The evaluator shall follow the guidance documentation to configure several different values for the inactivity time period referenced in the component. 
                     For each period configured, the evaluator shall establish an interactive session with the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. The evaluator shall then observe that the session is terminated 
                     after the configured time period.
@@ -6152,8 +6118,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 The evaluator shall check the guidance documentation to ensure that it describes how to configure the banner message.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 The evaluator shall perform the following test:
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_92" class="defined" href="#_t_92">Test FTA_TAB.1:1</a>:
-      
+                <span class="testlist-"><ul><li class="test-"><a id="_t_92" class="defined" href="#_t_92">Test FTA_TAB.1:1</a>
                     The evaluator shall follow the guidance documentation to
                     configure a notice and consent warning message. The evaluator shall
                     then, for each method of access specified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>, establish a
@@ -6262,14 +6227,11 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
                 instructions for configuring the communication channel between the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and authorized <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> entities for each supported
                 method.
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                :<span class="testlist-"><ul><li class="test-"><a id="_t_93" class="defined" href="#_t_93">Test FTP_ITC.1:1</a>:
-      The evaluator shall ensure that communications using each specified (in the
+                <span class="testlist-"><ul><li class="test-"><a id="_t_93" class="defined" href="#_t_93">Test FTP_ITC.1:1</a>The evaluator shall ensure that communications using each specified (in the
                     operational guidance) communication method is tested during the course of the
                     evaluation, setting up the connections as described in the operational guidance
-                    and ensuring that communication is successful.</li><li class="test-"><a id="_t_94" class="defined" href="#_t_94">Test FTP_ITC.1:2</a>:
-      The evaluator shall ensure, for each method of communication, the channel
-                    data is not sent in plaintext.</li><li class="test-"><a id="_t_95" class="defined" href="#_t_95">Test FTP_ITC.1:3</a>:
-      The evaluator shall ensure, for each communication channel with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, that a protocol analyzer identifies the traffic as the
+                    and ensuring that communication is successful.</li><li class="test-"><a id="_t_94" class="defined" href="#_t_94">Test FTP_ITC.1:2</a>The evaluator shall ensure, for each method of communication, the channel
+                    data is not sent in plaintext.</li><li class="test-"><a id="_t_95" class="defined" href="#_t_95">Test FTP_ITC.1:3</a>The evaluator shall ensure, for each communication channel with the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>, that a protocol analyzer identifies the traffic as the
                     protocol under testing.</li></ul></span> Further evaluation activities are associated with the specific protocols.
               </div></div></div></div></div>
         
@@ -6320,10 +6282,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the methods of remote <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administration are indicated, along with how those communications are protected. The evaluator shall also confirm that all protocols listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> administration are consistent with those specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>
-                If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for establishing the remote administrative sessions for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: :<span class="testlist-"><ul><li class="test-"><a id="_t_96" class="defined" href="#_t_96">Test FTP_TRP.1:1</a>:
-      The evaluator shall ensure that communications using each specified (in the operational guidance) remote administration method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</li><li class="test-"><a id="_t_97" class="defined" href="#_t_97">Test FTP_TRP.1:2</a>:
-      For each method of remote administration supported, the evaluator shall follow the operational guidance to ensure that there is no available interface that can be used by a remote user to establish remote administrative sessions without invoking the trusted path.</li><li class="test-"><a id="_t_98" class="defined" href="#_t_98">Test FTP_TRP.1:3</a>:
-      The evaluator shall ensure, for each method of remote administration, the channel data is not sent in plaintext.</li></ul></span> Further evaluation activities are associated with the specific protocols.
+                If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for establishing the remote administrative sessions for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: <span class="testlist-"><ul><li class="test-"><a id="_t_96" class="defined" href="#_t_96">Test FTP_TRP.1:1</a>The evaluator shall ensure that communications using each specified (in the operational guidance) remote administration method is tested during the course of the evaluation, setting up the connections as described in the operational guidance and ensuring that communication is successful.</li><li class="test-"><a id="_t_97" class="defined" href="#_t_97">Test FTP_TRP.1:2</a>For each method of remote administration supported, the evaluator shall follow the operational guidance to ensure that there is no available interface that can be used by a remote user to establish remote administrative sessions without invoking the trusted path.</li><li class="test-"><a id="_t_98" class="defined" href="#_t_98">Test FTP_TRP.1:3</a>The evaluator shall ensure, for each method of remote administration, the channel data is not sent in plaintext.</li></ul></span> Further evaluation activities are associated with the specific protocols.
               </div></div></div></div></div>
         
         <div class="comp" id="FTP_TRP.1/Join"><h4>FTP_TRP.1/Join Trusted Path (for Joining)</h4><div class="statustag"><b><i>This is a selection-based component. Its inclusion depends upon selection from
@@ -6353,11 +6312,7 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
               
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to determine that the methods of joining <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components are indicated, along with how those communications are protected. The evaluator shall also confirm that all protocols listed in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> in support of joining are consistent with those specified in the requirement, and are included in the requirements in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>.<br/><br/>              
-                If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for joining <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: :<span class="testlist-"><ul><li class="test-"><a id="_t_99" class="defined" href="#_t_99">Test FTP_TRP.1/Join:1</a>:
-      The evaluator shall ensure that the communications path for joining components to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is tested for each distinct (nonequivalent) component type, setting up the connections as described in the guidance documentation and ensuring that communication is successful. In particular the evaluator shall confirm that requirements on environment protection for the registration process are consistent with observations made on the test configuration (for example, a requirement to isolate the components from the Internet during registration might be inconsistent with the need for a component to contact a license server). If no requirements on the registration environment are identified as necessary to protect confidentiality, then the evaluator shall confirm that the key used for registration can be configured (following the instructions in the guidance documentation) to be at least the same length as the key used for the internal <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> channel that is being enabled. The evaluator shall confirm that the key used for the channel is unique to the pair of components (this is done by identifying the relevant key during the registration test: it is not necessary to examine the key value).</li><li class="test-"><a id="_t_100" class="defined" href="#_t_100">Test FTP_TRP.1/Join:2</a>:
-      The evaluator shall follow the guidance documentation to ensure that in fact the communication channel can be enabled by an administrator for all the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components identified in the guidance documentation as capable of initiation.</li><li class="test-"><a id="_t_101" class="defined" href="#_t_101">Test FTP_TRP.1/Join:3</a>:
-      The evaluator shall ensure that if the guidance documentation states that the channel data is encrypted then the data observed on the channel is not plaintext.</li><li class="test-"><a id="_t_102" class="defined" href="#_t_102">Test FTP_TRP.1/Join:4</a>:
-       The evaluator shall ensure that, for each different pair of nonequivalent component types that can use the registration channel, the connection is physically interrupted during a joining attempt. The evaluator shall ensure that when physical connectivity is restored, communications are appropriately protected.</li></ul></span> Further evaluation activities are associated with the specific protocols.
+                If "invoke platform-provided functionality" is selected, the evaluator shall examine the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> to verify that it describes (for each supported platform) how this functionality is invoked (it should be noted that this may be through a mechanism that is not implemented by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>; nonetheless, that mechanism will be identified in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> as part of this evaluation activity).</div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall confirm that the operational guidance contains instructions for joining <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components for each supported method.</div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall also perform the following tests: <span class="testlist-"><ul><li class="test-"><a id="_t_99" class="defined" href="#_t_99">Test FTP_TRP.1/Join:1</a>The evaluator shall ensure that the communications path for joining components to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> is tested for each distinct (nonequivalent) component type, setting up the connections as described in the guidance documentation and ensuring that communication is successful. In particular the evaluator shall confirm that requirements on environment protection for the registration process are consistent with observations made on the test configuration (for example, a requirement to isolate the components from the Internet during registration might be inconsistent with the need for a component to contact a license server). If no requirements on the registration environment are identified as necessary to protect confidentiality, then the evaluator shall confirm that the key used for registration can be configured (following the instructions in the guidance documentation) to be at least the same length as the key used for the internal <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> channel that is being enabled. The evaluator shall confirm that the key used for the channel is unique to the pair of components (this is done by identifying the relevant key during the registration test: it is not necessary to examine the key value).</li><li class="test-"><a id="_t_100" class="defined" href="#_t_100">Test FTP_TRP.1/Join:2</a>The evaluator shall follow the guidance documentation to ensure that in fact the communication channel can be enabled by an administrator for all the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> components identified in the guidance documentation as capable of initiation.</li><li class="test-"><a id="_t_101" class="defined" href="#_t_101">Test FTP_TRP.1/Join:3</a>The evaluator shall ensure that if the guidance documentation states that the channel data is encrypted then the data observed on the channel is not plaintext.</li><li class="test-"><a id="_t_102" class="defined" href="#_t_102">Test FTP_TRP.1/Join:4</a> The evaluator shall ensure that, for each different pair of nonequivalent component types that can use the registration channel, the connection is physically interrupted during a joining attempt. The evaluator shall ensure that when physical connectivity is restored, communications are appropriately protected.</li></ul></span> Further evaluation activities are associated with the specific protocols.
               </div></div></div></div></div>
       
     <h3 id="obj-req-map" class="indexable" data-level="3">6.1.11 TOE Security Functional Requirements Rationale</h3><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
@@ -6685,8 +6640,8 @@ work-dir of external doc = ../../outputFCS_DTLSC_EXT.1.2
             <span class="no-link">[FCS_TLSC_EXT.1 TLS Client Protocol or <br/>
               FCS_TLSS_EXT.1 TLS Server Protocol</span>
           </td></tr></table><h4 id="ext-comp-FCS_HTTPS_EXT.1.1">FCS_HTTPS_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall [<b>selection</b>: <span class="selectable-content" id="_s_330">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_331">implement</span>] the HTTPS protocol that complies with RFC 2818.<h4 id="ext-comp-FCS_HTTPS_EXT.1.2">FCS_HTTPS_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall 
-              [<b>selection</b>: <span class="selectable-content" id="_s_332">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_333">implement</span>] HTTPS using TLS in accordance with <a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439">Functional Package for Transport Layer Security (TLS),
-        version 
+              [<b>selection</b>: <span class="selectable-content" id="_s_332">invoke platform-provided functionality to implement</span>, <span class="selectable-content" id="_s_333">implement</span>] HTTPS using TLS in accordance with <a href="https://www.niap-ccevs.org/protectionprofiles/519">Functional Package for Transport Layer Security (TLS)
+        Version 
         2.1</a>. 
             </div></div><h3 id="ext-comp-FCS_IV_EXT" class="indexable" data-level="4">B.2.2.3 FCS_IV_EXT Initialization Vector Generation</h3><div style="margin-left: 1em;"><h4>Family Behavior</h4><div>This family defines requirements for generating IVs in accordance with
             <abbr class="dyn-abbr"><a href="#abbr_NIST">NIST</a></abbr>-approved cipher modes.</div><h4>Component Leveling</h4><svg style="max-height: 30px;"><text x="4" fill="black" font-size="15" y="24">FCS_IV_EXT</text><rect x="2" y="11" width="150" height="16" fill="none" stroke="black"></rect><text x="234" fill="black" font-size="15" y="24">1</text><rect x="232" y="11" width="12" height="16" fill="none" stroke="black"></rect><line x1="152" y1="17" x2="231" y2="17" stroke="black"></line></svg><p><a href="#FCS_IV_EXT.1">FCS_IV_EXT.1</a>,
