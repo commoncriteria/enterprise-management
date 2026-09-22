@@ -29,35 +29,6 @@
   </RevisionHistory>
 
 
-  <include-pkg id="ssh">
-    <git>
-      <url>https://github.com/commoncriteria/ssh</url>
-      <branch>release-2.0</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/515</url>
-    <depends on-sel="sel_all_ssh"/>
-  </include-pkg>
-  <include-pkg id="tls">
-    <git>
-      <url>https://github.com/commoncriteria/tls</url>
-      <branch>release-2.1</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439</url>
-  </include-pkg>
-  <include-pkg id="X509">
-    <git>
-      <url>https://github.com/commoncriteria/X509</url>
-      <branch>release-1.0</branch>
-    </git>
-    <url>https://www.niap-ccevs.org/protectionprofiles/511</url>
-  </include-pkg>
-  <include-pkg id="pkg-vpnc">
-    <git>
-      <url>https://github.com/commoncriteria/vpnclient</url>
-      <branch>release-3.0</branch>
-    </git>
-    <url>https://commoncriteria.github.io/vpnclient/master/vpnclient.html</url>
-  </include-pkg>
 
   <pp-preferences>
     <audit-events-in-sfrs/>
@@ -247,16 +218,79 @@
       <cc-pt3-conf>extended</cc-pt3-conf>
       <cc-pp-conf/>
       <cc-pp-config-with>    
-        <PP-cc-ref>Protection Profile for Application Software Version 2.0 </PP-cc-ref>
-       <Mod-cc-ref>PP-Module for Endpoint Detection and Response (EDR), Version 2.0 </Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for Host Agent (HA), Version 2.0</Mod-cc-ref>
-        <Mod-cc-ref>PP-Module for VPN Client, Version 3.0</Mod-cc-ref>
-        
+        <PP-cc-ref>
+			<!-- Protection Profile for Application Software Version 2.0 -->
+			<cc-doc-ref id="application">
+				<git>
+					<url>https://github.com/commoncriteria/application</url>
+					<branch>release-2.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/516</url>
+			</cc-doc-ref>
+		</PP-cc-ref>
+       <Mod-cc-ref>
+			<!-- PP-Module for Endpoint Detection and Response (EDR), Version 2.0 -->		
+			<cc-doc-ref id="esm-edr">
+				<git>
+					<url>https://github.com/commoncriteria/esm-edr</url>
+					<branch>release-2.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/526</url>
+			</cc-doc-ref>			
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<!-- PP-Module for Host Agent (HA), Version 2.0 -->
+			<cc-doc-ref id="esm-hostagent">
+				<git>
+					<url>https://github.com/commoncriteria/esm-hostagent</url>
+					<branch>release-2.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/525</url>
+			</cc-doc-ref>			
+		</Mod-cc-ref>
+        <Mod-cc-ref>
+			<!-- PP-Module for VPN Client, Version 3.0 -->
+			<cc-doc-ref id="vpnclient">
+				<git>
+					<url>https://github.com/commoncriteria/vpnclient</url>
+					<branch>v3.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/522</url>
+			</cc-doc-ref>					
+		</Mod-cc-ref>
       </cc-pp-config-with>
       <cc-pkg-claim>
-        <FP-cc-ref conf="conformant">Functional Package for Secure Shell Version 2.0</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for Transport Layer Security Version 2.1</FP-cc-ref>
-        <FP-cc-ref conf="conformant">Functional Package for X.509 Version 1.0</FP-cc-ref>
+        <FP-cc-ref conf="conformant">
+			<!-- Functional Package for Secure Shell Version 2.0 -->
+			<cc-doc-ref id="ssh">
+				<git>
+				  <url>https://github.com/commoncriteria/ssh</url>
+				  <branch>release-2.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/515</url>
+				<depends on-sel="sel_all_ssh"/>
+			</cc-doc-ref>
+		</FP-cc-ref>
+        <FP-cc-ref conf="conformant">
+			<!-- Functional Package for Transport Layer Security Version 2.1 -->
+			<cc-doc-ref id="tls">
+				<git>
+					<url>https://github.com/commoncriteria/tls</url>
+					<branch>release-2.1</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/519</url>
+			</cc-doc-ref>
+		</FP-cc-ref>
+        <FP-cc-ref conf="conformant">
+			<!-- Functional Package for X.509 Version 1.0  -->
+			<cc-doc-ref id="X509">
+				<git>
+					<url>https://github.com/commoncriteria/X509</url>
+					<branch>release-1.0</branch>
+				</git>
+				<url>https://www.niap-ccevs.org/protectionprofiles/511</url>
+			</cc-doc-ref>
+		</FP-cc-ref>
       </cc-pkg-claim>
       
     </CClaimsInfo>
@@ -5972,7 +6006,7 @@
                 <selectable id="ITT1_SSH_INVOKE">SSH</selectable>
               </selectables></h:b></selectable>
               <selectable><h:b>implement functionality using <selectables linebreak="yes">
-                <selectable id="ITT1_IPSEC_IMPLEMENT">IPsec as defined in <xref to="mod-vpnclient"/>,</selectable>
+                <selectable id="ITT1_IPSEC_IMPLEMENT">IPsec as defined in <xref to="vpnclient"/>,</selectable>
                 <selectable id="ITT1_TLS_IMPLEMENT">mutually authenticated TLS as defined in <xref to="tls"/>,</selectable>
                 <selectable id="ITT1_DTLS_IMPLEMENT">mutually authenticated DTLS as defined in <xref to="tls"/>,</selectable>
                 <selectable id="ITT1_HTTPS_IMPLEMENT">HTTPS in accordance with FCS_HTTPS_EXT.1,</selectable>
@@ -5981,7 +6015,7 @@
               separate parts of the TOE.</title>
             <note role="application">This requirement ensures that all communications between components of a distributed TOE are protected through the use of an encrypted communications channel. <h:br/><h:br/> 
               The trusted channel uses secure protocols that preserve the confidentiality and integrity of communications. For this particular use, any of IPsec, TLS, DTLS, HTTPS, or SSH can be used. If TLS or DTLS is used, mutual authentication must be supported regardless of whether the TOE acts as the client or the server in this connection. Where X.509 validation is needed (e.g., if the TOE acts as a TLS server that supports mutual authentication), <xref to="X509"/> must be claimed. To distinguish X.509 validation for internal communications from validation for external communications (e.g., communication between TOE components versus communication to a remote IT entity in the operational environment), FIA_X509_EXT.1 from <xref to="X509"/> must be iterated for this use as "FIA_X509_EXT.1/Internal" per the guidance in <xref to="package-usage"/>. This channel may also be used as the registration channel for the registration process, as described in section 3.1 and <xref to="fel-cpc-func"/>.<h:br/><h:br/>              
-              If the ST author selects that the TSF implements "IPsec as defined in <xref to="mod-vpnclient"/>," the TSF must claim conformance to a PP-Configuration that includes the VPN Client PP-Module.<h:br/><h:br/>
+              If the ST author selects that the TSF implements "IPsec as defined in <xref to="vpnclient"/>," the TSF must claim conformance to a PP-Configuration that includes the VPN Client PP-Module.<h:br/><h:br/>
               If the ST author selects that the TSF implements "SSH as defined in <xref to="ssh"/>," the TSF must be validated against <xref to="ssh"/>.<h:br/><h:br/>
               If the ST author selects that the TSF implements "mutually authenticated TLS as defined in <xref to="tls"/>" or "mutually authenticated DTLS as defined in <xref to="tls"/>," the TSF must be validated against requirements from <xref to="tls"/>, with the following selections made:
               <h:ul>
