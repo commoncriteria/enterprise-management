@@ -509,16 +509,7 @@
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[8]""/f-component[7]""/f-element[3]""/note[1]""/h:p[1]"This requ"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[1]""/section[8]""/f-component[8]""/f-element[3]""/note[1]""/h:p[1]"The speci"/h:p[1]""
 * Warning: Detected an empty _p_ element./PP[1]""/section[5]"For a dis"/section[2]"The Secur"/h:p[1]""
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
  Failed to find a reference to package-usage.
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
-warning: failed to load external entity "output/vpnclient.xml"
 * Warning: Since FCO_CPC_EXT.1.2 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
                        
 * Warning: Since FCS_STG_EXT.1.1 has an 'id' attribute in a descendant node in the title, you probably need to define an alternative 'ext-comp-def-title'.
